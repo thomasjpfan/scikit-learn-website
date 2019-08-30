@@ -1,0 +1,319 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Segmenting the picture of greek coins in regions &mdash; scikit-learn 0.22.dev0 documentation</title>
+  
+  <link rel="canonical" href="http://scikit-learn.org/stable/auto_examples/cluster/plot_coin_segmentation.html" />
+
+  
+  <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  <link rel="stylesheet" href="../../_static/css/vendor/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" /> 
+</head>
+<body>
+
+
+<nav class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid sk-docs-container">
+      <a class="navbar-brand" href="../../index.html">
+        <img
+          src="../../_static/scikit-learn-logo-notext.png"
+          width="100"
+          alt="logo"/>
+      </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../install.html">Install</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../documentation.html">Documentation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">Examples</a>
+        </li>
+      </ul>
+      <div class="search_form">
+          <div class="gcse-search" id="cse" data-linktarget="_parent"></div>
+      </div>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="d-flex " id="sk-doc-wrapper">
+    <div class="border-right" id="sk-sidebar-wrapper">
+      <div class="h-100 sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+              <a href="plot_affinity_propagation.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Demo of affinity propagation clustering algorithm">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
+              <a href="plot_digits_linkage.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Various Agglomerative Clustering on a 2D embedding of digits">Next</a>
+          </div>
+        <div class="alert alert-danger p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+          <strong>scikit-learn 0.22.dev0</strong><br/>
+          <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
+          </p>
+        </div>
+        <div class="alert alert-warning p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            Please <a class="font-weight-bold" href="about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
+          </p>
+        </div>
+        <ul>
+<li><a class="reference internal" href="#">Segmenting the picture of greek coins in regions</a></li>
+</ul>
+
+      </div>
+    </div>
+    <div id="sk-page-content-wrapper">
+      <div class="sk-page-content container-fluid body" role="main">
+        
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-cluster-plot-coin-segmentation-py"><span class="std std-ref">here</span></a> to download the full example code or run this example in your browser via Binder</p>
+</div>
+<div class="sphx-glr-example-title section" id="segmenting-the-picture-of-greek-coins-in-regions">
+<span id="sphx-glr-auto-examples-cluster-plot-coin-segmentation-py"></span><h1>Segmenting the picture of greek coins in regions<a class="headerlink" href="#segmenting-the-picture-of-greek-coins-in-regions" title="Permalink to this headline">¶</a></h1>
+<p>This example uses <a class="reference internal" href="../../modules/clustering.html#spectral-clustering"><span class="std std-ref">Spectral clustering</span></a> on a graph created from
+voxel-to-voxel difference on an image to break this image into multiple
+partly-homogeneous regions.</p>
+<p>This procedure (spectral clustering on an image) is an efficient
+approximate solution for finding normalized graph cuts.</p>
+<p>There are two options to assign labels:</p>
+<ul class="simple">
+<li><p>with ‘kmeans’ spectral clustering will cluster samples in the embedding space
+using a kmeans algorithm</p></li>
+<li><p>whereas ‘discrete’ will iteratively search for the closest partition
+space to the embedding space.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
+
+<span class="c1"># Author: Gael Varoquaux &lt;gael.varoquaux@normalesup.org&gt;, Brian Cheung</span>
+<span class="c1"># License: BSD 3 clause</span>
+
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">distutils.version</span> <span class="k">import</span> <span class="n">LooseVersion</span>
+<span class="kn">from</span> <span class="nn">scipy.ndimage.filters</span> <span class="k">import</span> <span class="n">gaussian_filter</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">skimage</span>
+<span class="kn">from</span> <span class="nn">skimage.data</span> <span class="k">import</span> <span class="n">coins</span>
+<span class="kn">from</span> <span class="nn">skimage.transform</span> <span class="k">import</span> <span class="n">rescale</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction</span> <span class="k">import</span> <span class="n">image</span>
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.cluster.spectral_clustering.html#sklearn.cluster.spectral_clustering" title="View documentation for sklearn.cluster.spectral_clustering"><a href="../../modules/generated/sklearn.cluster.spectral_clustering.html#sklearn.cluster.spectral_clustering" title="View documentation for sklearn.cluster.spectral_clustering"><span class="n">spectral_clustering</span></a></a>
+
+<span class="c1"># these were introduced in skimage-0.14</span>
+<span class="k">if</span> <span class="n">LooseVersion</span><span class="p">(</span><span class="n">skimage</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="s1">&#39;0.14&#39;</span><span class="p">:</span>
+    <span class="n">rescale_params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;anti_aliasing&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;multichannel&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">rescale_params</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># load the coins as a numpy array</span>
+<span class="n">orig_coins</span> <span class="o">=</span> <span class="n">coins</span><span class="p">()</span>
+
+<span class="c1"># Resize it to 20% of the original size to speed up the processing</span>
+<span class="c1"># Applying a Gaussian filter for smoothing prior to down-scaling</span>
+<span class="c1"># reduces aliasing artifacts.</span>
+<span class="n">smoothened_coins</span> <span class="o">=</span> <span class="n">gaussian_filter</span><span class="p">(</span><span class="n">orig_coins</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">rescaled_coins</span> <span class="o">=</span> <span class="n">rescale</span><span class="p">(</span><span class="n">smoothened_coins</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;reflect&quot;</span><span class="p">,</span>
+                         <span class="o">**</span><span class="n">rescale_params</span><span class="p">)</span>
+
+<span class="c1"># Convert the image into a graph with the value of the gradient on the</span>
+<span class="c1"># edges.</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">img_to_graph</span><span class="p">(</span><span class="n">rescaled_coins</span><span class="p">)</span>
+
+<span class="c1"># Take a decreasing function of the gradient: an exponential</span>
+<span class="c1"># The smaller beta is, the more independent the segmentation is of the</span>
+<span class="c1"># actual image. For beta=1, the segmentation is close to a voronoi</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">eps</span> <span class="o">=</span> <span class="mf">1e-6</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.exp.html#numpy.exp" title="View documentation for numpy.exp"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.exp.html#numpy.exp" title="View documentation for numpy.exp"><span class="n">np</span><span class="o">.</span><span class="n">exp</span></a></a><span class="p">(</span><span class="o">-</span><span class="n">beta</span> <span class="o">*</span> <span class="n">graph</span><span class="o">.</span><span class="n">data</span> <span class="o">/</span> <span class="n">graph</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">std</span><span class="p">())</span> <span class="o">+</span> <span class="n">eps</span>
+
+<span class="c1"># Apply spectral clustering (this step goes much faster if you have pyamg</span>
+<span class="c1"># installed)</span>
+<span class="n">N_REGIONS</span> <span class="o">=</span> <span class="mi">25</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>Visualize the resulting regions</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">assign_labels</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;kmeans&#39;</span><span class="p">,</span> <span class="s1">&#39;discretize&#39;</span><span class="p">):</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">labels</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.cluster.spectral_clustering.html#sklearn.cluster.spectral_clustering" title="View documentation for sklearn.cluster.spectral_clustering"><a href="../../modules/generated/sklearn.cluster.spectral_clustering.html#sklearn.cluster.spectral_clustering" title="View documentation for sklearn.cluster.spectral_clustering"><span class="n">spectral_clustering</span></a></a><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">n_clusters</span><span class="o">=</span><span class="n">N_REGIONS</span><span class="p">,</span>
+                                 <span class="n">assign_labels</span><span class="o">=</span><span class="n">assign_labels</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="n">labels</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">rescaled_coins</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+    <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="View documentation for matplotlib.pyplot.figure"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="View documentation for matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow" title="View documentation for matplotlib.pyplot.imshow"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow" title="View documentation for matplotlib.pyplot.imshow"><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span></a></a><span class="p">(</span><span class="n">rescaled_coins</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_REGIONS</span><span class="p">):</span>
+        <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.contour.html#matplotlib.pyplot.contour" title="View documentation for matplotlib.pyplot.contour"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.contour.html#matplotlib.pyplot.contour" title="View documentation for matplotlib.pyplot.contour"><span class="n">plt</span><span class="o">.</span><span class="n">contour</span></a></a><span class="p">(</span><span class="n">labels</span> <span class="o">==</span> <span class="n">l</span><span class="p">,</span>
+                    <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">nipy_spectral</span><span class="p">(</span><span class="n">l</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">N_REGIONS</span><span class="p">))])</span>
+    <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.xticks.html#matplotlib.pyplot.xticks" title="View documentation for matplotlib.pyplot.xticks"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.xticks.html#matplotlib.pyplot.xticks" title="View documentation for matplotlib.pyplot.xticks"><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span></a></a><span class="p">(())</span>
+    <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.yticks.html#matplotlib.pyplot.yticks" title="View documentation for matplotlib.pyplot.yticks"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.yticks.html#matplotlib.pyplot.yticks" title="View documentation for matplotlib.pyplot.yticks"><span class="n">plt</span><span class="o">.</span><span class="n">yticks</span></a></a><span class="p">(())</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Spectral clustering: </span><span class="si">%s</span><span class="s1">, </span><span class="si">%.2f</span><span class="s1">s&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">assign_labels</span><span class="p">,</span> <span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="View documentation for matplotlib.pyplot.title"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="View documentation for matplotlib.pyplot.title"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a></a><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a></a><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="sphx-glr-horizontal">
+<li><img alt="../../_images/sphx_glr_plot_coin_segmentation_001.png" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_coin_segmentation_001.png" />
+</li>
+<li><img alt="../../_images/sphx_glr_plot_coin_segmentation_002.png" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_coin_segmentation_002.png" />
+</li>
+</ul>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Spectral clustering: kmeans, 1.71s
+Spectral clustering: discretize, 1.48s
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.907 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-cluster-plot-coin-segmentation-py">
+<div class="binder-badge docutils container">
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/binder-examples/master?urlpath=lab/tree/notebooks/auto_examples/cluster/plot_coin_segmentation.ipynb"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" width="150px" /></a>
+</div>
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/2e86a4838807f09bbbb529d9643d45ab/plot_coin_segmentation.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_coin_segmentation.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/006fc185672e58b056a5c134db26935c/plot_coin_segmentation.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_coin_segmentation.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+      </div>
+    <div class="container">
+      <footer class="sk-content-footer">
+            &copy; 2007 - 2019, scikit-learn developers (BSD License).
+          <a href="../../_sources/auto_examples/cluster/plot_coin_segmentation.rst.txt" rel="nofollow">Show this page source</a>
+      </footer>
+    </div>
+  </div>
+  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle"><&mdash;></button>
+</div>
+<script src="../../_static/js/vendor/jquery.min.js"></script>
+<script src="../../_static/js/vendor/bootstrap.min.js"></script>
+
+
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-22606712-2', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script>
+
+    $(document).ready(function() {
+
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#sk-doc-wrapper").toggleClass("toggled");
+        });
+
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		'.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+    var hide_text = 'Hide prompts and outputs';
+    var show_text = 'Show prompts and outputs';
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        if (jthis.find('.gp').length > 0) {
+            var button = $('<span class="copybutton">&gt;&gt;&gt;</span>');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+            jthis.prepend(button);
+        }
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+    // define the behavior of the button when it's clicked
+    $('.copybutton').click(function(e){
+        e.preventDefault();
+        var button = $(this);
+        if (button.data('hidden') === 'false') {
+            // hide the code output
+            button.parent().find('.go, .gp, .gt').hide();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'hidden');
+            button.css('text-decoration', 'line-through');
+            button.attr('title', show_text);
+            button.data('hidden', 'true');
+        } else {
+            // show the code output
+            button.parent().find('.go, .gp, .gt').show();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'visible');
+            button.css('text-decoration', 'none');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+        }
+    });
+
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	})
+});
+</script>
+<script>
+    (function() {
+        var cx = '016639176250731907682:tjtqbvtvij0';
+        var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+    
+<script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
+    
+</body>
+</html>

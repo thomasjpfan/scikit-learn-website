@@ -1,0 +1,277 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>sklearn.cluster.ward_tree &mdash; scikit-learn 0.22.dev0 documentation</title>
+  
+  <link rel="canonical" href="http://scikit-learn.org/stable/modules/generated/sklearn.cluster.ward_tree.html" />
+
+  
+  <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  <link rel="stylesheet" href="../../_static/css/vendor/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" /> 
+</head>
+<body>
+
+
+<nav class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid sk-docs-container">
+      <a class="navbar-brand" href="../../index.html">
+        <img
+          src="../../_static/scikit-learn-logo-notext.png"
+          width="100"
+          alt="logo"/>
+      </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../install.html">Install</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../documentation.html">Documentation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../auto_examples/index.html">Examples</a>
+        </li>
+      </ul>
+      <div class="search_form">
+          <div class="gcse-search" id="cse" data-linktarget="_parent"></div>
+      </div>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="d-flex " id="sk-doc-wrapper">
+    <div class="border-right" id="sk-sidebar-wrapper">
+      <div class="h-100 sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+              <a href="sklearn.cluster.spectral_clustering.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.cluster.spectral_clustering">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
+              <a href="sklearn.cluster.bicluster.SpectralBiclustering.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.cluster.bicluster.SpectralBiclustering">Next</a>
+          </div>
+        <div class="alert alert-danger p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+          <strong>scikit-learn 0.22.dev0</strong><br/>
+          <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
+          </p>
+        </div>
+        <div class="alert alert-warning p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            Please <a class="font-weight-bold" href="about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
+          </p>
+        </div>
+        <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.cluster</span></code>.ward_tree</a></li>
+</ul>
+
+      </div>
+    </div>
+    <div id="sk-page-content-wrapper">
+      <div class="sk-page-content container-fluid body" role="main">
+        
+  <div class="section" id="sklearn-cluster-ward-tree">
+<h1><a class="reference internal" href="../classes.html#module-sklearn.cluster" title="sklearn.cluster"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.cluster</span></code></a>.ward_tree<a class="headerlink" href="#sklearn-cluster-ward-tree" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="sklearn.cluster.ward_tree">
+<code class="sig-prename descclassname">sklearn.cluster.</code><code class="sig-name descname">ward_tree</code><span class="sig-paren">(</span><em class="sig-param">X</em>, <em class="sig-param">connectivity=None</em>, <em class="sig-param">n_clusters=None</em>, <em class="sig-param">return_distance=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/cluster/hierarchical.py#L135"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.ward_tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ward clustering based on a Feature matrix.</p>
+<p>Recursively merges the pair of clusters that minimally increases
+within-cluster variance.</p>
+<p>The inertia matrix uses a Heapq-based representation.</p>
+<p>This is the structured version, that takes into account some topological
+structure between samples.</p>
+<p>Read more in the <a class="reference internal" href="../clustering.html#hierarchical-clustering"><span class="std std-ref">User Guide</span></a>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array, shape (n_samples, n_features)</span></dt><dd><p>feature matrix representing n_samples samples to be clustered</p>
+</dd>
+<dt><strong>connectivity</strong><span class="classifier">sparse matrix (optional).</span></dt><dd><p>connectivity matrix. Defines for each sample the neighboring samples
+following a given structure of the data. The matrix is assumed to
+be symmetric and only the upper triangular half is used.
+Default is None, i.e, the Ward algorithm is unstructured.</p>
+</dd>
+<dt><strong>n_clusters</strong><span class="classifier">int (optional)</span></dt><dd><p>Stop early the construction of the tree at n_clusters. This is
+useful to decrease computation time if the number of clusters is
+not small compared to the number of samples. In this case, the
+complete tree is not computed, thus the ‘children’ output is of
+limited use, and the ‘parents’ output should rather be used.
+This option is valid only when specifying a connectivity matrix.</p>
+</dd>
+<dt><strong>return_distance</strong><span class="classifier">bool (optional)</span></dt><dd><p>If True, return the distance between the clusters.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>children</strong><span class="classifier">2D array, shape (n_nodes-1, 2)</span></dt><dd><p>The children of each non-leaf node. Values less than <a class="reference internal" href="../../glossary.html#term-n-samples"><span class="xref any std std-term">n_samples</span></a>
+correspond to leaves of the tree which are the original samples.
+A node <code class="docutils literal notranslate"><span class="pre">i</span></code> greater than or equal to <a class="reference internal" href="../../glossary.html#term-n-samples"><span class="xref any std std-term">n_samples</span></a> is a non-leaf
+node and has children <code class="docutils literal notranslate"><span class="pre">children_[i</span> <span class="pre">-</span> <span class="pre">n_samples]</span></code>. Alternatively
+at the i-th iteration, children[i][0] and children[i][1]
+are merged to form node <code class="docutils literal notranslate"><span class="pre">n_samples</span> <span class="pre">+</span> <span class="pre">i</span></code></p>
+</dd>
+<dt><strong>n_connected_components</strong><span class="classifier">int</span></dt><dd><p>The number of connected components in the graph.</p>
+</dd>
+<dt><strong>n_leaves</strong><span class="classifier">int</span></dt><dd><p>The number of leaves in the tree</p>
+</dd>
+<dt><strong>parents</strong><span class="classifier">1D array, shape (n_nodes, ) or None</span></dt><dd><p>The parent of each node. Only returned when a connectivity matrix
+is specified, elsewhere ‘None’ is returned.</p>
+</dd>
+<dt><strong>distances</strong><span class="classifier">1D array, shape (n_nodes-1, )</span></dt><dd><p>Only returned if return_distance is set to True (for compatibility).
+The distances between the centers of the nodes. <code class="docutils literal notranslate"><span class="pre">distances[i]</span></code>
+corresponds to a weighted euclidean distance between
+the nodes <code class="docutils literal notranslate"><span class="pre">children[i,</span> <span class="pre">1]</span></code> and <code class="docutils literal notranslate"><span class="pre">children[i,</span> <span class="pre">2]</span></code>. If the nodes refer to
+leaves of the tree, then <code class="docutils literal notranslate"><span class="pre">distances[i]</span></code> is their unweighted euclidean
+distance. Distances are updated in the following way
+(from scipy.hierarchy.linkage):</p>
+<p>The new entry <span class="math notranslate nohighlight">\(d(u,v)\)</span> is computed as follows,</p>
+<div class="math notranslate nohighlight">
+\[d(u,v) = \sqrt{\frac{|v|+|s|}
+                    {T}d(v,s)^2
+             + \frac{|v|+|t|}
+                    {T}d(v,t)^2
+             - \frac{|v|}
+                    {T}d(s,t)^2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(u\)</span> is the newly joined cluster consisting of
+clusters <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(v\)</span> is an unused
+cluster in the forest, <span class="math notranslate nohighlight">\(T=|v|+|s|+|t|\)</span>, and
+<span class="math notranslate nohighlight">\(|*|\)</span> is the cardinality of its argument. This is also
+known as the incremental algorithm.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="clearer"></div></div>
+
+
+      </div>
+    <div class="container">
+      <footer class="sk-content-footer">
+            &copy; 2007 - 2019, scikit-learn developers (BSD License).
+          <a href="../../_sources/modules/generated/sklearn.cluster.ward_tree.rst.txt" rel="nofollow">Show this page source</a>
+      </footer>
+    </div>
+  </div>
+  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle"><&mdash;></button>
+</div>
+<script src="../../_static/js/vendor/jquery.min.js"></script>
+<script src="../../_static/js/vendor/bootstrap.min.js"></script>
+
+
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-22606712-2', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script>
+
+    $(document).ready(function() {
+
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#sk-doc-wrapper").toggleClass("toggled");
+        });
+
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		'.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+    var hide_text = 'Hide prompts and outputs';
+    var show_text = 'Show prompts and outputs';
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        if (jthis.find('.gp').length > 0) {
+            var button = $('<span class="copybutton">&gt;&gt;&gt;</span>');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+            jthis.prepend(button);
+        }
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+    // define the behavior of the button when it's clicked
+    $('.copybutton').click(function(e){
+        e.preventDefault();
+        var button = $(this);
+        if (button.data('hidden') === 'false') {
+            // hide the code output
+            button.parent().find('.go, .gp, .gt').hide();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'hidden');
+            button.css('text-decoration', 'line-through');
+            button.attr('title', show_text);
+            button.data('hidden', 'true');
+        } else {
+            // show the code output
+            button.parent().find('.go, .gp, .gt').show();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'visible');
+            button.css('text-decoration', 'none');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+        }
+    });
+
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	})
+});
+</script>
+<script>
+    (function() {
+        var cx = '016639176250731907682:tjtqbvtvij0';
+        var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+    
+<script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
+    
+</body>
+</html>

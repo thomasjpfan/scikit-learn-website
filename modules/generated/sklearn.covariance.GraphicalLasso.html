@@ -1,0 +1,466 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>sklearn.covariance.GraphicalLasso &mdash; scikit-learn 0.22.dev0 documentation</title>
+  
+  <link rel="canonical" href="http://scikit-learn.org/stable/modules/generated/sklearn.covariance.GraphicalLasso.html" />
+
+  
+  <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  <link rel="stylesheet" href="../../_static/css/vendor/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" /> 
+</head>
+<body>
+
+
+<nav class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid sk-docs-container">
+      <a class="navbar-brand" href="../../index.html">
+        <img
+          src="../../_static/scikit-learn-logo-notext.png"
+          width="100"
+          alt="logo"/>
+      </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../install.html">Install</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../documentation.html">Documentation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../auto_examples/index.html">Examples</a>
+        </li>
+      </ul>
+      <div class="search_form">
+          <div class="gcse-search" id="cse" data-linktarget="_parent"></div>
+      </div>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="d-flex " id="sk-doc-wrapper">
+    <div class="border-right" id="sk-sidebar-wrapper">
+      <div class="h-100 sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+              <a href="sklearn.covariance.EllipticEnvelope.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.covariance.EllipticEnvelope">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
+              <a href="sklearn.covariance.GraphicalLassoCV.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.covariance.GraphicalLassoCV">Next</a>
+          </div>
+        <div class="alert alert-danger p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+          <strong>scikit-learn 0.22.dev0</strong><br/>
+          <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
+          </p>
+        </div>
+        <div class="alert alert-warning p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            Please <a class="font-weight-bold" href="about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
+          </p>
+        </div>
+        <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.covariance</span></code>.GraphicalLasso</a></li>
+</ul>
+
+      </div>
+    </div>
+    <div id="sk-page-content-wrapper">
+      <div class="sk-page-content container-fluid body" role="main">
+        
+  <div class="section" id="sklearn-covariance-graphicallasso">
+<h1><a class="reference internal" href="../classes.html#module-sklearn.covariance" title="sklearn.covariance"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.covariance</span></code></a>.GraphicalLasso<a class="headerlink" href="#sklearn-covariance-graphicallasso" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="sklearn.covariance.GraphicalLasso">
+<em class="property">class </em><code class="sig-prename descclassname">sklearn.covariance.</code><code class="sig-name descname">GraphicalLasso</code><span class="sig-paren">(</span><em class="sig-param">alpha=0.01</em>, <em class="sig-param">mode='cd'</em>, <em class="sig-param">tol=0.0001</em>, <em class="sig-param">enet_tol=0.0001</em>, <em class="sig-param">max_iter=100</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">assume_centered=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/covariance/graph_lasso_.py#L282"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.covariance.GraphicalLasso" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sparse inverse covariance estimation with an l1-penalized estimator.</p>
+<p>Read more in the <a class="reference internal" href="../covariance.html#sparse-inverse-covariance"><span class="std std-ref">User Guide</span></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>alpha</strong><span class="classifier">positive float, default 0.01</span></dt><dd><p>The regularization parameter: the higher alpha, the more
+regularization, the sparser the inverse covariance.</p>
+</dd>
+<dt><strong>mode</strong><span class="classifier">{‘cd’, ‘lars’}, default ‘cd’</span></dt><dd><p>The Lasso solver to use: coordinate descent or LARS. Use LARS for
+very sparse underlying graphs, where p &gt; n. Elsewhere prefer cd
+which is more numerically stable.</p>
+</dd>
+<dt><strong>tol</strong><span class="classifier">positive float, default 1e-4</span></dt><dd><p>The tolerance to declare convergence: if the dual gap goes below
+this value, iterations are stopped.</p>
+</dd>
+<dt><strong>enet_tol</strong><span class="classifier">positive float, optional</span></dt><dd><p>The tolerance for the elastic net solver used to calculate the descent
+direction. This parameter controls the accuracy of the search direction
+for a given column update, not of the overall parameter estimate. Only
+used for mode=’cd’.</p>
+</dd>
+<dt><strong>max_iter</strong><span class="classifier">integer, default 100</span></dt><dd><p>The maximum number of iterations.</p>
+</dd>
+<dt><strong>verbose</strong><span class="classifier">boolean, default False</span></dt><dd><p>If verbose is True, the objective function and dual gap are
+plotted at each iteration.</p>
+</dd>
+<dt><strong>assume_centered</strong><span class="classifier">boolean, default False</span></dt><dd><p>If True, data are not centered before computation.
+Useful when working with data whose mean is almost, but not exactly
+zero.
+If False, data are centered before computation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Attributes</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>location_</strong><span class="classifier">array-like, shape (n_features,)</span></dt><dd><p>Estimated location, i.e. the estimated mean.</p>
+</dd>
+<dt><strong>covariance_</strong><span class="classifier">array-like, shape (n_features, n_features)</span></dt><dd><p>Estimated covariance matrix</p>
+</dd>
+<dt><strong>precision_</strong><span class="classifier">array-like, shape (n_features, n_features)</span></dt><dd><p>Estimated pseudo inverse matrix.</p>
+</dd>
+<dt><strong>n_iter_</strong><span class="classifier">int</span></dt><dd><p>Number of iterations run.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="sklearn.covariance.graphical_lasso.html#sklearn.covariance.graphical_lasso" title="sklearn.covariance.graphical_lasso"><code class="xref py py-obj docutils literal notranslate"><span class="pre">graphical_lasso</span></code></a>, <a class="reference internal" href="sklearn.covariance.GraphicalLassoCV.html#sklearn.covariance.GraphicalLassoCV" title="sklearn.covariance.GraphicalLassoCV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphicalLassoCV</span></code></a></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.covariance</span> <span class="k">import</span> <span class="n">GraphicalLasso</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">true_cov</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span>
+<span class="gp">... </span>                     <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span>
+<span class="gp">... </span>                     <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">],</span>
+<span class="gp">... </span>                     <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<span class="gp">... </span>                                  <span class="n">cov</span><span class="o">=</span><span class="n">true_cov</span><span class="p">,</span>
+<span class="gp">... </span>                                  <span class="n">size</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cov</span> <span class="o">=</span> <span class="n">GraphicalLasso</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">cov</span><span class="o">.</span><span class="n">covariance_</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">array([[0.816, 0.049, 0.218, 0.019],</span>
+<span class="go">       [0.049, 0.364, 0.017, 0.034],</span>
+<span class="go">       [0.218, 0.017, 0.322, 0.093],</span>
+<span class="go">       [0.019, 0.034, 0.093, 0.69 ]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">cov</span><span class="o">.</span><span class="n">location_</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">array([0.073, 0.04 , 0.038, 0.143])</span>
+</pre></div>
+</div>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.covariance.GraphicalLasso.error_norm" title="sklearn.covariance.GraphicalLasso.error_norm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">error_norm</span></code></a>(self, comp_cov[, norm, scaling, …])</p></td>
+<td><p>Computes the Mean Squared Error between two covariance estimators.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#sklearn.covariance.GraphicalLasso.fit" title="sklearn.covariance.GraphicalLasso.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X[, y])</p></td>
+<td><p>Fits the GraphicalLasso model to X.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.covariance.GraphicalLasso.get_params" title="sklearn.covariance.GraphicalLasso.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
+<td><p>Get parameters for this estimator.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#sklearn.covariance.GraphicalLasso.get_precision" title="sklearn.covariance.GraphicalLasso.get_precision"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_precision</span></code></a>(self)</p></td>
+<td><p>Getter for the precision matrix.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.covariance.GraphicalLasso.mahalanobis" title="sklearn.covariance.GraphicalLasso.mahalanobis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mahalanobis</span></code></a>(self, X)</p></td>
+<td><p>Computes the squared Mahalanobis distances of given observations.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#sklearn.covariance.GraphicalLasso.score" title="sklearn.covariance.GraphicalLasso.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X_test[, y])</p></td>
+<td><p>Computes the log-likelihood of a Gaussian data set with <code class="docutils literal notranslate"><span class="pre">self.covariance_</span></code> as an estimator of its covariance matrix.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.covariance.GraphicalLasso.set_params" title="sklearn.covariance.GraphicalLasso.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, \*\*params)</p></td>
+<td><p>Set the parameters of this estimator.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="sklearn.covariance.GraphicalLasso.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">alpha=0.01</em>, <em class="sig-param">mode='cd'</em>, <em class="sig-param">tol=0.0001</em>, <em class="sig-param">enet_tol=0.0001</em>, <em class="sig-param">max_iter=100</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">assume_centered=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/covariance/graph_lasso_.py#L361"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.covariance.GraphicalLasso.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sklearn.covariance.GraphicalLasso.error_norm">
+<code class="sig-name descname">error_norm</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">comp_cov</em>, <em class="sig-param">norm='frobenius'</em>, <em class="sig-param">scaling=True</em>, <em class="sig-param">squared=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/covariance/empirical_covariance_.py#L235"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.covariance.GraphicalLasso.error_norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the Mean Squared Error between two covariance estimators.
+(In the sense of the Frobenius norm).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>comp_cov</strong><span class="classifier">array-like, shape = [n_features, n_features]</span></dt><dd><p>The covariance to compare with.</p>
+</dd>
+<dt><strong>norm</strong><span class="classifier">str</span></dt><dd><p>The type of norm used to compute the error. Available error types:
+- ‘frobenius’ (default): sqrt(tr(A^t.A))
+- ‘spectral’: sqrt(max(eigenvalues(A^t.A))
+where A is the error <code class="docutils literal notranslate"><span class="pre">(comp_cov</span> <span class="pre">-</span> <span class="pre">self.covariance_)</span></code>.</p>
+</dd>
+<dt><strong>scaling</strong><span class="classifier">bool</span></dt><dd><p>If True (default), the squared error norm is divided by n_features.
+If False, the squared error norm is not rescaled.</p>
+</dd>
+<dt><strong>squared</strong><span class="classifier">bool</span></dt><dd><p>Whether to compute the squared error norm or the error norm.
+If True (default), the squared error norm is returned.
+If False, the error norm is returned.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>The Mean Squared Error (in the sense of the Frobenius norm) between</dt><dd></dd>
+<dt><code class="docutils literal notranslate"><span class="pre">self</span></code> and <code class="docutils literal notranslate"><span class="pre">comp_cov</span></code> covariance estimators.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sklearn.covariance.GraphicalLasso.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/covariance/graph_lasso_.py#L371"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.covariance.GraphicalLasso.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fits the GraphicalLasso model to X.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">ndarray, shape (n_samples, n_features)</span></dt><dd><p>Data from which to compute the covariance estimate</p>
+</dd>
+<dt><strong>y</strong><span class="classifier">(ignored)</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sklearn.covariance.GraphicalLasso.get_params">
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/base.py#L180"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.covariance.GraphicalLasso.get_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get parameters for this estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>deep</strong><span class="classifier">boolean, optional</span></dt><dd><p>If True, will return the parameters for this estimator and
+contained subobjects that are estimators.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>params</strong><span class="classifier">mapping of string to any</span></dt><dd><p>Parameter names mapped to their values.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sklearn.covariance.GraphicalLasso.get_precision">
+<code class="sig-name descname">get_precision</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/covariance/empirical_covariance_.py#L161"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.covariance.GraphicalLasso.get_precision" title="Permalink to this definition">¶</a></dt>
+<dd><p>Getter for the precision matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>precision_</strong><span class="classifier">array-like</span></dt><dd><p>The precision matrix associated to the current covariance object.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sklearn.covariance.GraphicalLasso.mahalanobis">
+<code class="sig-name descname">mahalanobis</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/covariance/empirical_covariance_.py#L287"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.covariance.GraphicalLasso.mahalanobis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the squared Mahalanobis distances of given observations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like, shape = [n_samples, n_features]</span></dt><dd><p>The observations, the Mahalanobis distances of the which we
+compute. Observations are assumed to be drawn from the same
+distribution than the data used in fit.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>dist</strong><span class="classifier">array, shape = [n_samples,]</span></dt><dd><p>Squared Mahalanobis distances of the observations.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sklearn.covariance.GraphicalLasso.score">
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X_test</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/covariance/empirical_covariance_.py#L205"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.covariance.GraphicalLasso.score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the log-likelihood of a Gaussian data set with
+<code class="docutils literal notranslate"><span class="pre">self.covariance_</span></code> as an estimator of its covariance matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X_test</strong><span class="classifier">array-like, shape = [n_samples, n_features]</span></dt><dd><p>Test data of which we compute the likelihood, where n_samples is
+the number of samples and n_features is the number of features.
+X_test is assumed to be drawn from the same distribution than
+the data used in fit (including centering).</p>
+</dd>
+<dt><strong>y</strong></dt><dd><p>not used, present for API consistence purpose.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>res</strong><span class="classifier">float</span></dt><dd><p>The likelihood of the data set with <code class="docutils literal notranslate"><span class="pre">self.covariance_</span></code> as an
+estimator of its covariance matrix.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sklearn.covariance.GraphicalLasso.set_params">
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/base.py#L211"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.covariance.GraphicalLasso.set_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the parameters of this estimator.</p>
+<p>The method works on simple estimators as well as on nested objects
+(such as pipelines). The latter have parameters of the form
+<code class="docutils literal notranslate"><span class="pre">&lt;component&gt;__&lt;parameter&gt;</span></code> so that it’s possible to update each
+component of a nested object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>self</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<div class="clearer"></div></div>
+
+
+      </div>
+    <div class="container">
+      <footer class="sk-content-footer">
+            &copy; 2007 - 2019, scikit-learn developers (BSD License).
+          <a href="../../_sources/modules/generated/sklearn.covariance.GraphicalLasso.rst.txt" rel="nofollow">Show this page source</a>
+      </footer>
+    </div>
+  </div>
+  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle"><&mdash;></button>
+</div>
+<script src="../../_static/js/vendor/jquery.min.js"></script>
+<script src="../../_static/js/vendor/bootstrap.min.js"></script>
+
+
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-22606712-2', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script>
+
+    $(document).ready(function() {
+
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#sk-doc-wrapper").toggleClass("toggled");
+        });
+
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		'.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+    var hide_text = 'Hide prompts and outputs';
+    var show_text = 'Show prompts and outputs';
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        if (jthis.find('.gp').length > 0) {
+            var button = $('<span class="copybutton">&gt;&gt;&gt;</span>');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+            jthis.prepend(button);
+        }
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+    // define the behavior of the button when it's clicked
+    $('.copybutton').click(function(e){
+        e.preventDefault();
+        var button = $(this);
+        if (button.data('hidden') === 'false') {
+            // hide the code output
+            button.parent().find('.go, .gp, .gt').hide();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'hidden');
+            button.css('text-decoration', 'line-through');
+            button.attr('title', show_text);
+            button.data('hidden', 'true');
+        } else {
+            // show the code output
+            button.parent().find('.go, .gp, .gt').show();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'visible');
+            button.css('text-decoration', 'none');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+        }
+    });
+
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	})
+});
+</script>
+<script>
+    (function() {
+        var cx = '016639176250731907682:tjtqbvtvij0';
+        var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+    
+<script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
+    
+</body>
+</html>

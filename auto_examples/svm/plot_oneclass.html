@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>One-class SVM with non-linear kernel (RBF) &mdash; scikit-learn 0.22.dev0 documentation</title>
+  
+  <link rel="canonical" href="http://scikit-learn.org/stable/auto_examples/svm/plot_oneclass.html" />
+
+  
+  <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  <link rel="stylesheet" href="../../_static/css/vendor/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" /> 
+</head>
+<body>
+
+
+<nav class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid sk-docs-container">
+      <a class="navbar-brand" href="../../index.html">
+        <img
+          src="../../_static/scikit-learn-logo-notext.png"
+          width="100"
+          alt="logo"/>
+      </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../install.html">Install</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../documentation.html">Documentation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">Examples</a>
+        </li>
+      </ul>
+      <div class="search_form">
+          <div class="gcse-search" id="cse" data-linktarget="_parent"></div>
+      </div>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="d-flex " id="sk-doc-wrapper">
+    <div class="border-right" id="sk-sidebar-wrapper">
+      <div class="h-100 sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+              <a href="plot_svm_margin.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="SVM Margins Example">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
+              <a href="plot_iris_svc.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Plot different SVM classifiers in the iris dataset">Next</a>
+          </div>
+        <div class="alert alert-danger p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+          <strong>scikit-learn 0.22.dev0</strong><br/>
+          <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
+          </p>
+        </div>
+        <div class="alert alert-warning p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            Please <a class="font-weight-bold" href="about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
+          </p>
+        </div>
+        <ul>
+<li><a class="reference internal" href="#">One-class SVM with non-linear kernel (RBF)</a></li>
+</ul>
+
+      </div>
+    </div>
+    <div id="sk-page-content-wrapper">
+      <div class="sk-page-content container-fluid body" role="main">
+        
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-svm-plot-oneclass-py"><span class="std std-ref">here</span></a> to download the full example code or run this example in your browser via Binder</p>
+</div>
+<div class="sphx-glr-example-title section" id="one-class-svm-with-non-linear-kernel-rbf">
+<span id="sphx-glr-auto-examples-svm-plot-oneclass-py"></span><h1>One-class SVM with non-linear kernel (RBF)<a class="headerlink" href="#one-class-svm-with-non-linear-kernel-rbf" title="Permalink to this headline">¶</a></h1>
+<p>An example using a one-class SVM for novelty detection.</p>
+<p><a class="reference internal" href="../../modules/svm.html#svm-outlier-detection"><span class="std std-ref">One-class SVM</span></a> is an unsupervised
+algorithm that learns a decision function for novelty detection:
+classifying new data as similar or different to the training set.</p>
+<img alt="../../_images/sphx_glr_plot_oneclass_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_oneclass_001.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.font_manager</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">svm</span>
+
+<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.meshgrid.html#numpy.meshgrid" title="View documentation for numpy.meshgrid"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.meshgrid.html#numpy.meshgrid" title="View documentation for numpy.meshgrid"><span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span></a></a><span class="p">(</span><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html#numpy.linspace" title="View documentation for numpy.linspace"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html#numpy.linspace" title="View documentation for numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a></a><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">500</span><span class="p">),</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html#numpy.linspace" title="View documentation for numpy.linspace"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html#numpy.linspace" title="View documentation for numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a></a><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span>
+<span class="c1"># Generate train data</span>
+<span class="n">X</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">X_train</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.r_.html#numpy.r_" title="View documentation for numpy.r_"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.r_.html#numpy.r_" title="View documentation for numpy.r_"><span class="n">np</span><span class="o">.</span><span class="n">r_</span></a></a><span class="p">[</span><span class="n">X</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">X</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span>
+<span class="c1"># Generate some regular novel observations</span>
+<span class="n">X</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">X_test</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.r_.html#numpy.r_" title="View documentation for numpy.r_"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.r_.html#numpy.r_" title="View documentation for numpy.r_"><span class="n">np</span><span class="o">.</span><span class="n">r_</span></a></a><span class="p">[</span><span class="n">X</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">X</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span>
+<span class="c1"># Generate some abnormal novel observations</span>
+<span class="n">X_outliers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=-</span><span class="mi">4</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># fit the model</span>
+<span class="n">clf</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.svm.OneClassSVM.html#sklearn.svm.OneClassSVM" title="View documentation for sklearn.svm.OneClassSVM"><a href="../../modules/generated/sklearn.svm.OneClassSVM.html#sklearn.svm.OneClassSVM" title="View documentation for sklearn.svm.OneClassSVM"><span class="n">svm</span><span class="o">.</span><span class="n">OneClassSVM</span></a></a><span class="p">(</span><span class="n">nu</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">kernel</span><span class="o">=</span><span class="s2">&quot;rbf&quot;</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">y_pred_train</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">y_pred_test</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">y_pred_outliers</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_outliers</span><span class="p">)</span>
+<span class="n">n_error_train</span> <span class="o">=</span> <span class="n">y_pred_train</span><span class="p">[</span><span class="n">y_pred_train</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">size</span>
+<span class="n">n_error_test</span> <span class="o">=</span> <span class="n">y_pred_test</span><span class="p">[</span><span class="n">y_pred_test</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">size</span>
+<span class="n">n_error_outliers</span> <span class="o">=</span> <span class="n">y_pred_outliers</span><span class="p">[</span><span class="n">y_pred_outliers</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">size</span>
+
+<span class="c1"># plot the line, the points, and the nearest vectors to the plane</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.c_.html#numpy.c_" title="View documentation for numpy.c_"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.c_.html#numpy.c_" title="View documentation for numpy.c_"><span class="n">np</span><span class="o">.</span><span class="n">c_</span></a></a><span class="p">[</span><span class="n">xx</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="n">ravel</span><span class="p">()])</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">Z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="View documentation for matplotlib.pyplot.title"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="View documentation for matplotlib.pyplot.title"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a></a><span class="p">(</span><span class="s2">&quot;Novelty Detection&quot;</span><span class="p">)</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.contourf.html#matplotlib.pyplot.contourf" title="View documentation for matplotlib.pyplot.contourf"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.contourf.html#matplotlib.pyplot.contourf" title="View documentation for matplotlib.pyplot.contourf"><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span></a></a><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html#numpy.linspace" title="View documentation for numpy.linspace"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html#numpy.linspace" title="View documentation for numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a></a><span class="p">(</span><span class="n">Z</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">PuBu</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.contour.html#matplotlib.pyplot.contour" title="View documentation for matplotlib.pyplot.contour"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.contour.html#matplotlib.pyplot.contour" title="View documentation for matplotlib.pyplot.contour"><span class="n">plt</span><span class="o">.</span><span class="n">contour</span></a></a><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;darkred&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.contourf.html#matplotlib.pyplot.contourf" title="View documentation for matplotlib.pyplot.contourf"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.contourf.html#matplotlib.pyplot.contourf" title="View documentation for matplotlib.pyplot.contourf"><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span></a></a><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">Z</span><span class="o">.</span><span class="n">max</span><span class="p">()],</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;palevioletred&#39;</span><span class="p">)</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">b1</span> <span class="o">=</span> <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.scatter.html#matplotlib.pyplot.scatter" title="View documentation for matplotlib.pyplot.scatter"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.scatter.html#matplotlib.pyplot.scatter" title="View documentation for matplotlib.pyplot.scatter"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span></a></a><span class="p">(</span><span class="n">X_train</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X_train</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">b2</span> <span class="o">=</span> <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.scatter.html#matplotlib.pyplot.scatter" title="View documentation for matplotlib.pyplot.scatter"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.scatter.html#matplotlib.pyplot.scatter" title="View documentation for matplotlib.pyplot.scatter"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span></a></a><span class="p">(</span><span class="n">X_test</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X_test</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;blueviolet&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="p">,</span>
+                 <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.scatter.html#matplotlib.pyplot.scatter" title="View documentation for matplotlib.pyplot.scatter"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.scatter.html#matplotlib.pyplot.scatter" title="View documentation for matplotlib.pyplot.scatter"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span></a></a><span class="p">(</span><span class="n">X_outliers</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X_outliers</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;gold&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="p">,</span>
+                <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.axis.html#matplotlib.pyplot.axis" title="View documentation for matplotlib.pyplot.axis"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.axis.html#matplotlib.pyplot.axis" title="View documentation for matplotlib.pyplot.axis"><span class="n">plt</span><span class="o">.</span><span class="n">axis</span></a></a><span class="p">(</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.xlim.html#matplotlib.pyplot.xlim" title="View documentation for matplotlib.pyplot.xlim"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.xlim.html#matplotlib.pyplot.xlim" title="View documentation for matplotlib.pyplot.xlim"><span class="n">plt</span><span class="o">.</span><span class="n">xlim</span></a></a><span class="p">((</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.ylim.html#matplotlib.pyplot.ylim" title="View documentation for matplotlib.pyplot.ylim"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.ylim.html#matplotlib.pyplot.ylim" title="View documentation for matplotlib.pyplot.ylim"><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span></a></a><span class="p">((</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.legend.html#matplotlib.pyplot.legend" title="View documentation for matplotlib.pyplot.legend"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.legend.html#matplotlib.pyplot.legend" title="View documentation for matplotlib.pyplot.legend"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span></a></a><span class="p">([</span><span class="n">a</span><span class="o">.</span><span class="n">collections</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">b1</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">c</span><span class="p">],</span>
+           <span class="p">[</span><span class="s2">&quot;learned frontier&quot;</span><span class="p">,</span> <span class="s2">&quot;training observations&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;new regular observations&quot;</span><span class="p">,</span> <span class="s2">&quot;new abnormal observations&quot;</span><span class="p">],</span>
+           <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">,</span>
+           <span class="n">prop</span><span class="o">=</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">font_manager</span><span class="o">.</span><span class="n">FontProperties</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">11</span><span class="p">))</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.xlabel.html#matplotlib.pyplot.xlabel" title="View documentation for matplotlib.pyplot.xlabel"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.xlabel.html#matplotlib.pyplot.xlabel" title="View documentation for matplotlib.pyplot.xlabel"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span></a></a><span class="p">(</span>
+    <span class="s2">&quot;error train: </span><span class="si">%d</span><span class="s2">/200 ; errors novel regular: </span><span class="si">%d</span><span class="s2">/40 ; &quot;</span>
+    <span class="s2">&quot;errors novel abnormal: </span><span class="si">%d</span><span class="s2">/40&quot;</span>
+    <span class="o">%</span> <span class="p">(</span><span class="n">n_error_train</span><span class="p">,</span> <span class="n">n_error_test</span><span class="p">,</span> <span class="n">n_error_outliers</span><span class="p">))</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a></a><span class="p">()</span>
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.293 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-svm-plot-oneclass-py">
+<div class="binder-badge docutils container">
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/binder-examples/master?urlpath=lab/tree/notebooks/auto_examples/svm/plot_oneclass.ipynb"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" width="150px" /></a>
+</div>
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/616e8a231ab03301473c9183f6cf03e8/plot_oneclass.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_oneclass.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/179a84f8da8ce09af733c9a82135ca4d/plot_oneclass.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_oneclass.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+      </div>
+    <div class="container">
+      <footer class="sk-content-footer">
+            &copy; 2007 - 2019, scikit-learn developers (BSD License).
+          <a href="../../_sources/auto_examples/svm/plot_oneclass.rst.txt" rel="nofollow">Show this page source</a>
+      </footer>
+    </div>
+  </div>
+  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle"><&mdash;></button>
+</div>
+<script src="../../_static/js/vendor/jquery.min.js"></script>
+<script src="../../_static/js/vendor/bootstrap.min.js"></script>
+
+
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-22606712-2', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script>
+
+    $(document).ready(function() {
+
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#sk-doc-wrapper").toggleClass("toggled");
+        });
+
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		'.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+    var hide_text = 'Hide prompts and outputs';
+    var show_text = 'Show prompts and outputs';
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        if (jthis.find('.gp').length > 0) {
+            var button = $('<span class="copybutton">&gt;&gt;&gt;</span>');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+            jthis.prepend(button);
+        }
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+    // define the behavior of the button when it's clicked
+    $('.copybutton').click(function(e){
+        e.preventDefault();
+        var button = $(this);
+        if (button.data('hidden') === 'false') {
+            // hide the code output
+            button.parent().find('.go, .gp, .gt').hide();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'hidden');
+            button.css('text-decoration', 'line-through');
+            button.attr('title', show_text);
+            button.data('hidden', 'true');
+        } else {
+            // show the code output
+            button.parent().find('.go, .gp, .gt').show();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'visible');
+            button.css('text-decoration', 'none');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+        }
+    });
+
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	})
+});
+</script>
+<script>
+    (function() {
+        var cx = '016639176250731907682:tjtqbvtvij0';
+        var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+    
+<script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
+    
+</body>
+</html>

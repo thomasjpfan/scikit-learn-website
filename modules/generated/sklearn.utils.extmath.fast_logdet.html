@@ -1,0 +1,220 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>sklearn.utils.extmath.fast_logdet &mdash; scikit-learn 0.22.dev0 documentation</title>
+  
+  <link rel="canonical" href="http://scikit-learn.org/stable/modules/generated/sklearn.utils.extmath.fast_logdet.html" />
+
+  
+  <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  <link rel="stylesheet" href="../../_static/css/vendor/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" /> 
+</head>
+<body>
+
+
+<nav class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid sk-docs-container">
+      <a class="navbar-brand" href="../../index.html">
+        <img
+          src="../../_static/scikit-learn-logo-notext.png"
+          width="100"
+          alt="logo"/>
+      </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../install.html">Install</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../documentation.html">Documentation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../auto_examples/index.html">Examples</a>
+        </li>
+      </ul>
+      <div class="search_form">
+          <div class="gcse-search" id="cse" data-linktarget="_parent"></div>
+      </div>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="d-flex " id="sk-doc-wrapper">
+    <div class="border-right" id="sk-sidebar-wrapper">
+      <div class="h-100 sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+              <a href="sklearn.utils.extmath.randomized_svd.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.utils.extmath.randomized_svd">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
+              <a href="sklearn.utils.extmath.density.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.utils.extmath.density">Next</a>
+          </div>
+        <div class="alert alert-danger p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+          <strong>scikit-learn 0.22.dev0</strong><br/>
+          <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
+          </p>
+        </div>
+        <div class="alert alert-warning p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            Please <a class="font-weight-bold" href="about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
+          </p>
+        </div>
+        <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.utils.extmath</span></code>.fast_logdet</a></li>
+</ul>
+
+      </div>
+    </div>
+    <div id="sk-page-content-wrapper">
+      <div class="sk-page-content container-fluid body" role="main">
+        
+  <div class="section" id="sklearn-utils-extmath-fast-logdet">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.utils.extmath</span></code>.fast_logdet<a class="headerlink" href="#sklearn-utils-extmath-fast-logdet" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="sklearn.utils.extmath.fast_logdet">
+<code class="sig-prename descclassname">sklearn.utils.extmath.</code><code class="sig-name descname">fast_logdet</code><span class="sig-paren">(</span><em class="sig-param">A</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/utils/extmath.py#L81"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.utils.extmath.fast_logdet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute log(det(A)) for A symmetric</p>
+<p>Equivalent to : np.log(nl.det(A)) but more robust.
+It returns -Inf if det(A) is non positive or is not defined.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>A</strong><span class="classifier">array_like</span></dt><dd><p>The matrix</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="clearer"></div></div>
+
+
+      </div>
+    <div class="container">
+      <footer class="sk-content-footer">
+            &copy; 2007 - 2019, scikit-learn developers (BSD License).
+          <a href="../../_sources/modules/generated/sklearn.utils.extmath.fast_logdet.rst.txt" rel="nofollow">Show this page source</a>
+      </footer>
+    </div>
+  </div>
+  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle"><&mdash;></button>
+</div>
+<script src="../../_static/js/vendor/jquery.min.js"></script>
+<script src="../../_static/js/vendor/bootstrap.min.js"></script>
+
+
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-22606712-2', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script>
+
+    $(document).ready(function() {
+
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#sk-doc-wrapper").toggleClass("toggled");
+        });
+
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		'.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+    var hide_text = 'Hide prompts and outputs';
+    var show_text = 'Show prompts and outputs';
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        if (jthis.find('.gp').length > 0) {
+            var button = $('<span class="copybutton">&gt;&gt;&gt;</span>');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+            jthis.prepend(button);
+        }
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+    // define the behavior of the button when it's clicked
+    $('.copybutton').click(function(e){
+        e.preventDefault();
+        var button = $(this);
+        if (button.data('hidden') === 'false') {
+            // hide the code output
+            button.parent().find('.go, .gp, .gt').hide();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'hidden');
+            button.css('text-decoration', 'line-through');
+            button.attr('title', show_text);
+            button.data('hidden', 'true');
+        } else {
+            // show the code output
+            button.parent().find('.go, .gp, .gt').show();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'visible');
+            button.css('text-decoration', 'none');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+        }
+    });
+
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	})
+});
+</script>
+<script>
+    (function() {
+        var cx = '016639176250731907682:tjtqbvtvij0';
+        var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+    
+<script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
+    
+</body>
+</html>

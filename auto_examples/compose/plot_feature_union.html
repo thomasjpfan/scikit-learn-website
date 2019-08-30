@@ -1,0 +1,477 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Concatenating multiple feature extraction methods &mdash; scikit-learn 0.22.dev0 documentation</title>
+  
+  <link rel="canonical" href="http://scikit-learn.org/stable/auto_examples/compose/plot_feature_union.html" />
+
+  
+  <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  <link rel="stylesheet" href="../../_static/css/vendor/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" /> 
+</head>
+<body>
+
+
+<nav class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid sk-docs-container">
+      <a class="navbar-brand" href="../../index.html">
+        <img
+          src="../../_static/scikit-learn-logo-notext.png"
+          width="100"
+          alt="logo"/>
+      </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../install.html">Install</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../documentation.html">Documentation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">Examples</a>
+        </li>
+      </ul>
+      <div class="search_form">
+          <div class="gcse-search" id="cse" data-linktarget="_parent"></div>
+      </div>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="d-flex " id="sk-doc-wrapper">
+    <div class="border-right" id="sk-sidebar-wrapper">
+      <div class="h-100 sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+              <a href="../cluster/plot_cluster_comparison.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Comparing different clustering algorithms on toy datasets">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
+              <a href="plot_digits_pipe.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Pipelining: chaining a PCA and a logistic regression">Next</a>
+          </div>
+        <div class="alert alert-danger p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+          <strong>scikit-learn 0.22.dev0</strong><br/>
+          <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
+          </p>
+        </div>
+        <div class="alert alert-warning p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            Please <a class="font-weight-bold" href="about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
+          </p>
+        </div>
+        <ul>
+<li><a class="reference internal" href="#">Concatenating multiple feature extraction methods</a></li>
+</ul>
+
+      </div>
+    </div>
+    <div id="sk-page-content-wrapper">
+      <div class="sk-page-content container-fluid body" role="main">
+        
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-compose-plot-feature-union-py"><span class="std std-ref">here</span></a> to download the full example code or run this example in your browser via Binder</p>
+</div>
+<div class="sphx-glr-example-title section" id="concatenating-multiple-feature-extraction-methods">
+<span id="sphx-glr-auto-examples-compose-plot-feature-union-py"></span><h1>Concatenating multiple feature extraction methods<a class="headerlink" href="#concatenating-multiple-feature-extraction-methods" title="Permalink to this headline">¶</a></h1>
+<p>In many real-world examples, there are many ways to extract features from a
+dataset. Often it is beneficial to combine several methods to obtain good
+performance. This example shows how to use <code class="docutils literal notranslate"><span class="pre">FeatureUnion</span></code> to combine
+features obtained by PCA and univariate selection.</p>
+<p>Combining features using this transformer has the benefit that it allows
+cross validation and grid searches over the whole process.</p>
+<p>The combination used in this example is not particularly helpful on this
+dataset and is only used to illustrate the usage of FeatureUnion.</p>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Combined space has 3 features
+Fitting 5 folds for each of 18 candidates, totalling 90 fits
+[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+[CV] features__pca__n_components=1, features__univ_select__k=1, svm__C=0.1
+[CV]  features__pca__n_components=1, features__univ_select__k=1, svm__C=0.1, score=0.933, total=   0.0s
+[Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    0.0s remaining:    0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=1, svm__C=0.1
+[CV]  features__pca__n_components=1, features__univ_select__k=1, svm__C=0.1, score=0.933, total=   0.0s
+[Parallel(n_jobs=1)]: Done   2 out of   2 | elapsed:    0.0s remaining:    0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=1, svm__C=0.1
+[CV]  features__pca__n_components=1, features__univ_select__k=1, svm__C=0.1, score=0.867, total=   0.0s
+[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed:    0.0s remaining:    0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=1, svm__C=0.1
+[CV]  features__pca__n_components=1, features__univ_select__k=1, svm__C=0.1, score=0.933, total=   0.0s
+[Parallel(n_jobs=1)]: Done   4 out of   4 | elapsed:    0.0s remaining:    0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=1, svm__C=0.1
+[CV]  features__pca__n_components=1, features__univ_select__k=1, svm__C=0.1, score=1.000, total=   0.0s
+[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    0.0s remaining:    0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=1, svm__C=1
+[CV]  features__pca__n_components=1, features__univ_select__k=1, svm__C=1, score=0.900, total=   0.0s
+[Parallel(n_jobs=1)]: Done   6 out of   6 | elapsed:    0.0s remaining:    0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=1, svm__C=1
+[CV]  features__pca__n_components=1, features__univ_select__k=1, svm__C=1, score=1.000, total=   0.0s
+[Parallel(n_jobs=1)]: Done   7 out of   7 | elapsed:    0.0s remaining:    0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=1, svm__C=1
+[CV]  features__pca__n_components=1, features__univ_select__k=1, svm__C=1, score=0.867, total=   0.0s
+[Parallel(n_jobs=1)]: Done   8 out of   8 | elapsed:    0.0s remaining:    0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=1, svm__C=1
+[CV]  features__pca__n_components=1, features__univ_select__k=1, svm__C=1, score=0.933, total=   0.0s
+[Parallel(n_jobs=1)]: Done   9 out of   9 | elapsed:    0.0s remaining:    0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=1, svm__C=1
+[CV]  features__pca__n_components=1, features__univ_select__k=1, svm__C=1, score=1.000, total=   0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=1, svm__C=10
+[CV]  features__pca__n_components=1, features__univ_select__k=1, svm__C=10, score=0.933, total=   0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=1, svm__C=10
+[CV]  features__pca__n_components=1, features__univ_select__k=1, svm__C=10, score=1.000, total=   0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=1, svm__C=10
+[CV]  features__pca__n_components=1, features__univ_select__k=1, svm__C=10, score=0.900, total=   0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=1, svm__C=10
+[CV]  features__pca__n_components=1, features__univ_select__k=1, svm__C=10, score=0.933, total=   0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=1, svm__C=10
+[CV]  features__pca__n_components=1, features__univ_select__k=1, svm__C=10, score=1.000, total=   0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=2, svm__C=0.1
+[CV]  features__pca__n_components=1, features__univ_select__k=2, svm__C=0.1, score=0.933, total=   0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=2, svm__C=0.1
+[CV]  features__pca__n_components=1, features__univ_select__k=2, svm__C=0.1, score=0.967, total=   0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=2, svm__C=0.1
+[CV]  features__pca__n_components=1, features__univ_select__k=2, svm__C=0.1, score=0.933, total=   0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=2, svm__C=0.1
+[CV]  features__pca__n_components=1, features__univ_select__k=2, svm__C=0.1, score=0.933, total=   0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=2, svm__C=0.1
+[CV]  features__pca__n_components=1, features__univ_select__k=2, svm__C=0.1, score=1.000, total=   0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=2, svm__C=1
+[CV]  features__pca__n_components=1, features__univ_select__k=2, svm__C=1, score=0.933, total=   0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=2, svm__C=1
+[CV]  features__pca__n_components=1, features__univ_select__k=2, svm__C=1, score=0.967, total=   0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=2, svm__C=1
+[CV]  features__pca__n_components=1, features__univ_select__k=2, svm__C=1, score=0.933, total=   0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=2, svm__C=1
+[CV]  features__pca__n_components=1, features__univ_select__k=2, svm__C=1, score=0.933, total=   0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=2, svm__C=1
+[CV]  features__pca__n_components=1, features__univ_select__k=2, svm__C=1, score=1.000, total=   0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=2, svm__C=10
+[CV]  features__pca__n_components=1, features__univ_select__k=2, svm__C=10, score=0.967, total=   0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=2, svm__C=10
+[CV]  features__pca__n_components=1, features__univ_select__k=2, svm__C=10, score=0.967, total=   0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=2, svm__C=10
+[CV]  features__pca__n_components=1, features__univ_select__k=2, svm__C=10, score=0.933, total=   0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=2, svm__C=10
+[CV]  features__pca__n_components=1, features__univ_select__k=2, svm__C=10, score=0.933, total=   0.0s
+[CV] features__pca__n_components=1, features__univ_select__k=2, svm__C=10
+[CV]  features__pca__n_components=1, features__univ_select__k=2, svm__C=10, score=1.000, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=1, svm__C=0.1
+[CV]  features__pca__n_components=2, features__univ_select__k=1, svm__C=0.1, score=0.933, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=1, svm__C=0.1
+[CV]  features__pca__n_components=2, features__univ_select__k=1, svm__C=0.1, score=1.000, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=1, svm__C=0.1
+[CV]  features__pca__n_components=2, features__univ_select__k=1, svm__C=0.1, score=0.867, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=1, svm__C=0.1
+[CV]  features__pca__n_components=2, features__univ_select__k=1, svm__C=0.1, score=0.933, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=1, svm__C=0.1
+[CV]  features__pca__n_components=2, features__univ_select__k=1, svm__C=0.1, score=1.000, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=1, svm__C=1
+[CV]  features__pca__n_components=2, features__univ_select__k=1, svm__C=1, score=0.967, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=1, svm__C=1
+[CV]  features__pca__n_components=2, features__univ_select__k=1, svm__C=1, score=1.000, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=1, svm__C=1
+[CV]  features__pca__n_components=2, features__univ_select__k=1, svm__C=1, score=0.933, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=1, svm__C=1
+[CV]  features__pca__n_components=2, features__univ_select__k=1, svm__C=1, score=0.933, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=1, svm__C=1
+[CV]  features__pca__n_components=2, features__univ_select__k=1, svm__C=1, score=1.000, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=1, svm__C=10
+[CV]  features__pca__n_components=2, features__univ_select__k=1, svm__C=10, score=0.967, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=1, svm__C=10
+[CV]  features__pca__n_components=2, features__univ_select__k=1, svm__C=10, score=0.967, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=1, svm__C=10
+[CV]  features__pca__n_components=2, features__univ_select__k=1, svm__C=10, score=0.900, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=1, svm__C=10
+[CV]  features__pca__n_components=2, features__univ_select__k=1, svm__C=10, score=0.933, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=1, svm__C=10
+[CV]  features__pca__n_components=2, features__univ_select__k=1, svm__C=10, score=1.000, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=2, svm__C=0.1
+[CV]  features__pca__n_components=2, features__univ_select__k=2, svm__C=0.1, score=0.967, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=2, svm__C=0.1
+[CV]  features__pca__n_components=2, features__univ_select__k=2, svm__C=0.1, score=1.000, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=2, svm__C=0.1
+[CV]  features__pca__n_components=2, features__univ_select__k=2, svm__C=0.1, score=0.933, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=2, svm__C=0.1
+[CV]  features__pca__n_components=2, features__univ_select__k=2, svm__C=0.1, score=0.933, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=2, svm__C=0.1
+[CV]  features__pca__n_components=2, features__univ_select__k=2, svm__C=0.1, score=1.000, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=2, svm__C=1
+[CV]  features__pca__n_components=2, features__univ_select__k=2, svm__C=1, score=0.967, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=2, svm__C=1
+[CV]  features__pca__n_components=2, features__univ_select__k=2, svm__C=1, score=1.000, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=2, svm__C=1
+[CV]  features__pca__n_components=2, features__univ_select__k=2, svm__C=1, score=0.933, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=2, svm__C=1
+[CV]  features__pca__n_components=2, features__univ_select__k=2, svm__C=1, score=0.967, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=2, svm__C=1
+[CV]  features__pca__n_components=2, features__univ_select__k=2, svm__C=1, score=1.000, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=2, svm__C=10
+[CV]  features__pca__n_components=2, features__univ_select__k=2, svm__C=10, score=0.967, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=2, svm__C=10
+[CV]  features__pca__n_components=2, features__univ_select__k=2, svm__C=10, score=1.000, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=2, svm__C=10
+[CV]  features__pca__n_components=2, features__univ_select__k=2, svm__C=10, score=0.900, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=2, svm__C=10
+[CV]  features__pca__n_components=2, features__univ_select__k=2, svm__C=10, score=0.933, total=   0.0s
+[CV] features__pca__n_components=2, features__univ_select__k=2, svm__C=10
+[CV]  features__pca__n_components=2, features__univ_select__k=2, svm__C=10, score=1.000, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=1, svm__C=0.1
+[CV]  features__pca__n_components=3, features__univ_select__k=1, svm__C=0.1, score=0.967, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=1, svm__C=0.1
+[CV]  features__pca__n_components=3, features__univ_select__k=1, svm__C=0.1, score=1.000, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=1, svm__C=0.1
+[CV]  features__pca__n_components=3, features__univ_select__k=1, svm__C=0.1, score=0.933, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=1, svm__C=0.1
+[CV]  features__pca__n_components=3, features__univ_select__k=1, svm__C=0.1, score=0.967, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=1, svm__C=0.1
+[CV]  features__pca__n_components=3, features__univ_select__k=1, svm__C=0.1, score=1.000, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=1, svm__C=1
+[CV]  features__pca__n_components=3, features__univ_select__k=1, svm__C=1, score=0.967, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=1, svm__C=1
+[CV]  features__pca__n_components=3, features__univ_select__k=1, svm__C=1, score=1.000, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=1, svm__C=1
+[CV]  features__pca__n_components=3, features__univ_select__k=1, svm__C=1, score=0.933, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=1, svm__C=1
+[CV]  features__pca__n_components=3, features__univ_select__k=1, svm__C=1, score=0.967, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=1, svm__C=1
+[CV]  features__pca__n_components=3, features__univ_select__k=1, svm__C=1, score=1.000, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=1, svm__C=10
+[CV]  features__pca__n_components=3, features__univ_select__k=1, svm__C=10, score=1.000, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=1, svm__C=10
+[CV]  features__pca__n_components=3, features__univ_select__k=1, svm__C=10, score=1.000, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=1, svm__C=10
+[CV]  features__pca__n_components=3, features__univ_select__k=1, svm__C=10, score=0.933, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=1, svm__C=10
+[CV]  features__pca__n_components=3, features__univ_select__k=1, svm__C=10, score=0.967, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=1, svm__C=10
+[CV]  features__pca__n_components=3, features__univ_select__k=1, svm__C=10, score=1.000, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=2, svm__C=0.1
+[CV]  features__pca__n_components=3, features__univ_select__k=2, svm__C=0.1, score=0.967, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=2, svm__C=0.1
+[CV]  features__pca__n_components=3, features__univ_select__k=2, svm__C=0.1, score=1.000, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=2, svm__C=0.1
+[CV]  features__pca__n_components=3, features__univ_select__k=2, svm__C=0.1, score=0.933, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=2, svm__C=0.1
+[CV]  features__pca__n_components=3, features__univ_select__k=2, svm__C=0.1, score=0.967, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=2, svm__C=0.1
+[CV]  features__pca__n_components=3, features__univ_select__k=2, svm__C=0.1, score=1.000, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=2, svm__C=1
+[CV]  features__pca__n_components=3, features__univ_select__k=2, svm__C=1, score=0.967, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=2, svm__C=1
+[CV]  features__pca__n_components=3, features__univ_select__k=2, svm__C=1, score=1.000, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=2, svm__C=1
+[CV]  features__pca__n_components=3, features__univ_select__k=2, svm__C=1, score=0.967, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=2, svm__C=1
+[CV]  features__pca__n_components=3, features__univ_select__k=2, svm__C=1, score=0.967, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=2, svm__C=1
+[CV]  features__pca__n_components=3, features__univ_select__k=2, svm__C=1, score=1.000, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=2, svm__C=10
+[CV]  features__pca__n_components=3, features__univ_select__k=2, svm__C=10, score=1.000, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=2, svm__C=10
+[CV]  features__pca__n_components=3, features__univ_select__k=2, svm__C=10, score=1.000, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=2, svm__C=10
+[CV]  features__pca__n_components=3, features__univ_select__k=2, svm__C=10, score=0.900, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=2, svm__C=10
+[CV]  features__pca__n_components=3, features__univ_select__k=2, svm__C=10, score=0.967, total=   0.0s
+[CV] features__pca__n_components=3, features__univ_select__k=2, svm__C=10
+[CV]  features__pca__n_components=3, features__univ_select__k=2, svm__C=10, score=1.000, total=   0.0s
+[Parallel(n_jobs=1)]: Done  90 out of  90 | elapsed:    0.3s finished
+Pipeline(steps=[(&#39;features&#39;,
+                 FeatureUnion(transformer_list=[(&#39;pca&#39;, PCA(n_components=3)),
+                                                (&#39;univ_select&#39;,
+                                                 SelectKBest(k=1))])),
+                (&#39;svm&#39;, SVC(C=10, kernel=&#39;linear&#39;))])
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Author: Andreas Mueller &lt;amueller@ais.uni-bonn.de&gt;</span>
+<span class="c1">#</span>
+<span class="c1"># License: BSD 3 clause</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline" title="View documentation for sklearn.pipeline.Pipeline"><a href="../../modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline" title="View documentation for sklearn.pipeline.Pipeline"><span class="n">Pipeline</span></a></a><span class="p">,</span> <a href="../../modules/generated/sklearn.pipeline.FeatureUnion.html#sklearn.pipeline.FeatureUnion" title="View documentation for sklearn.pipeline.FeatureUnion"><a href="../../modules/generated/sklearn.pipeline.FeatureUnion.html#sklearn.pipeline.FeatureUnion" title="View documentation for sklearn.pipeline.FeatureUnion"><span class="n">FeatureUnion</span></a></a>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV" title="View documentation for sklearn.model_selection.GridSearchCV"><a href="../../modules/generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV" title="View documentation for sklearn.model_selection.GridSearchCV"><span class="n">GridSearchCV</span></a></a>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC" title="View documentation for sklearn.svm.SVC"><a href="../../modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC" title="View documentation for sklearn.svm.SVC"><span class="n">SVC</span></a></a>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.datasets.load_iris.html#sklearn.datasets.load_iris" title="View documentation for sklearn.datasets.load_iris"><a href="../../modules/generated/sklearn.datasets.load_iris.html#sklearn.datasets.load_iris" title="View documentation for sklearn.datasets.load_iris"><span class="n">load_iris</span></a></a>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.decomposition.PCA.html#sklearn.decomposition.PCA" title="View documentation for sklearn.decomposition.PCA"><a href="../../modules/generated/sklearn.decomposition.PCA.html#sklearn.decomposition.PCA" title="View documentation for sklearn.decomposition.PCA"><span class="n">PCA</span></a></a>
+<span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.feature_selection.SelectKBest.html#sklearn.feature_selection.SelectKBest" title="View documentation for sklearn.feature_selection.SelectKBest"><a href="../../modules/generated/sklearn.feature_selection.SelectKBest.html#sklearn.feature_selection.SelectKBest" title="View documentation for sklearn.feature_selection.SelectKBest"><span class="n">SelectKBest</span></a></a>
+
+<span class="n">iris</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.load_iris.html#sklearn.datasets.load_iris" title="View documentation for sklearn.datasets.load_iris"><a href="../../modules/generated/sklearn.datasets.load_iris.html#sklearn.datasets.load_iris" title="View documentation for sklearn.datasets.load_iris"><span class="n">load_iris</span></a></a><span class="p">()</span>
+
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
+
+<span class="c1"># This dataset is way too high-dimensional. Better do PCA:</span>
+<span class="n">pca</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.decomposition.PCA.html#sklearn.decomposition.PCA" title="View documentation for sklearn.decomposition.PCA"><a href="../../modules/generated/sklearn.decomposition.PCA.html#sklearn.decomposition.PCA" title="View documentation for sklearn.decomposition.PCA"><span class="n">PCA</span></a></a><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Maybe some original features where good, too?</span>
+<span class="n">selection</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.feature_selection.SelectKBest.html#sklearn.feature_selection.SelectKBest" title="View documentation for sklearn.feature_selection.SelectKBest"><a href="../../modules/generated/sklearn.feature_selection.SelectKBest.html#sklearn.feature_selection.SelectKBest" title="View documentation for sklearn.feature_selection.SelectKBest"><span class="n">SelectKBest</span></a></a><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Build estimator from PCA and Univariate selection:</span>
+
+<span class="n">combined_features</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.pipeline.FeatureUnion.html#sklearn.pipeline.FeatureUnion" title="View documentation for sklearn.pipeline.FeatureUnion"><a href="../../modules/generated/sklearn.pipeline.FeatureUnion.html#sklearn.pipeline.FeatureUnion" title="View documentation for sklearn.pipeline.FeatureUnion"><span class="n">FeatureUnion</span></a></a><span class="p">([(</span><span class="s2">&quot;pca&quot;</span><span class="p">,</span> <span class="n">pca</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;univ_select&quot;</span><span class="p">,</span> <span class="n">selection</span><span class="p">)])</span>
+
+<span class="c1"># Use combined features to transform dataset:</span>
+<span class="n">X_features</span> <span class="o">=</span> <span class="n">combined_features</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Combined space has&quot;</span><span class="p">,</span> <span class="n">X_features</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;features&quot;</span><span class="p">)</span>
+
+<span class="n">svm</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC" title="View documentation for sklearn.svm.SVC"><a href="../../modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC" title="View documentation for sklearn.svm.SVC"><span class="n">SVC</span></a></a><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">)</span>
+
+<span class="c1"># Do grid search over k, n_components and C:</span>
+
+<span class="n">pipeline</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline" title="View documentation for sklearn.pipeline.Pipeline"><a href="../../modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline" title="View documentation for sklearn.pipeline.Pipeline"><span class="n">Pipeline</span></a></a><span class="p">([(</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">combined_features</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;svm&quot;</span><span class="p">,</span> <span class="n">svm</span><span class="p">)])</span>
+
+<span class="n">param_grid</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">features__pca__n_components</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+                  <span class="n">features__univ_select__k</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+                  <span class="n">svm__C</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+
+<span class="n">grid_search</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV" title="View documentation for sklearn.model_selection.GridSearchCV"><a href="../../modules/generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV" title="View documentation for sklearn.model_selection.GridSearchCV"><span class="n">GridSearchCV</span></a></a><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span> <span class="n">param_grid</span><span class="o">=</span><span class="n">param_grid</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">grid_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grid_search</span><span class="o">.</span><span class="n">best_estimator_</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.357 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-compose-plot-feature-union-py">
+<div class="binder-badge docutils container">
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/binder-examples/master?urlpath=lab/tree/notebooks/auto_examples/compose/plot_feature_union.ipynb"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" width="150px" /></a>
+</div>
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/01fdc7c95204e4a420de7cd297711693/plot_feature_union.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_feature_union.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/1273a3baa87138f2b817bfc78fe7ecb4/plot_feature_union.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_feature_union.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+      </div>
+    <div class="container">
+      <footer class="sk-content-footer">
+            &copy; 2007 - 2019, scikit-learn developers (BSD License).
+          <a href="../../_sources/auto_examples/compose/plot_feature_union.rst.txt" rel="nofollow">Show this page source</a>
+      </footer>
+    </div>
+  </div>
+  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle"><&mdash;></button>
+</div>
+<script src="../../_static/js/vendor/jquery.min.js"></script>
+<script src="../../_static/js/vendor/bootstrap.min.js"></script>
+
+
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-22606712-2', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script>
+
+    $(document).ready(function() {
+
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#sk-doc-wrapper").toggleClass("toggled");
+        });
+
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		'.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+    var hide_text = 'Hide prompts and outputs';
+    var show_text = 'Show prompts and outputs';
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        if (jthis.find('.gp').length > 0) {
+            var button = $('<span class="copybutton">&gt;&gt;&gt;</span>');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+            jthis.prepend(button);
+        }
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+    // define the behavior of the button when it's clicked
+    $('.copybutton').click(function(e){
+        e.preventDefault();
+        var button = $(this);
+        if (button.data('hidden') === 'false') {
+            // hide the code output
+            button.parent().find('.go, .gp, .gt').hide();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'hidden');
+            button.css('text-decoration', 'line-through');
+            button.attr('title', show_text);
+            button.data('hidden', 'true');
+        } else {
+            // show the code output
+            button.parent().find('.go, .gp, .gt').show();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'visible');
+            button.css('text-decoration', 'none');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+        }
+    });
+
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	})
+});
+</script>
+<script>
+    (function() {
+        var cx = '016639176250731907682:tjtqbvtvij0';
+        var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+    
+<script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
+    
+</body>
+</html>

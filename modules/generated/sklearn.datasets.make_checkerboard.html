@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>sklearn.datasets.make_checkerboard &mdash; scikit-learn 0.22.dev0 documentation</title>
+  
+  <link rel="canonical" href="http://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_checkerboard.html" />
+
+  
+  <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  <link rel="stylesheet" href="../../_static/css/vendor/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" /> 
+</head>
+<body>
+
+
+<nav class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid sk-docs-container">
+      <a class="navbar-brand" href="../../index.html">
+        <img
+          src="../../_static/scikit-learn-logo-notext.png"
+          width="100"
+          alt="logo"/>
+      </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../install.html">Install</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../documentation.html">Documentation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../auto_examples/index.html">Examples</a>
+        </li>
+      </ul>
+      <div class="search_form">
+          <div class="gcse-search" id="cse" data-linktarget="_parent"></div>
+      </div>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="d-flex " id="sk-doc-wrapper">
+    <div class="border-right" id="sk-sidebar-wrapper">
+      <div class="h-100 sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+              <a href="sklearn.datasets.make_blobs.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.datasets.make_blobs">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
+              <a href="sklearn.datasets.make_circles.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.datasets.make_circles">Next</a>
+          </div>
+        <div class="alert alert-danger p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+          <strong>scikit-learn 0.22.dev0</strong><br/>
+          <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
+          </p>
+        </div>
+        <div class="alert alert-warning p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            Please <a class="font-weight-bold" href="about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
+          </p>
+        </div>
+        <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.datasets</span></code>.make_checkerboard</a><ul>
+<li><a class="reference internal" href="#examples-using-sklearn-datasets-make-checkerboard">Examples using <code class="docutils literal notranslate"><span class="pre">sklearn.datasets.make_checkerboard</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+    <div id="sk-page-content-wrapper">
+      <div class="sk-page-content container-fluid body" role="main">
+        
+  <div class="section" id="sklearn-datasets-make-checkerboard">
+<h1><a class="reference internal" href="../classes.html#module-sklearn.datasets" title="sklearn.datasets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.datasets</span></code></a>.make_checkerboard<a class="headerlink" href="#sklearn-datasets-make-checkerboard" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="sklearn.datasets.make_checkerboard">
+<code class="sig-prename descclassname">sklearn.datasets.</code><code class="sig-name descname">make_checkerboard</code><span class="sig-paren">(</span><em class="sig-param">shape</em>, <em class="sig-param">n_clusters</em>, <em class="sig-param">noise=0.0</em>, <em class="sig-param">minval=10</em>, <em class="sig-param">maxval=100</em>, <em class="sig-param">shuffle=True</em>, <em class="sig-param">random_state=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/datasets/samples_generator.py#L1600"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.datasets.make_checkerboard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate an array with block checkerboard structure for
+biclustering.</p>
+<p>Read more in the <a class="reference internal" href="../../datasets/index.html#sample-generators"><span class="std std-ref">User Guide</span></a>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>shape</strong><span class="classifier">iterable (n_rows, n_cols)</span></dt><dd><p>The shape of the result.</p>
+</dd>
+<dt><strong>n_clusters</strong><span class="classifier">integer or iterable (n_row_clusters, n_column_clusters)</span></dt><dd><p>The number of row and column clusters.</p>
+</dd>
+<dt><strong>noise</strong><span class="classifier">float, optional (default=0.0)</span></dt><dd><p>The standard deviation of the gaussian noise.</p>
+</dd>
+<dt><strong>minval</strong><span class="classifier">int, optional (default=10)</span></dt><dd><p>Minimum value of a bicluster.</p>
+</dd>
+<dt><strong>maxval</strong><span class="classifier">int, optional (default=100)</span></dt><dd><p>Maximum value of a bicluster.</p>
+</dd>
+<dt><strong>shuffle</strong><span class="classifier">boolean, optional (default=True)</span></dt><dd><p>Shuffle the samples.</p>
+</dd>
+<dt><strong>random_state</strong><span class="classifier">int, RandomState instance or None (default)</span></dt><dd><p>Determines random number generation for dataset creation. Pass an int
+for reproducible output across multiple function calls.
+See <a class="reference internal" href="../../glossary.html#term-random-state"><span class="xref std std-term">Glossary</span></a>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>X</strong><span class="classifier">array of shape <code class="docutils literal notranslate"><span class="pre">shape</span></code></span></dt><dd><p>The generated array.</p>
+</dd>
+<dt><strong>rows</strong><span class="classifier">array of shape (n_clusters, X.shape[0],)</span></dt><dd><p>The indicators for cluster membership of each row.</p>
+</dd>
+<dt><strong>cols</strong><span class="classifier">array of shape (n_clusters, X.shape[1],)</span></dt><dd><p>The indicators for cluster membership of each column.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="sklearn.datasets.make_biclusters.html#sklearn.datasets.make_biclusters" title="sklearn.datasets.make_biclusters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_biclusters</span></code></a></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">References</p>
+<dl class="citation">
+<dt class="label" id="rb9a8d99f9bb0-1"><span class="brackets">1</span></dt>
+<dd><p>Kluger, Y., Basri, R., Chang, J. T., &amp; Gerstein, M. (2003).
+Spectral biclustering of microarray data: coclustering genes
+and conditions. Genome research, 13(4), 703-716.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="examples-using-sklearn-datasets-make-checkerboard">
+<h2>Examples using <code class="docutils literal notranslate"><span class="pre">sklearn.datasets.make_checkerboard</span></code><a class="headerlink" href="#examples-using-sklearn-datasets-make-checkerboard" title="Permalink to this headline">¶</a></h2>
+<div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to generate a checkerboard dataset and bicluster it using the Spe..."><div class="figure align-default" id="id2">
+<img alt="../../_images/sphx_glr_plot_spectral_biclustering_thumb.png" src="../../_images/sphx_glr_plot_spectral_biclustering_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../../auto_examples/bicluster/plot_spectral_biclustering.html#sphx-glr-auto-examples-bicluster-plot-spectral-biclustering-py"><span class="std std-ref">A demo of the Spectral Biclustering algorithm</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="clearer"></div></div>
+</div>
+
+
+      </div>
+    <div class="container">
+      <footer class="sk-content-footer">
+            &copy; 2007 - 2019, scikit-learn developers (BSD License).
+          <a href="../../_sources/modules/generated/sklearn.datasets.make_checkerboard.rst.txt" rel="nofollow">Show this page source</a>
+      </footer>
+    </div>
+  </div>
+  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle"><&mdash;></button>
+</div>
+<script src="../../_static/js/vendor/jquery.min.js"></script>
+<script src="../../_static/js/vendor/bootstrap.min.js"></script>
+
+
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-22606712-2', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script>
+
+    $(document).ready(function() {
+
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#sk-doc-wrapper").toggleClass("toggled");
+        });
+
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		'.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+    var hide_text = 'Hide prompts and outputs';
+    var show_text = 'Show prompts and outputs';
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        if (jthis.find('.gp').length > 0) {
+            var button = $('<span class="copybutton">&gt;&gt;&gt;</span>');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+            jthis.prepend(button);
+        }
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+    // define the behavior of the button when it's clicked
+    $('.copybutton').click(function(e){
+        e.preventDefault();
+        var button = $(this);
+        if (button.data('hidden') === 'false') {
+            // hide the code output
+            button.parent().find('.go, .gp, .gt').hide();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'hidden');
+            button.css('text-decoration', 'line-through');
+            button.attr('title', show_text);
+            button.data('hidden', 'true');
+        } else {
+            // show the code output
+            button.parent().find('.go, .gp, .gt').show();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'visible');
+            button.css('text-decoration', 'none');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+        }
+    });
+
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	})
+});
+</script>
+<script>
+    (function() {
+        var cx = '016639176250731907682:tjtqbvtvij0';
+        var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+    
+<script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
+    
+</body>
+</html>

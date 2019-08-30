@@ -1,0 +1,524 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Developer’s Guide &mdash; scikit-learn 0.22.dev0 documentation</title>
+  
+  <link rel="canonical" href="http://scikit-learn.org/stable/developers/index.html" />
+
+  
+  <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  <link rel="stylesheet" href="../_static/css/vendor/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" /> 
+</head>
+<body>
+
+
+<nav class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid sk-docs-container">
+      <a class="navbar-brand" href="../index.html">
+        <img
+          src="../_static/scikit-learn-logo-notext.png"
+          width="100"
+          alt="logo"/>
+      </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../install.html">Install</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../documentation.html">Documentation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../auto_examples/index.html">Examples</a>
+        </li>
+      </ul>
+      <div class="search_form">
+          <div class="gcse-search" id="cse" data-linktarget="_parent"></div>
+      </div>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="d-flex " id="sk-doc-wrapper">
+    <div class="border-right" id="sk-sidebar-wrapper">
+      <div class="h-100 sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+              <a href="../modules/generated/sklearn.ensemble.partial_dependence.plot_partial_dependence.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.ensemble.partial_dependence.plot_partial_dependence">Prev</a>
+              <a href="#" role="button" class="btn sk-btn-rellink disabled py-1">Up</a>
+              <a href="contributing.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Contributing">Next</a>
+          </div>
+        <div class="alert alert-danger p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+          <strong>scikit-learn 0.22.dev0</strong><br/>
+          <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
+          </p>
+        </div>
+        <div class="alert alert-warning p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            Please <a class="font-weight-bold" href="about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
+          </p>
+        </div>
+        <ul>
+<li><a class="reference internal" href="#">Developer’s Guide</a></li>
+</ul>
+
+      </div>
+    </div>
+    <div id="sk-page-content-wrapper">
+      <div class="sk-page-content container-fluid body" role="main">
+        
+  <div class="section" id="developer-s-guide">
+<span id="developers-guide"></span><h1>Developer’s Guide<a class="headerlink" href="#developer-s-guide" title="Permalink to this headline">¶</a></h1>
+<style type="text/css">
+  div.bodywrapper blockquote {
+      margin: 0 ;
+  }
+
+  div.toctree-wrapper ul {
+      margin-top: 0 ;
+      margin-bottom: 0 ;
+      padding-left: 10px ;
+  }
+
+  li.toctree-l1 {
+      padding: 0 0 0.5em 0 ;
+      list-style-type: none;
+      font-size: 150% ;
+      font-weight: bold;
+      }
+
+  li.toctree-l1 ul {
+      padding-left: 40px ;
+  }
+
+  li.toctree-l2 {
+      font-size: 70% ;
+      list-style-type: square;
+      font-weight: normal;
+      }
+
+  li.toctree-l3 {
+      font-size: 85% ;
+      list-style-type: circle;
+      font-weight: normal;
+      }
+
+</style> <script>
+ window.addEventListener('DOMContentLoaded', function() {
+      (function($) {
+ //Function to make the index toctree collapsible
+ $(function () {
+     $('.toctree-l2')
+         .click(function(event){
+             if (event.target.tagName.toLowerCase() != "a") {
+                 if ($(this).children('ul').length > 0) {
+                      $(this).attr('data-content',
+                          (!$(this).children('ul').is(':hidden')) ? '\u25ba' : '\u25bc');
+                     $(this).children('ul').toggle();
+                 }
+                 return true; //Makes links clickable
+             }
+         })
+         .mousedown(function(event){ return false; }) //Firefox highlighting fix
+         .children('ul').hide();
+     // Initialize the values
+     $('li.toctree-l2:not(:has(ul))').attr('data-content', '-');
+     $('li.toctree-l2:has(ul)').attr('data-content', '\u25ba');
+     $('li.toctree-l2:has(ul)').css('cursor', 'pointer');
+
+     $('.toctree-l2').hover(
+         function () {
+             if ($(this).children('ul').length > 0) {
+                 $(this).css('background-color', '#D0D0D0').children('ul').css('background-color', '#F0F0F0');
+                 $(this).attr('data-content',
+                     (!$(this).children('ul').is(':hidden')) ? '\u25bc' : '\u25ba');
+             }
+             else {
+                 $(this).css('background-color', '#F9F9F9');
+             }
+         },
+         function () {
+             $(this).css('background-color', 'white').children('ul').css('background-color', 'white');
+             if ($(this).children('ul').length > 0) {
+                 $(this).attr('data-content',
+                     (!$(this).children('ul').is(':hidden')) ? '\u25bc' : '\u25ba');
+             }
+         }
+     );
+ });
+      })(jQuery);
+  });
+ </script>
+
+<style type="text/css">
+  div.bodywrapper blockquote {
+      margin: 0 ;
+  }
+
+  div.toctree-wrapper ul {
+      margin: 0 ;
+      padding-left: 0px ;
+  }
+
+  li, ul {
+      transition-duration: 0.2s;
+  }
+
+  li.toctree-l1 {
+      padding: 5px 0 0;
+      list-style-type: none;
+      font-size: 150% ;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      font-weight: normal;
+      color: #20435c;
+      margin-left: 0;
+      margin-bottom: 1.2em;
+      font-weight: bold;
+      }
+
+  li.toctree-l1 a {
+      padding: 0 0 0 10px ;
+      color: #314F64 ;
+  }
+
+  li.toctree-l2 {
+      padding: 0.25em 0 0.25em 0 ;
+      list-style-type: none;
+      background-color: #FFFFFF;
+      font-size: 85% ;
+      font-weight: normal;
+  }
+
+  li.toctree-l2 ul {
+      padding-left: 40px ;
+  }
+
+
+  li.toctree-l2:before {
+      content: attr(data-content) ;
+      font-size: 85% ;
+      color: #777 ;
+      display: inline-block;
+      width: 10px;
+  }
+
+  li.toctree-l3 {
+      font-size: 88% ;
+      list-style-type: square;
+      font-weight: normal;
+  }
+
+  li.toctree-l4 {
+      font-size: 93% ;
+      list-style-type: circle;
+      font-weight: normal;
+  }
+
+  div.topic li.toctree-l1 {
+      font-size: 100% ;
+      font-weight: bold;
+      background-color: transparent;
+      margin-bottom: 0;
+      margin-left: 1.5em;
+      display:inline;
+  }
+
+  div.topic p {
+      font-size: 90% ;
+      margin: 0.4ex;
+  }
+
+  div.topic p.topic-title {
+      display:inline;
+      font-size: 100% ;
+      margin-bottom: 0;
+  }
+
+  div.sidebar {
+      width: 25ex ;
+  }
+
+</style><div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#ways-to-contribute">Ways to contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#submitting-a-bug-report-or-a-feature-request">Submitting a bug report or a feature request</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#how-to-make-a-good-bug-report">How to make a good bug report</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#contributing-code">Contributing code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#how-to-contribute">How to contribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#pull-request-checklist">Pull request checklist</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="contributing.html#continuous-integration-ci">Continuous Integration (CI)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="contributing.html#stalled-pull-requests">Stalled pull requests</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#issues-for-new-contributors">Issues for New Contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#documentation">Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#building-the-documentation">Building the documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#guidelines-for-writing-documentation">Guidelines for writing documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#generated-documentation-on-circleci">Generated documentation on CircleCI</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#testing-and-improving-test-coverage">Testing and improving test coverage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#writing-matplotlib-related-tests">Writing matplotlib related tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#workflow-to-improve-test-coverage">Workflow to improve test coverage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#issue-tracker-tags">Issue Tracker Tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#coding-guidelines">Coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#maintaining-backwards-compatibility">Maintaining backwards compatibility</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#deprecation">Deprecation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#change-the-default-value-of-a-parameter">Change the default value of a parameter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#code-review-guidelines">Code Review Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#reading-the-existing-code-base">Reading the existing code base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#plotting-api">Plotting API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="develop.html">Developing scikit-learn estimators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="develop.html#apis-of-scikit-learn-objects">APIs of scikit-learn objects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="develop.html#different-objects">Different objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="develop.html#estimators">Estimators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="develop.html#instantiation">Instantiation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="develop.html#fitting">Fitting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="develop.html#estimated-attributes">Estimated Attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="develop.html#optional-arguments">Optional Arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="develop.html#pairwise-attributes">Pairwise Attributes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="develop.html#rolling-your-own-estimator">Rolling your own estimator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="develop.html#get-params-and-set-params">get_params and set_params</a></li>
+<li class="toctree-l3"><a class="reference internal" href="develop.html#parameters-and-init">Parameters and init</a></li>
+<li class="toctree-l3"><a class="reference internal" href="develop.html#cloning">Cloning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="develop.html#pipeline-compatibility">Pipeline compatibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="develop.html#estimator-types">Estimator types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="develop.html#specific-models">Specific models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="develop.html#estimator-tags">Estimator Tags</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="develop.html#coding-guidelines">Coding guidelines</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="develop.html#input-validation">Input validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="develop.html#random-numbers">Random Numbers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Developers’ Tips and Tricks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tips.html#productivity-and-sanity-preserving-tips">Productivity and sanity-preserving tips</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tips.html#viewing-the-rendered-html-documentation-for-a-pull-request">Viewing the rendered HTML documentation for a pull request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tips.html#folding-and-unfolding-outdated-diffs-on-pull-requests">Folding and unfolding outdated diffs on pull requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tips.html#checking-out-pull-requests-as-remote-tracking-branches">Checking out pull requests as remote-tracking branches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tips.html#display-code-coverage-in-pull-requests">Display code coverage in pull requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tips.html#useful-pytest-aliases-and-flags">Useful pytest aliases and flags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tips.html#standard-replies-for-reviewing">Standard replies for reviewing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html#debugging-memory-errors-in-cython-with-valgrind">Debugging memory errors in Cython with valgrind</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities for Developers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html#validation-tools">Validation Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html#efficient-linear-algebra-array-operations">Efficient Linear Algebra &amp; Array Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html#efficient-random-sampling">Efficient Random Sampling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html#efficient-routines-for-sparse-matrices">Efficient Routines for Sparse Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html#graph-routines">Graph Routines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html#testing-functions">Testing Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html#multiclass-and-multilabel-utility-function">Multiclass and multilabel utility function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html#helper-functions">Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html#hash-functions">Hash Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html#warnings-and-exceptions">Warnings and Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">How to optimize for speed</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="performance.html#python-cython-or-c-c">Python, Cython or C/C++?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance.html#profiling-python-code">Profiling Python code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance.html#memory-usage-profiling">Memory usage profiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance.html#performance-tips-for-the-cython-developer">Performance tips for the Cython developer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="performance.html#using-openmp">Using OpenMP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="performance.html#profiling-compiled-extensions">Profiling compiled extensions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="performance.html#using-yep-and-gperftools">Using yep and gperftools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="performance.html#using-gprof">Using gprof</a></li>
+<li class="toctree-l3"><a class="reference internal" href="performance.html#using-valgrind-callgrind-kcachegrind">Using valgrind / callgrind / kcachegrind</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="performance.html#kcachegrind">kcachegrind</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="performance.html#multi-core-parallelism-using-joblib-parallel">Multi-core parallelism using <code class="docutils literal notranslate"><span class="pre">joblib.Parallel</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance.html#a-simple-algorithmic-trick-warm-restarts">A simple algorithmic trick: warm restarts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_installation.html">Advanced installation instructions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="advanced_installation.html#installing-nightly-builds">Installing nightly builds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_installation.html#building-from-source">Building from source</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="advanced_installation.html#dependencies">Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_installation.html#retrieving-the-latest-code">Retrieving the latest code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_installation.html#mac-osx">Mac OSX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_installation.html#freebsd">FreeBSD</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_installation.html#installing-build-dependencies">Installing build dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="advanced_installation.html#linux">Linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_installation.html#windows">Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_installation.html#building-binary-packages-and-installers">Building binary packages and installers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_installation.html#using-an-alternative-compiler">Using an alternative compiler</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="maintainer.html">Maintainer / core-developer information</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="maintainer.html#before-a-release">Before a release</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="maintainer.html#preparing-a-bug-fix-release">Preparing a bug-fix-release</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="maintainer.html#making-a-release">Making a release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maintainer.html#the-scikit-learn-org-web-site">The scikit-learn.org web site</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maintainer.html#travis-cron-jobs">Travis Cron jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maintainer.html#experimental-features">Experimental features</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+      </div>
+    <div class="container">
+      <footer class="sk-content-footer">
+            &copy; 2007 - 2019, scikit-learn developers (BSD License).
+          <a href="../_sources/developers/index.rst.txt" rel="nofollow">Show this page source</a>
+      </footer>
+    </div>
+  </div>
+  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle"><&mdash;></button>
+</div>
+<script src="../_static/js/vendor/jquery.min.js"></script>
+<script src="../_static/js/vendor/bootstrap.min.js"></script>
+
+
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-22606712-2', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script>
+
+    $(document).ready(function() {
+
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#sk-doc-wrapper").toggleClass("toggled");
+        });
+
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		'.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+    var hide_text = 'Hide prompts and outputs';
+    var show_text = 'Show prompts and outputs';
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        if (jthis.find('.gp').length > 0) {
+            var button = $('<span class="copybutton">&gt;&gt;&gt;</span>');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+            jthis.prepend(button);
+        }
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+    // define the behavior of the button when it's clicked
+    $('.copybutton').click(function(e){
+        e.preventDefault();
+        var button = $(this);
+        if (button.data('hidden') === 'false') {
+            // hide the code output
+            button.parent().find('.go, .gp, .gt').hide();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'hidden');
+            button.css('text-decoration', 'line-through');
+            button.attr('title', show_text);
+            button.data('hidden', 'true');
+        } else {
+            // show the code output
+            button.parent().find('.go, .gp, .gt').show();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'visible');
+            button.css('text-decoration', 'none');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+        }
+    });
+
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	})
+});
+</script>
+<script>
+    (function() {
+        var cx = '016639176250731907682:tjtqbvtvij0';
+        var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+    
+<script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
+    
+</body>
+</html>

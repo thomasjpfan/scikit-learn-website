@@ -1,0 +1,293 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta content="noindex" name="robots" />
+
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>sklearn.utils.Parallel &mdash; scikit-learn 0.22.dev0 documentation</title>
+  
+  <link rel="canonical" href="http://scikit-learn.org/stable/modules/generated/sklearn.utils.Parallel.html" />
+
+  
+  <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  <link rel="stylesheet" href="../../_static/css/vendor/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" /> 
+</head>
+<body>
+
+
+<nav class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid sk-docs-container">
+      <a class="navbar-brand" href="../../index.html">
+        <img
+          src="../../_static/scikit-learn-logo-notext.png"
+          width="100"
+          alt="logo"/>
+      </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../install.html">Install</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../documentation.html">Documentation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../auto_examples/index.html">Examples</a>
+        </li>
+      </ul>
+      <div class="search_form">
+          <div class="gcse-search" id="cse" data-linktarget="_parent"></div>
+      </div>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="d-flex " id="sk-doc-wrapper">
+    <div class="border-right" id="sk-sidebar-wrapper">
+      <div class="h-100 sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+              <a href="sklearn.utils.Memory.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.utils.Memory">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
+              <a href="sklearn.utils.cpu_count.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.utils.cpu_count">Next</a>
+          </div>
+        <div class="alert alert-danger p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+          <strong>scikit-learn 0.22.dev0</strong><br/>
+          <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
+          </p>
+        </div>
+        <div class="alert alert-warning p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            Please <a class="font-weight-bold" href="about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
+          </p>
+        </div>
+        <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.utils</span></code>.Parallel</a></li>
+</ul>
+
+      </div>
+    </div>
+    <div id="sk-page-content-wrapper">
+      <div class="sk-page-content container-fluid body" role="main">
+        
+  <div class="section" id="sklearn-utils-parallel">
+<h1><a class="reference internal" href="../classes.html#module-sklearn.utils" title="sklearn.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.utils</span></code></a>.Parallel<a class="headerlink" href="#sklearn-utils-parallel" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>DEPRECATED</strong></p>
+</div>
+<dl class="class">
+<dt id="sklearn.utils.Parallel">
+<em class="property">class </em><code class="sig-prename descclassname">sklearn.utils.</code><code class="sig-name descname">Parallel</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/utils/__init__.py#L58"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.utils.Parallel" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(self, iterable)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#sklearn.utils.Parallel.dispatch_next" title="sklearn.utils.Parallel.dispatch_next"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dispatch_next</span></code></a>(self)</p></td>
+<td><p>Dispatch more data for parallel processing</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.utils.Parallel.dispatch_one_batch" title="sklearn.utils.Parallel.dispatch_one_batch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dispatch_one_batch</span></code></a>(self, iterator)</p></td>
+<td><p>Prefetch the tasks for the next batch and dispatch them.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#sklearn.utils.Parallel.format" title="sklearn.utils.Parallel.format"><code class="xref py py-obj docutils literal notranslate"><span class="pre">format</span></code></a>(self, obj[, indent])</p></td>
+<td><p>Return the formatted representation of the object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.utils.Parallel.print_progress" title="sklearn.utils.Parallel.print_progress"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_progress</span></code></a>(self)</p></td>
+<td><p>Display the process of the parallel execution only a fraction of time, controlled by self.verbose.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55%" />
+<col style="width: 45%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>debug</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>retrieve</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>warn</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="sklearn.utils.Parallel.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/utils/deprecation.py#L65"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.utils.Parallel.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>DEPRECATED: deprecated in version 0.20.1 to be removed in version 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sklearn.utils.Parallel.dispatch_next">
+<code class="sig-name descname">dispatch_next</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/../../../anaconda3/envs/bs/lib/python3.7/site-packages/joblib/parallel.py#L723"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.utils.Parallel.dispatch_next" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dispatch more data for parallel processing</p>
+<p>This method is meant to be called concurrently by the multiprocessing
+callback. We rely on the thread-safety of dispatch_one_batch to protect
+against concurrent consumption of the unprotected iterator.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sklearn.utils.Parallel.dispatch_one_batch">
+<code class="sig-name descname">dispatch_one_batch</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">iterator</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/../../../anaconda3/envs/bs/lib/python3.7/site-packages/joblib/parallel.py#L735"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.utils.Parallel.dispatch_one_batch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prefetch the tasks for the next batch and dispatch them.</p>
+<p>The effective size of the batch is computed here.
+If there are no more jobs to dispatch, return False, else return True.</p>
+<p>The iterator consumption and dispatching is protected by the same
+lock so calling this function should be thread safe.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sklearn.utils.Parallel.format">
+<code class="sig-name descname">format</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">obj</em>, <em class="sig-param">indent=0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/../../../anaconda3/envs/bs/lib/python3.7/site-packages/joblib/logger.py#L83"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.utils.Parallel.format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the formatted representation of the object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sklearn.utils.Parallel.print_progress">
+<code class="sig-name descname">print_progress</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/../../../anaconda3/envs/bs/lib/python3.7/site-packages/joblib/parallel.py#L775"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.utils.Parallel.print_progress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display the process of the parallel execution only a fraction
+of time, controlled by self.verbose.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="clearer"></div></div>
+
+
+      </div>
+    <div class="container">
+      <footer class="sk-content-footer">
+            &copy; 2007 - 2019, scikit-learn developers (BSD License).
+          <a href="../../_sources/modules/generated/sklearn.utils.Parallel.rst.txt" rel="nofollow">Show this page source</a>
+      </footer>
+    </div>
+  </div>
+  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle"><&mdash;></button>
+</div>
+<script src="../../_static/js/vendor/jquery.min.js"></script>
+<script src="../../_static/js/vendor/bootstrap.min.js"></script>
+
+
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-22606712-2', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script>
+
+    $(document).ready(function() {
+
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#sk-doc-wrapper").toggleClass("toggled");
+        });
+
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		'.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+    var hide_text = 'Hide prompts and outputs';
+    var show_text = 'Show prompts and outputs';
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        if (jthis.find('.gp').length > 0) {
+            var button = $('<span class="copybutton">&gt;&gt;&gt;</span>');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+            jthis.prepend(button);
+        }
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+    // define the behavior of the button when it's clicked
+    $('.copybutton').click(function(e){
+        e.preventDefault();
+        var button = $(this);
+        if (button.data('hidden') === 'false') {
+            // hide the code output
+            button.parent().find('.go, .gp, .gt').hide();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'hidden');
+            button.css('text-decoration', 'line-through');
+            button.attr('title', show_text);
+            button.data('hidden', 'true');
+        } else {
+            // show the code output
+            button.parent().find('.go, .gp, .gt').show();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'visible');
+            button.css('text-decoration', 'none');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+        }
+    });
+
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	})
+});
+</script>
+<script>
+    (function() {
+        var cx = '016639176250731907682:tjtqbvtvij0';
+        var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+    
+<script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
+    
+</body>
+</html>

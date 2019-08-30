@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Lasso on dense and sparse data &mdash; scikit-learn 0.22.dev0 documentation</title>
+  
+  <link rel="canonical" href="http://scikit-learn.org/stable/auto_examples/linear_model/plot_lasso_dense_vs_sparse_data.html" />
+
+  
+  <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  <link rel="stylesheet" href="../../_static/css/vendor/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" /> 
+</head>
+<body>
+
+
+<nav class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid sk-docs-container">
+      <a class="navbar-brand" href="../../index.html">
+        <img
+          src="../../_static/scikit-learn-logo-notext.png"
+          width="100"
+          alt="logo"/>
+      </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../install.html">Install</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../documentation.html">Documentation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">Examples</a>
+        </li>
+      </ul>
+      <div class="search_form">
+          <div class="gcse-search" id="cse" data-linktarget="_parent"></div>
+      </div>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="d-flex " id="sk-doc-wrapper">
+    <div class="border-right" id="sk-sidebar-wrapper">
+      <div class="h-100 sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+              <a href="plot_huber_vs_ridge.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="HuberRegressor vs Ridge on dataset with strong outliers">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
+              <a href="plot_sgd_comparison.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Comparing various online solvers">Next</a>
+          </div>
+        <div class="alert alert-danger p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+          <strong>scikit-learn 0.22.dev0</strong><br/>
+          <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
+          </p>
+        </div>
+        <div class="alert alert-warning p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            Please <a class="font-weight-bold" href="about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
+          </p>
+        </div>
+        <ul>
+<li><a class="reference internal" href="#">Lasso on dense and sparse data</a></li>
+</ul>
+
+      </div>
+    </div>
+    <div id="sk-page-content-wrapper">
+      <div class="sk-page-content container-fluid body" role="main">
+        
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-linear-model-plot-lasso-dense-vs-sparse-data-py"><span class="std std-ref">here</span></a> to download the full example code or run this example in your browser via Binder</p>
+</div>
+<div class="sphx-glr-example-title section" id="lasso-on-dense-and-sparse-data">
+<span id="sphx-glr-auto-examples-linear-model-plot-lasso-dense-vs-sparse-data-py"></span><h1>Lasso on dense and sparse data<a class="headerlink" href="#lasso-on-dense-and-sparse-data" title="Permalink to this headline">¶</a></h1>
+<p>We show that linear_model.Lasso provides the same results for dense and sparse
+data and that in the case of sparse data the speed is improved.</p>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>--- Dense matrices
+Sparse Lasso done in 0.095853s
+Dense Lasso done in 0.038690s
+Distance between coefficients : 1.0204393146541031e-13
+--- Sparse matrices
+Matrix density : 0.6263000000000001 %
+Sparse Lasso done in 0.130362s
+Dense Lasso done in 0.830171s
+Distance between coefficients : 8.034211286713951e-12
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">time</span> <span class="k">import</span> <span class="n">time</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">sparse</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">linalg</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.datasets.samples_generator</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.datasets.make_regression.html#sklearn.datasets.make_regression" title="View documentation for sklearn.datasets.samples_generator.make_regression"><a href="../../modules/generated/sklearn.datasets.make_regression.html#sklearn.datasets.make_regression" title="View documentation for sklearn.datasets.samples_generator.make_regression"><span class="n">make_regression</span></a></a>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><span class="n">Lasso</span></a></a>
+
+
+<span class="c1"># #############################################################################</span>
+<span class="c1"># The two Lasso implementations on Dense data</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Dense matrices&quot;</span><span class="p">)</span>
+
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.make_regression.html#sklearn.datasets.make_regression" title="View documentation for sklearn.datasets.samples_generator.make_regression"><a href="../../modules/generated/sklearn.datasets.make_regression.html#sklearn.datasets.make_regression" title="View documentation for sklearn.datasets.samples_generator.make_regression"><span class="n">make_regression</span></a></a><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">n_features</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">X_sp</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.html#scipy.sparse.coo_matrix" title="View documentation for scipy.sparse.coo_matrix"><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.html#scipy.sparse.coo_matrix" title="View documentation for scipy.sparse.coo_matrix"><span class="n">sparse</span><span class="o">.</span><span class="n">coo_matrix</span></a></a><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">sparse_lasso</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><span class="n">Lasso</span></a></a><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">fit_intercept</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">dense_lasso</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><span class="n">Lasso</span></a></a><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">fit_intercept</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">sparse_lasso</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_sp</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sparse Lasso done in </span><span class="si">%f</span><span class="s2">s&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
+
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">dense_lasso</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dense Lasso done in </span><span class="si">%f</span><span class="s2">s&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Distance between coefficients : </span><span class="si">%s</span><span class="s2">&quot;</span>
+      <span class="o">%</span> <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.norm.html#scipy.linalg.norm" title="View documentation for scipy.linalg.norm"><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.norm.html#scipy.linalg.norm" title="View documentation for scipy.linalg.norm"><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span></a></a><span class="p">(</span><span class="n">sparse_lasso</span><span class="o">.</span><span class="n">coef_</span> <span class="o">-</span> <span class="n">dense_lasso</span><span class="o">.</span><span class="n">coef_</span><span class="p">))</span>
+
+<span class="c1"># #############################################################################</span>
+<span class="c1"># The two Lasso implementations on Sparse data</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Sparse matrices&quot;</span><span class="p">)</span>
+
+<span class="n">Xs</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">Xs</span><span class="p">[</span><span class="n">Xs</span> <span class="o">&lt;</span> <span class="mf">2.5</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">Xs</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.html#scipy.sparse.coo_matrix" title="View documentation for scipy.sparse.coo_matrix"><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.html#scipy.sparse.coo_matrix" title="View documentation for scipy.sparse.coo_matrix"><span class="n">sparse</span><span class="o">.</span><span class="n">coo_matrix</span></a></a><span class="p">(</span><span class="n">Xs</span><span class="p">)</span>
+<span class="n">Xs</span> <span class="o">=</span> <span class="n">Xs</span><span class="o">.</span><span class="n">tocsc</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matrix density : </span><span class="si">%s</span><span class="s2"> </span><span class="si">%%</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">Xs</span><span class="o">.</span><span class="n">nnz</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">size</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
+
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">sparse_lasso</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><span class="n">Lasso</span></a></a><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">fit_intercept</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+<span class="n">dense_lasso</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><span class="n">Lasso</span></a></a><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">fit_intercept</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">sparse_lasso</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xs</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sparse Lasso done in </span><span class="si">%f</span><span class="s2">s&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
+
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">dense_lasso</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xs</span><span class="o">.</span><span class="n">toarray</span><span class="p">(),</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dense Lasso done in </span><span class="si">%f</span><span class="s2">s&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Distance between coefficients : </span><span class="si">%s</span><span class="s2">&quot;</span>
+      <span class="o">%</span> <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.norm.html#scipy.linalg.norm" title="View documentation for scipy.linalg.norm"><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.norm.html#scipy.linalg.norm" title="View documentation for scipy.linalg.norm"><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span></a></a><span class="p">(</span><span class="n">sparse_lasso</span><span class="o">.</span><span class="n">coef_</span> <span class="o">-</span> <span class="n">dense_lasso</span><span class="o">.</span><span class="n">coef_</span><span class="p">))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.220 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-linear-model-plot-lasso-dense-vs-sparse-data-py">
+<div class="binder-badge docutils container">
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/binder-examples/master?urlpath=lab/tree/notebooks/auto_examples/linear_model/plot_lasso_dense_vs_sparse_data.ipynb"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" width="150px" /></a>
+</div>
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/510f5becea7ec7018a8eee43d6f12b1b/plot_lasso_dense_vs_sparse_data.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_lasso_dense_vs_sparse_data.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/0aadb4e0dc9f402704c8a56152f01083/plot_lasso_dense_vs_sparse_data.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_lasso_dense_vs_sparse_data.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+      </div>
+    <div class="container">
+      <footer class="sk-content-footer">
+            &copy; 2007 - 2019, scikit-learn developers (BSD License).
+          <a href="../../_sources/auto_examples/linear_model/plot_lasso_dense_vs_sparse_data.rst.txt" rel="nofollow">Show this page source</a>
+      </footer>
+    </div>
+  </div>
+  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle"><&mdash;></button>
+</div>
+<script src="../../_static/js/vendor/jquery.min.js"></script>
+<script src="../../_static/js/vendor/bootstrap.min.js"></script>
+
+
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-22606712-2', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script>
+
+    $(document).ready(function() {
+
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#sk-doc-wrapper").toggleClass("toggled");
+        });
+
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		'.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+    var hide_text = 'Hide prompts and outputs';
+    var show_text = 'Show prompts and outputs';
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        if (jthis.find('.gp').length > 0) {
+            var button = $('<span class="copybutton">&gt;&gt;&gt;</span>');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+            jthis.prepend(button);
+        }
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+    // define the behavior of the button when it's clicked
+    $('.copybutton').click(function(e){
+        e.preventDefault();
+        var button = $(this);
+        if (button.data('hidden') === 'false') {
+            // hide the code output
+            button.parent().find('.go, .gp, .gt').hide();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'hidden');
+            button.css('text-decoration', 'line-through');
+            button.attr('title', show_text);
+            button.data('hidden', 'true');
+        } else {
+            // show the code output
+            button.parent().find('.go, .gp, .gt').show();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'visible');
+            button.css('text-decoration', 'none');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+        }
+    });
+
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	})
+});
+</script>
+<script>
+    (function() {
+        var cx = '016639176250731907682:tjtqbvtvij0';
+        var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+    
+<script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
+    
+</body>
+</html>

@@ -1,0 +1,275 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>sklearn.cluster.affinity_propagation &mdash; scikit-learn 0.22.dev0 documentation</title>
+  
+  <link rel="canonical" href="http://scikit-learn.org/stable/modules/generated/sklearn.cluster.affinity_propagation.html" />
+
+  
+  <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  <link rel="stylesheet" href="../../_static/css/vendor/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" /> 
+</head>
+<body>
+
+
+<nav class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid sk-docs-container">
+      <a class="navbar-brand" href="../../index.html">
+        <img
+          src="../../_static/scikit-learn-logo-notext.png"
+          width="100"
+          alt="logo"/>
+      </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../install.html">Install</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../documentation.html">Documentation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../auto_examples/index.html">Examples</a>
+        </li>
+      </ul>
+      <div class="search_form">
+          <div class="gcse-search" id="cse" data-linktarget="_parent"></div>
+      </div>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="d-flex " id="sk-doc-wrapper">
+    <div class="border-right" id="sk-sidebar-wrapper">
+      <div class="h-100 sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+              <a href="sklearn.cluster.SpectralClustering.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.cluster.SpectralClustering">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
+              <a href="sklearn.cluster.cluster_optics_dbscan.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.cluster.cluster_optics_dbscan">Next</a>
+          </div>
+        <div class="alert alert-danger p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+          <strong>scikit-learn 0.22.dev0</strong><br/>
+          <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
+          </p>
+        </div>
+        <div class="alert alert-warning p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            Please <a class="font-weight-bold" href="about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
+          </p>
+        </div>
+        <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.cluster</span></code>.affinity_propagation</a><ul>
+<li><a class="reference internal" href="#examples-using-sklearn-cluster-affinity-propagation">Examples using <code class="docutils literal notranslate"><span class="pre">sklearn.cluster.affinity_propagation</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+    <div id="sk-page-content-wrapper">
+      <div class="sk-page-content container-fluid body" role="main">
+        
+  <div class="section" id="sklearn-cluster-affinity-propagation">
+<h1><a class="reference internal" href="../classes.html#module-sklearn.cluster" title="sklearn.cluster"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.cluster</span></code></a>.affinity_propagation<a class="headerlink" href="#sklearn-cluster-affinity-propagation" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="sklearn.cluster.affinity_propagation">
+<code class="sig-prename descclassname">sklearn.cluster.</code><code class="sig-name descname">affinity_propagation</code><span class="sig-paren">(</span><em class="sig-param">S</em>, <em class="sig-param">preference=None</em>, <em class="sig-param">convergence_iter=15</em>, <em class="sig-param">max_iter=200</em>, <em class="sig-param">damping=0.5</em>, <em class="sig-param">copy=True</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">return_n_iter=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/cluster/affinity_propagation_.py#L33"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.affinity_propagation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform Affinity Propagation Clustering of data</p>
+<p>Read more in the <a class="reference internal" href="../clustering.html#affinity-propagation"><span class="std std-ref">User Guide</span></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>S</strong><span class="classifier">array-like, shape (n_samples, n_samples)</span></dt><dd><p>Matrix of similarities between points</p>
+</dd>
+<dt><strong>preference</strong><span class="classifier">array-like, shape (n_samples,) or float, optional</span></dt><dd><p>Preferences for each point - points with larger values of
+preferences are more likely to be chosen as exemplars. The number of
+exemplars, i.e. of clusters, is influenced by the input preferences
+value. If the preferences are not passed as arguments, they will be
+set to the median of the input similarities (resulting in a moderate
+number of clusters). For a smaller amount of clusters, this can be set
+to the minimum value of the similarities.</p>
+</dd>
+<dt><strong>convergence_iter</strong><span class="classifier">int, optional, default: 15</span></dt><dd><p>Number of iterations with no change in the number
+of estimated clusters that stops the convergence.</p>
+</dd>
+<dt><strong>max_iter</strong><span class="classifier">int, optional, default: 200</span></dt><dd><p>Maximum number of iterations</p>
+</dd>
+<dt><strong>damping</strong><span class="classifier">float, optional, default: 0.5</span></dt><dd><p>Damping factor between 0.5 and 1.</p>
+</dd>
+<dt><strong>copy</strong><span class="classifier">boolean, optional, default: True</span></dt><dd><p>If copy is False, the affinity matrix is modified inplace by the
+algorithm, for memory efficiency</p>
+</dd>
+<dt><strong>verbose</strong><span class="classifier">boolean, optional, default: False</span></dt><dd><p>The verbosity level</p>
+</dd>
+<dt><strong>return_n_iter</strong><span class="classifier">bool, default False</span></dt><dd><p>Whether or not to return the number of iterations.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>cluster_centers_indices</strong><span class="classifier">array, shape (n_clusters,)</span></dt><dd><p>index of clusters centers</p>
+</dd>
+<dt><strong>labels</strong><span class="classifier">array, shape (n_samples,)</span></dt><dd><p>cluster labels for each point</p>
+</dd>
+<dt><strong>n_iter</strong><span class="classifier">int</span></dt><dd><p>number of iterations run. Returned only if <code class="docutils literal notranslate"><span class="pre">return_n_iter</span></code> is
+set to True.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>For an example, see <a class="reference internal" href="../../auto_examples/cluster/plot_affinity_propagation.html#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py"><span class="std std-ref">examples/cluster/plot_affinity_propagation.py</span></a>.</p>
+<p>When the algorithm does not converge, it returns an empty array as
+<code class="docutils literal notranslate"><span class="pre">cluster_center_indices</span></code> and <code class="docutils literal notranslate"><span class="pre">-1</span></code> as label for each training sample.</p>
+<p>When all training samples have equal similarities and equal preferences,
+the assignment of cluster centers and labels depends on the preference.
+If the preference is smaller than the similarities, a single cluster center
+and label <code class="docutils literal notranslate"><span class="pre">0</span></code> for every sample will be returned. Otherwise, every
+training sample becomes its own cluster center and is assigned a unique
+label.</p>
+<p class="rubric">References</p>
+<p>Brendan J. Frey and Delbert Dueck, “Clustering by Passing Messages
+Between Data Points”, Science Feb. 2007</p>
+</dd></dl>
+
+<div class="section" id="examples-using-sklearn-cluster-affinity-propagation">
+<h2>Examples using <code class="docutils literal notranslate"><span class="pre">sklearn.cluster.affinity_propagation</span></code><a class="headerlink" href="#examples-using-sklearn-cluster-affinity-propagation" title="Permalink to this headline">¶</a></h2>
+<div class="sphx-glr-thumbcontainer" tooltip="This example employs several unsupervised learning techniques to extract the stock market struc..."><div class="figure align-default" id="id1">
+<img alt="../../_images/sphx_glr_plot_stock_market_thumb.png" src="../../_images/sphx_glr_plot_stock_market_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../../auto_examples/applications/plot_stock_market.html#sphx-glr-auto-examples-applications-plot-stock-market-py"><span class="std std-ref">Visualizing the stock market structure</span></a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="clearer"></div></div>
+</div>
+
+
+      </div>
+    <div class="container">
+      <footer class="sk-content-footer">
+            &copy; 2007 - 2019, scikit-learn developers (BSD License).
+          <a href="../../_sources/modules/generated/sklearn.cluster.affinity_propagation.rst.txt" rel="nofollow">Show this page source</a>
+      </footer>
+    </div>
+  </div>
+  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle"><&mdash;></button>
+</div>
+<script src="../../_static/js/vendor/jquery.min.js"></script>
+<script src="../../_static/js/vendor/bootstrap.min.js"></script>
+
+
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-22606712-2', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script>
+
+    $(document).ready(function() {
+
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#sk-doc-wrapper").toggleClass("toggled");
+        });
+
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		'.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+    var hide_text = 'Hide prompts and outputs';
+    var show_text = 'Show prompts and outputs';
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        if (jthis.find('.gp').length > 0) {
+            var button = $('<span class="copybutton">&gt;&gt;&gt;</span>');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+            jthis.prepend(button);
+        }
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+    // define the behavior of the button when it's clicked
+    $('.copybutton').click(function(e){
+        e.preventDefault();
+        var button = $(this);
+        if (button.data('hidden') === 'false') {
+            // hide the code output
+            button.parent().find('.go, .gp, .gt').hide();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'hidden');
+            button.css('text-decoration', 'line-through');
+            button.attr('title', show_text);
+            button.data('hidden', 'true');
+        } else {
+            // show the code output
+            button.parent().find('.go, .gp, .gt').show();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'visible');
+            button.css('text-decoration', 'none');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+        }
+    });
+
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	})
+});
+</script>
+<script>
+    (function() {
+        var cx = '016639176250731907682:tjtqbvtvij0';
+        var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+    
+<script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
+    
+</body>
+</html>
