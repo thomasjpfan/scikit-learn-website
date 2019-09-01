@@ -101,29 +101,29 @@ matrix decomposition (dimension reduction) methods from the module
 
     Dataset consists of 400 faces
     Extracting the top 6 Eigenfaces - PCA using randomized SVD...
-    done in 0.025s
+    done in 0.028s
     Extracting the top 6 Non-negative components - NMF...
-    done in 0.099s
+    done in 0.293s
     Extracting the top 6 Independent components - FastICA...
     /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/decomposition/fastica_.py:119: ConvergenceWarning: FastICA did not converge. Consider increasing tolerance or the maximum number of iterations.
       ConvergenceWarning)
-    done in 0.097s
+    done in 0.214s
     Extracting the top 6 Sparse comp. - MiniBatchSparsePCA...
-    done in 0.698s
+    done in 1.246s
     Extracting the top 6 MiniBatchDictionaryLearning...
-    done in 0.433s
+    done in 0.606s
     Extracting the top 6 Cluster centers - MiniBatchKMeans...
-    done in 0.104s
+    done in 0.150s
     Extracting the top 6 Factor Analysis components - FA...
-    done in 0.141s
+    done in 0.190s
     Extracting the top 6 Dictionary learning...
-    done in 0.402s
+    done in 0.574s
     Extracting the top 6 Dictionary learning - positive dictionary...
-    done in 0.377s
+    done in 0.583s
     Extracting the top 6 Dictionary learning - positive code...
-    done in 0.106s
+    done in 0.147s
     Extracting the top 6 Dictionary learning - positive dictionary & code...
-    done in 0.112s
+    done in 0.161s
 
 
 
@@ -320,7 +320,7 @@ matrix decomposition (dimension reduction) methods from the module
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.626 seconds)
+   **Total running time of the script:** ( 0 minutes  7.117 seconds)
 
 
 .. _sphx_glr_download_auto_examples_decomposition_plot_faces_decomposition.py:
@@ -335,7 +335,7 @@ matrix decomposition (dimension reduction) methods from the module
   .. container:: binder-badge
 
     .. image:: https://mybinder.org/badge_logo.svg
-      :target: https://mybinder.org/v2/gh/scikit-learn/binder-examples/master?urlpath=lab/tree/notebooks/auto_examples/decomposition/plot_faces_decomposition.ipynb
+      :target: https://mybinder.org/v2/gh/scikit-learn/scikit-learn/master?urlpath=lab/tree/notebooks/auto_examples/decomposition/plot_faces_decomposition.ipynb
       :width: 150 px
 
 

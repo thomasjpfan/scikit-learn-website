@@ -138,7 +138,7 @@ is performed in order to stay on the same order of magnitude.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.506 seconds)
+   **Total running time of the script:** ( 0 minutes  0.536 seconds)
 
 
 .. _sphx_glr_download_auto_examples_decomposition_plot_sparse_coding.py:
@@ -153,7 +153,7 @@ is performed in order to stay on the same order of magnitude.
   .. container:: binder-badge
 
     .. image:: https://mybinder.org/badge_logo.svg
-      :target: https://mybinder.org/v2/gh/scikit-learn/binder-examples/master?urlpath=lab/tree/notebooks/auto_examples/decomposition/plot_sparse_coding.ipynb
+      :target: https://mybinder.org/v2/gh/scikit-learn/scikit-learn/master?urlpath=lab/tree/notebooks/auto_examples/decomposition/plot_sparse_coding.ipynb
       :width: 150 px
 
 

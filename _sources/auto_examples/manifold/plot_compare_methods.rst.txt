@@ -39,14 +39,14 @@ representation of the data in the low-dimensional space.
  .. code-block:: none
 
 
-    standard: 0.11 sec
-    ltsa: 0.19 sec
-    hessian: 0.28 sec
-    modified: 0.2 sec
-    Isomap: 0.4 sec
-    MDS: 1 sec
-    SpectralEmbedding: 0.058 sec
-    t-SNE: 6.1 sec
+    standard: 0.099 sec
+    ltsa: 0.21 sec
+    hessian: 0.29 sec
+    modified: 0.22 sec
+    Isomap: 0.37 sec
+    MDS: 1.1 sec
+    SpectralEmbedding: 0.057 sec
+    t-SNE: 6 sec
 
 
 
@@ -160,7 +160,7 @@ representation of the data in the low-dimensional space.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  9.130 seconds)
+   **Total running time of the script:** ( 0 minutes  9.017 seconds)
 
 
 .. _sphx_glr_download_auto_examples_manifold_plot_compare_methods.py:
@@ -175,7 +175,7 @@ representation of the data in the low-dimensional space.
   .. container:: binder-badge
 
     .. image:: https://mybinder.org/badge_logo.svg
-      :target: https://mybinder.org/v2/gh/scikit-learn/binder-examples/master?urlpath=lab/tree/notebooks/auto_examples/manifold/plot_compare_methods.ipynb
+      :target: https://mybinder.org/v2/gh/scikit-learn/scikit-learn/master?urlpath=lab/tree/notebooks/auto_examples/manifold/plot_compare_methods.ipynb
       :width: 150 px
 
 

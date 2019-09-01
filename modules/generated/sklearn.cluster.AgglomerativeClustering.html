@@ -68,7 +68,15 @@
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
     <div id="sk-sidebar-wrapper" class="border-right">
-      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+      <div class="sk-sidebar-toc-wrapper">
+        <div class="sk-sidebar-toc-logo">
+          <a href="../../index.html">
+            <img
+              src="../../_static/scikit-learn-logo-small.png"
+              height="38"
+              alt="logo"/>
+          </a>
+        </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="sklearn.cluster.AffinityPropagation.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.cluster.AffinityPropagation">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
               <a href="sklearn.cluster.Birch.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.cluster.Birch">Next</a>
           </div>
@@ -99,7 +107,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.cluster" title="sklearn.cluster"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.cluster</span></code></a>.AgglomerativeClustering<a class="headerlink" href="#sklearn-cluster-agglomerativeclustering" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="sklearn.cluster.AgglomerativeClustering">
-<em class="property">class </em><code class="sig-prename descclassname">sklearn.cluster.</code><code class="sig-name descname">AgglomerativeClustering</code><span class="sig-paren">(</span><em class="sig-param">n_clusters=2</em>, <em class="sig-param">affinity='euclidean'</em>, <em class="sig-param">memory=None</em>, <em class="sig-param">connectivity=None</em>, <em class="sig-param">compute_full_tree='auto'</em>, <em class="sig-param">linkage='ward'</em>, <em class="sig-param">distance_threshold=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/cluster/hierarchical.py#L655"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.AgglomerativeClustering" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">sklearn.cluster.</code><code class="sig-name descname">AgglomerativeClustering</code><span class="sig-paren">(</span><em class="sig-param">n_clusters=2</em>, <em class="sig-param">affinity='euclidean'</em>, <em class="sig-param">memory=None</em>, <em class="sig-param">connectivity=None</em>, <em class="sig-param">compute_full_tree='auto'</em>, <em class="sig-param">linkage='ward'</em>, <em class="sig-param">distance_threshold=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/cluster/hierarchical.py#L655"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.AgglomerativeClustering" title="Permalink to this definition">¶</a></dt>
 <dd><p>Agglomerative Clustering</p>
 <p>Recursively merges the pair of clusters that minimally increases
 a given linkage distance.</p>
@@ -214,13 +222,13 @@ are merged to form node <code class="docutils literal notranslate"><span class="
 </table>
 <dl class="method">
 <dt id="sklearn.cluster.AgglomerativeClustering.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">n_clusters=2</em>, <em class="sig-param">affinity='euclidean'</em>, <em class="sig-param">memory=None</em>, <em class="sig-param">connectivity=None</em>, <em class="sig-param">compute_full_tree='auto'</em>, <em class="sig-param">linkage='ward'</em>, <em class="sig-param">distance_threshold=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/cluster/hierarchical.py#L758"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.AgglomerativeClustering.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">n_clusters=2</em>, <em class="sig-param">affinity='euclidean'</em>, <em class="sig-param">memory=None</em>, <em class="sig-param">connectivity=None</em>, <em class="sig-param">compute_full_tree='auto'</em>, <em class="sig-param">linkage='ward'</em>, <em class="sig-param">distance_threshold=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/cluster/hierarchical.py#L758"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.AgglomerativeClustering.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sklearn.cluster.AgglomerativeClustering.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/cluster/hierarchical.py#L777"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.AgglomerativeClustering.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/cluster/hierarchical.py#L777"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.AgglomerativeClustering.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the hierarchical clustering from features, or distance matrix.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -242,7 +250,7 @@ are merged to form node <code class="docutils literal notranslate"><span class="
 
 <dl class="method">
 <dt id="sklearn.cluster.AgglomerativeClustering.fit_predict">
-<code class="sig-name descname">fit_predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/cluster/hierarchical.py#L881"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.AgglomerativeClustering.fit_predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit_predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/cluster/hierarchical.py#L881"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.AgglomerativeClustering.fit_predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the hierarchical clustering from features or distance matrix,
 and return cluster labels.</p>
 <dl class="field-list simple">
@@ -266,7 +274,7 @@ and return cluster labels.</p>
 
 <dl class="method">
 <dt id="sklearn.cluster.AgglomerativeClustering.get_params">
-<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L180"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.AgglomerativeClustering.get_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/base.py#L180"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.AgglomerativeClustering.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -287,7 +295,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="sklearn.cluster.AgglomerativeClustering.set_params">
-<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L211"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.AgglomerativeClustering.set_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/base.py#L211"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.AgglomerativeClustering.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as pipelines). The latter have parameters of the form
@@ -445,14 +453,19 @@ $(document).ready(function() {
     return target.getBoundingClientRect().top < 2;
   };
 
+  // Hide navbar on load if hash target is on top
+  var navBar = document.getElementById("navbar")
+  if (hashTargetOnTop()) {
+      navBar.style.top = "-48px";
+  }
+
   var prevScrollpos = window.pageYOffset;
-  var narBar = document.getElementById("navbar")
-  hideOnScroll = function() {
+  hideOnScroll = function(lastScrollTop) {
     var currentScrollPos = window.pageYOffset;
-    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
-      narBar.style.top = "-48px";
+    if (lastScrollTop > 2 && (prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      navBar.style.top = "-48px";
     } else {
-      narBar.style.top = "0";
+      navBar.style.top = "0";
     }
     prevScrollpos = currentScrollPos;
   };
@@ -477,7 +490,7 @@ function loop() {
         return;
     } else {
         lastScrollTop = scrollTop;
-        hideOnScroll();
+        hideOnScroll(lastScrollTop);
         raf(loop);
     }
   }

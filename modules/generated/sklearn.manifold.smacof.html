@@ -68,7 +68,15 @@
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
     <div id="sk-sidebar-wrapper" class="border-right">
-      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+      <div class="sk-sidebar-toc-wrapper">
+        <div class="sk-sidebar-toc-logo">
+          <a href="../../index.html">
+            <img
+              src="../../_static/scikit-learn-logo-small.png"
+              height="38"
+              alt="logo"/>
+          </a>
+        </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="sklearn.manifold.locally_linear_embedding.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.manifold.locally_linear_embedding">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
               <a href="sklearn.manifold.spectral_embedding.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.manifold.spectral_embedding">Next</a>
           </div>
@@ -96,7 +104,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.manifold" title="sklearn.manifold"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.manifold</span></code></a>.smacof<a class="headerlink" href="#sklearn-manifold-smacof" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="sklearn.manifold.smacof">
-<code class="sig-prename descclassname">sklearn.manifold.</code><code class="sig-name descname">smacof</code><span class="sig-paren">(</span><em class="sig-param">dissimilarities</em>, <em class="sig-param">metric=True</em>, <em class="sig-param">n_components=2</em>, <em class="sig-param">init=None</em>, <em class="sig-param">n_init=8</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">max_iter=300</em>, <em class="sig-param">verbose=0</em>, <em class="sig-param">eps=0.001</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">return_n_iter=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/manifold/mds.py#L133"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.manifold.smacof" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sklearn.manifold.</code><code class="sig-name descname">smacof</code><span class="sig-paren">(</span><em class="sig-param">dissimilarities</em>, <em class="sig-param">metric=True</em>, <em class="sig-param">n_components=2</em>, <em class="sig-param">init=None</em>, <em class="sig-param">n_init=8</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">max_iter=300</em>, <em class="sig-param">verbose=0</em>, <em class="sig-param">eps=0.001</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">return_n_iter=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/manifold/mds.py#L133"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.manifold.smacof" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes multidimensional scaling using the SMACOF algorithm.</p>
 <p>The SMACOF (Scaling by MAjorizing a COmplicated Function) algorithm is a
 multidimensional scaling algorithm which minimizes an objective function
@@ -280,14 +288,19 @@ $(document).ready(function() {
     return target.getBoundingClientRect().top < 2;
   };
 
+  // Hide navbar on load if hash target is on top
+  var navBar = document.getElementById("navbar")
+  if (hashTargetOnTop()) {
+      navBar.style.top = "-48px";
+  }
+
   var prevScrollpos = window.pageYOffset;
-  var narBar = document.getElementById("navbar")
-  hideOnScroll = function() {
+  hideOnScroll = function(lastScrollTop) {
     var currentScrollPos = window.pageYOffset;
-    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
-      narBar.style.top = "-48px";
+    if (lastScrollTop > 2 && (prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      navBar.style.top = "-48px";
     } else {
-      narBar.style.top = "0";
+      navBar.style.top = "0";
     }
     prevScrollpos = currentScrollPos;
   };
@@ -312,7 +325,7 @@ function loop() {
         return;
     } else {
         lastScrollTop = scrollTop;
-        hideOnScroll();
+        hideOnScroll(lastScrollTop);
         raf(loop);
     }
   }

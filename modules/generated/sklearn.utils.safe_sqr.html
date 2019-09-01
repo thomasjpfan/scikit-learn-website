@@ -68,7 +68,15 @@
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
     <div id="sk-sidebar-wrapper" class="border-right">
-      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+      <div class="sk-sidebar-toc-wrapper">
+        <div class="sk-sidebar-toc-logo">
+          <a href="../../index.html">
+            <img
+              src="../../_static/scikit-learn-logo-small.png"
+              height="38"
+              alt="logo"/>
+          </a>
+        </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="sklearn.utils.safe_mask.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.utils.safe_mask">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
               <a href="sklearn.utils.shuffle.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.utils.shuffle">Next</a>
           </div>
@@ -96,7 +104,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.utils" title="sklearn.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.utils</span></code></a>.safe_sqr<a class="headerlink" href="#sklearn-utils-safe-sqr" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="sklearn.utils.safe_sqr">
-<code class="sig-prename descclassname">sklearn.utils.</code><code class="sig-name descname">safe_sqr</code><span class="sig-paren">(</span><em class="sig-param">X</em>, <em class="sig-param">copy=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/utils/__init__.py#L659"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.utils.safe_sqr" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sklearn.utils.</code><code class="sig-name descname">safe_sqr</code><span class="sig-paren">(</span><em class="sig-param">X</em>, <em class="sig-param">copy=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/utils/__init__.py#L659"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.utils.safe_sqr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Element wise squaring of array-likes and sparse matrices.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -217,14 +225,19 @@ $(document).ready(function() {
     return target.getBoundingClientRect().top < 2;
   };
 
+  // Hide navbar on load if hash target is on top
+  var navBar = document.getElementById("navbar")
+  if (hashTargetOnTop()) {
+      navBar.style.top = "-48px";
+  }
+
   var prevScrollpos = window.pageYOffset;
-  var narBar = document.getElementById("navbar")
-  hideOnScroll = function() {
+  hideOnScroll = function(lastScrollTop) {
     var currentScrollPos = window.pageYOffset;
-    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
-      narBar.style.top = "-48px";
+    if (lastScrollTop > 2 && (prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      navBar.style.top = "-48px";
     } else {
-      narBar.style.top = "0";
+      navBar.style.top = "0";
     }
     prevScrollpos = currentScrollPos;
   };
@@ -249,7 +262,7 @@ function loop() {
         return;
     } else {
         lastScrollTop = scrollTop;
-        hideOnScroll();
+        hideOnScroll(lastScrollTop);
         raf(loop);
     }
   }

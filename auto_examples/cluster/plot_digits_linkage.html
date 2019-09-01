@@ -68,7 +68,15 @@
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
     <div id="sk-sidebar-wrapper" class="border-right">
-      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+      <div class="sk-sidebar-toc-wrapper">
+        <div class="sk-sidebar-toc-logo">
+          <a href="../../index.html">
+            <img
+              src="../../_static/scikit-learn-logo-small.png"
+              height="38"
+              alt="logo"/>
+          </a>
+        </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="plot_coin_segmentation.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Segmenting the picture of greek coins in regions">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
               <a href="plot_cluster_iris.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="K-means Clustering">Next</a>
           </div>
@@ -122,10 +130,10 @@ being drawn from noise points around the fringes.</p>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Computing embedding
 Done.
-ward :  0.29s
-average :       0.22s
-complete :      0.19s
-single :        0.09s
+ward :  0.32s
+average :       0.24s
+complete :      0.22s
+single :        0.10s
 </pre></div>
 </div>
 <div class="line-block">
@@ -204,10 +212,10 @@ single :        0.09s
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  25.922 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  27.415 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-cluster-plot-digits-linkage-py">
 <div class="binder-badge docutils container">
-<a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/binder-examples/master?urlpath=lab/tree/notebooks/auto_examples/cluster/plot_digits_linkage.ipynb"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" width="150px" /></a>
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/master?urlpath=lab/tree/notebooks/auto_examples/cluster/plot_digits_linkage.ipynb"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" width="150px" /></a>
 </div>
 <div class="sphx-glr-download docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/2b34fe5e4c2bfccb9b7dbff3e93ff741/plot_digits_linkage.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_digits_linkage.py</span></code></a></p>
@@ -319,14 +327,19 @@ $(document).ready(function() {
     return target.getBoundingClientRect().top < 2;
   };
 
+  // Hide navbar on load if hash target is on top
+  var navBar = document.getElementById("navbar")
+  if (hashTargetOnTop()) {
+      navBar.style.top = "-48px";
+  }
+
   var prevScrollpos = window.pageYOffset;
-  var narBar = document.getElementById("navbar")
-  hideOnScroll = function() {
+  hideOnScroll = function(lastScrollTop) {
     var currentScrollPos = window.pageYOffset;
-    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
-      narBar.style.top = "-48px";
+    if (lastScrollTop > 2 && (prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      navBar.style.top = "-48px";
     } else {
-      narBar.style.top = "0";
+      navBar.style.top = "0";
     }
     prevScrollpos = currentScrollPos;
   };
@@ -351,7 +364,7 @@ function loop() {
         return;
     } else {
         lastScrollTop = scrollTop;
-        hideOnScroll();
+        hideOnScroll(lastScrollTop);
         raf(loop);
     }
   }

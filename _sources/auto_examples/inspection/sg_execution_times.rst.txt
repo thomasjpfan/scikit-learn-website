@@ -5,8 +5,8 @@
 
 Computation times
 =================
-**00:08.906** total execution time for **auto_examples_inspection** files:
+**00:26.583** total execution time for **auto_examples_inspection** files:
 
-- **00:08.906**: :ref:`sphx_glr_auto_examples_inspection_plot_partial_dependence.py` (``plot_partial_dependence.py``)
-- **00:00.000**: :ref:`sphx_glr_auto_examples_inspection_plot_permutation_importance.py` (``plot_permutation_importance.py``)
-- **00:00.000**: :ref:`sphx_glr_auto_examples_inspection_plot_permutation_importance_multicollinear.py` (``plot_permutation_importance_multicollinear.py``)
+- **00:13.098**: :ref:`sphx_glr_auto_examples_inspection_plot_permutation_importance.py` (``plot_permutation_importance.py``)
+- **00:09.494**: :ref:`sphx_glr_auto_examples_inspection_plot_partial_dependence.py` (``plot_partial_dependence.py``)
+- **00:03.991**: :ref:`sphx_glr_auto_examples_inspection_plot_permutation_importance_multicollinear.py` (``plot_permutation_importance_multicollinear.py``)

@@ -259,7 +259,7 @@ Note how some use the group/class information while others do not.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.012 seconds)
+   **Total running time of the script:** ( 0 minutes  1.023 seconds)
 
 
 .. _sphx_glr_download_auto_examples_model_selection_plot_cv_indices.py:
@@ -274,7 +274,7 @@ Note how some use the group/class information while others do not.
   .. container:: binder-badge
 
     .. image:: https://mybinder.org/badge_logo.svg
-      :target: https://mybinder.org/v2/gh/scikit-learn/binder-examples/master?urlpath=lab/tree/notebooks/auto_examples/model_selection/plot_cv_indices.ipynb
+      :target: https://mybinder.org/v2/gh/scikit-learn/scikit-learn/master?urlpath=lab/tree/notebooks/auto_examples/model_selection/plot_cv_indices.ipynb
       :width: 150 px
 
 

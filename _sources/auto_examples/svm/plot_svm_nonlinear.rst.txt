@@ -90,7 +90,7 @@ The color map illustrates the decision function learned by the SVC.
   .. container:: binder-badge
 
     .. image:: https://mybinder.org/badge_logo.svg
-      :target: https://mybinder.org/v2/gh/scikit-learn/binder-examples/master?urlpath=lab/tree/notebooks/auto_examples/svm/plot_svm_nonlinear.ipynb
+      :target: https://mybinder.org/v2/gh/scikit-learn/scikit-learn/master?urlpath=lab/tree/notebooks/auto_examples/svm/plot_svm_nonlinear.ipynb
       :width: 150 px
 
 

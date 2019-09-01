@@ -68,7 +68,15 @@
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
     <div id="sk-sidebar-wrapper" class="border-right">
-      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+      <div class="sk-sidebar-toc-wrapper">
+        <div class="sk-sidebar-toc-logo">
+          <a href="../../index.html">
+            <img
+              src="../../_static/scikit-learn-logo-small.png"
+              height="38"
+              alt="logo"/>
+          </a>
+        </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="sklearn.neighbors.KDTree.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.neighbors.KDTree">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
               <a href="sklearn.neighbors.KNeighborsClassifier.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.neighbors.KNeighborsClassifier">Next</a>
           </div>
@@ -99,7 +107,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.neighbors" title="sklearn.neighbors"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.neighbors</span></code></a>.KernelDensity<a class="headerlink" href="#sklearn-neighbors-kerneldensity" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="sklearn.neighbors.KernelDensity">
-<em class="property">class </em><code class="sig-prename descclassname">sklearn.neighbors.</code><code class="sig-name descname">KernelDensity</code><span class="sig-paren">(</span><em class="sig-param">bandwidth=1.0</em>, <em class="sig-param">algorithm='auto'</em>, <em class="sig-param">kernel='gaussian'</em>, <em class="sig-param">metric='euclidean'</em>, <em class="sig-param">atol=0</em>, <em class="sig-param">rtol=0</em>, <em class="sig-param">breadth_first=True</em>, <em class="sig-param">leaf_size=40</em>, <em class="sig-param">metric_params=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/neighbors/kde.py#L25"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.KernelDensity" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">sklearn.neighbors.</code><code class="sig-name descname">KernelDensity</code><span class="sig-paren">(</span><em class="sig-param">bandwidth=1.0</em>, <em class="sig-param">algorithm='auto'</em>, <em class="sig-param">kernel='gaussian'</em>, <em class="sig-param">metric='euclidean'</em>, <em class="sig-param">atol=0</em>, <em class="sig-param">rtol=0</em>, <em class="sig-param">breadth_first=True</em>, <em class="sig-param">leaf_size=40</em>, <em class="sig-param">metric_params=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/neighbors/kde.py#L25"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.KernelDensity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Kernel Density Estimation</p>
 <p>Read more in the <a class="reference internal" href="../density.html#kernel-density"><span class="std std-ref">User Guide</span></a>.</p>
 <dl class="field-list simple">
@@ -169,13 +177,13 @@ metric.  For more information, see the documentation of
 </table>
 <dl class="method">
 <dt id="sklearn.neighbors.KernelDensity.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">bandwidth=1.0</em>, <em class="sig-param">algorithm='auto'</em>, <em class="sig-param">kernel='gaussian'</em>, <em class="sig-param">metric='euclidean'</em>, <em class="sig-param">atol=0</em>, <em class="sig-param">rtol=0</em>, <em class="sig-param">breadth_first=True</em>, <em class="sig-param">leaf_size=40</em>, <em class="sig-param">metric_params=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/neighbors/kde.py#L73"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.KernelDensity.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">bandwidth=1.0</em>, <em class="sig-param">algorithm='auto'</em>, <em class="sig-param">kernel='gaussian'</em>, <em class="sig-param">metric='euclidean'</em>, <em class="sig-param">atol=0</em>, <em class="sig-param">rtol=0</em>, <em class="sig-param">breadth_first=True</em>, <em class="sig-param">leaf_size=40</em>, <em class="sig-param">metric_params=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/neighbors/kde.py#L73"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.KernelDensity.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sklearn.neighbors.KernelDensity.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em>, <em class="sig-param">sample_weight=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/neighbors/kde.py#L116"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.KernelDensity.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em>, <em class="sig-param">sample_weight=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/neighbors/kde.py#L116"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.KernelDensity.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the Kernel Density model on the data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -192,7 +200,7 @@ corresponds to a single data point.</p>
 
 <dl class="method">
 <dt id="sklearn.neighbors.KernelDensity.get_params">
-<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L180"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.KernelDensity.get_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/base.py#L180"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.KernelDensity.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -213,7 +221,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="sklearn.neighbors.KernelDensity.sample">
-<code class="sig-name descname">sample</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">n_samples=1</em>, <em class="sig-param">random_state=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/neighbors/kde.py#L199"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.KernelDensity.sample" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">sample</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">n_samples=1</em>, <em class="sig-param">random_state=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/neighbors/kde.py#L199"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.KernelDensity.sample" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate random samples from the model.</p>
 <p>Currently, this is implemented only for gaussian and tophat kernels.</p>
 <dl class="field-list simple">
@@ -239,7 +247,7 @@ RandomState instance used by <code class="docutils literal notranslate"><span cl
 
 <dl class="method">
 <dt id="sklearn.neighbors.KernelDensity.score">
-<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/neighbors/kde.py#L181"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.KernelDensity.score" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/neighbors/kde.py#L181"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.KernelDensity.score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the total log probability density under the model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -262,7 +270,7 @@ data.</p>
 
 <dl class="method">
 <dt id="sklearn.neighbors.KernelDensity.score_samples">
-<code class="sig-name descname">score_samples</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/neighbors/kde.py#L150"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.KernelDensity.score_samples" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">score_samples</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/neighbors/kde.py#L150"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.KernelDensity.score_samples" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate the density model on the data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -285,7 +293,7 @@ data.</p>
 
 <dl class="method">
 <dt id="sklearn.neighbors.KernelDensity.set_params">
-<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L211"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.KernelDensity.set_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/base.py#L211"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.KernelDensity.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as pipelines). The latter have parameters of the form
@@ -419,14 +427,19 @@ $(document).ready(function() {
     return target.getBoundingClientRect().top < 2;
   };
 
+  // Hide navbar on load if hash target is on top
+  var navBar = document.getElementById("navbar")
+  if (hashTargetOnTop()) {
+      navBar.style.top = "-48px";
+  }
+
   var prevScrollpos = window.pageYOffset;
-  var narBar = document.getElementById("navbar")
-  hideOnScroll = function() {
+  hideOnScroll = function(lastScrollTop) {
     var currentScrollPos = window.pageYOffset;
-    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
-      narBar.style.top = "-48px";
+    if (lastScrollTop > 2 && (prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      navBar.style.top = "-48px";
     } else {
-      narBar.style.top = "0";
+      navBar.style.top = "0";
     }
     prevScrollpos = currentScrollPos;
   };
@@ -451,7 +464,7 @@ function loop() {
         return;
     } else {
         lastScrollTop = scrollTop;
-        hideOnScroll();
+        hideOnScroll(lastScrollTop);
         raf(loop);
     }
   }

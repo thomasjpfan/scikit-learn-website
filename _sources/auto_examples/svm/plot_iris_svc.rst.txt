@@ -152,7 +152,7 @@ kernel and its parameters.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.482 seconds)
+   **Total running time of the script:** ( 0 minutes  0.481 seconds)
 
 
 .. _sphx_glr_download_auto_examples_svm_plot_iris_svc.py:
@@ -167,7 +167,7 @@ kernel and its parameters.
   .. container:: binder-badge
 
     .. image:: https://mybinder.org/badge_logo.svg
-      :target: https://mybinder.org/v2/gh/scikit-learn/binder-examples/master?urlpath=lab/tree/notebooks/auto_examples/svm/plot_iris_svc.ipynb
+      :target: https://mybinder.org/v2/gh/scikit-learn/scikit-learn/master?urlpath=lab/tree/notebooks/auto_examples/svm/plot_iris_svc.ipynb
       :width: 150 px
 
 

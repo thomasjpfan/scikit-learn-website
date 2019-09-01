@@ -298,7 +298,7 @@ model with their true labels.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.592 seconds)
+   **Total running time of the script:** ( 0 minutes  0.523 seconds)
 
 
 .. _sphx_glr_download_auto_examples_semi_supervised_plot_label_propagation_digits_active_learning.py:
@@ -313,7 +313,7 @@ model with their true labels.
   .. container:: binder-badge
 
     .. image:: https://mybinder.org/badge_logo.svg
-      :target: https://mybinder.org/v2/gh/scikit-learn/binder-examples/master?urlpath=lab/tree/notebooks/auto_examples/semi_supervised/plot_label_propagation_digits_active_learning.ipynb
+      :target: https://mybinder.org/v2/gh/scikit-learn/scikit-learn/master?urlpath=lab/tree/notebooks/auto_examples/semi_supervised/plot_label_propagation_digits_active_learning.ipynb
       :width: 150 px
 
 

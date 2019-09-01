@@ -68,7 +68,15 @@
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
     <div id="sk-sidebar-wrapper" class="border-right">
-      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+      <div class="sk-sidebar-toc-wrapper">
+        <div class="sk-sidebar-toc-logo">
+          <a href="../../index.html">
+            <img
+              src="../../_static/scikit-learn-logo-small.png"
+              height="38"
+              alt="logo"/>
+          </a>
+        </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="plot_kmeans_stability_low_dim_dense.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Empirical evaluation of the impact of k-means initialization">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
               <a href="plot_mini_batch_kmeans.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Comparison of the K-Means and MiniBatchKMeans clustering algorithms">Next</a>
           </div>
@@ -118,21 +126,21 @@ value of k on various overlapping sub-samples of the dataset.</p>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Computing adjusted_rand_score for 10 values of n_clusters and n_samples=100
-done in 0.028s
-Computing v_measure_score for 10 values of n_clusters and n_samples=100
-done in 0.041s
-Computing ami_score for 10 values of n_clusters and n_samples=100
-done in 0.335s
-Computing mutual_info_score for 10 values of n_clusters and n_samples=100
 done in 0.036s
+Computing v_measure_score for 10 values of n_clusters and n_samples=100
+done in 0.039s
+Computing ami_score for 10 values of n_clusters and n_samples=100
+done in 0.364s
+Computing mutual_info_score for 10 values of n_clusters and n_samples=100
+done in 0.033s
 Computing adjusted_rand_score for 10 values of n_clusters and n_samples=1000
-done in 0.044s
+done in 0.040s
 Computing v_measure_score for 10 values of n_clusters and n_samples=1000
-done in 0.050s
+done in 0.052s
 Computing ami_score for 10 values of n_clusters and n_samples=1000
-done in 0.193s
+done in 0.191s
 Computing mutual_info_score for 10 values of n_clusters and n_samples=1000
-done in 0.043s
+done in 0.048s
 </pre></div>
 </div>
 <div class="line-block">
@@ -243,10 +251,10 @@ done in 0.043s
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.053 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.082 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-cluster-plot-adjusted-for-chance-measures-py">
 <div class="binder-badge docutils container">
-<a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/binder-examples/master?urlpath=lab/tree/notebooks/auto_examples/cluster/plot_adjusted_for_chance_measures.ipynb"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" width="150px" /></a>
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/master?urlpath=lab/tree/notebooks/auto_examples/cluster/plot_adjusted_for_chance_measures.ipynb"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" width="150px" /></a>
 </div>
 <div class="sphx-glr-download docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/f641388d3d28570ff40709693f9cb7ca/plot_adjusted_for_chance_measures.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_adjusted_for_chance_measures.py</span></code></a></p>
@@ -358,14 +366,19 @@ $(document).ready(function() {
     return target.getBoundingClientRect().top < 2;
   };
 
+  // Hide navbar on load if hash target is on top
+  var navBar = document.getElementById("navbar")
+  if (hashTargetOnTop()) {
+      navBar.style.top = "-48px";
+  }
+
   var prevScrollpos = window.pageYOffset;
-  var narBar = document.getElementById("navbar")
-  hideOnScroll = function() {
+  hideOnScroll = function(lastScrollTop) {
     var currentScrollPos = window.pageYOffset;
-    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
-      narBar.style.top = "-48px";
+    if (lastScrollTop > 2 && (prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      navBar.style.top = "-48px";
     } else {
-      narBar.style.top = "0";
+      navBar.style.top = "0";
     }
     prevScrollpos = currentScrollPos;
   };
@@ -390,7 +403,7 @@ function loop() {
         return;
     } else {
         lastScrollTop = scrollTop;
-        hideOnScroll();
+        hideOnScroll(lastScrollTop);
         raf(loop);
     }
   }

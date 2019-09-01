@@ -68,7 +68,15 @@
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
     <div id="sk-sidebar-wrapper" class="border-right">
-      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+      <div class="sk-sidebar-toc-wrapper">
+        <div class="sk-sidebar-toc-logo">
+          <a href="../../index.html">
+            <img
+              src="../../_static/scikit-learn-logo-small.png"
+              height="38"
+              alt="logo"/>
+          </a>
+        </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="plot_roc_crossval.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Receiver Operating Characteristic (ROC) with cross validation">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
               <a href="plot_nested_cross_validation_iris.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Nested versus non-nested cross-validation">Next</a>
           </div>
@@ -110,7 +118,7 @@ is most likely a noise effect and would not carry over to a held-out test set.</
 <p>Note that in practice, one would not search over this many different parameters
 simultaneously using grid search, but pick only the ones deemed most important.</p>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>RandomizedSearchCV took 4.14 seconds for 20 candidates parameter settings.
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>RandomizedSearchCV took 3.71 seconds for 20 candidates parameter settings.
 Model with rank: 1
 Mean validation score: 0.934 (std: 0.024)
 Parameters: {&#39;bootstrap&#39;: False, &#39;criterion&#39;: &#39;entropy&#39;, &#39;max_depth&#39;: None, &#39;max_features&#39;: 7, &#39;min_samples_split&#39;: 3}
@@ -123,7 +131,7 @@ Model with rank: 3
 Mean validation score: 0.932 (std: 0.021)
 Parameters: {&#39;bootstrap&#39;: False, &#39;criterion&#39;: &#39;entropy&#39;, &#39;max_depth&#39;: None, &#39;max_features&#39;: 4, &#39;min_samples_split&#39;: 2}
 
-GridSearchCV took 12.51 seconds for 72 candidate parameter settings.
+GridSearchCV took 11.42 seconds for 72 candidate parameter settings.
 Model with rank: 1
 Mean validation score: 0.935 (std: 0.019)
 Parameters: {&#39;bootstrap&#39;: False, &#39;criterion&#39;: &#39;entropy&#39;, &#39;max_depth&#39;: None, &#39;max_features&#39;: 10, &#39;min_samples_split&#39;: 2}
@@ -207,10 +215,10 @@ Parameters: {&#39;bootstrap&#39;: True, &#39;criterion&#39;: &#39;gini&#39;, &#3
 <span class="n">report</span><span class="p">(</span><span class="n">grid_search</span><span class="o">.</span><span class="n">cv_results_</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  16.754 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  15.228 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-model-selection-plot-randomized-search-py">
 <div class="binder-badge docutils container">
-<a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/binder-examples/master?urlpath=lab/tree/notebooks/auto_examples/model_selection/plot_randomized_search.ipynb"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" width="150px" /></a>
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/master?urlpath=lab/tree/notebooks/auto_examples/model_selection/plot_randomized_search.ipynb"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" width="150px" /></a>
 </div>
 <div class="sphx-glr-download docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/f6e7c2e766100e8bcbb85bbb947d2893/plot_randomized_search.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_randomized_search.py</span></code></a></p>
@@ -322,14 +330,19 @@ $(document).ready(function() {
     return target.getBoundingClientRect().top < 2;
   };
 
+  // Hide navbar on load if hash target is on top
+  var navBar = document.getElementById("navbar")
+  if (hashTargetOnTop()) {
+      navBar.style.top = "-48px";
+  }
+
   var prevScrollpos = window.pageYOffset;
-  var narBar = document.getElementById("navbar")
-  hideOnScroll = function() {
+  hideOnScroll = function(lastScrollTop) {
     var currentScrollPos = window.pageYOffset;
-    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
-      narBar.style.top = "-48px";
+    if (lastScrollTop > 2 && (prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      navBar.style.top = "-48px";
     } else {
-      narBar.style.top = "0";
+      navBar.style.top = "0";
     }
     prevScrollpos = currentScrollPos;
   };
@@ -354,7 +367,7 @@ function loop() {
         return;
     } else {
         lastScrollTop = scrollTop;
-        hideOnScroll();
+        hideOnScroll(lastScrollTop);
         raf(loop);
     }
   }

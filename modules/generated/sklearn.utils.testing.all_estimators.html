@@ -68,7 +68,15 @@
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
     <div id="sk-sidebar-wrapper" class="border-right">
-      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+      <div class="sk-sidebar-toc-wrapper">
+        <div class="sk-sidebar-toc-logo">
+          <a href="../../index.html">
+            <img
+              src="../../_static/scikit-learn-logo-small.png"
+              height="38"
+              alt="logo"/>
+          </a>
+        </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="sklearn.utils.testing.assert_raise_message.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.utils.testing.assert_raise_message">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
               <a href="sklearn.utils.parallel_backend.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.utils.parallel_backend">Next</a>
           </div>
@@ -96,7 +104,7 @@
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.utils.testing</span></code>.all_estimators<a class="headerlink" href="#sklearn-utils-testing-all-estimators" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="sklearn.utils.testing.all_estimators">
-<code class="sig-prename descclassname">sklearn.utils.testing.</code><code class="sig-name descname">all_estimators</code><span class="sig-paren">(</span><em class="sig-param">include_meta_estimators=None</em>, <em class="sig-param">include_other=None</em>, <em class="sig-param">type_filter=None</em>, <em class="sig-param">include_dont_test=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/utils/testing.py#L439"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.utils.testing.all_estimators" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sklearn.utils.testing.</code><code class="sig-name descname">all_estimators</code><span class="sig-paren">(</span><em class="sig-param">include_meta_estimators=None</em>, <em class="sig-param">include_other=None</em>, <em class="sig-param">type_filter=None</em>, <em class="sig-param">include_dont_test=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/utils/testing.py#L439"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.utils.testing.all_estimators" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of all estimators from sklearn.</p>
 <p>This function crawls the module and gets all classes that inherit
 from BaseEstimator. Classes that are defined in test-modules are not
@@ -246,14 +254,19 @@ $(document).ready(function() {
     return target.getBoundingClientRect().top < 2;
   };
 
+  // Hide navbar on load if hash target is on top
+  var navBar = document.getElementById("navbar")
+  if (hashTargetOnTop()) {
+      navBar.style.top = "-48px";
+  }
+
   var prevScrollpos = window.pageYOffset;
-  var narBar = document.getElementById("navbar")
-  hideOnScroll = function() {
+  hideOnScroll = function(lastScrollTop) {
     var currentScrollPos = window.pageYOffset;
-    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
-      narBar.style.top = "-48px";
+    if (lastScrollTop > 2 && (prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      navBar.style.top = "-48px";
     } else {
-      narBar.style.top = "0";
+      navBar.style.top = "0";
     }
     prevScrollpos = currentScrollPos;
   };
@@ -278,7 +291,7 @@ function loop() {
         return;
     } else {
         lastScrollTop = scrollTop;
-        hideOnScroll();
+        hideOnScroll(lastScrollTop);
         raf(loop);
     }
   }

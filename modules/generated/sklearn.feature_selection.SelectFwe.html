@@ -68,7 +68,15 @@
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
     <div id="sk-sidebar-wrapper" class="border-right">
-      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+      <div class="sk-sidebar-toc-wrapper">
+        <div class="sk-sidebar-toc-logo">
+          <a href="../../index.html">
+            <img
+              src="../../_static/scikit-learn-logo-small.png"
+              height="38"
+              alt="logo"/>
+          </a>
+        </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="sklearn.feature_selection.SelectFromModel.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.feature_selection.SelectFromModel">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
               <a href="sklearn.feature_selection.RFE.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.feature_selection.RFE">Next</a>
           </div>
@@ -96,7 +104,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.feature_selection" title="sklearn.feature_selection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_selection</span></code></a>.SelectFwe<a class="headerlink" href="#sklearn-feature-selection-selectfwe" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="sklearn.feature_selection.SelectFwe">
-<em class="property">class </em><code class="sig-prename descclassname">sklearn.feature_selection.</code><code class="sig-name descname">SelectFwe</code><span class="sig-paren">(</span><em class="sig-param">score_func=&lt;function f_classif&gt;</em>, <em class="sig-param">alpha=0.05</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/feature_selection/univariate_selection.py#L667"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.feature_selection.SelectFwe" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">sklearn.feature_selection.</code><code class="sig-name descname">SelectFwe</code><span class="sig-paren">(</span><em class="sig-param">score_func=&lt;function f_classif&gt;</em>, <em class="sig-param">alpha=0.05</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/feature_selection/univariate_selection.py#L667"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.feature_selection.SelectFwe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter: Select the p-values corresponding to Family-wise error rate</p>
 <p>Read more in the <a class="reference internal" href="../feature_selection.html#univariate-feature-selection"><span class="std std-ref">User Guide</span></a>.</p>
 <dl class="field-list simple">
@@ -184,13 +192,13 @@ works with classification tasks.</p>
 </table>
 <dl class="method">
 <dt id="sklearn.feature_selection.SelectFwe.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">score_func=&lt;function f_classif at 0x1a21bd3b90&gt;</em>, <em class="sig-param">alpha=0.05</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/feature_selection/univariate_selection.py#L714"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.feature_selection.SelectFwe.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">score_func=&lt;function f_classif at 0x1a18542d40&gt;</em>, <em class="sig-param">alpha=0.05</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/feature_selection/univariate_selection.py#L714"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.feature_selection.SelectFwe.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sklearn.feature_selection.SelectFwe.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/feature_selection/univariate_selection.py#L325"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.feature_selection.SelectFwe.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/feature_selection/univariate_selection.py#L325"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.feature_selection.SelectFwe.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run score function on (X, y) and get the appropriate features.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -212,7 +220,7 @@ regression).</p>
 
 <dl class="method">
 <dt id="sklearn.feature_selection.SelectFwe.fit_transform">
-<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em>, <em class="sig-param">**fit_params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L540"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.feature_selection.SelectFwe.fit_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em>, <em class="sig-param">**fit_params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/base.py#L540"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.feature_selection.SelectFwe.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit to data, then transform it.</p>
 <p>Fits transformer to X and y with optional parameters fit_params
 and returns a transformed version of X.</p>
@@ -236,7 +244,7 @@ and returns a transformed version of X.</p>
 
 <dl class="method">
 <dt id="sklearn.feature_selection.SelectFwe.get_params">
-<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L180"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.feature_selection.SelectFwe.get_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/base.py#L180"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.feature_selection.SelectFwe.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -257,7 +265,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="sklearn.feature_selection.SelectFwe.get_support">
-<code class="sig-name descname">get_support</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">indices=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/feature_selection/base.py#L26"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.feature_selection.SelectFwe.get_support" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_support</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">indices=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/feature_selection/base.py#L26"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.feature_selection.SelectFwe.get_support" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a mask, or integer index, of the features selected</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -283,7 +291,7 @@ values are indices into the input feature vector.</p>
 
 <dl class="method">
 <dt id="sklearn.feature_selection.SelectFwe.inverse_transform">
-<code class="sig-name descname">inverse_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/feature_selection/base.py#L85"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.feature_selection.SelectFwe.inverse_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">inverse_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/feature_selection/base.py#L85"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.feature_selection.SelectFwe.inverse_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reverse the transformation operation</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -304,7 +312,7 @@ been removed by <a class="reference internal" href="#sklearn.feature_selection.S
 
 <dl class="method">
 <dt id="sklearn.feature_selection.SelectFwe.set_params">
-<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L211"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.feature_selection.SelectFwe.set_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/base.py#L211"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.feature_selection.SelectFwe.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as pipelines). The latter have parameters of the form
@@ -321,7 +329,7 @@ component of a nested object.</p>
 
 <dl class="method">
 <dt id="sklearn.feature_selection.SelectFwe.transform">
-<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/feature_selection/base.py#L61"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.feature_selection.SelectFwe.transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/feature_selection/base.py#L61"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.feature_selection.SelectFwe.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reduce X to the selected features.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -443,14 +451,19 @@ $(document).ready(function() {
     return target.getBoundingClientRect().top < 2;
   };
 
+  // Hide navbar on load if hash target is on top
+  var navBar = document.getElementById("navbar")
+  if (hashTargetOnTop()) {
+      navBar.style.top = "-48px";
+  }
+
   var prevScrollpos = window.pageYOffset;
-  var narBar = document.getElementById("navbar")
-  hideOnScroll = function() {
+  hideOnScroll = function(lastScrollTop) {
     var currentScrollPos = window.pageYOffset;
-    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
-      narBar.style.top = "-48px";
+    if (lastScrollTop > 2 && (prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      navBar.style.top = "-48px";
     } else {
-      narBar.style.top = "0";
+      navBar.style.top = "0";
     }
     prevScrollpos = currentScrollPos;
   };
@@ -475,7 +488,7 @@ function loop() {
         return;
     } else {
         lastScrollTop = scrollTop;
-        hideOnScroll();
+        hideOnScroll(lastScrollTop);
         raf(loop);
     }
   }

@@ -68,7 +68,15 @@
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
     <div id="sk-sidebar-wrapper" class="border-right">
-      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+      <div class="sk-sidebar-toc-wrapper">
+        <div class="sk-sidebar-toc-logo">
+          <a href="../../index.html">
+            <img
+              src="../../_static/scikit-learn-logo-small.png"
+              height="38"
+              alt="logo"/>
+          </a>
+        </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="plot_permutation_importance.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Permutation Importance vs Random Forest Feature Importance (MDI)">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
               <a href="../linear_model/plot_lasso_lars.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Lasso path using LARS">Next</a>
           </div>
@@ -185,8 +193,8 @@ plots</p>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Training MLPRegressor...
-done in 5.186s
-Test R2 score: 0.80
+done in 6.390s
+Test R2 score: 0.82
 </pre></div>
 </div>
 <p>We configured a pipeline to scale the numerical input features and tuned the
@@ -221,7 +229,7 @@ the model-agnostic (brute-force) method:</p>
 <img alt="../../_images/sphx_glr_plot_partial_dependence_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_partial_dependence_001.png" />
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Computing partial dependence plots...
-done in 2.051s
+done in 1.481s
 </pre></div>
 </div>
 </div>
@@ -239,7 +247,7 @@ plots either or one or two variables at a time.</p>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Training GradientBoostingRegressor...
-done in 0.620s
+done in 0.587s
 Test R2 score: 0.85
 </pre></div>
 </div>
@@ -268,7 +276,7 @@ dependence plots for pairs of interacting features:</p>
 <img alt="../../_images/sphx_glr_plot_partial_dependence_002.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_partial_dependence_002.png" />
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Computing partial dependence plots...
-done in 0.169s
+done in 0.182s
 </pre></div>
 </div>
 </div>
@@ -326,7 +334,7 @@ this time in 3 dimensions.</p>
 </pre></div>
 </div>
 <img alt="../../_images/sphx_glr_plot_partial_dependence_003.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_partial_dependence_003.png" />
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  8.906 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  9.494 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-inspection-plot-partial-dependence-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/master?urlpath=lab/tree/notebooks/auto_examples/inspection/plot_partial_dependence.ipynb"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" width="150px" /></a>
@@ -442,14 +450,19 @@ $(document).ready(function() {
     return target.getBoundingClientRect().top < 2;
   };
 
+  // Hide navbar on load if hash target is on top
+  var navBar = document.getElementById("navbar")
+  if (hashTargetOnTop()) {
+      navBar.style.top = "-48px";
+  }
+
   var prevScrollpos = window.pageYOffset;
-  var narBar = document.getElementById("navbar")
-  hideOnScroll = function() {
+  hideOnScroll = function(lastScrollTop) {
     var currentScrollPos = window.pageYOffset;
-    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
-      narBar.style.top = "-48px";
+    if (lastScrollTop > 2 && (prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      navBar.style.top = "-48px";
     } else {
-      narBar.style.top = "0";
+      navBar.style.top = "0";
     }
     prevScrollpos = currentScrollPos;
   };
@@ -474,7 +487,7 @@ function loop() {
         return;
     } else {
         lastScrollTop = scrollTop;
-        hideOnScroll();
+        hideOnScroll(lastScrollTop);
         raf(loop);
     }
   }

@@ -68,7 +68,15 @@
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
     <div id="sk-sidebar-wrapper" class="border-right">
-      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+      <div class="sk-sidebar-toc-wrapper">
+        <div class="sk-sidebar-toc-logo">
+          <a href="../../index.html">
+            <img
+              src="../../_static/scikit-learn-logo-small.png"
+              height="38"
+              alt="logo"/>
+          </a>
+        </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="plot_mnist_filters.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Visualization of MLP weights on MNIST">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
               <a href="plot_mlp_alpha.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Varying regularization in Multi-layer Perceptron">Next</a>
           </div>
@@ -115,16 +123,16 @@ example shows that the features extracted by the BernoulliRBM help improve the
 classification accuracy.</p>
 <img alt="../../_images/sphx_glr_plot_rbm_logistic_classification_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_rbm_logistic_classification_001.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[BernoulliRBM] Iteration 1, pseudo-likelihood = -25.39, time = 0.13s
-[BernoulliRBM] Iteration 2, pseudo-likelihood = -23.77, time = 0.18s
-[BernoulliRBM] Iteration 3, pseudo-likelihood = -22.94, time = 0.18s
-[BernoulliRBM] Iteration 4, pseudo-likelihood = -21.91, time = 0.17s
-[BernoulliRBM] Iteration 5, pseudo-likelihood = -21.69, time = 0.17s
-[BernoulliRBM] Iteration 6, pseudo-likelihood = -21.06, time = 0.17s
-[BernoulliRBM] Iteration 7, pseudo-likelihood = -20.89, time = 0.17s
-[BernoulliRBM] Iteration 8, pseudo-likelihood = -20.64, time = 0.19s
-[BernoulliRBM] Iteration 9, pseudo-likelihood = -20.36, time = 0.17s
-[BernoulliRBM] Iteration 10, pseudo-likelihood = -20.09, time = 0.17s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[BernoulliRBM] Iteration 1, pseudo-likelihood = -25.39, time = 0.15s
+[BernoulliRBM] Iteration 2, pseudo-likelihood = -23.77, time = 0.23s
+[BernoulliRBM] Iteration 3, pseudo-likelihood = -22.94, time = 0.23s
+[BernoulliRBM] Iteration 4, pseudo-likelihood = -21.91, time = 0.21s
+[BernoulliRBM] Iteration 5, pseudo-likelihood = -21.69, time = 0.24s
+[BernoulliRBM] Iteration 6, pseudo-likelihood = -21.06, time = 0.21s
+[BernoulliRBM] Iteration 7, pseudo-likelihood = -20.89, time = 0.22s
+[BernoulliRBM] Iteration 8, pseudo-likelihood = -20.64, time = 0.21s
+[BernoulliRBM] Iteration 9, pseudo-likelihood = -20.36, time = 0.22s
+[BernoulliRBM] Iteration 10, pseudo-likelihood = -20.09, time = 0.21s
 Logistic regression using RBM features:
               precision    recall  f1-score   support
 
@@ -281,10 +289,10 @@ weighted avg       0.78      0.78      0.78      1797
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.535 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.518 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-neural-networks-plot-rbm-logistic-classification-py">
 <div class="binder-badge docutils container">
-<a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/binder-examples/master?urlpath=lab/tree/notebooks/auto_examples/neural_networks/plot_rbm_logistic_classification.ipynb"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" width="150px" /></a>
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/master?urlpath=lab/tree/notebooks/auto_examples/neural_networks/plot_rbm_logistic_classification.ipynb"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" width="150px" /></a>
 </div>
 <div class="sphx-glr-download docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/74cf42fe2afd38be640572601152dbe6/plot_rbm_logistic_classification.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_rbm_logistic_classification.py</span></code></a></p>
@@ -396,14 +404,19 @@ $(document).ready(function() {
     return target.getBoundingClientRect().top < 2;
   };
 
+  // Hide navbar on load if hash target is on top
+  var navBar = document.getElementById("navbar")
+  if (hashTargetOnTop()) {
+      navBar.style.top = "-48px";
+  }
+
   var prevScrollpos = window.pageYOffset;
-  var narBar = document.getElementById("navbar")
-  hideOnScroll = function() {
+  hideOnScroll = function(lastScrollTop) {
     var currentScrollPos = window.pageYOffset;
-    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
-      narBar.style.top = "-48px";
+    if (lastScrollTop > 2 && (prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      navBar.style.top = "-48px";
     } else {
-      narBar.style.top = "0";
+      navBar.style.top = "0";
     }
     prevScrollpos = currentScrollPos;
   };
@@ -428,7 +441,7 @@ function loop() {
         return;
     } else {
         lastScrollTop = scrollTop;
-        hideOnScroll();
+        hideOnScroll(lastScrollTop);
         raf(loop);
     }
   }

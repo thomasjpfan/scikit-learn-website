@@ -68,7 +68,15 @@
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
     <div id="sk-sidebar-wrapper" class="border-right">
-      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+      <div class="sk-sidebar-toc-wrapper">
+        <div class="sk-sidebar-toc-logo">
+          <a href="../../index.html">
+            <img
+              src="../../_static/scikit-learn-logo-small.png"
+              height="38"
+              alt="logo"/>
+          </a>
+        </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="sklearn.random_projection.SparseRandomProjection.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.random_projection.SparseRandomProjection">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
               <a href="sklearn.semi_supervised.LabelPropagation.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.semi_supervised.LabelPropagation">Next</a>
           </div>
@@ -99,7 +107,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.random_projection" title="sklearn.random_projection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.random_projection</span></code></a>.johnson_lindenstrauss_min_dim<a class="headerlink" href="#sklearn-random-projection-johnson-lindenstrauss-min-dim" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="sklearn.random_projection.johnson_lindenstrauss_min_dim">
-<code class="sig-prename descclassname">sklearn.random_projection.</code><code class="sig-name descname">johnson_lindenstrauss_min_dim</code><span class="sig-paren">(</span><em class="sig-param">n_samples</em>, <em class="sig-param">eps=0.1</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/random_projection.py#L50"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.random_projection.johnson_lindenstrauss_min_dim" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sklearn.random_projection.</code><code class="sig-name descname">johnson_lindenstrauss_min_dim</code><span class="sig-paren">(</span><em class="sig-param">n_samples</em>, <em class="sig-param">eps=0.1</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/random_projection.py#L50"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.random_projection.johnson_lindenstrauss_min_dim" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find a ‘safe’ number of components to randomly project to</p>
 <p>The distortion introduced by a random projection <code class="docutils literal notranslate"><span class="pre">p</span></code> only changes the
 distance between two points by a factor (1 +- eps) in an euclidean space
@@ -277,14 +285,19 @@ $(document).ready(function() {
     return target.getBoundingClientRect().top < 2;
   };
 
+  // Hide navbar on load if hash target is on top
+  var navBar = document.getElementById("navbar")
+  if (hashTargetOnTop()) {
+      navBar.style.top = "-48px";
+  }
+
   var prevScrollpos = window.pageYOffset;
-  var narBar = document.getElementById("navbar")
-  hideOnScroll = function() {
+  hideOnScroll = function(lastScrollTop) {
     var currentScrollPos = window.pageYOffset;
-    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
-      narBar.style.top = "-48px";
+    if (lastScrollTop > 2 && (prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      navBar.style.top = "-48px";
     } else {
-      narBar.style.top = "0";
+      navBar.style.top = "0";
     }
     prevScrollpos = currentScrollPos;
   };
@@ -309,7 +322,7 @@ function loop() {
         return;
     } else {
         lastScrollTop = scrollTop;
-        hideOnScroll();
+        hideOnScroll(lastScrollTop);
         raf(loop);
     }
   }

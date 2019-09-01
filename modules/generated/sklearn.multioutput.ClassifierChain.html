@@ -68,7 +68,15 @@
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
     <div id="sk-sidebar-wrapper" class="border-right">
-      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+      <div class="sk-sidebar-toc-wrapper">
+        <div class="sk-sidebar-toc-logo">
+          <a href="../../index.html">
+            <img
+              src="../../_static/scikit-learn-logo-small.png"
+              height="38"
+              alt="logo"/>
+          </a>
+        </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="sklearn.multiclass.OutputCodeClassifier.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.multiclass.OutputCodeClassifier">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
               <a href="sklearn.multioutput.MultiOutputRegressor.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.multioutput.MultiOutputRegressor">Next</a>
           </div>
@@ -99,7 +107,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.multioutput" title="sklearn.multioutput"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.multioutput</span></code></a>.ClassifierChain<a class="headerlink" href="#sklearn-multioutput-classifierchain" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="sklearn.multioutput.ClassifierChain">
-<em class="property">class </em><code class="sig-prename descclassname">sklearn.multioutput.</code><code class="sig-name descname">ClassifierChain</code><span class="sig-paren">(</span><em class="sig-param">base_estimator</em>, <em class="sig-param">order=None</em>, <em class="sig-param">cv=None</em>, <em class="sig-param">random_state=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/multioutput.py#L518"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.multioutput.ClassifierChain" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">sklearn.multioutput.</code><code class="sig-name descname">ClassifierChain</code><span class="sig-paren">(</span><em class="sig-param">base_estimator</em>, <em class="sig-param">order=None</em>, <em class="sig-param">cv=None</em>, <em class="sig-param">random_state=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/multioutput.py#L518"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.multioutput.ClassifierChain" title="Permalink to this definition">¶</a></dt>
 <dd><p>A multi-label model that arranges binary classifiers into a chain.</p>
 <p>Each model makes a prediction in the order specified by the chain using
 all of the available features provided to the model plus the predictions
@@ -199,13 +207,13 @@ Chains for Multi-label Classification”, 2009.</p>
 </table>
 <dl class="method">
 <dt id="sklearn.multioutput.ClassifierChain.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">base_estimator</em>, <em class="sig-param">order=None</em>, <em class="sig-param">cv=None</em>, <em class="sig-param">random_state=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/multioutput.py#L413"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.multioutput.ClassifierChain.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">base_estimator</em>, <em class="sig-param">order=None</em>, <em class="sig-param">cv=None</em>, <em class="sig-param">random_state=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/multioutput.py#L413"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.multioutput.ClassifierChain.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sklearn.multioutput.ClassifierChain.decision_function">
-<code class="sig-name descname">decision_function</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/utils/metaestimators.py#L642"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.multioutput.ClassifierChain.decision_function" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">decision_function</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/utils/metaestimators.py#L642"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.multioutput.ClassifierChain.decision_function" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate the decision_function of the models in the chain.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -225,7 +233,7 @@ in the chain.</p>
 
 <dl class="method">
 <dt id="sklearn.multioutput.ClassifierChain.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">Y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/multioutput.py#L593"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.multioutput.ClassifierChain.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">Y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/multioutput.py#L593"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.multioutput.ClassifierChain.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the model to data matrix X and targets Y.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -246,7 +254,7 @@ in the chain.</p>
 
 <dl class="method">
 <dt id="sklearn.multioutput.ClassifierChain.get_params">
-<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L180"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.multioutput.ClassifierChain.get_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/base.py#L180"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.multioutput.ClassifierChain.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -267,7 +275,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="sklearn.multioutput.ClassifierChain.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/multioutput.py#L483"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.multioutput.ClassifierChain.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/multioutput.py#L483"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.multioutput.ClassifierChain.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predict on the data matrix X using the ClassifierChain model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -287,7 +295,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="sklearn.multioutput.ClassifierChain.predict_proba">
-<code class="sig-name descname">predict_proba</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/utils/metaestimators.py#L613"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.multioutput.ClassifierChain.predict_proba" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict_proba</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/utils/metaestimators.py#L613"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.multioutput.ClassifierChain.predict_proba" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predict probability estimates.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -305,7 +313,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="sklearn.multioutput.ClassifierChain.score">
-<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">sample_weight=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L343"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.multioutput.ClassifierChain.score" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">sample_weight=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/base.py#L343"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.multioutput.ClassifierChain.score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the mean accuracy on the given test data and labels.</p>
 <p>In multi-label classification, this is the subset accuracy
 which is a harsh metric since you require for each sample that
@@ -332,7 +340,7 @@ each label set be correctly predicted.</p>
 
 <dl class="method">
 <dt id="sklearn.multioutput.ClassifierChain.set_params">
-<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L211"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.multioutput.ClassifierChain.set_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/base.py#L211"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.multioutput.ClassifierChain.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as pipelines). The latter have parameters of the form
@@ -458,14 +466,19 @@ $(document).ready(function() {
     return target.getBoundingClientRect().top < 2;
   };
 
+  // Hide navbar on load if hash target is on top
+  var navBar = document.getElementById("navbar")
+  if (hashTargetOnTop()) {
+      navBar.style.top = "-48px";
+  }
+
   var prevScrollpos = window.pageYOffset;
-  var narBar = document.getElementById("navbar")
-  hideOnScroll = function() {
+  hideOnScroll = function(lastScrollTop) {
     var currentScrollPos = window.pageYOffset;
-    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
-      narBar.style.top = "-48px";
+    if (lastScrollTop > 2 && (prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      navBar.style.top = "-48px";
     } else {
-      narBar.style.top = "0";
+      navBar.style.top = "0";
     }
     prevScrollpos = currentScrollPos;
   };
@@ -490,7 +503,7 @@ function loop() {
         return;
     } else {
         lastScrollTop = scrollTop;
-        hideOnScroll();
+        hideOnScroll(lastScrollTop);
         raf(loop);
     }
   }

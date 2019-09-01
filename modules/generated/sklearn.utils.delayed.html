@@ -69,7 +69,15 @@
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
     <div id="sk-sidebar-wrapper" class="border-right">
-      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+      <div class="sk-sidebar-toc-wrapper">
+        <div class="sk-sidebar-toc-logo">
+          <a href="../../index.html">
+            <img
+              src="../../_static/scikit-learn-logo-small.png"
+              height="38"
+              alt="logo"/>
+          </a>
+        </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="sklearn.utils.cpu_count.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.utils.cpu_count">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
               <a href="sklearn.metrics.calinski_harabaz_score.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.metrics.calinski_harabaz_score">Next</a>
           </div>
@@ -101,7 +109,7 @@
 </div>
 <dl class="function">
 <dt id="sklearn.utils.delayed">
-<code class="sig-prename descclassname">sklearn.utils.</code><code class="sig-name descname">delayed</code><span class="sig-paren">(</span><em class="sig-param">function</em>, <em class="sig-param">check_pickle=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/utils/deprecation.py#L264"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.utils.delayed" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sklearn.utils.</code><code class="sig-name descname">delayed</code><span class="sig-paren">(</span><em class="sig-param">function</em>, <em class="sig-param">check_pickle=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/utils/deprecation.py#L264"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.utils.delayed" title="Permalink to this definition">¶</a></dt>
 <dd><p>DEPRECATED: deprecated in version 0.20.1 to be removed in version 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib.</p>
 <p>Decorator used to capture the arguments of a function.</p>
 </dd></dl>
@@ -208,14 +216,19 @@ $(document).ready(function() {
     return target.getBoundingClientRect().top < 2;
   };
 
+  // Hide navbar on load if hash target is on top
+  var navBar = document.getElementById("navbar")
+  if (hashTargetOnTop()) {
+      navBar.style.top = "-48px";
+  }
+
   var prevScrollpos = window.pageYOffset;
-  var narBar = document.getElementById("navbar")
-  hideOnScroll = function() {
+  hideOnScroll = function(lastScrollTop) {
     var currentScrollPos = window.pageYOffset;
-    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
-      narBar.style.top = "-48px";
+    if (lastScrollTop > 2 && (prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      navBar.style.top = "-48px";
     } else {
-      narBar.style.top = "0";
+      navBar.style.top = "0";
     }
     prevScrollpos = currentScrollPos;
   };
@@ -240,7 +253,7 @@ function loop() {
         return;
     } else {
         lastScrollTop = scrollTop;
-        hideOnScroll();
+        hideOnScroll(lastScrollTop);
         raf(loop);
     }
   }

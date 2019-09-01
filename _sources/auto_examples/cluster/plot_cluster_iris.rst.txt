@@ -141,7 +141,7 @@ and finally the ground truth.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.011 seconds)
+   **Total running time of the script:** ( 0 minutes  0.998 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cluster_plot_cluster_iris.py:
@@ -156,7 +156,7 @@ and finally the ground truth.
   .. container:: binder-badge
 
     .. image:: https://mybinder.org/badge_logo.svg
-      :target: https://mybinder.org/v2/gh/scikit-learn/binder-examples/master?urlpath=lab/tree/notebooks/auto_examples/cluster/plot_cluster_iris.ipynb
+      :target: https://mybinder.org/v2/gh/scikit-learn/scikit-learn/master?urlpath=lab/tree/notebooks/auto_examples/cluster/plot_cluster_iris.ipynb
       :width: 150 px
 
 

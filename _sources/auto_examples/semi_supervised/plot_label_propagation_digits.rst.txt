@@ -154,7 +154,7 @@ At the end, the top 10 most uncertain predictions will be shown.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.296 seconds)
+   **Total running time of the script:** ( 0 minutes  0.301 seconds)
 
 
 .. _sphx_glr_download_auto_examples_semi_supervised_plot_label_propagation_digits.py:
@@ -169,7 +169,7 @@ At the end, the top 10 most uncertain predictions will be shown.
   .. container:: binder-badge
 
     .. image:: https://mybinder.org/badge_logo.svg
-      :target: https://mybinder.org/v2/gh/scikit-learn/binder-examples/master?urlpath=lab/tree/notebooks/auto_examples/semi_supervised/plot_label_propagation_digits.ipynb
+      :target: https://mybinder.org/v2/gh/scikit-learn/scikit-learn/master?urlpath=lab/tree/notebooks/auto_examples/semi_supervised/plot_label_propagation_digits.ipynb
       :width: 150 px
 
 

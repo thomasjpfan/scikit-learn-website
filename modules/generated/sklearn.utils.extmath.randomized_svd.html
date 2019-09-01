@@ -68,7 +68,15 @@
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
     <div id="sk-sidebar-wrapper" class="border-right">
-      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+      <div class="sk-sidebar-toc-wrapper">
+        <div class="sk-sidebar-toc-logo">
+          <a href="../../index.html">
+            <img
+              src="../../_static/scikit-learn-logo-small.png"
+              height="38"
+              alt="logo"/>
+          </a>
+        </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="sklearn.utils.extmath.randomized_range_finder.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.utils.extmath.randomized_range_finder">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
               <a href="sklearn.utils.extmath.fast_logdet.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.utils.extmath.fast_logdet">Next</a>
           </div>
@@ -96,7 +104,7 @@
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.utils.extmath</span></code>.randomized_svd<a class="headerlink" href="#sklearn-utils-extmath-randomized-svd" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="sklearn.utils.extmath.randomized_svd">
-<code class="sig-prename descclassname">sklearn.utils.extmath.</code><code class="sig-name descname">randomized_svd</code><span class="sig-paren">(</span><em class="sig-param">M</em>, <em class="sig-param">n_components</em>, <em class="sig-param">n_oversamples=10</em>, <em class="sig-param">n_iter='auto'</em>, <em class="sig-param">power_iteration_normalizer='auto'</em>, <em class="sig-param">transpose='auto'</em>, <em class="sig-param">flip_sign=True</em>, <em class="sig-param">random_state=0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/utils/extmath.py#L231"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.utils.extmath.randomized_svd" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sklearn.utils.extmath.</code><code class="sig-name descname">randomized_svd</code><span class="sig-paren">(</span><em class="sig-param">M</em>, <em class="sig-param">n_components</em>, <em class="sig-param">n_oversamples=10</em>, <em class="sig-param">n_iter='auto'</em>, <em class="sig-param">power_iteration_normalizer='auto'</em>, <em class="sig-param">transpose='auto'</em>, <em class="sig-param">flip_sign=True</em>, <em class="sig-param">random_state=0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/utils/extmath.py#L231"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.utils.extmath.randomized_svd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes a truncated randomized SVD</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -274,14 +282,19 @@ $(document).ready(function() {
     return target.getBoundingClientRect().top < 2;
   };
 
+  // Hide navbar on load if hash target is on top
+  var navBar = document.getElementById("navbar")
+  if (hashTargetOnTop()) {
+      navBar.style.top = "-48px";
+  }
+
   var prevScrollpos = window.pageYOffset;
-  var narBar = document.getElementById("navbar")
-  hideOnScroll = function() {
+  hideOnScroll = function(lastScrollTop) {
     var currentScrollPos = window.pageYOffset;
-    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
-      narBar.style.top = "-48px";
+    if (lastScrollTop > 2 && (prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      navBar.style.top = "-48px";
     } else {
-      narBar.style.top = "0";
+      navBar.style.top = "0";
     }
     prevScrollpos = currentScrollPos;
   };
@@ -306,7 +319,7 @@ function loop() {
         return;
     } else {
         lastScrollTop = scrollTop;
-        hideOnScroll();
+        hideOnScroll(lastScrollTop);
         raf(loop);
     }
   }

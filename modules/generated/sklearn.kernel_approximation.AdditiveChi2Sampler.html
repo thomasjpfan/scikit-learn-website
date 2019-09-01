@@ -68,7 +68,15 @@
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
     <div id="sk-sidebar-wrapper" class="border-right">
-      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+      <div class="sk-sidebar-toc-wrapper">
+        <div class="sk-sidebar-toc-logo">
+          <a href="../../index.html">
+            <img
+              src="../../_static/scikit-learn-logo-small.png"
+              height="38"
+              alt="logo"/>
+          </a>
+        </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="sklearn.isotonic.isotonic_regression.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.isotonic.isotonic_regression">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
               <a href="sklearn.kernel_approximation.Nystroem.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.kernel_approximation.Nystroem">Next</a>
           </div>
@@ -96,7 +104,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.kernel_approximation" title="sklearn.kernel_approximation"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.kernel_approximation</span></code></a>.AdditiveChi2Sampler<a class="headerlink" href="#sklearn-kernel-approximation-additivechi2sampler" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="sklearn.kernel_approximation.AdditiveChi2Sampler">
-<em class="property">class </em><code class="sig-prename descclassname">sklearn.kernel_approximation.</code><code class="sig-name descname">AdditiveChi2Sampler</code><span class="sig-paren">(</span><em class="sig-param">sample_steps=2</em>, <em class="sig-param">sample_interval=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/kernel_approximation.py#L242"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.kernel_approximation.AdditiveChi2Sampler" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">sklearn.kernel_approximation.</code><code class="sig-name descname">AdditiveChi2Sampler</code><span class="sig-paren">(</span><em class="sig-param">sample_steps=2</em>, <em class="sig-param">sample_interval=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/kernel_approximation.py#L242"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.kernel_approximation.AdditiveChi2Sampler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Approximate feature map for additive chi2 kernel.</p>
 <p>Uses sampling the fourier transform of the kernel characteristic
 at regular intervals.</p>
@@ -183,13 +191,13 @@ A. Vedaldi and A. Zisserman, Pattern Analysis and Machine Intelligence,
 </table>
 <dl class="method">
 <dt id="sklearn.kernel_approximation.AdditiveChi2Sampler.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">sample_steps=2</em>, <em class="sig-param">sample_interval=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/kernel_approximation.py#L309"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.kernel_approximation.AdditiveChi2Sampler.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">sample_steps=2</em>, <em class="sig-param">sample_interval=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/kernel_approximation.py#L309"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.kernel_approximation.AdditiveChi2Sampler.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sklearn.kernel_approximation.AdditiveChi2Sampler.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/kernel_approximation.py#L313"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.kernel_approximation.AdditiveChi2Sampler.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/kernel_approximation.py#L313"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.kernel_approximation.AdditiveChi2Sampler.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -210,7 +218,7 @@ and n_features is the number of features.</p>
 
 <dl class="method">
 <dt id="sklearn.kernel_approximation.AdditiveChi2Sampler.fit_transform">
-<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em>, <em class="sig-param">**fit_params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L540"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.kernel_approximation.AdditiveChi2Sampler.fit_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em>, <em class="sig-param">**fit_params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/base.py#L540"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.kernel_approximation.AdditiveChi2Sampler.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit to data, then transform it.</p>
 <p>Fits transformer to X and y with optional parameters fit_params
 and returns a transformed version of X.</p>
@@ -234,7 +242,7 @@ and returns a transformed version of X.</p>
 
 <dl class="method">
 <dt id="sklearn.kernel_approximation.AdditiveChi2Sampler.get_params">
-<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L180"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.kernel_approximation.AdditiveChi2Sampler.get_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/base.py#L180"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.kernel_approximation.AdditiveChi2Sampler.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -255,7 +263,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="sklearn.kernel_approximation.AdditiveChi2Sampler.set_params">
-<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L211"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.kernel_approximation.AdditiveChi2Sampler.set_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/base.py#L211"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.kernel_approximation.AdditiveChi2Sampler.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as pipelines). The latter have parameters of the form
@@ -272,7 +280,7 @@ component of a nested object.</p>
 
 <dl class="method">
 <dt id="sklearn.kernel_approximation.AdditiveChi2Sampler.transform">
-<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/kernel_approximation.py#L343"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.kernel_approximation.AdditiveChi2Sampler.transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/kernel_approximation.py#L343"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.kernel_approximation.AdditiveChi2Sampler.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply approximate feature map to X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -394,14 +402,19 @@ $(document).ready(function() {
     return target.getBoundingClientRect().top < 2;
   };
 
+  // Hide navbar on load if hash target is on top
+  var navBar = document.getElementById("navbar")
+  if (hashTargetOnTop()) {
+      navBar.style.top = "-48px";
+  }
+
   var prevScrollpos = window.pageYOffset;
-  var narBar = document.getElementById("navbar")
-  hideOnScroll = function() {
+  hideOnScroll = function(lastScrollTop) {
     var currentScrollPos = window.pageYOffset;
-    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
-      narBar.style.top = "-48px";
+    if (lastScrollTop > 2 && (prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      navBar.style.top = "-48px";
     } else {
-      narBar.style.top = "0";
+      navBar.style.top = "0";
     }
     prevScrollpos = currentScrollPos;
   };
@@ -426,7 +439,7 @@ function loop() {
         return;
     } else {
         lastScrollTop = scrollTop;
-        hideOnScroll();
+        hideOnScroll(lastScrollTop);
         raf(loop);
     }
   }

@@ -111,7 +111,7 @@ x and y coordinate as output.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.649 seconds)
+   **Total running time of the script:** ( 0 minutes  0.521 seconds)
 
 
 .. _sphx_glr_download_auto_examples_ensemble_plot_random_forest_regression_multioutput.py:
@@ -126,7 +126,7 @@ x and y coordinate as output.
   .. container:: binder-badge
 
     .. image:: https://mybinder.org/badge_logo.svg
-      :target: https://mybinder.org/v2/gh/scikit-learn/binder-examples/master?urlpath=lab/tree/notebooks/auto_examples/ensemble/plot_random_forest_regression_multioutput.ipynb
+      :target: https://mybinder.org/v2/gh/scikit-learn/scikit-learn/master?urlpath=lab/tree/notebooks/auto_examples/ensemble/plot_random_forest_regression_multioutput.ipynb
       :width: 150 px
 
 

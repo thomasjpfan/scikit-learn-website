@@ -274,7 +274,7 @@ img.sk-footer-funding-logo {
 
 div.sk-page-content {
   background-color: white;
-  margin-top: 48px;
+  margin-top: 50px;
 }
 
 .sk-btn-toggle-toc {
@@ -361,13 +361,16 @@ a.sk-documentation-index-anchor:hover {
 
 /* toc  */
 
+div.sk-sidebar-toc-logo {
+  height: 50px;
+}
+
 div.sk-sidebar-toc-wrapper > ul > li > a{
   font-weight: bold;
 }
 
 div.sk-sidebar-toc-wrapper {
   font-size: 0.9rem;
-  margin-top: 48px;
 }
 
 div.sk-sidebar-toc-wrapper > ul,

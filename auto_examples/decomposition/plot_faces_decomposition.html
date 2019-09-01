@@ -68,7 +68,15 @@
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
     <div id="sk-sidebar-wrapper" class="border-right">
-      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+      <div class="sk-sidebar-toc-wrapper">
+        <div class="sk-sidebar-toc-logo">
+          <a href="../../index.html">
+            <img
+              src="../../_static/scikit-learn-logo-small.png"
+              height="38"
+              alt="logo"/>
+          </a>
+        </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="plot_image_denoising.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Image denoising using dictionary learning">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
               <a href="../ensemble/plot_forest_importances_faces.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Pixel importances with a parallel forest of trees">Next</a>
           </div>
@@ -135,29 +143,29 @@ matrix decomposition (dimension reduction) methods from the module
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Dataset consists of 400 faces
 Extracting the top 6 Eigenfaces - PCA using randomized SVD...
-done in 0.025s
+done in 0.028s
 Extracting the top 6 Non-negative components - NMF...
-done in 0.099s
+done in 0.293s
 Extracting the top 6 Independent components - FastICA...
 /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/decomposition/fastica_.py:119: ConvergenceWarning: FastICA did not converge. Consider increasing tolerance or the maximum number of iterations.
   ConvergenceWarning)
-done in 0.097s
+done in 0.214s
 Extracting the top 6 Sparse comp. - MiniBatchSparsePCA...
-done in 0.698s
+done in 1.246s
 Extracting the top 6 MiniBatchDictionaryLearning...
-done in 0.433s
+done in 0.606s
 Extracting the top 6 Cluster centers - MiniBatchKMeans...
-done in 0.104s
+done in 0.150s
 Extracting the top 6 Factor Analysis components - FA...
-done in 0.141s
+done in 0.190s
 Extracting the top 6 Dictionary learning...
-done in 0.402s
+done in 0.574s
 Extracting the top 6 Dictionary learning - positive dictionary...
-done in 0.377s
+done in 0.583s
 Extracting the top 6 Dictionary learning - positive code...
-done in 0.106s
+done in 0.147s
 Extracting the top 6 Dictionary learning - positive dictionary &amp; code...
-done in 0.112s
+done in 0.161s
 </pre></div>
 </div>
 <div class="line-block">
@@ -347,10 +355,10 @@ done in 0.112s
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.626 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  7.117 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-decomposition-plot-faces-decomposition-py">
 <div class="binder-badge docutils container">
-<a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/binder-examples/master?urlpath=lab/tree/notebooks/auto_examples/decomposition/plot_faces_decomposition.ipynb"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" width="150px" /></a>
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/master?urlpath=lab/tree/notebooks/auto_examples/decomposition/plot_faces_decomposition.ipynb"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" width="150px" /></a>
 </div>
 <div class="sphx-glr-download docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/4825fc8223d1af0f3b61080c3dea3a62/plot_faces_decomposition.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_faces_decomposition.py</span></code></a></p>
@@ -462,14 +470,19 @@ $(document).ready(function() {
     return target.getBoundingClientRect().top < 2;
   };
 
+  // Hide navbar on load if hash target is on top
+  var navBar = document.getElementById("navbar")
+  if (hashTargetOnTop()) {
+      navBar.style.top = "-48px";
+  }
+
   var prevScrollpos = window.pageYOffset;
-  var narBar = document.getElementById("navbar")
-  hideOnScroll = function() {
+  hideOnScroll = function(lastScrollTop) {
     var currentScrollPos = window.pageYOffset;
-    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
-      narBar.style.top = "-48px";
+    if (lastScrollTop > 2 && (prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      navBar.style.top = "-48px";
     } else {
-      narBar.style.top = "0";
+      navBar.style.top = "0";
     }
     prevScrollpos = currentScrollPos;
   };
@@ -494,7 +507,7 @@ function loop() {
         return;
     } else {
         lastScrollTop = scrollTop;
-        hideOnScroll();
+        hideOnScroll(lastScrollTop);
         raf(loop);
     }
   }

@@ -69,6 +69,14 @@
 <div class="d-flex " id="sk-doc-wrapper">
     <div id="sk-sidebar-wrapper" class="border-right">
       <div class="sk-sidebar-toc-wrapper">
+        <div class="sk-sidebar-toc-logo">
+          <a href="../../index.html">
+            <img
+              src="../../_static/scikit-learn-logo-small.png"
+              height="38"
+              alt="logo"/>
+          </a>
+        </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
           <strong>scikit-learn 0.22.dev0</strong><br/>
@@ -91,12 +99,12 @@
         
   <div class="section" id="computation-times">
 <span id="sphx-glr-auto-examples-exercises-sg-execution-times"></span><h1>Computation times<a class="headerlink" href="#computation-times" title="Permalink to this headline">¶</a></h1>
-<p><strong>00:13.873</strong> total execution time for <strong>auto_examples_exercises</strong> files:</p>
+<p><strong>00:15.199</strong> total execution time for <strong>auto_examples_exercises</strong> files:</p>
 <ul class="simple">
-<li><p><strong>00:08.320</strong>: <a class="reference internal" href="plot_cv_digits.html#sphx-glr-auto-examples-exercises-plot-cv-digits-py"><span class="std std-ref">Cross-validation on Digits Dataset Exercise</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_cv_digits.py</span></code>)</p></li>
-<li><p><strong>00:04.757</strong>: <a class="reference internal" href="plot_iris_exercise.html#sphx-glr-auto-examples-exercises-plot-iris-exercise-py"><span class="std std-ref">SVM Exercise</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_iris_exercise.py</span></code>)</p></li>
-<li><p><strong>00:00.538</strong>: <a class="reference internal" href="plot_cv_diabetes.html#sphx-glr-auto-examples-exercises-plot-cv-diabetes-py"><span class="std std-ref">Cross-validation on diabetes Dataset Exercise</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_cv_diabetes.py</span></code>)</p></li>
-<li><p><strong>00:00.259</strong>: <a class="reference internal" href="plot_digits_classification_exercise.html#sphx-glr-auto-examples-exercises-plot-digits-classification-exercise-py"><span class="std std-ref">Digits Classification Exercise</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_digits_classification_exercise.py</span></code>)</p></li>
+<li><p><strong>00:09.521</strong>: <a class="reference internal" href="plot_cv_digits.html#sphx-glr-auto-examples-exercises-plot-cv-digits-py"><span class="std std-ref">Cross-validation on Digits Dataset Exercise</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_cv_digits.py</span></code>)</p></li>
+<li><p><strong>00:04.835</strong>: <a class="reference internal" href="plot_iris_exercise.html#sphx-glr-auto-examples-exercises-plot-iris-exercise-py"><span class="std std-ref">SVM Exercise</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_iris_exercise.py</span></code>)</p></li>
+<li><p><strong>00:00.539</strong>: <a class="reference internal" href="plot_cv_diabetes.html#sphx-glr-auto-examples-exercises-plot-cv-diabetes-py"><span class="std std-ref">Cross-validation on diabetes Dataset Exercise</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_cv_diabetes.py</span></code>)</p></li>
+<li><p><strong>00:00.305</strong>: <a class="reference internal" href="plot_digits_classification_exercise.html#sphx-glr-auto-examples-exercises-plot-digits-classification-exercise-py"><span class="std std-ref">Digits Classification Exercise</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_digits_classification_exercise.py</span></code>)</p></li>
 </ul>
 </div>
 
@@ -200,14 +208,19 @@ $(document).ready(function() {
     return target.getBoundingClientRect().top < 2;
   };
 
+  // Hide navbar on load if hash target is on top
+  var navBar = document.getElementById("navbar")
+  if (hashTargetOnTop()) {
+      navBar.style.top = "-48px";
+  }
+
   var prevScrollpos = window.pageYOffset;
-  var narBar = document.getElementById("navbar")
-  hideOnScroll = function() {
+  hideOnScroll = function(lastScrollTop) {
     var currentScrollPos = window.pageYOffset;
-    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
-      narBar.style.top = "-48px";
+    if (lastScrollTop > 2 && (prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      navBar.style.top = "-48px";
     } else {
-      narBar.style.top = "0";
+      navBar.style.top = "0";
     }
     prevScrollpos = currentScrollPos;
   };
@@ -232,7 +245,7 @@ function loop() {
         return;
     } else {
         lastScrollTop = scrollTop;
-        hideOnScroll();
+        hideOnScroll(lastScrollTop);
         raf(loop);
     }
   }

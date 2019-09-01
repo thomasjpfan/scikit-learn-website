@@ -68,7 +68,15 @@
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
     <div id="sk-sidebar-wrapper" class="border-right">
-      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+      <div class="sk-sidebar-toc-wrapper">
+        <div class="sk-sidebar-toc-logo">
+          <a href="../../index.html">
+            <img
+              src="../../_static/scikit-learn-logo-small.png"
+              height="38"
+              alt="logo"/>
+          </a>
+        </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="sklearn.linear_model.orthogonal_mp.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.linear_model.orthogonal_mp">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
               <a href="sklearn.linear_model.ridge_regression.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.linear_model.ridge_regression">Next</a>
           </div>
@@ -96,7 +104,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.linear_model" title="sklearn.linear_model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.linear_model</span></code></a>.orthogonal_mp_gram<a class="headerlink" href="#sklearn-linear-model-orthogonal-mp-gram" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="sklearn.linear_model.orthogonal_mp_gram">
-<code class="sig-prename descclassname">sklearn.linear_model.</code><code class="sig-name descname">orthogonal_mp_gram</code><span class="sig-paren">(</span><em class="sig-param">Gram</em>, <em class="sig-param">Xy</em>, <em class="sig-param">n_nonzero_coefs=None</em>, <em class="sig-param">tol=None</em>, <em class="sig-param">norms_squared=None</em>, <em class="sig-param">copy_Gram=True</em>, <em class="sig-param">copy_Xy=True</em>, <em class="sig-param">return_path=False</em>, <em class="sig-param">return_n_iter=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/linear_model/omp.py#L407"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.linear_model.orthogonal_mp_gram" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sklearn.linear_model.</code><code class="sig-name descname">orthogonal_mp_gram</code><span class="sig-paren">(</span><em class="sig-param">Gram</em>, <em class="sig-param">Xy</em>, <em class="sig-param">n_nonzero_coefs=None</em>, <em class="sig-param">tol=None</em>, <em class="sig-param">norms_squared=None</em>, <em class="sig-param">copy_Gram=True</em>, <em class="sig-param">copy_Xy=True</em>, <em class="sig-param">return_path=False</em>, <em class="sig-param">return_n_iter=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/linear_model/omp.py#L407"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.linear_model.orthogonal_mp_gram" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gram Orthogonal Matching Pursuit (OMP)</p>
 <p>Solves n_targets Orthogonal Matching Pursuit problems using only
 the Gram matrix X.T * X and the product X.T * y.</p>
@@ -265,14 +273,19 @@ $(document).ready(function() {
     return target.getBoundingClientRect().top < 2;
   };
 
+  // Hide navbar on load if hash target is on top
+  var navBar = document.getElementById("navbar")
+  if (hashTargetOnTop()) {
+      navBar.style.top = "-48px";
+  }
+
   var prevScrollpos = window.pageYOffset;
-  var narBar = document.getElementById("navbar")
-  hideOnScroll = function() {
+  hideOnScroll = function(lastScrollTop) {
     var currentScrollPos = window.pageYOffset;
-    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
-      narBar.style.top = "-48px";
+    if (lastScrollTop > 2 && (prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      navBar.style.top = "-48px";
     } else {
-      narBar.style.top = "0";
+      navBar.style.top = "0";
     }
     prevScrollpos = currentScrollPos;
   };
@@ -297,7 +310,7 @@ function loop() {
         return;
     } else {
         lastScrollTop = scrollTop;
-        hideOnScroll();
+        hideOnScroll(lastScrollTop);
         raf(loop);
     }
   }

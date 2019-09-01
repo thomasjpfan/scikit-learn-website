@@ -108,7 +108,7 @@ measurement encoded with a dictionary
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.286 seconds)
+   **Total running time of the script:** ( 0 minutes  0.320 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_omp.py:
@@ -123,7 +123,7 @@ measurement encoded with a dictionary
   .. container:: binder-badge
 
     .. image:: https://mybinder.org/badge_logo.svg
-      :target: https://mybinder.org/v2/gh/scikit-learn/binder-examples/master?urlpath=lab/tree/notebooks/auto_examples/linear_model/plot_omp.ipynb
+      :target: https://mybinder.org/v2/gh/scikit-learn/scikit-learn/master?urlpath=lab/tree/notebooks/auto_examples/linear_model/plot_omp.ipynb
       :width: 150 px
 
 
