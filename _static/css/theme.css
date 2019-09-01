@@ -32,6 +32,7 @@ code {
   background-color: #ecf0f3;
   border-radius: 0.2rem;
   padding: 0.2rem;
+  white-space: nowrap;
 }
 
 nav {
@@ -184,7 +185,7 @@ div.sk-landing-bg-more-info dd {
 }
 
 div.sk-landing-bg {
-  background-image: linear-gradient(90deg, #3499cd 50%, #ff9c34);
+  background-image: linear-gradient(90deg, #3499cd 40%, #ff9c34);
 }
 
 div.sk-landing-bg-more-info {
