@@ -24,12 +24,12 @@
 <body>
 
 
-<nav class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+<nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
   <div class="container-fluid sk-docs-container">
       <a class="navbar-brand" href="../../index.html">
         <img
           src="../../_static/scikit-learn-logo-notext.png"
-          width="100"
+          height="38"
           alt="logo"/>
       </a>
     <button
@@ -67,8 +67,8 @@
   </div>
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
-    <div class="border-right" id="sk-sidebar-wrapper">
-      <div class="h-100 sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+    <div id="sk-sidebar-wrapper" class="border-right">
+      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="sklearn.decomposition.LatentDirichletAllocation.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.decomposition.LatentDirichletAllocation">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
               <a href="sklearn.decomposition.MiniBatchSparsePCA.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.decomposition.MiniBatchSparsePCA">Next</a>
           </div>
@@ -80,7 +80,7 @@
         </div>
         <div class="alert alert-warning p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-            Please <a class="font-weight-bold" href="about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
+            Please <a class="font-weight-bold" href="../../about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
           </p>
         </div>
         <ul>
@@ -99,7 +99,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.decomposition" title="sklearn.decomposition"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.decomposition</span></code></a>.MiniBatchDictionaryLearning<a class="headerlink" href="#sklearn-decomposition-minibatchdictionarylearning" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="sklearn.decomposition.MiniBatchDictionaryLearning">
-<em class="property">class </em><code class="sig-prename descclassname">sklearn.decomposition.</code><code class="sig-name descname">MiniBatchDictionaryLearning</code><span class="sig-paren">(</span><em class="sig-param">n_components=None</em>, <em class="sig-param">alpha=1</em>, <em class="sig-param">n_iter=1000</em>, <em class="sig-param">fit_algorithm='lars'</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">batch_size=3</em>, <em class="sig-param">shuffle=True</em>, <em class="sig-param">dict_init=None</em>, <em class="sig-param">transform_algorithm='omp'</em>, <em class="sig-param">transform_n_nonzero_coefs=None</em>, <em class="sig-param">transform_alpha=None</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">split_sign=False</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">positive_code=False</em>, <em class="sig-param">positive_dict=False</em>, <em class="sig-param">transform_max_iter=1000</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/decomposition/dict_learning.py#L1244"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.decomposition.MiniBatchDictionaryLearning" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">sklearn.decomposition.</code><code class="sig-name descname">MiniBatchDictionaryLearning</code><span class="sig-paren">(</span><em class="sig-param">n_components=None</em>, <em class="sig-param">alpha=1</em>, <em class="sig-param">n_iter=1000</em>, <em class="sig-param">fit_algorithm='lars'</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">batch_size=3</em>, <em class="sig-param">shuffle=True</em>, <em class="sig-param">dict_init=None</em>, <em class="sig-param">transform_algorithm='omp'</em>, <em class="sig-param">transform_n_nonzero_coefs=None</em>, <em class="sig-param">transform_alpha=None</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">split_sign=False</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">positive_code=False</em>, <em class="sig-param">positive_dict=False</em>, <em class="sig-param">transform_max_iter=1000</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/decomposition/dict_learning.py#L1244"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.decomposition.MiniBatchDictionaryLearning" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mini-batch dictionary learning</p>
 <p>Finds a dictionary (a set of atoms) that can best be used to represent data
 using a sparse code.</p>
@@ -251,13 +251,13 @@ for sparse coding (<a class="reference external" href="https://www.di.ens.fr/sie
 </table>
 <dl class="method">
 <dt id="sklearn.decomposition.MiniBatchDictionaryLearning.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">n_components=None</em>, <em class="sig-param">alpha=1</em>, <em class="sig-param">n_iter=1000</em>, <em class="sig-param">fit_algorithm='lars'</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">batch_size=3</em>, <em class="sig-param">shuffle=True</em>, <em class="sig-param">dict_init=None</em>, <em class="sig-param">transform_algorithm='omp'</em>, <em class="sig-param">transform_n_nonzero_coefs=None</em>, <em class="sig-param">transform_alpha=None</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">split_sign=False</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">positive_code=False</em>, <em class="sig-param">positive_dict=False</em>, <em class="sig-param">transform_max_iter=1000</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/decomposition/dict_learning.py#L1386"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.decomposition.MiniBatchDictionaryLearning.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">n_components=None</em>, <em class="sig-param">alpha=1</em>, <em class="sig-param">n_iter=1000</em>, <em class="sig-param">fit_algorithm='lars'</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">batch_size=3</em>, <em class="sig-param">shuffle=True</em>, <em class="sig-param">dict_init=None</em>, <em class="sig-param">transform_algorithm='omp'</em>, <em class="sig-param">transform_n_nonzero_coefs=None</em>, <em class="sig-param">transform_alpha=None</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">split_sign=False</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">positive_code=False</em>, <em class="sig-param">positive_dict=False</em>, <em class="sig-param">transform_max_iter=1000</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/decomposition/dict_learning.py#L1386"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.decomposition.MiniBatchDictionaryLearning.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sklearn.decomposition.MiniBatchDictionaryLearning.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/decomposition/dict_learning.py#L1409"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.decomposition.MiniBatchDictionaryLearning.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/decomposition/dict_learning.py#L1409"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.decomposition.MiniBatchDictionaryLearning.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the model from data in X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -279,7 +279,7 @@ and n_features is the number of features.</p>
 
 <dl class="method">
 <dt id="sklearn.decomposition.MiniBatchDictionaryLearning.fit_transform">
-<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em>, <em class="sig-param">**fit_params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/base.py#L540"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.decomposition.MiniBatchDictionaryLearning.fit_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em>, <em class="sig-param">**fit_params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L540"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.decomposition.MiniBatchDictionaryLearning.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit to data, then transform it.</p>
 <p>Fits transformer to X and y with optional parameters fit_params
 and returns a transformed version of X.</p>
@@ -303,7 +303,7 @@ and returns a transformed version of X.</p>
 
 <dl class="method">
 <dt id="sklearn.decomposition.MiniBatchDictionaryLearning.get_params">
-<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/base.py#L180"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.decomposition.MiniBatchDictionaryLearning.get_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L180"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.decomposition.MiniBatchDictionaryLearning.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -324,7 +324,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="sklearn.decomposition.MiniBatchDictionaryLearning.partial_fit">
-<code class="sig-name descname">partial_fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em>, <em class="sig-param">iter_offset=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/decomposition/dict_learning.py#L1447"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.decomposition.MiniBatchDictionaryLearning.partial_fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">partial_fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em>, <em class="sig-param">iter_offset=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/decomposition/dict_learning.py#L1447"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.decomposition.MiniBatchDictionaryLearning.partial_fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates the model using the data in X as a mini-batch.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -351,7 +351,7 @@ used.</p>
 
 <dl class="method">
 <dt id="sklearn.decomposition.MiniBatchDictionaryLearning.set_params">
-<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/base.py#L211"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.decomposition.MiniBatchDictionaryLearning.set_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L211"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.decomposition.MiniBatchDictionaryLearning.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as pipelines). The latter have parameters of the form
@@ -368,7 +368,7 @@ component of a nested object.</p>
 
 <dl class="method">
 <dt id="sklearn.decomposition.MiniBatchDictionaryLearning.transform">
-<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/decomposition/dict_learning.py#L896"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.decomposition.MiniBatchDictionaryLearning.transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/decomposition/dict_learning.py#L896"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.decomposition.MiniBatchDictionaryLearning.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Encode the data as a sparse combination of the dictionary atoms.</p>
 <p>Coding method is determined by the object parameter
 <code class="docutils literal notranslate"><span class="pre">transform_algorithm</span></code>.</p>
@@ -413,7 +413,7 @@ features as the data used to train the model.</p>
       </footer>
     </div>
   </div>
-  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle"><&mdash;></button>
+  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle">Toggle Menu</button>
 </div>
 <script src="../../_static/js/vendor/jquery.min.js"></script>
 <script src="../../_static/js/vendor/bootstrap.min.js"></script>
@@ -429,13 +429,11 @@ features as the data used to train the model.</p>
 
 
 <script>
-
-    $(document).ready(function() {
-
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#sk-doc-wrapper").toggleClass("toggled");
-        });
+$(document).ready(function() {
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sk-doc-wrapper").toggleClass("toggled");
+    });
 
     /* Add a [>>>] button on the top-right corner of code samples to hide
      * the >>> and ... prompts and the output and thus make the code
@@ -488,14 +486,62 @@ features as the data used to train the model.</p>
         }
     });
 
-
 	/*** Add permalink buttons next to glossary terms ***/
 	$('dl.glossary > dt[id]').append(function() {
 		return ('<a class="headerlink" href="#' +
 			    this.getAttribute('id') +
 			    '" title="Permalink to this term">¶</a>');
-	})
+	});
+  /*** Had navbar when scrolling down ***/
+  // Returns true when headerlink target matches hash in url
+  hashTargetOnTop = function() {
+    var hash = window.location.hash;
+    if ( hash.length < 2 ) { return false; }
+
+    var target = document.getElementById( hash.slice(1) );
+    if ( target === null ) { return false; }
+
+    return target.getBoundingClientRect().top < 2;
+  };
+
+  var prevScrollpos = window.pageYOffset;
+  var narBar = document.getElementById("navbar")
+  hideOnScroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      narBar.style.top = "-48px";
+    } else {
+      narBar.style.top = "0";
+    }
+    prevScrollpos = currentScrollPos;
+  };
+
+  /*** high preformance scroll event listener***/
+  var raf = window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      window.oRequestAnimationFrame;
+  var $window = $(window);
+  var lastScrollTop = $window.scrollTop();
+
+  if (raf) {
+      loop();
+  }
+
+function loop() {
+    var scrollTop = $window.scrollTop();
+    if (lastScrollTop === scrollTop) {
+        raf(loop);
+        return;
+    } else {
+        lastScrollTop = scrollTop;
+        hideOnScroll();
+        raf(loop);
+    }
+  }
 });
+
 </script>
 <script>
     (function() {
@@ -506,7 +552,7 @@ features as the data used to train the model.</p>
     })();
 </script>
     
-<script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
+<script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
     
 </body>
 </html>

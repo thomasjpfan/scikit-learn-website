@@ -24,12 +24,12 @@
 <body>
 
 
-<nav class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+<nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
   <div class="container-fluid sk-docs-container">
       <a class="navbar-brand" href="../../index.html">
         <img
           src="../../_static/scikit-learn-logo-notext.png"
-          width="100"
+          height="38"
           alt="logo"/>
       </a>
     <button
@@ -67,8 +67,8 @@
   </div>
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
-    <div class="border-right" id="sk-sidebar-wrapper">
-      <div class="h-100 sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+    <div id="sk-sidebar-wrapper" class="border-right">
+      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="plot_huber_vs_ridge.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="HuberRegressor vs Ridge on dataset with strong outliers">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
               <a href="plot_sgd_comparison.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Comparing various online solvers">Next</a>
           </div>
@@ -80,7 +80,7 @@
         </div>
         <div class="alert alert-warning p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-            Please <a class="font-weight-bold" href="about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
+            Please <a class="font-weight-bold" href="../../about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
           </p>
         </div>
         <ul>
@@ -121,20 +121,20 @@ Distance between coefficients : 8.034211286713951e-12
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">sparse</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">linalg</span>
 
-<span class="kn">from</span> <span class="nn">sklearn.datasets.samples_generator</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.datasets.make_regression.html#sklearn.datasets.make_regression" title="View documentation for sklearn.datasets.samples_generator.make_regression"><a href="../../modules/generated/sklearn.datasets.make_regression.html#sklearn.datasets.make_regression" title="View documentation for sklearn.datasets.samples_generator.make_regression"><span class="n">make_regression</span></a></a>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><span class="n">Lasso</span></a></a>
+<span class="kn">from</span> <span class="nn">sklearn.datasets.samples_generator</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.datasets.make_regression.html#sklearn.datasets.make_regression" title="View documentation for sklearn.datasets.samples_generator.make_regression"><a href="../../modules/generated/sklearn.datasets.make_regression.html#sklearn.datasets.make_regression" title="View documentation for sklearn.datasets.samples_generator.make_regression"><a href="../../modules/generated/sklearn.datasets.make_regression.html#sklearn.datasets.make_regression" title="View documentation for sklearn.datasets.samples_generator.make_regression"><span class="n">make_regression</span></a></a></a>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><span class="n">Lasso</span></a></a></a>
 
 
 <span class="c1"># #############################################################################</span>
 <span class="c1"># The two Lasso implementations on Dense data</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Dense matrices&quot;</span><span class="p">)</span>
 
-<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.make_regression.html#sklearn.datasets.make_regression" title="View documentation for sklearn.datasets.samples_generator.make_regression"><a href="../../modules/generated/sklearn.datasets.make_regression.html#sklearn.datasets.make_regression" title="View documentation for sklearn.datasets.samples_generator.make_regression"><span class="n">make_regression</span></a></a><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">n_features</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">X_sp</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.html#scipy.sparse.coo_matrix" title="View documentation for scipy.sparse.coo_matrix"><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.html#scipy.sparse.coo_matrix" title="View documentation for scipy.sparse.coo_matrix"><span class="n">sparse</span><span class="o">.</span><span class="n">coo_matrix</span></a></a><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.make_regression.html#sklearn.datasets.make_regression" title="View documentation for sklearn.datasets.samples_generator.make_regression"><a href="../../modules/generated/sklearn.datasets.make_regression.html#sklearn.datasets.make_regression" title="View documentation for sklearn.datasets.samples_generator.make_regression"><a href="../../modules/generated/sklearn.datasets.make_regression.html#sklearn.datasets.make_regression" title="View documentation for sklearn.datasets.samples_generator.make_regression"><span class="n">make_regression</span></a></a></a><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">n_features</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">X_sp</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.html#scipy.sparse.coo_matrix" title="View documentation for scipy.sparse.coo_matrix"><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.html#scipy.sparse.coo_matrix" title="View documentation for scipy.sparse.coo_matrix"><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.html#scipy.sparse.coo_matrix" title="View documentation for scipy.sparse.coo_matrix"><span class="n">sparse</span><span class="o">.</span><span class="n">coo_matrix</span></a></a></a><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 
 <span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">sparse_lasso</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><span class="n">Lasso</span></a></a><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">fit_intercept</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
-<span class="n">dense_lasso</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><span class="n">Lasso</span></a></a><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">fit_intercept</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">sparse_lasso</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><span class="n">Lasso</span></a></a></a><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">fit_intercept</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">dense_lasso</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><span class="n">Lasso</span></a></a></a><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">fit_intercept</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 
 <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
 <span class="n">sparse_lasso</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_sp</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -145,7 +145,7 @@ Distance between coefficients : 8.034211286713951e-12
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dense Lasso done in </span><span class="si">%f</span><span class="s2">s&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Distance between coefficients : </span><span class="si">%s</span><span class="s2">&quot;</span>
-      <span class="o">%</span> <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.norm.html#scipy.linalg.norm" title="View documentation for scipy.linalg.norm"><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.norm.html#scipy.linalg.norm" title="View documentation for scipy.linalg.norm"><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span></a></a><span class="p">(</span><span class="n">sparse_lasso</span><span class="o">.</span><span class="n">coef_</span> <span class="o">-</span> <span class="n">dense_lasso</span><span class="o">.</span><span class="n">coef_</span><span class="p">))</span>
+      <span class="o">%</span> <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.norm.html#scipy.linalg.norm" title="View documentation for scipy.linalg.norm"><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.norm.html#scipy.linalg.norm" title="View documentation for scipy.linalg.norm"><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.norm.html#scipy.linalg.norm" title="View documentation for scipy.linalg.norm"><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span></a></a></a><span class="p">(</span><span class="n">sparse_lasso</span><span class="o">.</span><span class="n">coef_</span> <span class="o">-</span> <span class="n">dense_lasso</span><span class="o">.</span><span class="n">coef_</span><span class="p">))</span>
 
 <span class="c1"># #############################################################################</span>
 <span class="c1"># The two Lasso implementations on Sparse data</span>
@@ -153,14 +153,14 @@ Distance between coefficients : 8.034211286713951e-12
 
 <span class="n">Xs</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">Xs</span><span class="p">[</span><span class="n">Xs</span> <span class="o">&lt;</span> <span class="mf">2.5</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="n">Xs</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.html#scipy.sparse.coo_matrix" title="View documentation for scipy.sparse.coo_matrix"><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.html#scipy.sparse.coo_matrix" title="View documentation for scipy.sparse.coo_matrix"><span class="n">sparse</span><span class="o">.</span><span class="n">coo_matrix</span></a></a><span class="p">(</span><span class="n">Xs</span><span class="p">)</span>
+<span class="n">Xs</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.html#scipy.sparse.coo_matrix" title="View documentation for scipy.sparse.coo_matrix"><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.html#scipy.sparse.coo_matrix" title="View documentation for scipy.sparse.coo_matrix"><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.html#scipy.sparse.coo_matrix" title="View documentation for scipy.sparse.coo_matrix"><span class="n">sparse</span><span class="o">.</span><span class="n">coo_matrix</span></a></a></a><span class="p">(</span><span class="n">Xs</span><span class="p">)</span>
 <span class="n">Xs</span> <span class="o">=</span> <span class="n">Xs</span><span class="o">.</span><span class="n">tocsc</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matrix density : </span><span class="si">%s</span><span class="s2"> </span><span class="si">%%</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">Xs</span><span class="o">.</span><span class="n">nnz</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">size</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
 
 <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">sparse_lasso</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><span class="n">Lasso</span></a></a><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">fit_intercept</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
-<span class="n">dense_lasso</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><span class="n">Lasso</span></a></a><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">fit_intercept</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+<span class="n">sparse_lasso</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><span class="n">Lasso</span></a></a></a><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">fit_intercept</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+<span class="n">dense_lasso</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="View documentation for sklearn.linear_model.Lasso"><span class="n">Lasso</span></a></a></a><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">fit_intercept</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
 
 <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
 <span class="n">sparse_lasso</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xs</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -171,7 +171,7 @@ Distance between coefficients : 8.034211286713951e-12
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dense Lasso done in </span><span class="si">%f</span><span class="s2">s&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Distance between coefficients : </span><span class="si">%s</span><span class="s2">&quot;</span>
-      <span class="o">%</span> <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.norm.html#scipy.linalg.norm" title="View documentation for scipy.linalg.norm"><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.norm.html#scipy.linalg.norm" title="View documentation for scipy.linalg.norm"><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span></a></a><span class="p">(</span><span class="n">sparse_lasso</span><span class="o">.</span><span class="n">coef_</span> <span class="o">-</span> <span class="n">dense_lasso</span><span class="o">.</span><span class="n">coef_</span><span class="p">))</span>
+      <span class="o">%</span> <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.norm.html#scipy.linalg.norm" title="View documentation for scipy.linalg.norm"><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.norm.html#scipy.linalg.norm" title="View documentation for scipy.linalg.norm"><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.norm.html#scipy.linalg.norm" title="View documentation for scipy.linalg.norm"><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span></a></a></a><span class="p">(</span><span class="n">sparse_lasso</span><span class="o">.</span><span class="n">coef_</span> <span class="o">-</span> <span class="n">dense_lasso</span><span class="o">.</span><span class="n">coef_</span><span class="p">))</span>
 </pre></div>
 </div>
 <p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.220 seconds)</p>
@@ -198,7 +198,7 @@ Distance between coefficients : 8.034211286713951e-12
       </footer>
     </div>
   </div>
-  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle"><&mdash;></button>
+  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle">Toggle Menu</button>
 </div>
 <script src="../../_static/js/vendor/jquery.min.js"></script>
 <script src="../../_static/js/vendor/bootstrap.min.js"></script>
@@ -214,13 +214,11 @@ Distance between coefficients : 8.034211286713951e-12
 
 
 <script>
-
-    $(document).ready(function() {
-
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#sk-doc-wrapper").toggleClass("toggled");
-        });
+$(document).ready(function() {
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sk-doc-wrapper").toggleClass("toggled");
+    });
 
     /* Add a [>>>] button on the top-right corner of code samples to hide
      * the >>> and ... prompts and the output and thus make the code
@@ -273,14 +271,68 @@ Distance between coefficients : 8.034211286713951e-12
         }
     });
 
-
 	/*** Add permalink buttons next to glossary terms ***/
 	$('dl.glossary > dt[id]').append(function() {
 		return ('<a class="headerlink" href="#' +
 			    this.getAttribute('id') +
 			    '" title="Permalink to this term">¶</a>');
-	})
+	});
+
+    scrollUpToCompensateForFixedHeader();
+    // Run on hash change (user clicked on anchor link)
+    if ( 'onhashchange' in window ) {
+        window.addEventListener('hashchange', scrollUpToCompensateForFixedHeader);
+    }
+  /*** Had navbar when scrolling down ***/
+  // Returns true when headerlink target matches hash in url
+  hashTargetOnTop = function() {
+    var hash = window.location.hash;
+    if ( hash.length < 2 ) { return false; }
+
+    var target = document.getElementById( hash.slice(1) );
+    if ( target === null ) { return false; }
+
+    return target.getBoundingClientRect().top < 2;
+  };
+
+  var prevScrollpos = window.pageYOffset;
+  var narBar = document.getElementById("navbar")
+  hideOnScroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      narBar.style.top = "-48px";
+    } else {
+      narBar.style.top = "0";
+    }
+    prevScrollpos = currentScrollPos;
+  };
+
+  /*** high preformance scroll event listener***/
+  var raf = window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      window.oRequestAnimationFrame;
+  var $window = $(window);
+  var lastScrollTop = $window.scrollTop();
+
+  if (raf) {
+      loop();
+  }
+
+function loop() {
+    var scrollTop = $window.scrollTop();
+    if (lastScrollTop === scrollTop) {
+        raf(loop);
+        return;
+    } else {
+        lastScrollTop = scrollTop;
+        hideOnScroll();
+        raf(loop);
+    }
+  }
 });
+
 </script>
 <script>
     (function() {
@@ -291,7 +343,7 @@ Distance between coefficients : 8.034211286713951e-12
     })();
 </script>
     
-<script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
+<script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
     
 </body>
 </html>

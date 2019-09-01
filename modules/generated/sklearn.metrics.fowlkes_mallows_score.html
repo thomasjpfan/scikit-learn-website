@@ -24,12 +24,12 @@
 <body>
 
 
-<nav class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+<nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
   <div class="container-fluid sk-docs-container">
       <a class="navbar-brand" href="../../index.html">
         <img
           src="../../_static/scikit-learn-logo-notext.png"
-          width="100"
+          height="38"
           alt="logo"/>
       </a>
     <button
@@ -67,8 +67,8 @@
   </div>
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
-    <div class="border-right" id="sk-sidebar-wrapper">
-      <div class="h-100 sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+    <div id="sk-sidebar-wrapper" class="border-right">
+      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="sklearn.metrics.cluster.contingency_matrix.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.metrics.cluster.contingency_matrix">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
               <a href="sklearn.metrics.homogeneity_completeness_v_measure.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.metrics.homogeneity_completeness_v_measure">Next</a>
           </div>
@@ -80,7 +80,7 @@
         </div>
         <div class="alert alert-warning p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-            Please <a class="font-weight-bold" href="about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
+            Please <a class="font-weight-bold" href="../../about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
           </p>
         </div>
         <ul>
@@ -96,7 +96,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.metrics" title="sklearn.metrics"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.metrics</span></code></a>.fowlkes_mallows_score<a class="headerlink" href="#sklearn-metrics-fowlkes-mallows-score" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="sklearn.metrics.fowlkes_mallows_score">
-<code class="sig-prename descclassname">sklearn.metrics.</code><code class="sig-name descname">fowlkes_mallows_score</code><span class="sig-paren">(</span><em class="sig-param">labels_true</em>, <em class="sig-param">labels_pred</em>, <em class="sig-param">sparse=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/metrics/cluster/supervised.py#L870"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.metrics.fowlkes_mallows_score" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sklearn.metrics.</code><code class="sig-name descname">fowlkes_mallows_score</code><span class="sig-paren">(</span><em class="sig-param">labels_true</em>, <em class="sig-param">labels_pred</em>, <em class="sig-param">sparse=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/metrics/cluster/supervised.py#L870"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.metrics.fowlkes_mallows_score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Measure the similarity of two clusterings of a set of points.</p>
 <p>The Fowlkes-Mallows index (FMI) is defined as the geometric mean between of
 the precision and recall:</p>
@@ -171,7 +171,7 @@ the assignment is totally random, hence the FMI is null:</p>
       </footer>
     </div>
   </div>
-  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle"><&mdash;></button>
+  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle">Toggle Menu</button>
 </div>
 <script src="../../_static/js/vendor/jquery.min.js"></script>
 <script src="../../_static/js/vendor/bootstrap.min.js"></script>
@@ -187,13 +187,11 @@ the assignment is totally random, hence the FMI is null:</p>
 
 
 <script>
-
-    $(document).ready(function() {
-
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#sk-doc-wrapper").toggleClass("toggled");
-        });
+$(document).ready(function() {
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sk-doc-wrapper").toggleClass("toggled");
+    });
 
     /* Add a [>>>] button on the top-right corner of code samples to hide
      * the >>> and ... prompts and the output and thus make the code
@@ -246,14 +244,62 @@ the assignment is totally random, hence the FMI is null:</p>
         }
     });
 
-
 	/*** Add permalink buttons next to glossary terms ***/
 	$('dl.glossary > dt[id]').append(function() {
 		return ('<a class="headerlink" href="#' +
 			    this.getAttribute('id') +
 			    '" title="Permalink to this term">¶</a>');
-	})
+	});
+  /*** Had navbar when scrolling down ***/
+  // Returns true when headerlink target matches hash in url
+  hashTargetOnTop = function() {
+    var hash = window.location.hash;
+    if ( hash.length < 2 ) { return false; }
+
+    var target = document.getElementById( hash.slice(1) );
+    if ( target === null ) { return false; }
+
+    return target.getBoundingClientRect().top < 2;
+  };
+
+  var prevScrollpos = window.pageYOffset;
+  var narBar = document.getElementById("navbar")
+  hideOnScroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      narBar.style.top = "-48px";
+    } else {
+      narBar.style.top = "0";
+    }
+    prevScrollpos = currentScrollPos;
+  };
+
+  /*** high preformance scroll event listener***/
+  var raf = window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      window.oRequestAnimationFrame;
+  var $window = $(window);
+  var lastScrollTop = $window.scrollTop();
+
+  if (raf) {
+      loop();
+  }
+
+function loop() {
+    var scrollTop = $window.scrollTop();
+    if (lastScrollTop === scrollTop) {
+        raf(loop);
+        return;
+    } else {
+        lastScrollTop = scrollTop;
+        hideOnScroll();
+        raf(loop);
+    }
+  }
 });
+
 </script>
 <script>
     (function() {
@@ -264,7 +310,7 @@ the assignment is totally random, hence the FMI is null:</p>
     })();
 </script>
     
-<script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
+<script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
     
 </body>
 </html>

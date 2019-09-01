@@ -24,12 +24,12 @@
 <body>
 
 
-<nav class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+<nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
   <div class="container-fluid sk-docs-container">
       <a class="navbar-brand" href="../../index.html">
         <img
           src="../../_static/scikit-learn-logo-notext.png"
-          width="100"
+          height="38"
           alt="logo"/>
       </a>
     <button
@@ -67,8 +67,8 @@
   </div>
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
-    <div class="border-right" id="sk-sidebar-wrapper">
-      <div class="h-100 sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+    <div id="sk-sidebar-wrapper" class="border-right">
+      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="plot_face_recognition.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Faces recognition example using eigenfaces and SVMs">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
               <a href="plot_species_distribution_modeling.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Species distribution modeling">Next</a>
           </div>
@@ -80,7 +80,7 @@
         </div>
         <div class="alert alert-warning p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-            Please <a class="font-weight-bold" href="about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
+            Please <a class="font-weight-bold" href="../../about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
           </p>
         </div>
         <ul>
@@ -177,12 +177,12 @@ Complexity: 500 | MSE: 7.1437 | Pred. Time: 0.001239s
 <span class="kn">from</span> <span class="nn">scipy.sparse.csr</span> <span class="k">import</span> <span class="n">csr_matrix</span>
 
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">datasets</span>
-<span class="kn">from</span> <span class="nn">sklearn.utils</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.utils.shuffle.html#sklearn.utils.shuffle" title="View documentation for sklearn.utils.shuffle"><a href="../../modules/generated/sklearn.utils.shuffle.html#sklearn.utils.shuffle" title="View documentation for sklearn.utils.shuffle"><span class="n">shuffle</span></a></a>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.metrics.mean_squared_error.html#sklearn.metrics.mean_squared_error" title="View documentation for sklearn.metrics.mean_squared_error"><a href="../../modules/generated/sklearn.metrics.mean_squared_error.html#sklearn.metrics.mean_squared_error" title="View documentation for sklearn.metrics.mean_squared_error"><span class="n">mean_squared_error</span></a></a>
-<span class="kn">from</span> <span class="nn">sklearn.svm.classes</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.svm.NuSVR.html#sklearn.svm.NuSVR" title="View documentation for sklearn.svm.classes.NuSVR"><a href="../../modules/generated/sklearn.svm.NuSVR.html#sklearn.svm.NuSVR" title="View documentation for sklearn.svm.classes.NuSVR"><span class="n">NuSVR</span></a></a>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble.gradient_boosting</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.ensemble.GradientBoostingRegressor.html#sklearn.ensemble.GradientBoostingRegressor" title="View documentation for sklearn.ensemble.gradient_boosting.GradientBoostingRegressor"><a href="../../modules/generated/sklearn.ensemble.GradientBoostingRegressor.html#sklearn.ensemble.GradientBoostingRegressor" title="View documentation for sklearn.ensemble.gradient_boosting.GradientBoostingRegressor"><span class="n">GradientBoostingRegressor</span></a></a>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model.stochastic_gradient</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.linear_model.SGDClassifier.html#sklearn.linear_model.SGDClassifier" title="View documentation for sklearn.linear_model.stochastic_gradient.SGDClassifier"><a href="../../modules/generated/sklearn.linear_model.SGDClassifier.html#sklearn.linear_model.SGDClassifier" title="View documentation for sklearn.linear_model.stochastic_gradient.SGDClassifier"><span class="n">SGDClassifier</span></a></a>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.metrics.hamming_loss.html#sklearn.metrics.hamming_loss" title="View documentation for sklearn.metrics.hamming_loss"><a href="../../modules/generated/sklearn.metrics.hamming_loss.html#sklearn.metrics.hamming_loss" title="View documentation for sklearn.metrics.hamming_loss"><span class="n">hamming_loss</span></a></a>
+<span class="kn">from</span> <span class="nn">sklearn.utils</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.utils.shuffle.html#sklearn.utils.shuffle" title="View documentation for sklearn.utils.shuffle"><a href="../../modules/generated/sklearn.utils.shuffle.html#sklearn.utils.shuffle" title="View documentation for sklearn.utils.shuffle"><a href="../../modules/generated/sklearn.utils.shuffle.html#sklearn.utils.shuffle" title="View documentation for sklearn.utils.shuffle"><span class="n">shuffle</span></a></a></a>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.metrics.mean_squared_error.html#sklearn.metrics.mean_squared_error" title="View documentation for sklearn.metrics.mean_squared_error"><a href="../../modules/generated/sklearn.metrics.mean_squared_error.html#sklearn.metrics.mean_squared_error" title="View documentation for sklearn.metrics.mean_squared_error"><a href="../../modules/generated/sklearn.metrics.mean_squared_error.html#sklearn.metrics.mean_squared_error" title="View documentation for sklearn.metrics.mean_squared_error"><span class="n">mean_squared_error</span></a></a></a>
+<span class="kn">from</span> <span class="nn">sklearn.svm.classes</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.svm.NuSVR.html#sklearn.svm.NuSVR" title="View documentation for sklearn.svm.classes.NuSVR"><a href="../../modules/generated/sklearn.svm.NuSVR.html#sklearn.svm.NuSVR" title="View documentation for sklearn.svm.classes.NuSVR"><a href="../../modules/generated/sklearn.svm.NuSVR.html#sklearn.svm.NuSVR" title="View documentation for sklearn.svm.classes.NuSVR"><span class="n">NuSVR</span></a></a></a>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble.gradient_boosting</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.ensemble.GradientBoostingRegressor.html#sklearn.ensemble.GradientBoostingRegressor" title="View documentation for sklearn.ensemble.gradient_boosting.GradientBoostingRegressor"><a href="../../modules/generated/sklearn.ensemble.GradientBoostingRegressor.html#sklearn.ensemble.GradientBoostingRegressor" title="View documentation for sklearn.ensemble.gradient_boosting.GradientBoostingRegressor"><a href="../../modules/generated/sklearn.ensemble.GradientBoostingRegressor.html#sklearn.ensemble.GradientBoostingRegressor" title="View documentation for sklearn.ensemble.gradient_boosting.GradientBoostingRegressor"><span class="n">GradientBoostingRegressor</span></a></a></a>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model.stochastic_gradient</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.linear_model.SGDClassifier.html#sklearn.linear_model.SGDClassifier" title="View documentation for sklearn.linear_model.stochastic_gradient.SGDClassifier"><a href="../../modules/generated/sklearn.linear_model.SGDClassifier.html#sklearn.linear_model.SGDClassifier" title="View documentation for sklearn.linear_model.stochastic_gradient.SGDClassifier"><a href="../../modules/generated/sklearn.linear_model.SGDClassifier.html#sklearn.linear_model.SGDClassifier" title="View documentation for sklearn.linear_model.stochastic_gradient.SGDClassifier"><span class="n">SGDClassifier</span></a></a></a>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.metrics.hamming_loss.html#sklearn.metrics.hamming_loss" title="View documentation for sklearn.metrics.hamming_loss"><a href="../../modules/generated/sklearn.metrics.hamming_loss.html#sklearn.metrics.hamming_loss" title="View documentation for sklearn.metrics.hamming_loss"><a href="../../modules/generated/sklearn.metrics.hamming_loss.html#sklearn.metrics.hamming_loss" title="View documentation for sklearn.metrics.hamming_loss"><span class="n">hamming_loss</span></a></a></a>
 
 <span class="c1"># #############################################################################</span>
 <span class="c1"># Routines</span>
@@ -195,11 +195,11 @@ Complexity: 500 | MSE: 7.1437 | Pred. Time: 0.001239s
 <span class="k">def</span> <span class="nf">generate_data</span><span class="p">(</span><span class="n">case</span><span class="p">,</span> <span class="n">sparse</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Generate regression/classification data.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">case</span> <span class="o">==</span> <span class="s1">&#39;regression&#39;</span><span class="p">:</span>
-        <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.load_boston.html#sklearn.datasets.load_boston" title="View documentation for sklearn.datasets.load_boston"><a href="../../modules/generated/sklearn.datasets.load_boston.html#sklearn.datasets.load_boston" title="View documentation for sklearn.datasets.load_boston"><span class="n">datasets</span><span class="o">.</span><span class="n">load_boston</span></a></a><span class="p">(</span><span class="n">return_X_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.load_boston.html#sklearn.datasets.load_boston" title="View documentation for sklearn.datasets.load_boston"><a href="../../modules/generated/sklearn.datasets.load_boston.html#sklearn.datasets.load_boston" title="View documentation for sklearn.datasets.load_boston"><a href="../../modules/generated/sklearn.datasets.load_boston.html#sklearn.datasets.load_boston" title="View documentation for sklearn.datasets.load_boston"><span class="n">datasets</span><span class="o">.</span><span class="n">load_boston</span></a></a></a><span class="p">(</span><span class="n">return_X_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">case</span> <span class="o">==</span> <span class="s1">&#39;classification&#39;</span><span class="p">:</span>
-        <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.fetch_20newsgroups_vectorized.html#sklearn.datasets.fetch_20newsgroups_vectorized" title="View documentation for sklearn.datasets.fetch_20newsgroups_vectorized"><a href="../../modules/generated/sklearn.datasets.fetch_20newsgroups_vectorized.html#sklearn.datasets.fetch_20newsgroups_vectorized" title="View documentation for sklearn.datasets.fetch_20newsgroups_vectorized"><span class="n">datasets</span><span class="o">.</span><span class="n">fetch_20newsgroups_vectorized</span></a></a><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span>
+        <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.fetch_20newsgroups_vectorized.html#sklearn.datasets.fetch_20newsgroups_vectorized" title="View documentation for sklearn.datasets.fetch_20newsgroups_vectorized"><a href="../../modules/generated/sklearn.datasets.fetch_20newsgroups_vectorized.html#sklearn.datasets.fetch_20newsgroups_vectorized" title="View documentation for sklearn.datasets.fetch_20newsgroups_vectorized"><a href="../../modules/generated/sklearn.datasets.fetch_20newsgroups_vectorized.html#sklearn.datasets.fetch_20newsgroups_vectorized" title="View documentation for sklearn.datasets.fetch_20newsgroups_vectorized"><span class="n">datasets</span><span class="o">.</span><span class="n">fetch_20newsgroups_vectorized</span></a></a></a><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span>
                                                       <span class="n">return_X_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.utils.shuffle.html#sklearn.utils.shuffle" title="View documentation for sklearn.utils.shuffle"><a href="../../modules/generated/sklearn.utils.shuffle.html#sklearn.utils.shuffle" title="View documentation for sklearn.utils.shuffle"><span class="n">shuffle</span></a></a><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.utils.shuffle.html#sklearn.utils.shuffle" title="View documentation for sklearn.utils.shuffle"><a href="../../modules/generated/sklearn.utils.shuffle.html#sklearn.utils.shuffle" title="View documentation for sklearn.utils.shuffle"><a href="../../modules/generated/sklearn.utils.shuffle.html#sklearn.utils.shuffle" title="View documentation for sklearn.utils.shuffle"><span class="n">shuffle</span></a></a></a><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
     <span class="n">offset</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">)</span>
     <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:</span><span class="n">offset</span><span class="p">],</span> <span class="n">y</span><span class="p">[:</span><span class="n">offset</span><span class="p">]</span>
     <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">offset</span><span class="p">:],</span> <span class="n">y</span><span class="p">[</span><span class="n">offset</span><span class="p">:]</span>
@@ -207,10 +207,10 @@ Complexity: 500 | MSE: 7.1437 | Pred. Time: 0.001239s
         <span class="n">X_train</span> <span class="o">=</span> <span class="n">csr_matrix</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
         <span class="n">X_test</span> <span class="o">=</span> <span class="n">csr_matrix</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">X_train</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array" title="View documentation for numpy.array"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array" title="View documentation for numpy.array"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a></a><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
-        <span class="n">X_test</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array" title="View documentation for numpy.array"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array" title="View documentation for numpy.array"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a></a><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-    <span class="n">y_test</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array" title="View documentation for numpy.array"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array" title="View documentation for numpy.array"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a></a><span class="p">(</span><span class="n">y_test</span><span class="p">)</span>
-    <span class="n">y_train</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array" title="View documentation for numpy.array"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array" title="View documentation for numpy.array"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a></a><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
+        <span class="n">X_train</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array" title="View documentation for numpy.array"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array" title="View documentation for numpy.array"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array" title="View documentation for numpy.array"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a></a></a><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+        <span class="n">X_test</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array" title="View documentation for numpy.array"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array" title="View documentation for numpy.array"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array" title="View documentation for numpy.array"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a></a></a><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+    <span class="n">y_test</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array" title="View documentation for numpy.array"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array" title="View documentation for numpy.array"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array" title="View documentation for numpy.array"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a></a></a><span class="p">(</span><span class="n">y_test</span><span class="p">)</span>
+    <span class="n">y_train</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array" title="View documentation for numpy.array"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array" title="View documentation for numpy.array"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array" title="View documentation for numpy.array"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a></a></a><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
     <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;X_train&#39;</span><span class="p">:</span> <span class="n">X_train</span><span class="p">,</span> <span class="s1">&#39;X_test&#39;</span><span class="p">:</span> <span class="n">X_test</span><span class="p">,</span> <span class="s1">&#39;y_train&#39;</span><span class="p">:</span> <span class="n">y_train</span><span class="p">,</span>
             <span class="s1">&#39;y_test&#39;</span><span class="p">:</span> <span class="n">y_test</span><span class="p">}</span>
     <span class="k">return</span> <span class="n">data</span>
@@ -249,9 +249,9 @@ Complexity: 500 | MSE: 7.1437 | Pred. Time: 0.001239s
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Plot influence of model complexity on both accuracy and latency.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="View documentation for matplotlib.pyplot.figure"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="View documentation for matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="View documentation for matplotlib.pyplot.figure"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="View documentation for matplotlib.pyplot.figure"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="View documentation for matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a></a></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
     <span class="n">host</span> <span class="o">=</span> <span class="n">host_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">axes_class</span><span class="o">=</span><span class="n">Axes</span><span class="p">)</span>
-    <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots_adjust.html#matplotlib.pyplot.subplots_adjust" title="View documentation for matplotlib.pyplot.subplots_adjust"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots_adjust.html#matplotlib.pyplot.subplots_adjust" title="View documentation for matplotlib.pyplot.subplots_adjust"><span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span></a></a><span class="p">(</span><span class="n">right</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+    <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots_adjust.html#matplotlib.pyplot.subplots_adjust" title="View documentation for matplotlib.pyplot.subplots_adjust"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots_adjust.html#matplotlib.pyplot.subplots_adjust" title="View documentation for matplotlib.pyplot.subplots_adjust"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots_adjust.html#matplotlib.pyplot.subplots_adjust" title="View documentation for matplotlib.pyplot.subplots_adjust"><span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span></a></a></a><span class="p">(</span><span class="n">right</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
     <span class="n">par1</span> <span class="o">=</span> <span class="n">host</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
     <span class="n">host</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Model Complexity (</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="n">conf</span><span class="p">[</span><span class="s1">&#39;complexity_label&#39;</span><span class="p">])</span>
     <span class="n">y1_label</span> <span class="o">=</span> <span class="n">conf</span><span class="p">[</span><span class="s1">&#39;prediction_performance_label&#39;</span><span class="p">]</span>
@@ -264,32 +264,32 @@ Complexity: 500 | MSE: 7.1437 | Pred. Time: 0.001239s
     <span class="n">host</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
     <span class="n">host</span><span class="o">.</span><span class="n">axis</span><span class="p">[</span><span class="s2">&quot;left&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">get_color</span><span class="p">())</span>
     <span class="n">par1</span><span class="o">.</span><span class="n">axis</span><span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">get_color</span><span class="p">())</span>
-    <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="View documentation for matplotlib.pyplot.title"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="View documentation for matplotlib.pyplot.title"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a></a><span class="p">(</span><span class="s1">&#39;Influence of Model Complexity - </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">conf</span><span class="p">[</span><span class="s1">&#39;estimator&#39;</span><span class="p">]</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
-    <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a></a><span class="p">()</span>
+    <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="View documentation for matplotlib.pyplot.title"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="View documentation for matplotlib.pyplot.title"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="View documentation for matplotlib.pyplot.title"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a></a></a><span class="p">(</span><span class="s1">&#39;Influence of Model Complexity - </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">conf</span><span class="p">[</span><span class="s1">&#39;estimator&#39;</span><span class="p">]</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+    <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a></a></a><span class="p">()</span>
 
 
 <span class="k">def</span> <span class="nf">_count_nonzero_coefficients</span><span class="p">(</span><span class="n">estimator</span><span class="p">):</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">estimator</span><span class="o">.</span><span class="n">coef_</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
-    <span class="k">return</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.count_nonzero.html#numpy.count_nonzero" title="View documentation for numpy.count_nonzero"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.count_nonzero.html#numpy.count_nonzero" title="View documentation for numpy.count_nonzero"><span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span></a></a><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="k">return</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.count_nonzero.html#numpy.count_nonzero" title="View documentation for numpy.count_nonzero"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.count_nonzero.html#numpy.count_nonzero" title="View documentation for numpy.count_nonzero"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.count_nonzero.html#numpy.count_nonzero" title="View documentation for numpy.count_nonzero"><span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span></a></a></a><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 
 <span class="c1"># #############################################################################</span>
 <span class="c1"># Main code</span>
 <span class="n">regression_data</span> <span class="o">=</span> <span class="n">generate_data</span><span class="p">(</span><span class="s1">&#39;regression&#39;</span><span class="p">)</span>
 <span class="n">classification_data</span> <span class="o">=</span> <span class="n">generate_data</span><span class="p">(</span><span class="s1">&#39;classification&#39;</span><span class="p">,</span> <span class="n">sparse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">configurations</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s1">&#39;estimator&#39;</span><span class="p">:</span> <a href="../../modules/generated/sklearn.linear_model.SGDClassifier.html#sklearn.linear_model.SGDClassifier" title="View documentation for sklearn.linear_model.stochastic_gradient.SGDClassifier"><a href="../../modules/generated/sklearn.linear_model.SGDClassifier.html#sklearn.linear_model.SGDClassifier" title="View documentation for sklearn.linear_model.stochastic_gradient.SGDClassifier"><span class="n">SGDClassifier</span></a></a><span class="p">,</span>
+    <span class="p">{</span><span class="s1">&#39;estimator&#39;</span><span class="p">:</span> <a href="../../modules/generated/sklearn.linear_model.SGDClassifier.html#sklearn.linear_model.SGDClassifier" title="View documentation for sklearn.linear_model.stochastic_gradient.SGDClassifier"><a href="../../modules/generated/sklearn.linear_model.SGDClassifier.html#sklearn.linear_model.SGDClassifier" title="View documentation for sklearn.linear_model.stochastic_gradient.SGDClassifier"><a href="../../modules/generated/sklearn.linear_model.SGDClassifier.html#sklearn.linear_model.SGDClassifier" title="View documentation for sklearn.linear_model.stochastic_gradient.SGDClassifier"><span class="n">SGDClassifier</span></a></a></a><span class="p">,</span>
      <span class="s1">&#39;tuned_params&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;penalty&#39;</span><span class="p">:</span> <span class="s1">&#39;elasticnet&#39;</span><span class="p">,</span> <span class="s1">&#39;alpha&#39;</span><span class="p">:</span> <span class="mf">0.001</span><span class="p">,</span> <span class="s1">&#39;loss&#39;</span><span class="p">:</span>
                       <span class="s1">&#39;modified_huber&#39;</span><span class="p">,</span> <span class="s1">&#39;fit_intercept&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;tol&#39;</span><span class="p">:</span> <span class="mf">1e-3</span><span class="p">},</span>
      <span class="s1">&#39;changing_param&#39;</span><span class="p">:</span> <span class="s1">&#39;l1_ratio&#39;</span><span class="p">,</span>
      <span class="s1">&#39;changing_param_values&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">],</span>
      <span class="s1">&#39;complexity_label&#39;</span><span class="p">:</span> <span class="s1">&#39;non_zero coefficients&#39;</span><span class="p">,</span>
      <span class="s1">&#39;complexity_computer&#39;</span><span class="p">:</span> <span class="n">_count_nonzero_coefficients</span><span class="p">,</span>
-     <span class="s1">&#39;prediction_performance_computer&#39;</span><span class="p">:</span> <a href="../../modules/generated/sklearn.metrics.hamming_loss.html#sklearn.metrics.hamming_loss" title="View documentation for sklearn.metrics.hamming_loss"><a href="../../modules/generated/sklearn.metrics.hamming_loss.html#sklearn.metrics.hamming_loss" title="View documentation for sklearn.metrics.hamming_loss"><span class="n">hamming_loss</span></a></a><span class="p">,</span>
+     <span class="s1">&#39;prediction_performance_computer&#39;</span><span class="p">:</span> <a href="../../modules/generated/sklearn.metrics.hamming_loss.html#sklearn.metrics.hamming_loss" title="View documentation for sklearn.metrics.hamming_loss"><a href="../../modules/generated/sklearn.metrics.hamming_loss.html#sklearn.metrics.hamming_loss" title="View documentation for sklearn.metrics.hamming_loss"><a href="../../modules/generated/sklearn.metrics.hamming_loss.html#sklearn.metrics.hamming_loss" title="View documentation for sklearn.metrics.hamming_loss"><span class="n">hamming_loss</span></a></a></a><span class="p">,</span>
      <span class="s1">&#39;prediction_performance_label&#39;</span><span class="p">:</span> <span class="s1">&#39;Hamming Loss (Misclassification Ratio)&#39;</span><span class="p">,</span>
      <span class="s1">&#39;postfit_hook&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">sparsify</span><span class="p">(),</span>
      <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">classification_data</span><span class="p">,</span>
      <span class="s1">&#39;n_samples&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">},</span>
-    <span class="p">{</span><span class="s1">&#39;estimator&#39;</span><span class="p">:</span> <a href="../../modules/generated/sklearn.svm.NuSVR.html#sklearn.svm.NuSVR" title="View documentation for sklearn.svm.classes.NuSVR"><a href="../../modules/generated/sklearn.svm.NuSVR.html#sklearn.svm.NuSVR" title="View documentation for sklearn.svm.classes.NuSVR"><span class="n">NuSVR</span></a></a><span class="p">,</span>
+    <span class="p">{</span><span class="s1">&#39;estimator&#39;</span><span class="p">:</span> <a href="../../modules/generated/sklearn.svm.NuSVR.html#sklearn.svm.NuSVR" title="View documentation for sklearn.svm.classes.NuSVR"><a href="../../modules/generated/sklearn.svm.NuSVR.html#sklearn.svm.NuSVR" title="View documentation for sklearn.svm.classes.NuSVR"><a href="../../modules/generated/sklearn.svm.NuSVR.html#sklearn.svm.NuSVR" title="View documentation for sklearn.svm.classes.NuSVR"><span class="n">NuSVR</span></a></a></a><span class="p">,</span>
      <span class="s1">&#39;tuned_params&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="mf">1e3</span><span class="p">,</span> <span class="s1">&#39;gamma&#39;</span><span class="p">:</span> <span class="mi">2</span> <span class="o">**</span> <span class="o">-</span><span class="mi">15</span><span class="p">},</span>
      <span class="s1">&#39;changing_param&#39;</span><span class="p">:</span> <span class="s1">&#39;nu&#39;</span><span class="p">,</span>
      <span class="s1">&#39;changing_param_values&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">],</span>
@@ -297,10 +297,10 @@ Complexity: 500 | MSE: 7.1437 | Pred. Time: 0.001239s
      <span class="s1">&#39;complexity_computer&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">support_vectors_</span><span class="p">),</span>
      <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">regression_data</span><span class="p">,</span>
      <span class="s1">&#39;postfit_hook&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span>
-     <span class="s1">&#39;prediction_performance_computer&#39;</span><span class="p">:</span> <a href="../../modules/generated/sklearn.metrics.mean_squared_error.html#sklearn.metrics.mean_squared_error" title="View documentation for sklearn.metrics.mean_squared_error"><a href="../../modules/generated/sklearn.metrics.mean_squared_error.html#sklearn.metrics.mean_squared_error" title="View documentation for sklearn.metrics.mean_squared_error"><span class="n">mean_squared_error</span></a></a><span class="p">,</span>
+     <span class="s1">&#39;prediction_performance_computer&#39;</span><span class="p">:</span> <a href="../../modules/generated/sklearn.metrics.mean_squared_error.html#sklearn.metrics.mean_squared_error" title="View documentation for sklearn.metrics.mean_squared_error"><a href="../../modules/generated/sklearn.metrics.mean_squared_error.html#sklearn.metrics.mean_squared_error" title="View documentation for sklearn.metrics.mean_squared_error"><a href="../../modules/generated/sklearn.metrics.mean_squared_error.html#sklearn.metrics.mean_squared_error" title="View documentation for sklearn.metrics.mean_squared_error"><span class="n">mean_squared_error</span></a></a></a><span class="p">,</span>
      <span class="s1">&#39;prediction_performance_label&#39;</span><span class="p">:</span> <span class="s1">&#39;MSE&#39;</span><span class="p">,</span>
      <span class="s1">&#39;n_samples&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">},</span>
-    <span class="p">{</span><span class="s1">&#39;estimator&#39;</span><span class="p">:</span> <a href="../../modules/generated/sklearn.ensemble.GradientBoostingRegressor.html#sklearn.ensemble.GradientBoostingRegressor" title="View documentation for sklearn.ensemble.gradient_boosting.GradientBoostingRegressor"><a href="../../modules/generated/sklearn.ensemble.GradientBoostingRegressor.html#sklearn.ensemble.GradientBoostingRegressor" title="View documentation for sklearn.ensemble.gradient_boosting.GradientBoostingRegressor"><span class="n">GradientBoostingRegressor</span></a></a><span class="p">,</span>
+    <span class="p">{</span><span class="s1">&#39;estimator&#39;</span><span class="p">:</span> <a href="../../modules/generated/sklearn.ensemble.GradientBoostingRegressor.html#sklearn.ensemble.GradientBoostingRegressor" title="View documentation for sklearn.ensemble.gradient_boosting.GradientBoostingRegressor"><a href="../../modules/generated/sklearn.ensemble.GradientBoostingRegressor.html#sklearn.ensemble.GradientBoostingRegressor" title="View documentation for sklearn.ensemble.gradient_boosting.GradientBoostingRegressor"><a href="../../modules/generated/sklearn.ensemble.GradientBoostingRegressor.html#sklearn.ensemble.GradientBoostingRegressor" title="View documentation for sklearn.ensemble.gradient_boosting.GradientBoostingRegressor"><span class="n">GradientBoostingRegressor</span></a></a></a><span class="p">,</span>
      <span class="s1">&#39;tuned_params&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;loss&#39;</span><span class="p">:</span> <span class="s1">&#39;ls&#39;</span><span class="p">},</span>
      <span class="s1">&#39;changing_param&#39;</span><span class="p">:</span> <span class="s1">&#39;n_estimators&#39;</span><span class="p">,</span>
      <span class="s1">&#39;changing_param_values&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">],</span>
@@ -308,7 +308,7 @@ Complexity: 500 | MSE: 7.1437 | Pred. Time: 0.001239s
      <span class="s1">&#39;complexity_computer&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">n_estimators</span><span class="p">,</span>
      <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">regression_data</span><span class="p">,</span>
      <span class="s1">&#39;postfit_hook&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span>
-     <span class="s1">&#39;prediction_performance_computer&#39;</span><span class="p">:</span> <a href="../../modules/generated/sklearn.metrics.mean_squared_error.html#sklearn.metrics.mean_squared_error" title="View documentation for sklearn.metrics.mean_squared_error"><a href="../../modules/generated/sklearn.metrics.mean_squared_error.html#sklearn.metrics.mean_squared_error" title="View documentation for sklearn.metrics.mean_squared_error"><span class="n">mean_squared_error</span></a></a><span class="p">,</span>
+     <span class="s1">&#39;prediction_performance_computer&#39;</span><span class="p">:</span> <a href="../../modules/generated/sklearn.metrics.mean_squared_error.html#sklearn.metrics.mean_squared_error" title="View documentation for sklearn.metrics.mean_squared_error"><a href="../../modules/generated/sklearn.metrics.mean_squared_error.html#sklearn.metrics.mean_squared_error" title="View documentation for sklearn.metrics.mean_squared_error"><a href="../../modules/generated/sklearn.metrics.mean_squared_error.html#sklearn.metrics.mean_squared_error" title="View documentation for sklearn.metrics.mean_squared_error"><span class="n">mean_squared_error</span></a></a></a><span class="p">,</span>
      <span class="s1">&#39;prediction_performance_label&#39;</span><span class="p">:</span> <span class="s1">&#39;MSE&#39;</span><span class="p">,</span>
      <span class="s1">&#39;n_samples&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">},</span>
 <span class="p">]</span>
@@ -343,7 +343,7 @@ Complexity: 500 | MSE: 7.1437 | Pred. Time: 0.001239s
       </footer>
     </div>
   </div>
-  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle"><&mdash;></button>
+  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle">Toggle Menu</button>
 </div>
 <script src="../../_static/js/vendor/jquery.min.js"></script>
 <script src="../../_static/js/vendor/bootstrap.min.js"></script>
@@ -359,13 +359,11 @@ Complexity: 500 | MSE: 7.1437 | Pred. Time: 0.001239s
 
 
 <script>
-
-    $(document).ready(function() {
-
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#sk-doc-wrapper").toggleClass("toggled");
-        });
+$(document).ready(function() {
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sk-doc-wrapper").toggleClass("toggled");
+    });
 
     /* Add a [>>>] button on the top-right corner of code samples to hide
      * the >>> and ... prompts and the output and thus make the code
@@ -418,14 +416,69 @@ Complexity: 500 | MSE: 7.1437 | Pred. Time: 0.001239s
         }
     });
 
-
 	/*** Add permalink buttons next to glossary terms ***/
 	$('dl.glossary > dt[id]').append(function() {
 		return ('<a class="headerlink" href="#' +
 			    this.getAttribute('id') +
 			    '" title="Permalink to this term">¶</a>');
-	})
+	});
+
+    scrollUpToCompensateForFixedHeader();
+    // Run on hash change (user clicked on anchor link)
+    if ( 'onhashchange' in window ) {
+        window.addEventListener('hashchange', scrollUpToCompensateForFixedHeader);
+    }
+  /*** Had navbar when scrolling down ***/
+  // Returns true when headerlink target matches hash in url
+  hashTargetOnTop = function() {
+    var hash = window.location.hash;
+    if ( hash.length < 2 ) { return false; }
+
+    var target = document.getElementById( hash.slice(1) );
+    if ( target === null ) { return false; }
+
+    return target.getBoundingClientRect().top < 2;
+  };
+
+  var prevScrollpos = window.pageYOffset;
+  var narBar = document.getElementById("navbar")
+  hideOnScroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      narBar.style.top = "-48px";
+    } else {
+      narBar.style.top = "0";
+    }
+    prevScrollpos = currentScrollPos;
+  };
+
+  /*** high preformance scroll event listener***/
+  var raf = window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      window.oRequestAnimationFrame;
+  var $window = $(window);
+  var lastScrollTop = $window.scrollTop();
+
+  if (raf) {
+      loop();
+  }
+
+function loop() {
+    var scrollTop = $window.scrollTop();
+    if (lastScrollTop === scrollTop) {
+        raf(loop);
+        return;
+    } else {
+        lastScrollTop = scrollTop;
+        hideOnScroll();
+        raf(loop);
+    }
+  }
+
 });
+
 </script>
 <script>
     (function() {
@@ -436,7 +489,7 @@ Complexity: 500 | MSE: 7.1437 | Pred. Time: 0.001239s
     })();
 </script>
     
-<script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
+<script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
     
 </body>
 </html>

@@ -24,12 +24,12 @@
 <body>
 
 
-<nav class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+<nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
   <div class="container-fluid sk-docs-container">
       <a class="navbar-brand" href="../../index.html">
         <img
           src="../../_static/scikit-learn-logo-notext.png"
-          width="100"
+          height="38"
           alt="logo"/>
       </a>
     <button
@@ -67,8 +67,8 @@
   </div>
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
-    <div class="border-right" id="sk-sidebar-wrapper">
-      <div class="h-100 sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+    <div id="sk-sidebar-wrapper" class="border-right">
+      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="sklearn.neighbors.RadiusNeighborsClassifier.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.neighbors.RadiusNeighborsClassifier">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
               <a href="sklearn.neighbors.NearestCentroid.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.neighbors.NearestCentroid">Next</a>
           </div>
@@ -80,7 +80,7 @@
         </div>
         <div class="alert alert-warning p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-            Please <a class="font-weight-bold" href="about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
+            Please <a class="font-weight-bold" href="../../about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
           </p>
         </div>
         <ul>
@@ -96,7 +96,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.neighbors" title="sklearn.neighbors"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.neighbors</span></code></a>.RadiusNeighborsRegressor<a class="headerlink" href="#sklearn-neighbors-radiusneighborsregressor" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="sklearn.neighbors.RadiusNeighborsRegressor">
-<em class="property">class </em><code class="sig-prename descclassname">sklearn.neighbors.</code><code class="sig-name descname">RadiusNeighborsRegressor</code><span class="sig-paren">(</span><em class="sig-param">radius=1.0</em>, <em class="sig-param">weights='uniform'</em>, <em class="sig-param">algorithm='auto'</em>, <em class="sig-param">leaf_size=30</em>, <em class="sig-param">p=2</em>, <em class="sig-param">metric='minkowski'</em>, <em class="sig-param">metric_params=None</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/neighbors/regression.py#L194"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.RadiusNeighborsRegressor" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">sklearn.neighbors.</code><code class="sig-name descname">RadiusNeighborsRegressor</code><span class="sig-paren">(</span><em class="sig-param">radius=1.0</em>, <em class="sig-param">weights='uniform'</em>, <em class="sig-param">algorithm='auto'</em>, <em class="sig-param">leaf_size=30</em>, <em class="sig-param">p=2</em>, <em class="sig-param">metric='minkowski'</em>, <em class="sig-param">metric_params=None</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/neighbors/regression.py#L194"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.RadiusNeighborsRegressor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Regression based on neighbors within a fixed radius.</p>
 <p>The target is predicted by local interpolation of the targets
 associated of the nearest neighbors in the training set.</p>
@@ -226,13 +226,13 @@ for a discussion of the choice of <code class="docutils literal notranslate"><sp
 </table>
 <dl class="method">
 <dt id="sklearn.neighbors.RadiusNeighborsRegressor.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">radius=1.0</em>, <em class="sig-param">weights='uniform'</em>, <em class="sig-param">algorithm='auto'</em>, <em class="sig-param">leaf_size=30</em>, <em class="sig-param">p=2</em>, <em class="sig-param">metric='minkowski'</em>, <em class="sig-param">metric_params=None</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/neighbors/regression.py#L301"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.RadiusNeighborsRegressor.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">radius=1.0</em>, <em class="sig-param">weights='uniform'</em>, <em class="sig-param">algorithm='auto'</em>, <em class="sig-param">leaf_size=30</em>, <em class="sig-param">p=2</em>, <em class="sig-param">metric='minkowski'</em>, <em class="sig-param">metric_params=None</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/neighbors/regression.py#L301"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.RadiusNeighborsRegressor.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sklearn.neighbors.RadiusNeighborsRegressor.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/neighbors/base.py#L866"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.RadiusNeighborsRegressor.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/neighbors/base.py#L866"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.RadiusNeighborsRegressor.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the model using X as training data and y as target values</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -252,7 +252,7 @@ or [n_samples, n_samples] if metric=’precomputed’.</p>
 
 <dl class="method">
 <dt id="sklearn.neighbors.RadiusNeighborsRegressor.get_params">
-<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/base.py#L180"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.RadiusNeighborsRegressor.get_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L180"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.RadiusNeighborsRegressor.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -273,7 +273,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="sklearn.neighbors.RadiusNeighborsRegressor.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/neighbors/regression.py#L313"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.RadiusNeighborsRegressor.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/neighbors/regression.py#L313"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.RadiusNeighborsRegressor.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predict the target for the provided data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -293,7 +293,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="sklearn.neighbors.RadiusNeighborsRegressor.radius_neighbors">
-<code class="sig-name descname">radius_neighbors</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X=None</em>, <em class="sig-param">radius=None</em>, <em class="sig-param">return_distance=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/neighbors/base.py#L628"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.RadiusNeighborsRegressor.radius_neighbors" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">radius_neighbors</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X=None</em>, <em class="sig-param">radius=None</em>, <em class="sig-param">return_distance=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/neighbors/base.py#L628"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.RadiusNeighborsRegressor.radius_neighbors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Finds the neighbors within a given radius of a point or points.</p>
 <p>Return the indices and distances of each point from the dataset
 lying in a ball with size <code class="docutils literal notranslate"><span class="pre">radius</span></code> around the points of the query
@@ -357,7 +357,7 @@ indices.  In general, multiple points can be queried at the same time.</p>
 
 <dl class="method">
 <dt id="sklearn.neighbors.RadiusNeighborsRegressor.radius_neighbors_graph">
-<code class="sig-name descname">radius_neighbors_graph</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X=None</em>, <em class="sig-param">radius=None</em>, <em class="sig-param">mode='connectivity'</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/neighbors/base.py#L787"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.RadiusNeighborsRegressor.radius_neighbors_graph" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">radius_neighbors_graph</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X=None</em>, <em class="sig-param">radius=None</em>, <em class="sig-param">mode='connectivity'</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/neighbors/base.py#L787"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.RadiusNeighborsRegressor.radius_neighbors_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the (weighted) graph of Neighbors for points in X</p>
 <p>Neighborhoods are restricted the points at a distance lower than
 radius.</p>
@@ -407,7 +407,7 @@ edges are Euclidean distance between points.</p>
 
 <dl class="method">
 <dt id="sklearn.neighbors.RadiusNeighborsRegressor.score">
-<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">sample_weight=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/base.py#L375"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.RadiusNeighborsRegressor.score" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">sample_weight=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L375"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.RadiusNeighborsRegressor.score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the coefficient of determination R^2 of the prediction.</p>
 <p>The coefficient R^2 is defined as (1 - u/v), where u is the residual
 sum of squares ((y_true - y_pred) ** 2).sum() and v is the total
@@ -450,7 +450,7 @@ built-in scorer <code class="docutils literal notranslate"><span class="pre">'r2
 
 <dl class="method">
 <dt id="sklearn.neighbors.RadiusNeighborsRegressor.set_params">
-<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/base.py#L211"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.RadiusNeighborsRegressor.set_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L211"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neighbors.RadiusNeighborsRegressor.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as pipelines). The latter have parameters of the form
@@ -478,7 +478,7 @@ component of a nested object.</p>
       </footer>
     </div>
   </div>
-  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle"><&mdash;></button>
+  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle">Toggle Menu</button>
 </div>
 <script src="../../_static/js/vendor/jquery.min.js"></script>
 <script src="../../_static/js/vendor/bootstrap.min.js"></script>
@@ -494,13 +494,11 @@ component of a nested object.</p>
 
 
 <script>
-
-    $(document).ready(function() {
-
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#sk-doc-wrapper").toggleClass("toggled");
-        });
+$(document).ready(function() {
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sk-doc-wrapper").toggleClass("toggled");
+    });
 
     /* Add a [>>>] button on the top-right corner of code samples to hide
      * the >>> and ... prompts and the output and thus make the code
@@ -553,14 +551,62 @@ component of a nested object.</p>
         }
     });
 
-
 	/*** Add permalink buttons next to glossary terms ***/
 	$('dl.glossary > dt[id]').append(function() {
 		return ('<a class="headerlink" href="#' +
 			    this.getAttribute('id') +
 			    '" title="Permalink to this term">¶</a>');
-	})
+	});
+  /*** Had navbar when scrolling down ***/
+  // Returns true when headerlink target matches hash in url
+  hashTargetOnTop = function() {
+    var hash = window.location.hash;
+    if ( hash.length < 2 ) { return false; }
+
+    var target = document.getElementById( hash.slice(1) );
+    if ( target === null ) { return false; }
+
+    return target.getBoundingClientRect().top < 2;
+  };
+
+  var prevScrollpos = window.pageYOffset;
+  var narBar = document.getElementById("navbar")
+  hideOnScroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      narBar.style.top = "-48px";
+    } else {
+      narBar.style.top = "0";
+    }
+    prevScrollpos = currentScrollPos;
+  };
+
+  /*** high preformance scroll event listener***/
+  var raf = window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      window.oRequestAnimationFrame;
+  var $window = $(window);
+  var lastScrollTop = $window.scrollTop();
+
+  if (raf) {
+      loop();
+  }
+
+function loop() {
+    var scrollTop = $window.scrollTop();
+    if (lastScrollTop === scrollTop) {
+        raf(loop);
+        return;
+    } else {
+        lastScrollTop = scrollTop;
+        hideOnScroll();
+        raf(loop);
+    }
+  }
 });
+
 </script>
 <script>
     (function() {
@@ -571,7 +617,7 @@ component of a nested object.</p>
     })();
 </script>
     
-<script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
+<script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
     
 </body>
 </html>

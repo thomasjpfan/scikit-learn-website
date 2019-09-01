@@ -24,12 +24,12 @@
 <body>
 
 
-<nav class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+<nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
   <div class="container-fluid sk-docs-container">
       <a class="navbar-brand" href="../../index.html">
         <img
           src="../../_static/scikit-learn-logo-notext.png"
-          width="100"
+          height="38"
           alt="logo"/>
       </a>
     <button
@@ -67,8 +67,8 @@
   </div>
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
-    <div class="border-right" id="sk-sidebar-wrapper">
-      <div class="h-100 sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+    <div id="sk-sidebar-wrapper" class="border-right">
+      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="plot_adjusted_for_chance_measures.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Adjustment for chance in clustering performance evaluation">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
               <a href="plot_feature_agglomeration_vs_univariate_selection.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Feature agglomeration vs. univariate selection">Next</a>
           </div>
@@ -80,7 +80,7 @@
         </div>
         <div class="alert alert-warning p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-            Please <a class="font-weight-bold" href="about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
+            Please <a class="font-weight-bold" href="../../about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
           </p>
         </div>
         <ul>
@@ -120,9 +120,9 @@ algorithms.</p>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.cluster.MiniBatchKMeans.html#sklearn.cluster.MiniBatchKMeans" title="View documentation for sklearn.cluster.MiniBatchKMeans"><a href="../../modules/generated/sklearn.cluster.MiniBatchKMeans.html#sklearn.cluster.MiniBatchKMeans" title="View documentation for sklearn.cluster.MiniBatchKMeans"><span class="n">MiniBatchKMeans</span></a></a><span class="p">,</span> <a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="View documentation for sklearn.cluster.KMeans"><a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="View documentation for sklearn.cluster.KMeans"><span class="n">KMeans</span></a></a>
-<span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.metrics.pairwise_distances_argmin.html#sklearn.metrics.pairwise_distances_argmin" title="View documentation for sklearn.metrics.pairwise.pairwise_distances_argmin"><a href="../../modules/generated/sklearn.metrics.pairwise_distances_argmin.html#sklearn.metrics.pairwise_distances_argmin" title="View documentation for sklearn.metrics.pairwise.pairwise_distances_argmin"><span class="n">pairwise_distances_argmin</span></a></a>
-<span class="kn">from</span> <span class="nn">sklearn.datasets.samples_generator</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.datasets.make_blobs.html#sklearn.datasets.make_blobs" title="View documentation for sklearn.datasets.samples_generator.make_blobs"><a href="../../modules/generated/sklearn.datasets.make_blobs.html#sklearn.datasets.make_blobs" title="View documentation for sklearn.datasets.samples_generator.make_blobs"><span class="n">make_blobs</span></a></a>
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.cluster.MiniBatchKMeans.html#sklearn.cluster.MiniBatchKMeans" title="View documentation for sklearn.cluster.MiniBatchKMeans"><a href="../../modules/generated/sklearn.cluster.MiniBatchKMeans.html#sklearn.cluster.MiniBatchKMeans" title="View documentation for sklearn.cluster.MiniBatchKMeans"><a href="../../modules/generated/sklearn.cluster.MiniBatchKMeans.html#sklearn.cluster.MiniBatchKMeans" title="View documentation for sklearn.cluster.MiniBatchKMeans"><span class="n">MiniBatchKMeans</span></a></a></a><span class="p">,</span> <a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="View documentation for sklearn.cluster.KMeans"><a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="View documentation for sklearn.cluster.KMeans"><a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="View documentation for sklearn.cluster.KMeans"><span class="n">KMeans</span></a></a></a>
+<span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.metrics.pairwise_distances_argmin.html#sklearn.metrics.pairwise_distances_argmin" title="View documentation for sklearn.metrics.pairwise.pairwise_distances_argmin"><a href="../../modules/generated/sklearn.metrics.pairwise_distances_argmin.html#sklearn.metrics.pairwise_distances_argmin" title="View documentation for sklearn.metrics.pairwise.pairwise_distances_argmin"><a href="../../modules/generated/sklearn.metrics.pairwise_distances_argmin.html#sklearn.metrics.pairwise_distances_argmin" title="View documentation for sklearn.metrics.pairwise.pairwise_distances_argmin"><span class="n">pairwise_distances_argmin</span></a></a></a>
+<span class="kn">from</span> <span class="nn">sklearn.datasets.samples_generator</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.datasets.make_blobs.html#sklearn.datasets.make_blobs" title="View documentation for sklearn.datasets.samples_generator.make_blobs"><a href="../../modules/generated/sklearn.datasets.make_blobs.html#sklearn.datasets.make_blobs" title="View documentation for sklearn.datasets.samples_generator.make_blobs"><a href="../../modules/generated/sklearn.datasets.make_blobs.html#sklearn.datasets.make_blobs" title="View documentation for sklearn.datasets.samples_generator.make_blobs"><span class="n">make_blobs</span></a></a></a>
 
 <span class="c1"># #############################################################################</span>
 <span class="c1"># Generate sample data</span>
@@ -131,12 +131,12 @@ algorithms.</p>
 <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">45</span>
 <span class="n">centers</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
 <span class="n">n_clusters</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">centers</span><span class="p">)</span>
-<span class="n">X</span><span class="p">,</span> <span class="n">labels_true</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.make_blobs.html#sklearn.datasets.make_blobs" title="View documentation for sklearn.datasets.samples_generator.make_blobs"><a href="../../modules/generated/sklearn.datasets.make_blobs.html#sklearn.datasets.make_blobs" title="View documentation for sklearn.datasets.samples_generator.make_blobs"><span class="n">make_blobs</span></a></a><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">3000</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="n">centers</span><span class="p">,</span> <span class="n">cluster_std</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">labels_true</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.make_blobs.html#sklearn.datasets.make_blobs" title="View documentation for sklearn.datasets.samples_generator.make_blobs"><a href="../../modules/generated/sklearn.datasets.make_blobs.html#sklearn.datasets.make_blobs" title="View documentation for sklearn.datasets.samples_generator.make_blobs"><a href="../../modules/generated/sklearn.datasets.make_blobs.html#sklearn.datasets.make_blobs" title="View documentation for sklearn.datasets.samples_generator.make_blobs"><span class="n">make_blobs</span></a></a></a><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">3000</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="n">centers</span><span class="p">,</span> <span class="n">cluster_std</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 
 <span class="c1"># #############################################################################</span>
 <span class="c1"># Compute clustering with Means</span>
 
-<span class="n">k_means</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="View documentation for sklearn.cluster.KMeans"><a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="View documentation for sklearn.cluster.KMeans"><span class="n">KMeans</span></a></a><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="s1">&#39;k-means++&#39;</span><span class="p">,</span> <span class="n">n_clusters</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">k_means</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="View documentation for sklearn.cluster.KMeans"><a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="View documentation for sklearn.cluster.KMeans"><a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="View documentation for sklearn.cluster.KMeans"><span class="n">KMeans</span></a></a></a><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="s1">&#39;k-means++&#39;</span><span class="p">,</span> <span class="n">n_clusters</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="n">k_means</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 <span class="n">t_batch</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span>
@@ -144,7 +144,7 @@ algorithms.</p>
 <span class="c1"># #############################################################################</span>
 <span class="c1"># Compute clustering with MiniBatchKMeans</span>
 
-<span class="n">mbk</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.cluster.MiniBatchKMeans.html#sklearn.cluster.MiniBatchKMeans" title="View documentation for sklearn.cluster.MiniBatchKMeans"><a href="../../modules/generated/sklearn.cluster.MiniBatchKMeans.html#sklearn.cluster.MiniBatchKMeans" title="View documentation for sklearn.cluster.MiniBatchKMeans"><span class="n">MiniBatchKMeans</span></a></a><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="s1">&#39;k-means++&#39;</span><span class="p">,</span> <span class="n">n_clusters</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
+<span class="n">mbk</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.cluster.MiniBatchKMeans.html#sklearn.cluster.MiniBatchKMeans" title="View documentation for sklearn.cluster.MiniBatchKMeans"><a href="../../modules/generated/sklearn.cluster.MiniBatchKMeans.html#sklearn.cluster.MiniBatchKMeans" title="View documentation for sklearn.cluster.MiniBatchKMeans"><a href="../../modules/generated/sklearn.cluster.MiniBatchKMeans.html#sklearn.cluster.MiniBatchKMeans" title="View documentation for sklearn.cluster.MiniBatchKMeans"><span class="n">MiniBatchKMeans</span></a></a></a><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="s1">&#39;k-means++&#39;</span><span class="p">,</span> <span class="n">n_clusters</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
                       <span class="n">n_init</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">max_no_improvement</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="n">mbk</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
@@ -153,7 +153,7 @@ algorithms.</p>
 <span class="c1"># #############################################################################</span>
 <span class="c1"># Plot result</span>
 
-<span class="n">fig</span> <span class="o">=</span> <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="View documentation for matplotlib.pyplot.figure"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="View documentation for matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">fig</span> <span class="o">=</span> <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="View documentation for matplotlib.pyplot.figure"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="View documentation for matplotlib.pyplot.figure"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="View documentation for matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a></a></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.98</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
 <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#4EACC5&#39;</span><span class="p">,</span> <span class="s1">&#39;#FF9C34&#39;</span><span class="p">,</span> <span class="s1">&#39;#4E9A06&#39;</span><span class="p">]</span>
 
@@ -161,12 +161,12 @@ algorithms.</p>
 <span class="c1"># MiniBatchKMeans and the KMeans algorithm. Let&#39;s pair the cluster centers per</span>
 <span class="c1"># closest one.</span>
 <span class="n">k_means_cluster_centers</span> <span class="o">=</span> <span class="n">k_means</span><span class="o">.</span><span class="n">cluster_centers_</span>
-<span class="n">order</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.metrics.pairwise_distances_argmin.html#sklearn.metrics.pairwise_distances_argmin" title="View documentation for sklearn.metrics.pairwise.pairwise_distances_argmin"><a href="../../modules/generated/sklearn.metrics.pairwise_distances_argmin.html#sklearn.metrics.pairwise_distances_argmin" title="View documentation for sklearn.metrics.pairwise.pairwise_distances_argmin"><span class="n">pairwise_distances_argmin</span></a></a><span class="p">(</span><span class="n">k_means</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">,</span>
+<span class="n">order</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.metrics.pairwise_distances_argmin.html#sklearn.metrics.pairwise_distances_argmin" title="View documentation for sklearn.metrics.pairwise.pairwise_distances_argmin"><a href="../../modules/generated/sklearn.metrics.pairwise_distances_argmin.html#sklearn.metrics.pairwise_distances_argmin" title="View documentation for sklearn.metrics.pairwise.pairwise_distances_argmin"><a href="../../modules/generated/sklearn.metrics.pairwise_distances_argmin.html#sklearn.metrics.pairwise_distances_argmin" title="View documentation for sklearn.metrics.pairwise.pairwise_distances_argmin"><span class="n">pairwise_distances_argmin</span></a></a></a><span class="p">(</span><span class="n">k_means</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">,</span>
                                   <span class="n">mbk</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">)</span>
 <span class="n">mbk_means_cluster_centers</span> <span class="o">=</span> <span class="n">mbk</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[</span><span class="n">order</span><span class="p">]</span>
 
-<span class="n">k_means_labels</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.metrics.pairwise_distances_argmin.html#sklearn.metrics.pairwise_distances_argmin" title="View documentation for sklearn.metrics.pairwise.pairwise_distances_argmin"><a href="../../modules/generated/sklearn.metrics.pairwise_distances_argmin.html#sklearn.metrics.pairwise_distances_argmin" title="View documentation for sklearn.metrics.pairwise.pairwise_distances_argmin"><span class="n">pairwise_distances_argmin</span></a></a><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">k_means_cluster_centers</span><span class="p">)</span>
-<span class="n">mbk_means_labels</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.metrics.pairwise_distances_argmin.html#sklearn.metrics.pairwise_distances_argmin" title="View documentation for sklearn.metrics.pairwise.pairwise_distances_argmin"><a href="../../modules/generated/sklearn.metrics.pairwise_distances_argmin.html#sklearn.metrics.pairwise_distances_argmin" title="View documentation for sklearn.metrics.pairwise.pairwise_distances_argmin"><span class="n">pairwise_distances_argmin</span></a></a><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">mbk_means_cluster_centers</span><span class="p">)</span>
+<span class="n">k_means_labels</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.metrics.pairwise_distances_argmin.html#sklearn.metrics.pairwise_distances_argmin" title="View documentation for sklearn.metrics.pairwise.pairwise_distances_argmin"><a href="../../modules/generated/sklearn.metrics.pairwise_distances_argmin.html#sklearn.metrics.pairwise_distances_argmin" title="View documentation for sklearn.metrics.pairwise.pairwise_distances_argmin"><a href="../../modules/generated/sklearn.metrics.pairwise_distances_argmin.html#sklearn.metrics.pairwise_distances_argmin" title="View documentation for sklearn.metrics.pairwise.pairwise_distances_argmin"><span class="n">pairwise_distances_argmin</span></a></a></a><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">k_means_cluster_centers</span><span class="p">)</span>
+<span class="n">mbk_means_labels</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.metrics.pairwise_distances_argmin.html#sklearn.metrics.pairwise_distances_argmin" title="View documentation for sklearn.metrics.pairwise.pairwise_distances_argmin"><a href="../../modules/generated/sklearn.metrics.pairwise_distances_argmin.html#sklearn.metrics.pairwise_distances_argmin" title="View documentation for sklearn.metrics.pairwise.pairwise_distances_argmin"><a href="../../modules/generated/sklearn.metrics.pairwise_distances_argmin.html#sklearn.metrics.pairwise_distances_argmin" title="View documentation for sklearn.metrics.pairwise.pairwise_distances_argmin"><span class="n">pairwise_distances_argmin</span></a></a></a><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">mbk_means_cluster_centers</span><span class="p">)</span>
 
 <span class="c1"># KMeans</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -180,7 +180,7 @@ algorithms.</p>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;KMeans&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(())</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(())</span>
-<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" title="View documentation for matplotlib.pyplot.text"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" title="View documentation for matplotlib.pyplot.text"><span class="n">plt</span><span class="o">.</span><span class="n">text</span></a></a><span class="p">(</span><span class="o">-</span><span class="mf">3.5</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span>  <span class="s1">&#39;train time: </span><span class="si">%.2f</span><span class="s1">s</span><span class="se">\n</span><span class="s1">inertia: </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" title="View documentation for matplotlib.pyplot.text"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" title="View documentation for matplotlib.pyplot.text"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" title="View documentation for matplotlib.pyplot.text"><span class="n">plt</span><span class="o">.</span><span class="n">text</span></a></a></a><span class="p">(</span><span class="o">-</span><span class="mf">3.5</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span>  <span class="s1">&#39;train time: </span><span class="si">%.2f</span><span class="s1">s</span><span class="se">\n</span><span class="s1">inertia: </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span>
     <span class="n">t_batch</span><span class="p">,</span> <span class="n">k_means</span><span class="o">.</span><span class="n">inertia_</span><span class="p">))</span>
 
 <span class="c1"># MiniBatchKMeans</span>
@@ -195,7 +195,7 @@ algorithms.</p>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;MiniBatchKMeans&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(())</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(())</span>
-<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" title="View documentation for matplotlib.pyplot.text"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" title="View documentation for matplotlib.pyplot.text"><span class="n">plt</span><span class="o">.</span><span class="n">text</span></a></a><span class="p">(</span><span class="o">-</span><span class="mf">3.5</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="s1">&#39;train time: </span><span class="si">%.2f</span><span class="s1">s</span><span class="se">\n</span><span class="s1">inertia: </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" title="View documentation for matplotlib.pyplot.text"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" title="View documentation for matplotlib.pyplot.text"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" title="View documentation for matplotlib.pyplot.text"><span class="n">plt</span><span class="o">.</span><span class="n">text</span></a></a></a><span class="p">(</span><span class="o">-</span><span class="mf">3.5</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="s1">&#39;train time: </span><span class="si">%.2f</span><span class="s1">s</span><span class="se">\n</span><span class="s1">inertia: </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span>
          <span class="p">(</span><span class="n">t_mini_batch</span><span class="p">,</span> <span class="n">mbk</span><span class="o">.</span><span class="n">inertia_</span><span class="p">))</span>
 
 <span class="c1"># Initialise the different array to all False</span>
@@ -205,7 +205,7 @@ algorithms.</p>
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_clusters</span><span class="p">):</span>
     <span class="n">different</span> <span class="o">+=</span> <span class="p">((</span><span class="n">k_means_labels</span> <span class="o">==</span> <span class="n">k</span><span class="p">)</span> <span class="o">!=</span> <span class="p">(</span><span class="n">mbk_means_labels</span> <span class="o">==</span> <span class="n">k</span><span class="p">))</span>
 
-<span class="n">identic</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.logical_not.html#numpy.logical_not" title="View documentation for numpy.logical_not"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.logical_not.html#numpy.logical_not" title="View documentation for numpy.logical_not"><span class="n">np</span><span class="o">.</span><span class="n">logical_not</span></a></a><span class="p">(</span><span class="n">different</span><span class="p">)</span>
+<span class="n">identic</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.logical_not.html#numpy.logical_not" title="View documentation for numpy.logical_not"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.logical_not.html#numpy.logical_not" title="View documentation for numpy.logical_not"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.logical_not.html#numpy.logical_not" title="View documentation for numpy.logical_not"><span class="n">np</span><span class="o">.</span><span class="n">logical_not</span></a></a></a><span class="p">(</span><span class="n">different</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">identic</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">identic</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span>
         <span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;#bbbbbb&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">different</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">different</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span>
@@ -214,7 +214,7 @@ algorithms.</p>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(())</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(())</span>
 
-<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a></a><span class="p">()</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a></a></a><span class="p">()</span>
 </pre></div>
 </div>
 <p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.298 seconds)</p>
@@ -241,7 +241,7 @@ algorithms.</p>
       </footer>
     </div>
   </div>
-  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle"><&mdash;></button>
+  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle">Toggle Menu</button>
 </div>
 <script src="../../_static/js/vendor/jquery.min.js"></script>
 <script src="../../_static/js/vendor/bootstrap.min.js"></script>
@@ -257,13 +257,11 @@ algorithms.</p>
 
 
 <script>
-
-    $(document).ready(function() {
-
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#sk-doc-wrapper").toggleClass("toggled");
-        });
+$(document).ready(function() {
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sk-doc-wrapper").toggleClass("toggled");
+    });
 
     /* Add a [>>>] button on the top-right corner of code samples to hide
      * the >>> and ... prompts and the output and thus make the code
@@ -316,14 +314,69 @@ algorithms.</p>
         }
     });
 
-
 	/*** Add permalink buttons next to glossary terms ***/
 	$('dl.glossary > dt[id]').append(function() {
 		return ('<a class="headerlink" href="#' +
 			    this.getAttribute('id') +
 			    '" title="Permalink to this term">¶</a>');
-	})
+	});
+
+    scrollUpToCompensateForFixedHeader();
+    // Run on hash change (user clicked on anchor link)
+    if ( 'onhashchange' in window ) {
+        window.addEventListener('hashchange', scrollUpToCompensateForFixedHeader);
+    }
+  /*** Had navbar when scrolling down ***/
+  // Returns true when headerlink target matches hash in url
+  hashTargetOnTop = function() {
+    var hash = window.location.hash;
+    if ( hash.length < 2 ) { return false; }
+
+    var target = document.getElementById( hash.slice(1) );
+    if ( target === null ) { return false; }
+
+    return target.getBoundingClientRect().top < 2;
+  };
+
+  var prevScrollpos = window.pageYOffset;
+  var narBar = document.getElementById("navbar")
+  hideOnScroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      narBar.style.top = "-48px";
+    } else {
+      narBar.style.top = "0";
+    }
+    prevScrollpos = currentScrollPos;
+  };
+
+  /*** high preformance scroll event listener***/
+  var raf = window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      window.oRequestAnimationFrame;
+  var $window = $(window);
+  var lastScrollTop = $window.scrollTop();
+
+  if (raf) {
+      loop();
+  }
+
+function loop() {
+    var scrollTop = $window.scrollTop();
+    if (lastScrollTop === scrollTop) {
+        raf(loop);
+        return;
+    } else {
+        lastScrollTop = scrollTop;
+        hideOnScroll();
+        raf(loop);
+    }
+  }
+
 });
+
 </script>
 <script>
     (function() {
@@ -334,7 +387,7 @@ algorithms.</p>
     })();
 </script>
     
-<script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
+<script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
     
 </body>
 </html>

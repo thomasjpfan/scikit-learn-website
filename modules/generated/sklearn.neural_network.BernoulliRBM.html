@@ -24,12 +24,12 @@
 <body>
 
 
-<nav class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+<nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
   <div class="container-fluid sk-docs-container">
       <a class="navbar-brand" href="../../index.html">
         <img
           src="../../_static/scikit-learn-logo-notext.png"
-          width="100"
+          height="38"
           alt="logo"/>
       </a>
     <button
@@ -67,8 +67,8 @@
   </div>
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
-    <div class="border-right" id="sk-sidebar-wrapper">
-      <div class="h-100 sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+    <div id="sk-sidebar-wrapper" class="border-right">
+      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="sklearn.neighbors.radius_neighbors_graph.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.neighbors.radius_neighbors_graph">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
               <a href="sklearn.neural_network.MLPClassifier.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.neural_network.MLPClassifier">Next</a>
           </div>
@@ -80,7 +80,7 @@
         </div>
         <div class="alert alert-warning p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-            Please <a class="font-weight-bold" href="about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
+            Please <a class="font-weight-bold" href="../../about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
           </p>
         </div>
         <ul>
@@ -99,7 +99,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.neural_network" title="sklearn.neural_network"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.neural_network</span></code></a>.BernoulliRBM<a class="headerlink" href="#sklearn-neural-network-bernoullirbm" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="sklearn.neural_network.BernoulliRBM">
-<em class="property">class </em><code class="sig-prename descclassname">sklearn.neural_network.</code><code class="sig-name descname">BernoulliRBM</code><span class="sig-paren">(</span><em class="sig-param">n_components=256</em>, <em class="sig-param">learning_rate=0.1</em>, <em class="sig-param">batch_size=10</em>, <em class="sig-param">n_iter=10</em>, <em class="sig-param">verbose=0</em>, <em class="sig-param">random_state=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/neural_network/rbm.py#L26"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neural_network.BernoulliRBM" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">sklearn.neural_network.</code><code class="sig-name descname">BernoulliRBM</code><span class="sig-paren">(</span><em class="sig-param">n_components=256</em>, <em class="sig-param">learning_rate=0.1</em>, <em class="sig-param">batch_size=10</em>, <em class="sig-param">n_iter=10</em>, <em class="sig-param">verbose=0</em>, <em class="sig-param">random_state=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/neural_network/rbm.py#L26"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neural_network.BernoulliRBM" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bernoulli Restricted Boltzmann Machine (RBM).</p>
 <p>A Restricted Boltzmann Machine with binary visible units and
 binary hidden units. Parameters are estimated using Stochastic Maximum
@@ -199,13 +199,13 @@ on Machine Learning (ICML) 2008</p>
 </table>
 <dl class="method">
 <dt id="sklearn.neural_network.BernoulliRBM.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">n_components=256</em>, <em class="sig-param">learning_rate=0.1</em>, <em class="sig-param">batch_size=10</em>, <em class="sig-param">n_iter=10</em>, <em class="sig-param">verbose=0</em>, <em class="sig-param">random_state=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/neural_network/rbm.py#L102"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neural_network.BernoulliRBM.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">n_components=256</em>, <em class="sig-param">learning_rate=0.1</em>, <em class="sig-param">batch_size=10</em>, <em class="sig-param">n_iter=10</em>, <em class="sig-param">verbose=0</em>, <em class="sig-param">random_state=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/neural_network/rbm.py#L102"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neural_network.BernoulliRBM.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sklearn.neural_network.BernoulliRBM.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/neural_network/rbm.py#L326"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neural_network.BernoulliRBM.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/neural_network/rbm.py#L326"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neural_network.BernoulliRBM.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the model to the data X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -225,7 +225,7 @@ on Machine Learning (ICML) 2008</p>
 
 <dl class="method">
 <dt id="sklearn.neural_network.BernoulliRBM.fit_transform">
-<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em>, <em class="sig-param">**fit_params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/base.py#L540"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neural_network.BernoulliRBM.fit_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em>, <em class="sig-param">**fit_params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L540"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neural_network.BernoulliRBM.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit to data, then transform it.</p>
 <p>Fits transformer to X and y with optional parameters fit_params
 and returns a transformed version of X.</p>
@@ -249,7 +249,7 @@ and returns a transformed version of X.</p>
 
 <dl class="method">
 <dt id="sklearn.neural_network.BernoulliRBM.get_params">
-<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/base.py#L180"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neural_network.BernoulliRBM.get_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L180"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neural_network.BernoulliRBM.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -270,7 +270,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="sklearn.neural_network.BernoulliRBM.gibbs">
-<code class="sig-name descname">gibbs</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">v</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/neural_network/rbm.py#L203"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neural_network.BernoulliRBM.gibbs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">gibbs</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">v</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/neural_network/rbm.py#L203"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neural_network.BernoulliRBM.gibbs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform one Gibbs sampling step.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -290,7 +290,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="sklearn.neural_network.BernoulliRBM.partial_fit">
-<code class="sig-name descname">partial_fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/neural_network/rbm.py#L224"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neural_network.BernoulliRBM.partial_fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">partial_fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/neural_network/rbm.py#L224"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neural_network.BernoulliRBM.partial_fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the model to the data X which should contain a partial
 segment of the data.</p>
 <dl class="field-list simple">
@@ -311,7 +311,7 @@ segment of the data.</p>
 
 <dl class="method">
 <dt id="sklearn.neural_network.BernoulliRBM.score_samples">
-<code class="sig-name descname">score_samples</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/neural_network/rbm.py#L288"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neural_network.BernoulliRBM.score_samples" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">score_samples</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/neural_network/rbm.py#L288"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neural_network.BernoulliRBM.score_samples" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the pseudo-likelihood of X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -335,7 +335,7 @@ returns the log of the logistic function of the difference.</p>
 
 <dl class="method">
 <dt id="sklearn.neural_network.BernoulliRBM.set_params">
-<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/base.py#L211"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neural_network.BernoulliRBM.set_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L211"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neural_network.BernoulliRBM.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as pipelines). The latter have parameters of the form
@@ -352,7 +352,7 @@ component of a nested object.</p>
 
 <dl class="method">
 <dt id="sklearn.neural_network.BernoulliRBM.transform">
-<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/neural_network/rbm.py#L111"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neural_network.BernoulliRBM.transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/neural_network/rbm.py#L111"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.neural_network.BernoulliRBM.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the hidden layer activation probabilities, P(h=1|v=X).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -390,7 +390,7 @@ component of a nested object.</p>
       </footer>
     </div>
   </div>
-  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle"><&mdash;></button>
+  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle">Toggle Menu</button>
 </div>
 <script src="../../_static/js/vendor/jquery.min.js"></script>
 <script src="../../_static/js/vendor/bootstrap.min.js"></script>
@@ -406,13 +406,11 @@ component of a nested object.</p>
 
 
 <script>
-
-    $(document).ready(function() {
-
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#sk-doc-wrapper").toggleClass("toggled");
-        });
+$(document).ready(function() {
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sk-doc-wrapper").toggleClass("toggled");
+    });
 
     /* Add a [>>>] button on the top-right corner of code samples to hide
      * the >>> and ... prompts and the output and thus make the code
@@ -465,14 +463,62 @@ component of a nested object.</p>
         }
     });
 
-
 	/*** Add permalink buttons next to glossary terms ***/
 	$('dl.glossary > dt[id]').append(function() {
 		return ('<a class="headerlink" href="#' +
 			    this.getAttribute('id') +
 			    '" title="Permalink to this term">¶</a>');
-	})
+	});
+  /*** Had navbar when scrolling down ***/
+  // Returns true when headerlink target matches hash in url
+  hashTargetOnTop = function() {
+    var hash = window.location.hash;
+    if ( hash.length < 2 ) { return false; }
+
+    var target = document.getElementById( hash.slice(1) );
+    if ( target === null ) { return false; }
+
+    return target.getBoundingClientRect().top < 2;
+  };
+
+  var prevScrollpos = window.pageYOffset;
+  var narBar = document.getElementById("navbar")
+  hideOnScroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      narBar.style.top = "-48px";
+    } else {
+      narBar.style.top = "0";
+    }
+    prevScrollpos = currentScrollPos;
+  };
+
+  /*** high preformance scroll event listener***/
+  var raf = window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      window.oRequestAnimationFrame;
+  var $window = $(window);
+  var lastScrollTop = $window.scrollTop();
+
+  if (raf) {
+      loop();
+  }
+
+function loop() {
+    var scrollTop = $window.scrollTop();
+    if (lastScrollTop === scrollTop) {
+        raf(loop);
+        return;
+    } else {
+        lastScrollTop = scrollTop;
+        hideOnScroll();
+        raf(loop);
+    }
+  }
 });
+
 </script>
 <script>
     (function() {
@@ -483,7 +529,7 @@ component of a nested object.</p>
     })();
 </script>
     
-<script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
+<script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
     
 </body>
 </html>

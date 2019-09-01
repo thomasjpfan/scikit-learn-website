@@ -24,12 +24,12 @@
 <body>
 
 
-<nav class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+<nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
   <div class="container-fluid sk-docs-container">
       <a class="navbar-brand" href="../../index.html">
         <img
           src="../../_static/scikit-learn-logo-notext.png"
-          width="100"
+          height="38"
           alt="logo"/>
       </a>
     <button
@@ -67,8 +67,8 @@
   </div>
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
-    <div class="border-right" id="sk-sidebar-wrapper">
-      <div class="h-100 sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+    <div id="sk-sidebar-wrapper" class="border-right">
+      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="plot_hashing_vs_dict_vectorizer.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="FeatureHasher and DictVectorizer Comparison">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
               <a href="plot_document_classification_20newsgroups.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Classification of text documents using sparse features">Next</a>
           </div>
@@ -80,7 +80,7 @@
         </div>
         <div class="alert alert-warning p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-            Please <a class="font-weight-bold" href="about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
+            Please <a class="font-weight-bold" href="../../about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
           </p>
         </div>
         <ul>
@@ -182,16 +182,16 @@ Cluster 3: space nasa access gov digex pat shuttle hst orbit net
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Author: Peter Prettenhofer &lt;peter.prettenhofer@gmail.com&gt;</span>
 <span class="c1">#         Lars Buitinck</span>
 <span class="c1"># License: BSD 3 clause</span>
-<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.datasets.fetch_20newsgroups.html#sklearn.datasets.fetch_20newsgroups" title="View documentation for sklearn.datasets.fetch_20newsgroups"><a href="../../modules/generated/sklearn.datasets.fetch_20newsgroups.html#sklearn.datasets.fetch_20newsgroups" title="View documentation for sklearn.datasets.fetch_20newsgroups"><span class="n">fetch_20newsgroups</span></a></a>
-<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.decomposition.TruncatedSVD.html#sklearn.decomposition.TruncatedSVD" title="View documentation for sklearn.decomposition.TruncatedSVD"><a href="../../modules/generated/sklearn.decomposition.TruncatedSVD.html#sklearn.decomposition.TruncatedSVD" title="View documentation for sklearn.decomposition.TruncatedSVD"><span class="n">TruncatedSVD</span></a></a>
-<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer" title="View documentation for sklearn.feature_extraction.text.TfidfVectorizer"><a href="../../modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer" title="View documentation for sklearn.feature_extraction.text.TfidfVectorizer"><span class="n">TfidfVectorizer</span></a></a>
-<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.feature_extraction.text.HashingVectorizer.html#sklearn.feature_extraction.text.HashingVectorizer" title="View documentation for sklearn.feature_extraction.text.HashingVectorizer"><a href="../../modules/generated/sklearn.feature_extraction.text.HashingVectorizer.html#sklearn.feature_extraction.text.HashingVectorizer" title="View documentation for sklearn.feature_extraction.text.HashingVectorizer"><span class="n">HashingVectorizer</span></a></a>
-<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.feature_extraction.text.TfidfTransformer.html#sklearn.feature_extraction.text.TfidfTransformer" title="View documentation for sklearn.feature_extraction.text.TfidfTransformer"><a href="../../modules/generated/sklearn.feature_extraction.text.TfidfTransformer.html#sklearn.feature_extraction.text.TfidfTransformer" title="View documentation for sklearn.feature_extraction.text.TfidfTransformer"><span class="n">TfidfTransformer</span></a></a>
-<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.pipeline.make_pipeline.html#sklearn.pipeline.make_pipeline" title="View documentation for sklearn.pipeline.make_pipeline"><a href="../../modules/generated/sklearn.pipeline.make_pipeline.html#sklearn.pipeline.make_pipeline" title="View documentation for sklearn.pipeline.make_pipeline"><span class="n">make_pipeline</span></a></a>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.preprocessing.Normalizer.html#sklearn.preprocessing.Normalizer" title="View documentation for sklearn.preprocessing.Normalizer"><a href="../../modules/generated/sklearn.preprocessing.Normalizer.html#sklearn.preprocessing.Normalizer" title="View documentation for sklearn.preprocessing.Normalizer"><span class="n">Normalizer</span></a></a>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.datasets.fetch_20newsgroups.html#sklearn.datasets.fetch_20newsgroups" title="View documentation for sklearn.datasets.fetch_20newsgroups"><a href="../../modules/generated/sklearn.datasets.fetch_20newsgroups.html#sklearn.datasets.fetch_20newsgroups" title="View documentation for sklearn.datasets.fetch_20newsgroups"><a href="../../modules/generated/sklearn.datasets.fetch_20newsgroups.html#sklearn.datasets.fetch_20newsgroups" title="View documentation for sklearn.datasets.fetch_20newsgroups"><span class="n">fetch_20newsgroups</span></a></a></a>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.decomposition.TruncatedSVD.html#sklearn.decomposition.TruncatedSVD" title="View documentation for sklearn.decomposition.TruncatedSVD"><a href="../../modules/generated/sklearn.decomposition.TruncatedSVD.html#sklearn.decomposition.TruncatedSVD" title="View documentation for sklearn.decomposition.TruncatedSVD"><a href="../../modules/generated/sklearn.decomposition.TruncatedSVD.html#sklearn.decomposition.TruncatedSVD" title="View documentation for sklearn.decomposition.TruncatedSVD"><span class="n">TruncatedSVD</span></a></a></a>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer" title="View documentation for sklearn.feature_extraction.text.TfidfVectorizer"><a href="../../modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer" title="View documentation for sklearn.feature_extraction.text.TfidfVectorizer"><a href="../../modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer" title="View documentation for sklearn.feature_extraction.text.TfidfVectorizer"><span class="n">TfidfVectorizer</span></a></a></a>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.feature_extraction.text.HashingVectorizer.html#sklearn.feature_extraction.text.HashingVectorizer" title="View documentation for sklearn.feature_extraction.text.HashingVectorizer"><a href="../../modules/generated/sklearn.feature_extraction.text.HashingVectorizer.html#sklearn.feature_extraction.text.HashingVectorizer" title="View documentation for sklearn.feature_extraction.text.HashingVectorizer"><a href="../../modules/generated/sklearn.feature_extraction.text.HashingVectorizer.html#sklearn.feature_extraction.text.HashingVectorizer" title="View documentation for sklearn.feature_extraction.text.HashingVectorizer"><span class="n">HashingVectorizer</span></a></a></a>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.feature_extraction.text.TfidfTransformer.html#sklearn.feature_extraction.text.TfidfTransformer" title="View documentation for sklearn.feature_extraction.text.TfidfTransformer"><a href="../../modules/generated/sklearn.feature_extraction.text.TfidfTransformer.html#sklearn.feature_extraction.text.TfidfTransformer" title="View documentation for sklearn.feature_extraction.text.TfidfTransformer"><a href="../../modules/generated/sklearn.feature_extraction.text.TfidfTransformer.html#sklearn.feature_extraction.text.TfidfTransformer" title="View documentation for sklearn.feature_extraction.text.TfidfTransformer"><span class="n">TfidfTransformer</span></a></a></a>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.pipeline.make_pipeline.html#sklearn.pipeline.make_pipeline" title="View documentation for sklearn.pipeline.make_pipeline"><a href="../../modules/generated/sklearn.pipeline.make_pipeline.html#sklearn.pipeline.make_pipeline" title="View documentation for sklearn.pipeline.make_pipeline"><a href="../../modules/generated/sklearn.pipeline.make_pipeline.html#sklearn.pipeline.make_pipeline" title="View documentation for sklearn.pipeline.make_pipeline"><span class="n">make_pipeline</span></a></a></a>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.preprocessing.Normalizer.html#sklearn.preprocessing.Normalizer" title="View documentation for sklearn.preprocessing.Normalizer"><a href="../../modules/generated/sklearn.preprocessing.Normalizer.html#sklearn.preprocessing.Normalizer" title="View documentation for sklearn.preprocessing.Normalizer"><a href="../../modules/generated/sklearn.preprocessing.Normalizer.html#sklearn.preprocessing.Normalizer" title="View documentation for sklearn.preprocessing.Normalizer"><span class="n">Normalizer</span></a></a></a>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">metrics</span>
 
-<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="View documentation for sklearn.cluster.KMeans"><a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="View documentation for sklearn.cluster.KMeans"><span class="n">KMeans</span></a></a><span class="p">,</span> <a href="../../modules/generated/sklearn.cluster.MiniBatchKMeans.html#sklearn.cluster.MiniBatchKMeans" title="View documentation for sklearn.cluster.MiniBatchKMeans"><a href="../../modules/generated/sklearn.cluster.MiniBatchKMeans.html#sklearn.cluster.MiniBatchKMeans" title="View documentation for sklearn.cluster.MiniBatchKMeans"><span class="n">MiniBatchKMeans</span></a></a>
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="k">import</span> <a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="View documentation for sklearn.cluster.KMeans"><a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="View documentation for sklearn.cluster.KMeans"><a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="View documentation for sklearn.cluster.KMeans"><span class="n">KMeans</span></a></a></a><span class="p">,</span> <a href="../../modules/generated/sklearn.cluster.MiniBatchKMeans.html#sklearn.cluster.MiniBatchKMeans" title="View documentation for sklearn.cluster.MiniBatchKMeans"><a href="../../modules/generated/sklearn.cluster.MiniBatchKMeans.html#sklearn.cluster.MiniBatchKMeans" title="View documentation for sklearn.cluster.MiniBatchKMeans"><a href="../../modules/generated/sklearn.cluster.MiniBatchKMeans.html#sklearn.cluster.MiniBatchKMeans" title="View documentation for sklearn.cluster.MiniBatchKMeans"><span class="n">MiniBatchKMeans</span></a></a></a>
 
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">from</span> <span class="nn">optparse</span> <span class="k">import</span> <span class="n">OptionParser</span>
@@ -256,7 +256,7 @@ Cluster 3: space nasa access gov digex pat shuttle hst orbit net
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loading 20 newsgroups dataset for categories:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">categories</span><span class="p">)</span>
 
-<span class="n">dataset</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.fetch_20newsgroups.html#sklearn.datasets.fetch_20newsgroups" title="View documentation for sklearn.datasets.fetch_20newsgroups"><a href="../../modules/generated/sklearn.datasets.fetch_20newsgroups.html#sklearn.datasets.fetch_20newsgroups" title="View documentation for sklearn.datasets.fetch_20newsgroups"><span class="n">fetch_20newsgroups</span></a></a><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">categories</span><span class="o">=</span><span class="n">categories</span><span class="p">,</span>
+<span class="n">dataset</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.fetch_20newsgroups.html#sklearn.datasets.fetch_20newsgroups" title="View documentation for sklearn.datasets.fetch_20newsgroups"><a href="../../modules/generated/sklearn.datasets.fetch_20newsgroups.html#sklearn.datasets.fetch_20newsgroups" title="View documentation for sklearn.datasets.fetch_20newsgroups"><a href="../../modules/generated/sklearn.datasets.fetch_20newsgroups.html#sklearn.datasets.fetch_20newsgroups" title="View documentation for sklearn.datasets.fetch_20newsgroups"><span class="n">fetch_20newsgroups</span></a></a></a><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">categories</span><span class="o">=</span><span class="n">categories</span><span class="p">,</span>
                              <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> documents&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
@@ -264,7 +264,7 @@ Cluster 3: space nasa access gov digex pat shuttle hst orbit net
 <span class="nb">print</span><span class="p">()</span>
 
 <span class="n">labels</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">target</span>
-<span class="n">true_k</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.unique.html#numpy.unique" title="View documentation for numpy.unique"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.unique.html#numpy.unique" title="View documentation for numpy.unique"><span class="n">np</span><span class="o">.</span><span class="n">unique</span></a></a><span class="p">(</span><span class="n">labels</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">true_k</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.unique.html#numpy.unique" title="View documentation for numpy.unique"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.unique.html#numpy.unique" title="View documentation for numpy.unique"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.unique.html#numpy.unique" title="View documentation for numpy.unique"><span class="n">np</span><span class="o">.</span><span class="n">unique</span></a></a></a><span class="p">(</span><span class="n">labels</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Extracting features from the training dataset &quot;</span>
       <span class="s2">&quot;using a sparse vectorizer&quot;</span><span class="p">)</span>
@@ -272,16 +272,16 @@ Cluster 3: space nasa access gov digex pat shuttle hst orbit net
 <span class="k">if</span> <span class="n">opts</span><span class="o">.</span><span class="n">use_hashing</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">opts</span><span class="o">.</span><span class="n">use_idf</span><span class="p">:</span>
         <span class="c1"># Perform an IDF normalization on the output of HashingVectorizer</span>
-        <span class="n">hasher</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.feature_extraction.text.HashingVectorizer.html#sklearn.feature_extraction.text.HashingVectorizer" title="View documentation for sklearn.feature_extraction.text.HashingVectorizer"><a href="../../modules/generated/sklearn.feature_extraction.text.HashingVectorizer.html#sklearn.feature_extraction.text.HashingVectorizer" title="View documentation for sklearn.feature_extraction.text.HashingVectorizer"><span class="n">HashingVectorizer</span></a></a><span class="p">(</span><span class="n">n_features</span><span class="o">=</span><span class="n">opts</span><span class="o">.</span><span class="n">n_features</span><span class="p">,</span>
+        <span class="n">hasher</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.feature_extraction.text.HashingVectorizer.html#sklearn.feature_extraction.text.HashingVectorizer" title="View documentation for sklearn.feature_extraction.text.HashingVectorizer"><a href="../../modules/generated/sklearn.feature_extraction.text.HashingVectorizer.html#sklearn.feature_extraction.text.HashingVectorizer" title="View documentation for sklearn.feature_extraction.text.HashingVectorizer"><a href="../../modules/generated/sklearn.feature_extraction.text.HashingVectorizer.html#sklearn.feature_extraction.text.HashingVectorizer" title="View documentation for sklearn.feature_extraction.text.HashingVectorizer"><span class="n">HashingVectorizer</span></a></a></a><span class="p">(</span><span class="n">n_features</span><span class="o">=</span><span class="n">opts</span><span class="o">.</span><span class="n">n_features</span><span class="p">,</span>
                                    <span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">,</span> <span class="n">alternate_sign</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
                                    <span class="n">norm</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-        <span class="n">vectorizer</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.pipeline.make_pipeline.html#sklearn.pipeline.make_pipeline" title="View documentation for sklearn.pipeline.make_pipeline"><a href="../../modules/generated/sklearn.pipeline.make_pipeline.html#sklearn.pipeline.make_pipeline" title="View documentation for sklearn.pipeline.make_pipeline"><span class="n">make_pipeline</span></a></a><span class="p">(</span><span class="n">hasher</span><span class="p">,</span> <a href="../../modules/generated/sklearn.feature_extraction.text.TfidfTransformer.html#sklearn.feature_extraction.text.TfidfTransformer" title="View documentation for sklearn.feature_extraction.text.TfidfTransformer"><a href="../../modules/generated/sklearn.feature_extraction.text.TfidfTransformer.html#sklearn.feature_extraction.text.TfidfTransformer" title="View documentation for sklearn.feature_extraction.text.TfidfTransformer"><span class="n">TfidfTransformer</span></a></a><span class="p">())</span>
+        <span class="n">vectorizer</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.pipeline.make_pipeline.html#sklearn.pipeline.make_pipeline" title="View documentation for sklearn.pipeline.make_pipeline"><a href="../../modules/generated/sklearn.pipeline.make_pipeline.html#sklearn.pipeline.make_pipeline" title="View documentation for sklearn.pipeline.make_pipeline"><a href="../../modules/generated/sklearn.pipeline.make_pipeline.html#sklearn.pipeline.make_pipeline" title="View documentation for sklearn.pipeline.make_pipeline"><span class="n">make_pipeline</span></a></a></a><span class="p">(</span><span class="n">hasher</span><span class="p">,</span> <a href="../../modules/generated/sklearn.feature_extraction.text.TfidfTransformer.html#sklearn.feature_extraction.text.TfidfTransformer" title="View documentation for sklearn.feature_extraction.text.TfidfTransformer"><a href="../../modules/generated/sklearn.feature_extraction.text.TfidfTransformer.html#sklearn.feature_extraction.text.TfidfTransformer" title="View documentation for sklearn.feature_extraction.text.TfidfTransformer"><a href="../../modules/generated/sklearn.feature_extraction.text.TfidfTransformer.html#sklearn.feature_extraction.text.TfidfTransformer" title="View documentation for sklearn.feature_extraction.text.TfidfTransformer"><span class="n">TfidfTransformer</span></a></a></a><span class="p">())</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">vectorizer</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.feature_extraction.text.HashingVectorizer.html#sklearn.feature_extraction.text.HashingVectorizer" title="View documentation for sklearn.feature_extraction.text.HashingVectorizer"><a href="../../modules/generated/sklearn.feature_extraction.text.HashingVectorizer.html#sklearn.feature_extraction.text.HashingVectorizer" title="View documentation for sklearn.feature_extraction.text.HashingVectorizer"><span class="n">HashingVectorizer</span></a></a><span class="p">(</span><span class="n">n_features</span><span class="o">=</span><span class="n">opts</span><span class="o">.</span><span class="n">n_features</span><span class="p">,</span>
+        <span class="n">vectorizer</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.feature_extraction.text.HashingVectorizer.html#sklearn.feature_extraction.text.HashingVectorizer" title="View documentation for sklearn.feature_extraction.text.HashingVectorizer"><a href="../../modules/generated/sklearn.feature_extraction.text.HashingVectorizer.html#sklearn.feature_extraction.text.HashingVectorizer" title="View documentation for sklearn.feature_extraction.text.HashingVectorizer"><a href="../../modules/generated/sklearn.feature_extraction.text.HashingVectorizer.html#sklearn.feature_extraction.text.HashingVectorizer" title="View documentation for sklearn.feature_extraction.text.HashingVectorizer"><span class="n">HashingVectorizer</span></a></a></a><span class="p">(</span><span class="n">n_features</span><span class="o">=</span><span class="n">opts</span><span class="o">.</span><span class="n">n_features</span><span class="p">,</span>
                                        <span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">,</span>
                                        <span class="n">alternate_sign</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="s1">&#39;l2&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">vectorizer</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer" title="View documentation for sklearn.feature_extraction.text.TfidfVectorizer"><a href="../../modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer" title="View documentation for sklearn.feature_extraction.text.TfidfVectorizer"><span class="n">TfidfVectorizer</span></a></a><span class="p">(</span><span class="n">max_df</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">max_features</span><span class="o">=</span><span class="n">opts</span><span class="o">.</span><span class="n">n_features</span><span class="p">,</span>
+    <span class="n">vectorizer</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer" title="View documentation for sklearn.feature_extraction.text.TfidfVectorizer"><a href="../../modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer" title="View documentation for sklearn.feature_extraction.text.TfidfVectorizer"><a href="../../modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer" title="View documentation for sklearn.feature_extraction.text.TfidfVectorizer"><span class="n">TfidfVectorizer</span></a></a></a><span class="p">(</span><span class="n">max_df</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">max_features</span><span class="o">=</span><span class="n">opts</span><span class="o">.</span><span class="n">n_features</span><span class="p">,</span>
                                  <span class="n">min_df</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">,</span>
                                  <span class="n">use_idf</span><span class="o">=</span><span class="n">opts</span><span class="o">.</span><span class="n">use_idf</span><span class="p">)</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
@@ -296,9 +296,9 @@ Cluster 3: space nasa access gov digex pat shuttle hst orbit net
     <span class="c1"># Vectorizer results are normalized, which makes KMeans behave as</span>
     <span class="c1"># spherical k-means for better results. Since LSA/SVD results are</span>
     <span class="c1"># not normalized, we have to redo the normalization.</span>
-    <span class="n">svd</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.decomposition.TruncatedSVD.html#sklearn.decomposition.TruncatedSVD" title="View documentation for sklearn.decomposition.TruncatedSVD"><a href="../../modules/generated/sklearn.decomposition.TruncatedSVD.html#sklearn.decomposition.TruncatedSVD" title="View documentation for sklearn.decomposition.TruncatedSVD"><span class="n">TruncatedSVD</span></a></a><span class="p">(</span><span class="n">opts</span><span class="o">.</span><span class="n">n_components</span><span class="p">)</span>
-    <span class="n">normalizer</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.preprocessing.Normalizer.html#sklearn.preprocessing.Normalizer" title="View documentation for sklearn.preprocessing.Normalizer"><a href="../../modules/generated/sklearn.preprocessing.Normalizer.html#sklearn.preprocessing.Normalizer" title="View documentation for sklearn.preprocessing.Normalizer"><span class="n">Normalizer</span></a></a><span class="p">(</span><span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">lsa</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.pipeline.make_pipeline.html#sklearn.pipeline.make_pipeline" title="View documentation for sklearn.pipeline.make_pipeline"><a href="../../modules/generated/sklearn.pipeline.make_pipeline.html#sklearn.pipeline.make_pipeline" title="View documentation for sklearn.pipeline.make_pipeline"><span class="n">make_pipeline</span></a></a><span class="p">(</span><span class="n">svd</span><span class="p">,</span> <span class="n">normalizer</span><span class="p">)</span>
+    <span class="n">svd</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.decomposition.TruncatedSVD.html#sklearn.decomposition.TruncatedSVD" title="View documentation for sklearn.decomposition.TruncatedSVD"><a href="../../modules/generated/sklearn.decomposition.TruncatedSVD.html#sklearn.decomposition.TruncatedSVD" title="View documentation for sklearn.decomposition.TruncatedSVD"><a href="../../modules/generated/sklearn.decomposition.TruncatedSVD.html#sklearn.decomposition.TruncatedSVD" title="View documentation for sklearn.decomposition.TruncatedSVD"><span class="n">TruncatedSVD</span></a></a></a><span class="p">(</span><span class="n">opts</span><span class="o">.</span><span class="n">n_components</span><span class="p">)</span>
+    <span class="n">normalizer</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.preprocessing.Normalizer.html#sklearn.preprocessing.Normalizer" title="View documentation for sklearn.preprocessing.Normalizer"><a href="../../modules/generated/sklearn.preprocessing.Normalizer.html#sklearn.preprocessing.Normalizer" title="View documentation for sklearn.preprocessing.Normalizer"><a href="../../modules/generated/sklearn.preprocessing.Normalizer.html#sklearn.preprocessing.Normalizer" title="View documentation for sklearn.preprocessing.Normalizer"><span class="n">Normalizer</span></a></a></a><span class="p">(</span><span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">lsa</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.pipeline.make_pipeline.html#sklearn.pipeline.make_pipeline" title="View documentation for sklearn.pipeline.make_pipeline"><a href="../../modules/generated/sklearn.pipeline.make_pipeline.html#sklearn.pipeline.make_pipeline" title="View documentation for sklearn.pipeline.make_pipeline"><a href="../../modules/generated/sklearn.pipeline.make_pipeline.html#sklearn.pipeline.make_pipeline" title="View documentation for sklearn.pipeline.make_pipeline"><span class="n">make_pipeline</span></a></a></a><span class="p">(</span><span class="n">svd</span><span class="p">,</span> <span class="n">normalizer</span><span class="p">)</span>
 
     <span class="n">X</span> <span class="o">=</span> <span class="n">lsa</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 
@@ -315,10 +315,10 @@ Cluster 3: space nasa access gov digex pat shuttle hst orbit net
 <span class="c1"># Do the actual clustering</span>
 
 <span class="k">if</span> <span class="n">opts</span><span class="o">.</span><span class="n">minibatch</span><span class="p">:</span>
-    <span class="n">km</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.cluster.MiniBatchKMeans.html#sklearn.cluster.MiniBatchKMeans" title="View documentation for sklearn.cluster.MiniBatchKMeans"><a href="../../modules/generated/sklearn.cluster.MiniBatchKMeans.html#sklearn.cluster.MiniBatchKMeans" title="View documentation for sklearn.cluster.MiniBatchKMeans"><span class="n">MiniBatchKMeans</span></a></a><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">true_k</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s1">&#39;k-means++&#39;</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">km</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.cluster.MiniBatchKMeans.html#sklearn.cluster.MiniBatchKMeans" title="View documentation for sklearn.cluster.MiniBatchKMeans"><a href="../../modules/generated/sklearn.cluster.MiniBatchKMeans.html#sklearn.cluster.MiniBatchKMeans" title="View documentation for sklearn.cluster.MiniBatchKMeans"><a href="../../modules/generated/sklearn.cluster.MiniBatchKMeans.html#sklearn.cluster.MiniBatchKMeans" title="View documentation for sklearn.cluster.MiniBatchKMeans"><span class="n">MiniBatchKMeans</span></a></a></a><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">true_k</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s1">&#39;k-means++&#39;</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                          <span class="n">init_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="n">opts</span><span class="o">.</span><span class="n">verbose</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">km</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="View documentation for sklearn.cluster.KMeans"><a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="View documentation for sklearn.cluster.KMeans"><span class="n">KMeans</span></a></a><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">true_k</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s1">&#39;k-means++&#39;</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">km</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="View documentation for sklearn.cluster.KMeans"><a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="View documentation for sklearn.cluster.KMeans"><a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="View documentation for sklearn.cluster.KMeans"><span class="n">KMeans</span></a></a></a><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">true_k</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s1">&#39;k-means++&#39;</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                 <span class="n">verbose</span><span class="o">=</span><span class="n">opts</span><span class="o">.</span><span class="n">verbose</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Clustering sparse data with </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">km</span><span class="p">)</span>
@@ -327,13 +327,13 @@ Cluster 3: space nasa access gov digex pat shuttle hst orbit net
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;done in </span><span class="si">%0.3f</span><span class="s2">s&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Homogeneity: </span><span class="si">%0.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <a href="../../modules/generated/sklearn.metrics.homogeneity_score.html#sklearn.metrics.homogeneity_score" title="View documentation for sklearn.metrics.homogeneity_score"><a href="../../modules/generated/sklearn.metrics.homogeneity_score.html#sklearn.metrics.homogeneity_score" title="View documentation for sklearn.metrics.homogeneity_score"><span class="n">metrics</span><span class="o">.</span><span class="n">homogeneity_score</span></a></a><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Completeness: </span><span class="si">%0.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <a href="../../modules/generated/sklearn.metrics.completeness_score.html#sklearn.metrics.completeness_score" title="View documentation for sklearn.metrics.completeness_score"><a href="../../modules/generated/sklearn.metrics.completeness_score.html#sklearn.metrics.completeness_score" title="View documentation for sklearn.metrics.completeness_score"><span class="n">metrics</span><span class="o">.</span><span class="n">completeness_score</span></a></a><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;V-measure: </span><span class="si">%0.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <a href="../../modules/generated/sklearn.metrics.v_measure_score.html#sklearn.metrics.v_measure_score" title="View documentation for sklearn.metrics.v_measure_score"><a href="../../modules/generated/sklearn.metrics.v_measure_score.html#sklearn.metrics.v_measure_score" title="View documentation for sklearn.metrics.v_measure_score"><span class="n">metrics</span><span class="o">.</span><span class="n">v_measure_score</span></a></a><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Homogeneity: </span><span class="si">%0.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <a href="../../modules/generated/sklearn.metrics.homogeneity_score.html#sklearn.metrics.homogeneity_score" title="View documentation for sklearn.metrics.homogeneity_score"><a href="../../modules/generated/sklearn.metrics.homogeneity_score.html#sklearn.metrics.homogeneity_score" title="View documentation for sklearn.metrics.homogeneity_score"><a href="../../modules/generated/sklearn.metrics.homogeneity_score.html#sklearn.metrics.homogeneity_score" title="View documentation for sklearn.metrics.homogeneity_score"><span class="n">metrics</span><span class="o">.</span><span class="n">homogeneity_score</span></a></a></a><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Completeness: </span><span class="si">%0.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <a href="../../modules/generated/sklearn.metrics.completeness_score.html#sklearn.metrics.completeness_score" title="View documentation for sklearn.metrics.completeness_score"><a href="../../modules/generated/sklearn.metrics.completeness_score.html#sklearn.metrics.completeness_score" title="View documentation for sklearn.metrics.completeness_score"><a href="../../modules/generated/sklearn.metrics.completeness_score.html#sklearn.metrics.completeness_score" title="View documentation for sklearn.metrics.completeness_score"><span class="n">metrics</span><span class="o">.</span><span class="n">completeness_score</span></a></a></a><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;V-measure: </span><span class="si">%0.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <a href="../../modules/generated/sklearn.metrics.v_measure_score.html#sklearn.metrics.v_measure_score" title="View documentation for sklearn.metrics.v_measure_score"><a href="../../modules/generated/sklearn.metrics.v_measure_score.html#sklearn.metrics.v_measure_score" title="View documentation for sklearn.metrics.v_measure_score"><a href="../../modules/generated/sklearn.metrics.v_measure_score.html#sklearn.metrics.v_measure_score" title="View documentation for sklearn.metrics.v_measure_score"><span class="n">metrics</span><span class="o">.</span><span class="n">v_measure_score</span></a></a></a><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adjusted Rand-Index: </span><span class="si">%.3f</span><span class="s2">&quot;</span>
-      <span class="o">%</span> <a href="../../modules/generated/sklearn.metrics.adjusted_rand_score.html#sklearn.metrics.adjusted_rand_score" title="View documentation for sklearn.metrics.adjusted_rand_score"><a href="../../modules/generated/sklearn.metrics.adjusted_rand_score.html#sklearn.metrics.adjusted_rand_score" title="View documentation for sklearn.metrics.adjusted_rand_score"><span class="n">metrics</span><span class="o">.</span><span class="n">adjusted_rand_score</span></a></a><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">))</span>
+      <span class="o">%</span> <a href="../../modules/generated/sklearn.metrics.adjusted_rand_score.html#sklearn.metrics.adjusted_rand_score" title="View documentation for sklearn.metrics.adjusted_rand_score"><a href="../../modules/generated/sklearn.metrics.adjusted_rand_score.html#sklearn.metrics.adjusted_rand_score" title="View documentation for sklearn.metrics.adjusted_rand_score"><a href="../../modules/generated/sklearn.metrics.adjusted_rand_score.html#sklearn.metrics.adjusted_rand_score" title="View documentation for sklearn.metrics.adjusted_rand_score"><span class="n">metrics</span><span class="o">.</span><span class="n">adjusted_rand_score</span></a></a></a><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Silhouette Coefficient: </span><span class="si">%0.3f</span><span class="s2">&quot;</span>
-      <span class="o">%</span> <a href="../../modules/generated/sklearn.metrics.silhouette_score.html#sklearn.metrics.silhouette_score" title="View documentation for sklearn.metrics.silhouette_score"><a href="../../modules/generated/sklearn.metrics.silhouette_score.html#sklearn.metrics.silhouette_score" title="View documentation for sklearn.metrics.silhouette_score"><span class="n">metrics</span><span class="o">.</span><span class="n">silhouette_score</span></a></a><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">,</span> <span class="n">sample_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">))</span>
+      <span class="o">%</span> <a href="../../modules/generated/sklearn.metrics.silhouette_score.html#sklearn.metrics.silhouette_score" title="View documentation for sklearn.metrics.silhouette_score"><a href="../../modules/generated/sklearn.metrics.silhouette_score.html#sklearn.metrics.silhouette_score" title="View documentation for sklearn.metrics.silhouette_score"><a href="../../modules/generated/sklearn.metrics.silhouette_score.html#sklearn.metrics.silhouette_score" title="View documentation for sklearn.metrics.silhouette_score"><span class="n">metrics</span><span class="o">.</span><span class="n">silhouette_score</span></a></a></a><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">,</span> <span class="n">sample_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">()</span>
 
@@ -379,7 +379,7 @@ Cluster 3: space nasa access gov digex pat shuttle hst orbit net
       </footer>
     </div>
   </div>
-  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle"><&mdash;></button>
+  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle">Toggle Menu</button>
 </div>
 <script src="../../_static/js/vendor/jquery.min.js"></script>
 <script src="../../_static/js/vendor/bootstrap.min.js"></script>
@@ -395,13 +395,11 @@ Cluster 3: space nasa access gov digex pat shuttle hst orbit net
 
 
 <script>
-
-    $(document).ready(function() {
-
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#sk-doc-wrapper").toggleClass("toggled");
-        });
+$(document).ready(function() {
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sk-doc-wrapper").toggleClass("toggled");
+    });
 
     /* Add a [>>>] button on the top-right corner of code samples to hide
      * the >>> and ... prompts and the output and thus make the code
@@ -454,14 +452,68 @@ Cluster 3: space nasa access gov digex pat shuttle hst orbit net
         }
     });
 
-
 	/*** Add permalink buttons next to glossary terms ***/
 	$('dl.glossary > dt[id]').append(function() {
 		return ('<a class="headerlink" href="#' +
 			    this.getAttribute('id') +
 			    '" title="Permalink to this term">¶</a>');
-	})
+	});
+
+    scrollUpToCompensateForFixedHeader();
+    // Run on hash change (user clicked on anchor link)
+    if ( 'onhashchange' in window ) {
+        window.addEventListener('hashchange', scrollUpToCompensateForFixedHeader);
+    }
+  /*** Had navbar when scrolling down ***/
+  // Returns true when headerlink target matches hash in url
+  hashTargetOnTop = function() {
+    var hash = window.location.hash;
+    if ( hash.length < 2 ) { return false; }
+
+    var target = document.getElementById( hash.slice(1) );
+    if ( target === null ) { return false; }
+
+    return target.getBoundingClientRect().top < 2;
+  };
+
+  var prevScrollpos = window.pageYOffset;
+  var narBar = document.getElementById("navbar")
+  hideOnScroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      narBar.style.top = "-48px";
+    } else {
+      narBar.style.top = "0";
+    }
+    prevScrollpos = currentScrollPos;
+  };
+
+  /*** high preformance scroll event listener***/
+  var raf = window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      window.oRequestAnimationFrame;
+  var $window = $(window);
+  var lastScrollTop = $window.scrollTop();
+
+  if (raf) {
+      loop();
+  }
+
+function loop() {
+    var scrollTop = $window.scrollTop();
+    if (lastScrollTop === scrollTop) {
+        raf(loop);
+        return;
+    } else {
+        lastScrollTop = scrollTop;
+        hideOnScroll();
+        raf(loop);
+    }
+  }
 });
+
 </script>
 <script>
     (function() {
@@ -472,7 +524,7 @@ Cluster 3: space nasa access gov digex pat shuttle hst orbit net
     })();
 </script>
     
-<script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
+<script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
     
 </body>
 </html>

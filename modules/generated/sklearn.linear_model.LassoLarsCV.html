@@ -24,12 +24,12 @@
 <body>
 
 
-<nav class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+<nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
   <div class="container-fluid sk-docs-container">
       <a class="navbar-brand" href="../../index.html">
         <img
           src="../../_static/scikit-learn-logo-notext.png"
-          width="100"
+          height="38"
           alt="logo"/>
       </a>
     <button
@@ -67,8 +67,8 @@
   </div>
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
-    <div class="border-right" id="sk-sidebar-wrapper">
-      <div class="h-100 sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+    <div id="sk-sidebar-wrapper" class="border-right">
+      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="sklearn.linear_model.LassoCV.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="3.2.4.1.3. sklearn.linear_model.LassoCV">Prev</a><a href="../grid_search.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="3.2. Tuning the hyper-parameters of an estimator">Up</a>
               <a href="sklearn.linear_model.LogisticRegressionCV.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="3.2.4.1.5. sklearn.linear_model.LogisticRegressionCV">Next</a>
           </div>
@@ -80,7 +80,7 @@
         </div>
         <div class="alert alert-warning p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-            Please <a class="font-weight-bold" href="about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
+            Please <a class="font-weight-bold" href="../../about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
           </p>
         </div>
         <ul>
@@ -99,7 +99,7 @@
 <h1>3.2.4.1.4. <a class="reference internal" href="../classes.html#module-sklearn.linear_model" title="sklearn.linear_model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.linear_model</span></code></a>.LassoLarsCV<a class="headerlink" href="#sklearn-linear-model-lassolarscv" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="sklearn.linear_model.LassoLarsCV">
-<em class="property">class </em><code class="sig-prename descclassname">sklearn.linear_model.</code><code class="sig-name descname">LassoLarsCV</code><span class="sig-paren">(</span><em class="sig-param">fit_intercept=True</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">max_iter=500</em>, <em class="sig-param">normalize=True</em>, <em class="sig-param">precompute='auto'</em>, <em class="sig-param">cv=None</em>, <em class="sig-param">max_n_alphas=1000</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">eps=2.220446049250313e-16</em>, <em class="sig-param">copy_X=True</em>, <em class="sig-param">positive=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/linear_model/least_angle.py#L1442"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.linear_model.LassoLarsCV" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">sklearn.linear_model.</code><code class="sig-name descname">LassoLarsCV</code><span class="sig-paren">(</span><em class="sig-param">fit_intercept=True</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">max_iter=500</em>, <em class="sig-param">normalize=True</em>, <em class="sig-param">precompute='auto'</em>, <em class="sig-param">cv=None</em>, <em class="sig-param">max_n_alphas=1000</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">eps=2.220446049250313e-16</em>, <em class="sig-param">copy_X=True</em>, <em class="sig-param">positive=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/linear_model/least_angle.py#L1442"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.linear_model.LassoLarsCV" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cross-validated Lasso, using the LARS algorithm.</p>
 <p>See glossary entry for <a class="reference internal" href="../../glossary.html#term-cross-validation-estimator"><span class="xref std std-term">cross-validation estimator</span></a>.</p>
 <p>The optimization objective for Lasso is:</p>
@@ -246,13 +246,13 @@ there are very few samples compared to the number of features.</p>
 </table>
 <dl class="method">
 <dt id="sklearn.linear_model.LassoLarsCV.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">fit_intercept=True</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">max_iter=500</em>, <em class="sig-param">normalize=True</em>, <em class="sig-param">precompute='auto'</em>, <em class="sig-param">cv=None</em>, <em class="sig-param">max_n_alphas=1000</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">eps=2.220446049250313e-16</em>, <em class="sig-param">copy_X=True</em>, <em class="sig-param">positive=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/linear_model/least_angle.py#L1585"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.linear_model.LassoLarsCV.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">fit_intercept=True</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">max_iter=500</em>, <em class="sig-param">normalize=True</em>, <em class="sig-param">precompute='auto'</em>, <em class="sig-param">cv=None</em>, <em class="sig-param">max_n_alphas=1000</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">eps=2.220446049250313e-16</em>, <em class="sig-param">copy_X=True</em>, <em class="sig-param">positive=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/linear_model/least_angle.py#L1585"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.linear_model.LassoLarsCV.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sklearn.linear_model.LassoLarsCV.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/linear_model/least_angle.py#L1361"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.linear_model.LassoLarsCV.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/linear_model/least_angle.py#L1361"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.linear_model.LassoLarsCV.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the model using X, y as training data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -274,7 +274,7 @@ there are very few samples compared to the number of features.</p>
 
 <dl class="method">
 <dt id="sklearn.linear_model.LassoLarsCV.get_params">
-<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/base.py#L180"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.linear_model.LassoLarsCV.get_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L180"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.linear_model.LassoLarsCV.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -295,7 +295,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="sklearn.linear_model.LassoLarsCV.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/linear_model/base.py#L208"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.linear_model.LassoLarsCV.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/linear_model/base.py#L208"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.linear_model.LassoLarsCV.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predict using the linear model</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -315,7 +315,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="sklearn.linear_model.LassoLarsCV.score">
-<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">sample_weight=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/base.py#L375"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.linear_model.LassoLarsCV.score" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">sample_weight=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L375"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.linear_model.LassoLarsCV.score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the coefficient of determination R^2 of the prediction.</p>
 <p>The coefficient R^2 is defined as (1 - u/v), where u is the residual
 sum of squares ((y_true - y_pred) ** 2).sum() and v is the total
@@ -358,7 +358,7 @@ built-in scorer <code class="docutils literal notranslate"><span class="pre">'r2
 
 <dl class="method">
 <dt id="sklearn.linear_model.LassoLarsCV.set_params">
-<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/base.py#L211"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.linear_model.LassoLarsCV.set_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L211"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.linear_model.LassoLarsCV.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as pipelines). The latter have parameters of the form
@@ -393,7 +393,7 @@ component of a nested object.</p>
       </footer>
     </div>
   </div>
-  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle"><&mdash;></button>
+  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle">Toggle Menu</button>
 </div>
 <script src="../../_static/js/vendor/jquery.min.js"></script>
 <script src="../../_static/js/vendor/bootstrap.min.js"></script>
@@ -409,13 +409,11 @@ component of a nested object.</p>
 
 
 <script>
-
-    $(document).ready(function() {
-
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#sk-doc-wrapper").toggleClass("toggled");
-        });
+$(document).ready(function() {
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sk-doc-wrapper").toggleClass("toggled");
+    });
 
     /* Add a [>>>] button on the top-right corner of code samples to hide
      * the >>> and ... prompts and the output and thus make the code
@@ -468,14 +466,62 @@ component of a nested object.</p>
         }
     });
 
-
 	/*** Add permalink buttons next to glossary terms ***/
 	$('dl.glossary > dt[id]').append(function() {
 		return ('<a class="headerlink" href="#' +
 			    this.getAttribute('id') +
 			    '" title="Permalink to this term">¶</a>');
-	})
+	});
+  /*** Had navbar when scrolling down ***/
+  // Returns true when headerlink target matches hash in url
+  hashTargetOnTop = function() {
+    var hash = window.location.hash;
+    if ( hash.length < 2 ) { return false; }
+
+    var target = document.getElementById( hash.slice(1) );
+    if ( target === null ) { return false; }
+
+    return target.getBoundingClientRect().top < 2;
+  };
+
+  var prevScrollpos = window.pageYOffset;
+  var narBar = document.getElementById("navbar")
+  hideOnScroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      narBar.style.top = "-48px";
+    } else {
+      narBar.style.top = "0";
+    }
+    prevScrollpos = currentScrollPos;
+  };
+
+  /*** high preformance scroll event listener***/
+  var raf = window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      window.oRequestAnimationFrame;
+  var $window = $(window);
+  var lastScrollTop = $window.scrollTop();
+
+  if (raf) {
+      loop();
+  }
+
+function loop() {
+    var scrollTop = $window.scrollTop();
+    if (lastScrollTop === scrollTop) {
+        raf(loop);
+        return;
+    } else {
+        lastScrollTop = scrollTop;
+        hideOnScroll();
+        raf(loop);
+    }
+  }
 });
+
 </script>
 <script>
     (function() {
@@ -486,7 +532,7 @@ component of a nested object.</p>
     })();
 </script>
     
-<script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
+<script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
     
 </body>
 </html>

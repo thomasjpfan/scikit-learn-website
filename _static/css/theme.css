@@ -1,5 +1,4 @@
 /* Elements */
-
 a {
   color: #2878A2;
   word-wrap: break-word;
@@ -8,6 +7,8 @@ a {
 a:focus {
   outline: none;
 }
+
+/* Anchor links */
 
 a.headerlink {
   color: #c60f0f;
@@ -31,10 +32,6 @@ code {
   background-color: #ecf0f3;
   border-radius: 0.2rem;
   padding: 0.2rem;
-}
-
-code span.pre {
-  font-weight: bold;
 }
 
 nav {
@@ -153,8 +150,10 @@ button.gsc-search-button:active {
 
 div.gsc-results-wrapper-visible {
   background-color: #f8f9fa;
+  padding: 1rem;
   position: absolute;
-  right: 0;
+  right: 1rem;
+  box-shadow: -4px 9px 20px -4px rgba(0,0,0,0.56);
 }
 
 div.gsc-results {
@@ -162,9 +161,6 @@ div.gsc-results {
 }
 
 @media (min-width: 768px) {
-  div.gsc-control-cse {
-    padding: 1em;
-  }
   .search_form {
     width: 16rem;
   }
@@ -200,11 +196,11 @@ div.sk-landing-bg-more-info {
 }
 
 .sk-landing-header {
-  font-size: 3rem;
+  font-size: 3.2rem;
 }
 
 .sk-landing-header-body {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 500;
 }
 
@@ -214,7 +210,7 @@ div.sk-landing-bg-more-info {
 }
 
 img.sk-index-img {
-  max-height: 240px;
+  height: 240px;
   margin: auto;
   margin-bottom: 1em;
   width: auto;
@@ -227,7 +223,7 @@ img.sk-index-img {
 }
 
 img.sk-who-uses-carousel-img {
-  height: 100px;
+  max-height: 100px;
   max-width: 50%;
 }
 
@@ -257,9 +253,8 @@ img.sk-footer-funding-logo {
   background-color: white;
   opacity: 0;
   top: 0;
-  padding: 0.5rem;
+  padding: 0 0.5rem 0.5rem 0.5rem;
   z-index: 2;
-  background-color: #f8f9fa;
 }
 
 #sk-doc-wrapper.toggled #sk-sidebar-wrapper {
@@ -276,18 +271,16 @@ img.sk-footer-funding-logo {
   width: 100%;
 }
 
-:target::before {
-  display: block;
-  content: " ";
-  height: 4.5rem;
-  visibility: hidden;
+div.sk-page-content {
+  background-color: white;
+  margin-top: 48px;
 }
 
 .sk-btn-toggle-toc {
   position: fixed;
   bottom: 0.5rem;
   margin-left: 0.5rem;
-  padding: 0.25rem;
+  padding: 0.5rem;
   border-radius: 1rem;
   z-index: 3;
 }
@@ -306,17 +299,15 @@ footer.sk-content-footer {
 nav.sk-docs-navbar {
   width: 100%;
   z-index: 3;
+  position: fixed;
+  -webkit-transition: top .2s ease-in-out;
+  -moz-transition: top .2s ease-in-out .05s;
+  -o-transition: top .2s ease-in-out .05s;
+  transition: top .2s ease-in-out .05s;
+  position: fixed;
 }
 
 @media (min-width: 768px) {
-  nav.sk-docs-navbar {
-    position: fixed;
-  }
-
-  #sk-page-content-wrapper {
-    width: 100%;
-    margin-top: 4.5rem;
-  }
 
   #sk-page-content-wrapper {
     padding-left: 240px;
@@ -342,6 +333,7 @@ nav.sk-docs-navbar {
 .centered {
   text-align: center;
 }
+
 
 /* docs index */
 
@@ -374,7 +366,7 @@ div.sk-sidebar-toc-wrapper > ul > li > a{
 
 div.sk-sidebar-toc-wrapper {
   font-size: 0.9rem;
-  margin-top: 4rem;
+  margin-top: 48px;
 }
 
 div.sk-sidebar-toc-wrapper > ul,
@@ -392,14 +384,14 @@ div.sk-sidebar-toc-wrapper ul ul ul {
 div.sk-sidebar-toc-wrapper::after {
   display: block;
   content: "";
-  height: 120px;
+  height: 3rem;
   visibility: hidden;
 }
 
 /* content styling element style */
 
 div.sk-page-content img {
-  max-width: 100%;
+  max-width: 80%;
 }
 
 div.sk-page-content h1 {
@@ -408,6 +400,7 @@ div.sk-page-content h1 {
   border-radius: 0 1rem;
   text-align: center;
   font-size: 2rem;
+  word-wrap: break-word;
 }
 
 div.sk-page-content h2 {
@@ -416,6 +409,7 @@ div.sk-page-content h2 {
   border-radius: 0.3rem;
   font-size: 1.5rem;
   margin-bottom: 1.2rem;
+  word-wrap: break-word;
 }
 
 div.sk-page-content h3 {
@@ -423,6 +417,7 @@ div.sk-page-content h3 {
   background-color: #eee;
   border-radius: 0.3rem;
   font-size: 1.2rem;
+  word-wrap: break-word;
 }
 
 div.sk-page-content h4 {
@@ -430,6 +425,7 @@ div.sk-page-content h4 {
   background-color: #F4F4F4;
   border-radius: 0.3rem;
   font-size: 1.2rem;
+  word-wrap: break-word;
 }
 
 /* longtables */
@@ -525,7 +521,7 @@ dt.field-odd, dt.field-even {
   font-style: italic;
 }
 
-.classifier:before {
+.classifier::before {
   font-style: normal;
   margin: 0.5em;
   content: ":";
@@ -689,7 +685,7 @@ table.docutils td, table.docutils th {
 table.docutils {
   margin-bottom: 1rem;
   line-height: 1rem;
-  width: 100%;
+  max-width: 100%;
 }
 
 table.docutils p {
@@ -729,7 +725,7 @@ div.sphx-glr-thumbcontainer {
   cursor: pointer;
 }
 
-[sk-rellink-tooltip]:before {
+[sk-rellink-tooltip]::before {
   visibility: hidden;
   position: absolute;
   padding: 0.5rem;

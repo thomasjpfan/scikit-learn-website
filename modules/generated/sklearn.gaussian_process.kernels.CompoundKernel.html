@@ -24,12 +24,12 @@
 <body>
 
 
-<nav class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+<nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
   <div class="container-fluid sk-docs-container">
       <a class="navbar-brand" href="../../index.html">
         <img
           src="../../_static/scikit-learn-logo-notext.png"
-          width="100"
+          height="38"
           alt="logo"/>
       </a>
     <button
@@ -67,8 +67,8 @@
   </div>
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
-    <div class="border-right" id="sk-sidebar-wrapper">
-      <div class="h-100 sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+    <div id="sk-sidebar-wrapper" class="border-right">
+      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="sklearn.gaussian_process.GaussianProcessRegressor.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.gaussian_process.GaussianProcessRegressor">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
               <a href="sklearn.gaussian_process.kernels.ConstantKernel.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.gaussian_process.kernels.ConstantKernel">Next</a>
           </div>
@@ -80,7 +80,7 @@
         </div>
         <div class="alert alert-warning p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-            Please <a class="font-weight-bold" href="about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
+            Please <a class="font-weight-bold" href="../../about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
           </p>
         </div>
         <ul>
@@ -96,7 +96,7 @@
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.gaussian_process.kernels</span></code>.CompoundKernel<a class="headerlink" href="#sklearn-gaussian-process-kernels-compoundkernel" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="sklearn.gaussian_process.kernels.CompoundKernel">
-<em class="property">class </em><code class="sig-prename descclassname">sklearn.gaussian_process.kernels.</code><code class="sig-name descname">CompoundKernel</code><span class="sig-paren">(</span><em class="sig-param">kernels</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/gaussian_process/kernels.py#L406"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.gaussian_process.kernels.CompoundKernel" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">sklearn.gaussian_process.kernels.</code><code class="sig-name descname">CompoundKernel</code><span class="sig-paren">(</span><em class="sig-param">kernels</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/gaussian_process/kernels.py#L406"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.gaussian_process.kernels.CompoundKernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Kernel which is composed of a set of other kernels.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.18.</span></p>
@@ -150,13 +150,13 @@
 </table>
 <dl class="method">
 <dt id="sklearn.gaussian_process.kernels.CompoundKernel.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">kernels</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/gaussian_process/kernels.py#L417"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.gaussian_process.kernels.CompoundKernel.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">kernels</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/gaussian_process/kernels.py#L417"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.gaussian_process.kernels.CompoundKernel.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sklearn.gaussian_process.kernels.CompoundKernel.__call__">
-<code class="sig-name descname">__call__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">Y=None</em>, <em class="sig-param">eval_gradient=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/gaussian_process/kernels.py#L476"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.gaussian_process.kernels.CompoundKernel.__call__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__call__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">Y=None</em>, <em class="sig-param">eval_gradient=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/gaussian_process/kernels.py#L476"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.gaussian_process.kernels.CompoundKernel.__call__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the kernel k(X, Y) and optionally its gradient.</p>
 <p>Note that this compound kernel returns the results of all simple kernel
 stacked along an additional axis.</p>
@@ -202,7 +202,7 @@ is True.</p>
 
 <dl class="method">
 <dt id="sklearn.gaussian_process.kernels.CompoundKernel.clone_with_theta">
-<code class="sig-name descname">clone_with_theta</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">theta</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/gaussian_process/kernels.py#L210"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.gaussian_process.kernels.CompoundKernel.clone_with_theta" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">clone_with_theta</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">theta</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/gaussian_process/kernels.py#L210"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.gaussian_process.kernels.CompoundKernel.clone_with_theta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a clone of self with given hyperparameters theta.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -216,7 +216,7 @@ is True.</p>
 
 <dl class="method">
 <dt id="sklearn.gaussian_process.kernels.CompoundKernel.diag">
-<code class="sig-name descname">diag</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/gaussian_process/kernels.py#L527"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.gaussian_process.kernels.CompoundKernel.diag" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">diag</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/gaussian_process/kernels.py#L527"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.gaussian_process.kernels.CompoundKernel.diag" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the diagonal of the kernel k(X, X).</p>
 <p>The result of this method is identical to np.diag(self(X)); however,
 it can be evaluated more efficiently since only the diagonal is
@@ -239,7 +239,7 @@ evaluated.</p>
 
 <dl class="method">
 <dt id="sklearn.gaussian_process.kernels.CompoundKernel.get_params">
-<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/gaussian_process/kernels.py#L420"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.gaussian_process.kernels.CompoundKernel.get_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/gaussian_process/kernels.py#L420"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.gaussian_process.kernels.CompoundKernel.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters of this kernel.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -266,7 +266,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="sklearn.gaussian_process.kernels.CompoundKernel.is_stationary">
-<code class="sig-name descname">is_stationary</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/gaussian_process/kernels.py#L523"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.gaussian_process.kernels.CompoundKernel.is_stationary" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_stationary</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/gaussian_process/kernels.py#L523"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.gaussian_process.kernels.CompoundKernel.is_stationary" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns whether the kernel is stationary.</p>
 </dd></dl>
 
@@ -278,7 +278,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="sklearn.gaussian_process.kernels.CompoundKernel.set_params">
-<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/gaussian_process/kernels.py#L173"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.gaussian_process.kernels.CompoundKernel.set_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/gaussian_process/kernels.py#L173"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.gaussian_process.kernels.CompoundKernel.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this kernel.</p>
 <p>The method works on simple kernels as well as on nested kernels.
 The latter have parameters of the form <code class="docutils literal notranslate"><span class="pre">&lt;component&gt;__&lt;parameter&gt;</span></code>
@@ -323,7 +323,7 @@ length-scales naturally live on a log-scale.</p>
       </footer>
     </div>
   </div>
-  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle"><&mdash;></button>
+  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle">Toggle Menu</button>
 </div>
 <script src="../../_static/js/vendor/jquery.min.js"></script>
 <script src="../../_static/js/vendor/bootstrap.min.js"></script>
@@ -339,13 +339,11 @@ length-scales naturally live on a log-scale.</p>
 
 
 <script>
-
-    $(document).ready(function() {
-
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#sk-doc-wrapper").toggleClass("toggled");
-        });
+$(document).ready(function() {
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sk-doc-wrapper").toggleClass("toggled");
+    });
 
     /* Add a [>>>] button on the top-right corner of code samples to hide
      * the >>> and ... prompts and the output and thus make the code
@@ -398,14 +396,62 @@ length-scales naturally live on a log-scale.</p>
         }
     });
 
-
 	/*** Add permalink buttons next to glossary terms ***/
 	$('dl.glossary > dt[id]').append(function() {
 		return ('<a class="headerlink" href="#' +
 			    this.getAttribute('id') +
 			    '" title="Permalink to this term">¶</a>');
-	})
+	});
+  /*** Had navbar when scrolling down ***/
+  // Returns true when headerlink target matches hash in url
+  hashTargetOnTop = function() {
+    var hash = window.location.hash;
+    if ( hash.length < 2 ) { return false; }
+
+    var target = document.getElementById( hash.slice(1) );
+    if ( target === null ) { return false; }
+
+    return target.getBoundingClientRect().top < 2;
+  };
+
+  var prevScrollpos = window.pageYOffset;
+  var narBar = document.getElementById("navbar")
+  hideOnScroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      narBar.style.top = "-48px";
+    } else {
+      narBar.style.top = "0";
+    }
+    prevScrollpos = currentScrollPos;
+  };
+
+  /*** high preformance scroll event listener***/
+  var raf = window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      window.oRequestAnimationFrame;
+  var $window = $(window);
+  var lastScrollTop = $window.scrollTop();
+
+  if (raf) {
+      loop();
+  }
+
+function loop() {
+    var scrollTop = $window.scrollTop();
+    if (lastScrollTop === scrollTop) {
+        raf(loop);
+        return;
+    } else {
+        lastScrollTop = scrollTop;
+        hideOnScroll();
+        raf(loop);
+    }
+  }
 });
+
 </script>
 <script>
     (function() {
@@ -416,7 +462,7 @@ length-scales naturally live on a log-scale.</p>
     })();
 </script>
     
-<script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
+<script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
     
 </body>
 </html>

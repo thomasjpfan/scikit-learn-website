@@ -24,12 +24,12 @@
 <body>
 
 
-<nav class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+<nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
   <div class="container-fluid sk-docs-container">
       <a class="navbar-brand" href="../../index.html">
         <img
           src="../../_static/scikit-learn-logo-notext.png"
-          width="100"
+          height="38"
           alt="logo"/>
       </a>
     <button
@@ -67,8 +67,8 @@
   </div>
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
-    <div class="border-right" id="sk-sidebar-wrapper">
-      <div class="h-100 sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+    <div id="sk-sidebar-wrapper" class="border-right">
+      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="plot_stock_market.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Visualizing the stock market structure">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
               <a href="svm_gui.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Libsvm GUI">Next</a>
           </div>
@@ -80,7 +80,7 @@
         </div>
         <div class="alert alert-warning p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-            Please <a class="font-weight-bold" href="about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
+            Please <a class="font-weight-bold" href="../../about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
           </p>
         </div>
         <ul>
@@ -132,7 +132,7 @@ of the latent structured data of the Wikipedia content.</p>
 
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">sparse</span>
 
-<span class="kn">from</span> <span class="nn">joblib</span> <span class="k">import</span> <a href="https://joblib.readthedocs.io/en/latest/generated/joblib.Memory.html#joblib.Memory" title="View documentation for joblib.Memory"><a href="https://joblib.readthedocs.io/en/latest/generated/joblib.Memory.html#joblib.Memory" title="View documentation for joblib.Memory"><span class="n">Memory</span></a></a>
+<span class="kn">from</span> <span class="nn">joblib</span> <span class="k">import</span> <a href="https://joblib.readthedocs.io/en/latest/generated/joblib.Memory.html#joblib.Memory" title="View documentation for joblib.Memory"><a href="https://joblib.readthedocs.io/en/latest/generated/joblib.Memory.html#joblib.Memory" title="View documentation for joblib.Memory"><a href="https://joblib.readthedocs.io/en/latest/generated/joblib.Memory.html#joblib.Memory" title="View documentation for joblib.Memory"><span class="n">Memory</span></a></a></a>
 
 <span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="k">import</span> <span class="n">randomized_svd</span>
 <span class="kn">from</span> <span class="nn">urllib.request</span> <span class="k">import</span> <span class="n">urlopen</span>
@@ -164,7 +164,7 @@ of the latent structured data of the Wikipedia content.</p>
 <span class="c1"># #############################################################################</span>
 <span class="c1"># Loading the redirect files</span>
 
-<span class="n">memory</span> <span class="o">=</span> <a href="https://joblib.readthedocs.io/en/latest/generated/joblib.Memory.html#joblib.Memory" title="View documentation for joblib.Memory"><a href="https://joblib.readthedocs.io/en/latest/generated/joblib.Memory.html#joblib.Memory" title="View documentation for joblib.Memory"><span class="n">Memory</span></a></a><span class="p">(</span><span class="n">cachedir</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+<span class="n">memory</span> <span class="o">=</span> <a href="https://joblib.readthedocs.io/en/latest/generated/joblib.Memory.html#joblib.Memory" title="View documentation for joblib.Memory"><a href="https://joblib.readthedocs.io/en/latest/generated/joblib.Memory.html#joblib.Memory" title="View documentation for joblib.Memory"><a href="https://joblib.readthedocs.io/en/latest/generated/joblib.Memory.html#joblib.Memory" title="View documentation for joblib.Memory"><span class="n">Memory</span></a></a></a><span class="p">(</span><span class="n">cachedir</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">redirects</span><span class="p">,</span> <span class="n">index_map</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
@@ -247,7 +247,7 @@ of the latent structured data of the Wikipedia content.</p>
             <span class="k">break</span>
 
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Computing the adjacency matrix&quot;</span><span class="p">)</span>
-    <span class="n">X</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.lil_matrix.html#scipy.sparse.lil_matrix" title="View documentation for scipy.sparse.lil_matrix"><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.lil_matrix.html#scipy.sparse.lil_matrix" title="View documentation for scipy.sparse.lil_matrix"><span class="n">sparse</span><span class="o">.</span><span class="n">lil_matrix</span></a></a><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">index_map</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">index_map</span><span class="p">)),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="n">X</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.lil_matrix.html#scipy.sparse.lil_matrix" title="View documentation for scipy.sparse.lil_matrix"><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.lil_matrix.html#scipy.sparse.lil_matrix" title="View documentation for scipy.sparse.lil_matrix"><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.lil_matrix.html#scipy.sparse.lil_matrix" title="View documentation for scipy.sparse.lil_matrix"><span class="n">sparse</span><span class="o">.</span><span class="n">lil_matrix</span></a></a></a><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">index_map</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">index_map</span><span class="p">)),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
         <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
     <span class="k">del</span> <span class="n">links</span>
@@ -287,19 +287,19 @@ of the latent structured data of the Wikipedia content.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">n</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="n">incoming_counts</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.asarray.html#numpy.asarray" title="View documentation for numpy.asarray"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.asarray.html#numpy.asarray" title="View documentation for numpy.asarray"><span class="n">np</span><span class="o">.</span><span class="n">asarray</span></a></a><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    <span class="n">incoming_counts</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.asarray.html#numpy.asarray" title="View documentation for numpy.asarray"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.asarray.html#numpy.asarray" title="View documentation for numpy.asarray"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.asarray.html#numpy.asarray" title="View documentation for numpy.asarray"><span class="n">np</span><span class="o">.</span><span class="n">asarray</span></a></a></a><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
 
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Normalizing the graph&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">incoming_counts</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()[</span><span class="mi">0</span><span class="p">]:</span>
         <span class="n">X</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">X</span><span class="o">.</span><span class="n">indptr</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span><span class="n">X</span><span class="o">.</span><span class="n">indptr</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]]</span> <span class="o">*=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">incoming_counts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-    <span class="n">dangle</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.asarray.html#numpy.asarray" title="View documentation for numpy.asarray"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.asarray.html#numpy.asarray" title="View documentation for numpy.asarray"><span class="n">np</span><span class="o">.</span><span class="n">asarray</span></a></a><span class="p">(</span><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html#numpy.where" title="View documentation for numpy.where"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html#numpy.where" title="View documentation for numpy.where"><span class="n">np</span><span class="o">.</span><span class="n">where</span></a></a><span class="p">(</span><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.isclose.html#numpy.isclose" title="View documentation for numpy.isclose"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.isclose.html#numpy.isclose" title="View documentation for numpy.isclose"><span class="n">np</span><span class="o">.</span><span class="n">isclose</span></a></a><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="n">dangle</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.asarray.html#numpy.asarray" title="View documentation for numpy.asarray"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.asarray.html#numpy.asarray" title="View documentation for numpy.asarray"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.asarray.html#numpy.asarray" title="View documentation for numpy.asarray"><span class="n">np</span><span class="o">.</span><span class="n">asarray</span></a></a></a><span class="p">(</span><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html#numpy.where" title="View documentation for numpy.where"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html#numpy.where" title="View documentation for numpy.where"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html#numpy.where" title="View documentation for numpy.where"><span class="n">np</span><span class="o">.</span><span class="n">where</span></a></a></a><span class="p">(</span><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.isclose.html#numpy.isclose" title="View documentation for numpy.isclose"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.isclose.html#numpy.isclose" title="View documentation for numpy.isclose"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.isclose.html#numpy.isclose" title="View documentation for numpy.isclose"><span class="n">np</span><span class="o">.</span><span class="n">isclose</span></a></a></a><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">),</span>
                                  <span class="mf">1.0</span> <span class="o">/</span> <span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
 
-    <span class="n">scores</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.full.html#numpy.full" title="View documentation for numpy.full"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.full.html#numpy.full" title="View documentation for numpy.full"><span class="n">np</span><span class="o">.</span><span class="n">full</span></a></a><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">n</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>  <span class="c1"># initial guess</span>
+    <span class="n">scores</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.full.html#numpy.full" title="View documentation for numpy.full"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.full.html#numpy.full" title="View documentation for numpy.full"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.full.html#numpy.full" title="View documentation for numpy.full"><span class="n">np</span><span class="o">.</span><span class="n">full</span></a></a></a><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">n</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>  <span class="c1"># initial guess</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iter</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;power iteration #</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
         <span class="n">prev_scores</span> <span class="o">=</span> <span class="n">scores</span>
-        <span class="n">scores</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span> <span class="o">*</span> <span class="p">(</span><span class="n">scores</span> <span class="o">*</span> <span class="n">X</span> <span class="o">+</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.dot.html#numpy.dot" title="View documentation for numpy.dot"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.dot.html#numpy.dot" title="View documentation for numpy.dot"><span class="n">np</span><span class="o">.</span><span class="n">dot</span></a></a><span class="p">(</span><span class="n">dangle</span><span class="p">,</span> <span class="n">prev_scores</span><span class="p">))</span>
+        <span class="n">scores</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span> <span class="o">*</span> <span class="p">(</span><span class="n">scores</span> <span class="o">*</span> <span class="n">X</span> <span class="o">+</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.dot.html#numpy.dot" title="View documentation for numpy.dot"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.dot.html#numpy.dot" title="View documentation for numpy.dot"><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.dot.html#numpy.dot" title="View documentation for numpy.dot"><span class="n">np</span><span class="o">.</span><span class="n">dot</span></a></a></a><span class="p">(</span><span class="n">dangle</span><span class="p">,</span> <span class="n">prev_scores</span><span class="p">))</span>
                   <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="n">prev_scores</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span>
         <span class="c1"># check convergence: normalized l_inf norm</span>
         <span class="n">scores_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
@@ -343,7 +343,7 @@ of the latent structured data of the Wikipedia content.</p>
       </footer>
     </div>
   </div>
-  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle"><&mdash;></button>
+  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle">Toggle Menu</button>
 </div>
 <script src="../../_static/js/vendor/jquery.min.js"></script>
 <script src="../../_static/js/vendor/bootstrap.min.js"></script>
@@ -359,13 +359,11 @@ of the latent structured data of the Wikipedia content.</p>
 
 
 <script>
-
-    $(document).ready(function() {
-
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#sk-doc-wrapper").toggleClass("toggled");
-        });
+$(document).ready(function() {
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sk-doc-wrapper").toggleClass("toggled");
+    });
 
     /* Add a [>>>] button on the top-right corner of code samples to hide
      * the >>> and ... prompts and the output and thus make the code
@@ -418,14 +416,69 @@ of the latent structured data of the Wikipedia content.</p>
         }
     });
 
-
 	/*** Add permalink buttons next to glossary terms ***/
 	$('dl.glossary > dt[id]').append(function() {
 		return ('<a class="headerlink" href="#' +
 			    this.getAttribute('id') +
 			    '" title="Permalink to this term">¶</a>');
-	})
+	});
+
+    scrollUpToCompensateForFixedHeader();
+    // Run on hash change (user clicked on anchor link)
+    if ( 'onhashchange' in window ) {
+        window.addEventListener('hashchange', scrollUpToCompensateForFixedHeader);
+    }
+  /*** Had navbar when scrolling down ***/
+  // Returns true when headerlink target matches hash in url
+  hashTargetOnTop = function() {
+    var hash = window.location.hash;
+    if ( hash.length < 2 ) { return false; }
+
+    var target = document.getElementById( hash.slice(1) );
+    if ( target === null ) { return false; }
+
+    return target.getBoundingClientRect().top < 2;
+  };
+
+  var prevScrollpos = window.pageYOffset;
+  var narBar = document.getElementById("navbar")
+  hideOnScroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      narBar.style.top = "-48px";
+    } else {
+      narBar.style.top = "0";
+    }
+    prevScrollpos = currentScrollPos;
+  };
+
+  /*** high preformance scroll event listener***/
+  var raf = window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      window.oRequestAnimationFrame;
+  var $window = $(window);
+  var lastScrollTop = $window.scrollTop();
+
+  if (raf) {
+      loop();
+  }
+
+function loop() {
+    var scrollTop = $window.scrollTop();
+    if (lastScrollTop === scrollTop) {
+        raf(loop);
+        return;
+    } else {
+        lastScrollTop = scrollTop;
+        hideOnScroll();
+        raf(loop);
+    }
+  }
+
 });
+
 </script>
 <script>
     (function() {
@@ -436,7 +489,7 @@ of the latent structured data of the Wikipedia content.</p>
     })();
 </script>
     
-<script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
+<script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
     
 </body>
 </html>

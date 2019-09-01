@@ -24,12 +24,12 @@
 <body>
 
 
-<nav class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+<nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
   <div class="container-fluid sk-docs-container">
       <a class="navbar-brand" href="../../index.html">
         <img
           src="../../_static/scikit-learn-logo-notext.png"
-          width="100"
+          height="38"
           alt="logo"/>
       </a>
     <button
@@ -67,8 +67,8 @@
   </div>
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
-    <div class="border-right" id="sk-sidebar-wrapper">
-      <div class="h-100 sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+    <div id="sk-sidebar-wrapper" class="border-right">
+      <div class="sk-sidebar-toc-wrapper"><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
               <a href="sklearn.multioutput.RegressorChain.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.multioutput.RegressorChain">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
               <a href="sklearn.naive_bayes.GaussianNB.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.naive_bayes.GaussianNB">Next</a>
           </div>
@@ -80,7 +80,7 @@
         </div>
         <div class="alert alert-warning p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-            Please <a class="font-weight-bold" href="about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
+            Please <a class="font-weight-bold" href="../../about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
           </p>
         </div>
         <ul>
@@ -99,7 +99,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.naive_bayes" title="sklearn.naive_bayes"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.naive_bayes</span></code></a>.BernoulliNB<a class="headerlink" href="#sklearn-naive-bayes-bernoullinb" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="sklearn.naive_bayes.BernoulliNB">
-<em class="property">class </em><code class="sig-prename descclassname">sklearn.naive_bayes.</code><code class="sig-name descname">BernoulliNB</code><span class="sig-paren">(</span><em class="sig-param">alpha=1.0</em>, <em class="sig-param">binarize=0.0</em>, <em class="sig-param">fit_prior=True</em>, <em class="sig-param">class_prior=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/naive_bayes.py#L868"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">sklearn.naive_bayes.</code><code class="sig-name descname">BernoulliNB</code><span class="sig-paren">(</span><em class="sig-param">alpha=1.0</em>, <em class="sig-param">binarize=0.0</em>, <em class="sig-param">fit_prior=True</em>, <em class="sig-param">class_prior=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/naive_bayes.py#L868"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB" title="Permalink to this definition">¶</a></dt>
 <dd><p>Naive Bayes classifier for multivariate Bernoulli models.</p>
 <p>Like MultinomialNB, this classifier is suitable for discrete data. The
 difference is that while MultinomialNB works with occurrence counts,
@@ -198,13 +198,13 @@ naive Bayes – Which naive Bayes? 3rd Conf. on Email and Anti-Spam (CEAS).</p>
 </table>
 <dl class="method">
 <dt id="sklearn.naive_bayes.BernoulliNB.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">alpha=1.0</em>, <em class="sig-param">binarize=0.0</em>, <em class="sig-param">fit_prior=True</em>, <em class="sig-param">class_prior=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/naive_bayes.py#L946"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">alpha=1.0</em>, <em class="sig-param">binarize=0.0</em>, <em class="sig-param">fit_prior=True</em>, <em class="sig-param">class_prior=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/naive_bayes.py#L946"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sklearn.naive_bayes.BernoulliNB.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">sample_weight=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/naive_bayes.py#L575"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">sample_weight=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/naive_bayes.py#L575"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit Naive Bayes classifier according to X, y</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -228,7 +228,7 @@ n_features is the number of features.</p>
 
 <dl class="method">
 <dt id="sklearn.naive_bayes.BernoulliNB.get_params">
-<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/base.py#L180"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.get_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L180"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -249,7 +249,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="sklearn.naive_bayes.BernoulliNB.partial_fit">
-<code class="sig-name descname">partial_fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">classes=None</em>, <em class="sig-param">sample_weight=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/naive_bayes.py#L495"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.partial_fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">partial_fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">classes=None</em>, <em class="sig-param">sample_weight=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/naive_bayes.py#L495"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.partial_fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Incremental fit on a batch of samples.</p>
 <p>This method is expected to be called several times consecutively
 on different chunks of a dataset so as to implement out-of-core
@@ -285,7 +285,7 @@ in subsequent calls.</p>
 
 <dl class="method">
 <dt id="sklearn.naive_bayes.BernoulliNB.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/naive_bayes.py#L52"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/naive_bayes.py#L52"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform classification on an array of test vectors X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -304,7 +304,7 @@ in subsequent calls.</p>
 
 <dl class="method">
 <dt id="sklearn.naive_bayes.BernoulliNB.predict_log_proba">
-<code class="sig-name descname">predict_log_proba</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/naive_bayes.py#L68"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.predict_log_proba" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict_log_proba</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/naive_bayes.py#L68"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.predict_log_proba" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return log-probability estimates for the test vector X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -325,7 +325,7 @@ order, as they appear in the attribute <a class="reference internal" href="../..
 
 <dl class="method">
 <dt id="sklearn.naive_bayes.BernoulliNB.predict_proba">
-<code class="sig-name descname">predict_proba</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/naive_bayes.py#L88"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.predict_proba" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict_proba</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/naive_bayes.py#L88"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.predict_proba" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return probability estimates for the test vector X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -346,7 +346,7 @@ order, as they appear in the attribute <a class="reference internal" href="../..
 
 <dl class="method">
 <dt id="sklearn.naive_bayes.BernoulliNB.score">
-<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">sample_weight=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/base.py#L343"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.score" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">sample_weight=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L343"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the mean accuracy on the given test data and labels.</p>
 <p>In multi-label classification, this is the subset accuracy
 which is a harsh metric since you require for each sample that
@@ -373,7 +373,7 @@ each label set be correctly predicted.</p>
 
 <dl class="method">
 <dt id="sklearn.naive_bayes.BernoulliNB.set_params">
-<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/61bc8a426/sklearn/base.py#L211"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.set_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c7464ec6e/sklearn/base.py#L211"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as pipelines). The latter have parameters of the form
@@ -412,7 +412,7 @@ component of a nested object.</p>
       </footer>
     </div>
   </div>
-  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle"><&mdash;></button>
+  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle">Toggle Menu</button>
 </div>
 <script src="../../_static/js/vendor/jquery.min.js"></script>
 <script src="../../_static/js/vendor/bootstrap.min.js"></script>
@@ -428,13 +428,11 @@ component of a nested object.</p>
 
 
 <script>
-
-    $(document).ready(function() {
-
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#sk-doc-wrapper").toggleClass("toggled");
-        });
+$(document).ready(function() {
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sk-doc-wrapper").toggleClass("toggled");
+    });
 
     /* Add a [>>>] button on the top-right corner of code samples to hide
      * the >>> and ... prompts and the output and thus make the code
@@ -487,14 +485,62 @@ component of a nested object.</p>
         }
     });
 
-
 	/*** Add permalink buttons next to glossary terms ***/
 	$('dl.glossary > dt[id]').append(function() {
 		return ('<a class="headerlink" href="#' +
 			    this.getAttribute('id') +
 			    '" title="Permalink to this term">¶</a>');
-	})
+	});
+  /*** Had navbar when scrolling down ***/
+  // Returns true when headerlink target matches hash in url
+  hashTargetOnTop = function() {
+    var hash = window.location.hash;
+    if ( hash.length < 2 ) { return false; }
+
+    var target = document.getElementById( hash.slice(1) );
+    if ( target === null ) { return false; }
+
+    return target.getBoundingClientRect().top < 2;
+  };
+
+  var prevScrollpos = window.pageYOffset;
+  var narBar = document.getElementById("navbar")
+  hideOnScroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if ((prevScrollpos <= currentScrollPos) || hashTargetOnTop()){
+      narBar.style.top = "-48px";
+    } else {
+      narBar.style.top = "0";
+    }
+    prevScrollpos = currentScrollPos;
+  };
+
+  /*** high preformance scroll event listener***/
+  var raf = window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      window.oRequestAnimationFrame;
+  var $window = $(window);
+  var lastScrollTop = $window.scrollTop();
+
+  if (raf) {
+      loop();
+  }
+
+function loop() {
+    var scrollTop = $window.scrollTop();
+    if (lastScrollTop === scrollTop) {
+        raf(loop);
+        return;
+    } else {
+        lastScrollTop = scrollTop;
+        hideOnScroll();
+        raf(loop);
+    }
+  }
 });
+
 </script>
 <script>
     (function() {
@@ -505,7 +551,7 @@ component of a nested object.</p>
     })();
 </script>
     
-<script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
+<script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG"></script>
     
 </body>
 </html>

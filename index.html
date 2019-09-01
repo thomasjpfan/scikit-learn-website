@@ -24,12 +24,12 @@
 <body>
 
 
-<nav class="sk-landing-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+<nav id="navbar" class="sk-landing-navbar navbar navbar-expand-md navbar-light bg-light py-0">
   <div class="container-fluid sk-landing-container">
       <a class="navbar-brand" href="#">
         <img
           src="_static/scikit-learn-logo-notext.png"
-          width="100"
+          height="38"
           alt="logo"/>
       </a>
     <button
@@ -84,8 +84,8 @@
 </div>
 
 <div class="container sk-landing-container py-3 body" role="main">
-  <div class="row">
-    <div class="col-md-4 mb-2">
+  <div class="row no-gutters">
+    <div class="col-md-4 mb-3 px-2">
       <div class="card h-100">
         <div class="card-body">
           <a href="supervised_learning.html#supervised-learning"><h4 class="sk-card-title card-title">Classification</h4></a>
@@ -97,7 +97,7 @@
           <a href="modules/ensemble.html#forest">random forest</a>,
           and <a href="supervised_learning.html#supervised-learning">more...</a></p>
         </div>
-        <div class="overflow-hidden mx-1">
+        <div class="overflow-hidden mx-1 text-center">
           <a href="auto_examples/classification/plot_classifier_comparison.html">
           <img src="_images/sphx_glr_plot_classifier_comparison_001_carousel.png" class="sk-index-img" style="width: unset">
           </a>
@@ -105,7 +105,7 @@
           <a href="auto_examples/index.html#examples" class="sk-btn-primary btn text-white btn-block" role="button">Examples</a>
       </div>
     </div>
-    <div class="col-md-4 mb-2">
+    <div class="col-md-4 mb-3 px-2">
       <div class="card h-100">
         <div class="card-body">
           <a href="supervised_learning.html#supervised-learning"><h4 class="sk-card-title card-title">Regression</h4></a>
@@ -125,7 +125,7 @@
           <a href="auto_examples/index.html#examples" class="sk-btn-primary btn text-white btn-block" role="button">Examples</a>
       </div>
     </div>
-    <div class="col-md-4 mb-2">
+    <div class="col-md-4 mb-3 px-2">
       <div class="card h-100">
         <div class="card-body">
           <a href="modules/clustering.html#clustering"><h4 class="sk-card-title card-title">Clustering</h4></a>
@@ -145,7 +145,7 @@
           <a href="auto_examples/index.html#cluster-examples" class="sk-btn-primary btn text-white btn-block" role="button">Examples</a>
       </div>
     </div>
-    <div class="col-md-4 mb-2">
+    <div class="col-md-4 mb-3 px-2">
       <div class="card h-100">
         <div class="card-body">
           <a href="modules/decomposition.html#decompositions"><h4 class="sk-card-title card-title">Dimensionality reduction</h4></a>
@@ -165,7 +165,7 @@
           <a href="auto_examples/index.html#decomposition-examples" class="sk-btn-primary btn text-white btn-block" role="button">Examples</a>
       </div>
     </div>
-    <div class="col-md-4 mb-2">
+    <div class="col-md-4 mb-3 px-2">
       <div class="card h-100">
         <div class="card-body">
           <a href="model_selection.html#model-selection"><h4 class="sk-card-title card-title">Model selection</h4></a>
@@ -185,7 +185,7 @@
           <a href="auto_examples/index.html#model-selection" class="sk-btn-primary btn text-white btn-block" role="button">Examples</a>
       </div>
     </div>
-    <div class="col-md-4 mb-2">
+    <div class="col-md-4 mb-3 px-2">
       <div class="card h-100">
         <div class="card-body">
           <a href="modules/preprocessing.html#preprocessing"><h4 class="sk-card-title card-title">Preprocessing</h4></a>
@@ -328,13 +328,11 @@
 
 
 <script>
-
-    $(document).ready(function() {
-
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#sk-doc-wrapper").toggleClass("toggled");
-        });
+$(document).ready(function() {
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sk-doc-wrapper").toggleClass("toggled");
+    });
 
     /* Add a [>>>] button on the top-right corner of code samples to hide
      * the >>> and ... prompts and the output and thus make the code
@@ -387,14 +385,14 @@
         }
     });
 
-
 	/*** Add permalink buttons next to glossary terms ***/
 	$('dl.glossary > dt[id]').append(function() {
 		return ('<a class="headerlink" href="#' +
 			    this.getAttribute('id') +
 			    '" title="Permalink to this term">¶</a>');
-	})
+	});
 });
+
 </script>
 <script>
     (function() {
