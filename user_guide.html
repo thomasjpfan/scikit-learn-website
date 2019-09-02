@@ -67,6 +67,8 @@
 </nav>
 <div class="d-flex " id="sk-doc-wrapper">
     <div id="sk-sidebar-wrapper" class="border-right">
+      <input type="checkbox" name="sk-toggle-checkbox" id="sk-toggle-checkbox">
+      <label id="sk-sidemenu-toggle" class="sk-btn-toggle-toc btn sk-btn-primary" for="sk-toggle-checkbox">Toggle Menu</label>
       <div class="sk-sidebar-toc-wrapper">
         <div class="sk-sidebar-toc-logo">
           <a href="index.html">
@@ -1231,7 +1233,6 @@
       </footer>
     </div>
   </div>
-  <button class="sk-btn-toggle-toc btn sk-btn-primary" id="menu-toggle">Toggle Menu</button>
 </div>
 <script src="_static/js/vendor/jquery.min.js"></script>
 <script src="_static/js/vendor/bootstrap.min.js"></script>
@@ -1248,11 +1249,6 @@
 
 <script>
 $(document).ready(function() {
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#sk-doc-wrapper").toggleClass("toggled");
-    });
-
     /* Add a [>>>] button on the top-right corner of code samples to hide
      * the >>> and ... prompts and the output and thus make the code
      * copyable. */
