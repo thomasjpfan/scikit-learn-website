@@ -25,11 +25,11 @@
 
 
 <nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
-  <div class="container-fluid sk-docs-container">
-      <a class="navbar-brand" href="index.html">
+  <div class="container-fluid sk-docs-container px-0">
+      <a class="navbar-brand py-0" href="index.html">
         <img
-          src="_static/scikit-learn-logo-notext.png"
-          height="38"
+          class="sk-brand-img"
+          src="_static/scikit-learn-logo-small.png"
           alt="logo"/>
       </a>
     <button
@@ -47,16 +47,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
+          <a class="sk-nav-link nav-link" href="install.html">Install</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="install.html">Install</a>
+          <a class="sk-nav-link nav-link" href="user_guide.html">User Guide</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="documentation.html">Documentation</a>
+          <a class="sk-nav-link nav-link" href="modules/classes.html">API</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="auto_examples/index.html">Examples</a>
+          <a class="sk-nav-link nav-link" href="auto_examples/index.html">Examples</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sk-nav-dropdown-item dropdown-item" href="tutorial/basic/tutorial.html">Quick Start</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="tutorial/index.html">Tutorial</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="#">Glossary</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="developers/index.html">Development</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="faq.html">FAQ</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="related_projects.html">Related packages</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="roadmap.html">Roadmap</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="about.html">About us</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="documentation.html">Index</a>
+          </div>
         </li>
       </ul>
       <div class="sk-search-form">
@@ -65,7 +79,7 @@
     </div>
   </div>
 </nav>
-<div class="d-flex " id="sk-doc-wrapper">
+<div class="d-flex" id="sk-doc-wrapper">
     <input type="checkbox" name="sk-toggle-checkbox" id="sk-toggle-checkbox">
     <label id="sk-sidemenu-toggle" class="sk-btn-toggle-toc btn sk-btn-primary" for="sk-toggle-checkbox">Toggle Menu</label>
     <div id="sk-sidebar-wrapper" class="border-right">
@@ -73,8 +87,8 @@
         <div class="sk-sidebar-toc-logo">
           <a href="index.html">
             <img
+              class="sk-brand-img"
               src="_static/scikit-learn-logo-small.png"
-              height="38"
               alt="logo"/>
           </a>
         </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
@@ -108,8 +122,8 @@
 
       </div>
     </div>
-    <div id="sk-page-content-wrapper">
-      <div class="sk-page-content container-fluid body" role="main">
+    <div id="sk-page-content-wrapper" >
+      <div class="sk-page-content container-fluid body pl-md-4 px-lg-5" role="main">
         
   <div class="section" id="glossary-of-common-terms-and-api-elements">
 <span id="glossary"></span><h1>Glossary of Common Terms and API Elements<a class="headerlink" href="#glossary-of-common-terms-and-api-elements" title="Permalink to this headline">¶</a></h1>
@@ -810,10 +824,10 @@ provided by inheritance from <a class="reference internal" href="modules/generat
 </dd>
 <dt id="term-feature-extractor">feature extractor</dt><dt id="term-feature-extractors">feature extractors</dt><dd><p>A <a class="reference internal" href="#term-transformer"><span class="xref std std-term">transformer</span></a> which takes input where each sample is not
 represented as an <a class="reference internal" href="#term-array-like"><span class="xref std std-term">array-like</span></a> object of fixed length, and
-produces an <a class="reference internal" href="#term-array-like"><span class="xref any std std-term">array-like</span></a> object of <a class="reference internal" href="#term-features"><span class="xref std std-term">features</span></a> for each sample
-(and thus a 2-dimensional array-like for a set of samples).  In other
-words, it (lossily) maps a non-rectangular data representation into
-<a class="reference internal" href="#term-rectangular"><span class="xref std std-term">rectangular</span></a> data.</p>
+produces an <a class="reference internal" href="#term-array-like"><span class="xref std std-term">array-like</span></a> object of <a class="reference internal" href="#term-features"><span class="xref std std-term">features</span></a> for each
+sample (and thus a 2-dimensional array-like for a set of samples).  In
+other words, it (lossily) maps a non-rectangular data representation
+into <a class="reference internal" href="#term-rectangular"><span class="xref std std-term">rectangular</span></a> data.</p>
 <p>Feature extractors must implement at least:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#term-fit"><span class="xref std std-term">fit</span></a></p></li>
@@ -907,7 +921,7 @@ are <a class="reference internal" href="modules/generated/sklearn.linear_model.E
 Cross-validation estimators are named <code class="docutils literal notranslate"><span class="pre">EstimatorCV</span></code> and tend to be
 roughly equivalent to <code class="docutils literal notranslate"><span class="pre">GridSearchCV(Estimator(),</span> <span class="pre">...)</span></code>. The
 advantage of using a cross-validation estimator over the canonical
-<a class="reference internal" href="#term-estimator"><code class="xref any std std-term docutils literal notranslate"><span class="pre">Estimator</span></code></a> class along with <a class="reference internal" href="modules/grid_search.html#grid-search"><span class="std std-ref">grid search</span></a> is
+<a class="reference internal" href="#term-estimator"><span class="xref std std-term">Estimator</span></a> class along with <a class="reference internal" href="modules/grid_search.html#grid-search"><span class="std std-ref">grid search</span></a> is
 that they can take advantage of warm-starting by reusing precomputed
 results in the previous steps of the cross-validation process. This
 generally leads to speed improvements. An exception is the

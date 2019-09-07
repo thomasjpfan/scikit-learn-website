@@ -25,11 +25,11 @@
 
 
 <nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
-  <div class="container-fluid sk-docs-container">
-      <a class="navbar-brand" href="../index.html">
+  <div class="container-fluid sk-docs-container px-0">
+      <a class="navbar-brand py-0" href="../index.html">
         <img
-          src="../_static/scikit-learn-logo-notext.png"
-          height="38"
+          class="sk-brand-img"
+          src="../_static/scikit-learn-logo-small.png"
           alt="logo"/>
       </a>
     <button
@@ -47,16 +47,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="../index.html">Home</a>
+          <a class="sk-nav-link nav-link" href="../install.html">Install</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../install.html">Install</a>
+          <a class="sk-nav-link nav-link" href="../user_guide.html">User Guide</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../documentation.html">Documentation</a>
+          <a class="sk-nav-link nav-link" href="classes.html">API</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../auto_examples/index.html">Examples</a>
+          <a class="sk-nav-link nav-link" href="../auto_examples/index.html">Examples</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sk-nav-dropdown-item dropdown-item" href="../tutorial/basic/tutorial.html">Quick Start</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../tutorial/index.html">Tutorial</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../glossary.html">Glossary</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../developers/index.html">Development</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../faq.html">FAQ</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../related_projects.html">Related packages</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../roadmap.html">Roadmap</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../about.html">About us</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../documentation.html">Index</a>
+          </div>
         </li>
       </ul>
       <div class="sk-search-form">
@@ -65,7 +79,7 @@
     </div>
   </div>
 </nav>
-<div class="d-flex " id="sk-doc-wrapper">
+<div class="d-flex" id="sk-doc-wrapper">
     <input type="checkbox" name="sk-toggle-checkbox" id="sk-toggle-checkbox">
     <label id="sk-sidemenu-toggle" class="sk-btn-toggle-toc btn sk-btn-primary" for="sk-toggle-checkbox">Toggle Menu</label>
     <div id="sk-sidebar-wrapper" class="border-right">
@@ -73,8 +87,8 @@
         <div class="sk-sidebar-toc-logo">
           <a href="../index.html">
             <img
+              class="sk-brand-img"
               src="../_static/scikit-learn-logo-small.png"
-              height="38"
               alt="logo"/>
           </a>
         </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
@@ -123,8 +137,8 @@
 
       </div>
     </div>
-    <div id="sk-page-content-wrapper">
-      <div class="sk-page-content container-fluid body" role="main">
+    <div id="sk-page-content-wrapper" >
+      <div class="sk-page-content container-fluid body pl-md-4 px-lg-5" role="main">
         
   <div class="section" id="decomposing-signals-in-components-matrix-factorization-problems">
 <span id="decompositions"></span><h1>2.5. Decomposing signals in components (matrix factorization problems)<a class="headerlink" href="#decomposing-signals-in-components-matrix-factorization-problems" title="Permalink to this headline">¶</a></h1>
@@ -152,7 +166,7 @@ features, projected on the 2 dimensions that explain most variance:</p>
 <p>The <a class="reference internal" href="generated/sklearn.decomposition.PCA.html#sklearn.decomposition.PCA" title="sklearn.decomposition.PCA"><code class="xref py py-class docutils literal notranslate"><span class="pre">PCA</span></code></a> object also provides a
 probabilistic interpretation of the PCA that can give a likelihood of
 data based on the amount of variance it explains. As such it implements a
-<a class="reference internal" href="../glossary.html#term-score"><span class="xref any std std-term">score</span></a> method that can be used in cross-validation:</p>
+<a class="reference internal" href="../glossary.html#term-score"><span class="xref std std-term">score</span></a> method that can be used in cross-validation:</p>
 <div class="figure align-center">
 <a class="reference external image-reference" href="../auto_examples/decomposition/plot_pca_vs_fa_model_selection.html"><img alt="../_images/sphx_glr_plot_pca_vs_fa_model_selection_0011.png" src="../_images/sphx_glr_plot_pca_vs_fa_model_selection_0011.png" style="width: 480.0px; height: 360.0px;" /></a>
 </div>

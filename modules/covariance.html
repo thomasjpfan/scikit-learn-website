@@ -25,11 +25,11 @@
 
 
 <nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
-  <div class="container-fluid sk-docs-container">
-      <a class="navbar-brand" href="../index.html">
+  <div class="container-fluid sk-docs-container px-0">
+      <a class="navbar-brand py-0" href="../index.html">
         <img
-          src="../_static/scikit-learn-logo-notext.png"
-          height="38"
+          class="sk-brand-img"
+          src="../_static/scikit-learn-logo-small.png"
           alt="logo"/>
       </a>
     <button
@@ -47,16 +47,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="../index.html">Home</a>
+          <a class="sk-nav-link nav-link" href="../install.html">Install</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../install.html">Install</a>
+          <a class="sk-nav-link nav-link" href="../user_guide.html">User Guide</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../documentation.html">Documentation</a>
+          <a class="sk-nav-link nav-link" href="classes.html">API</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../auto_examples/index.html">Examples</a>
+          <a class="sk-nav-link nav-link" href="../auto_examples/index.html">Examples</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sk-nav-dropdown-item dropdown-item" href="../tutorial/basic/tutorial.html">Quick Start</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../tutorial/index.html">Tutorial</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../glossary.html">Glossary</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../developers/index.html">Development</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../faq.html">FAQ</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../related_projects.html">Related packages</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../roadmap.html">Roadmap</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../about.html">About us</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../documentation.html">Index</a>
+          </div>
         </li>
       </ul>
       <div class="sk-search-form">
@@ -65,7 +79,7 @@
     </div>
   </div>
 </nav>
-<div class="d-flex " id="sk-doc-wrapper">
+<div class="d-flex" id="sk-doc-wrapper">
     <input type="checkbox" name="sk-toggle-checkbox" id="sk-toggle-checkbox">
     <label id="sk-sidemenu-toggle" class="sk-btn-toggle-toc btn sk-btn-primary" for="sk-toggle-checkbox">Toggle Menu</label>
     <div id="sk-sidebar-wrapper" class="border-right">
@@ -73,8 +87,8 @@
         <div class="sk-sidebar-toc-logo">
           <a href="../index.html">
             <img
+              class="sk-brand-img"
               src="../_static/scikit-learn-logo-small.png"
-              height="38"
               alt="logo"/>
           </a>
         </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
@@ -112,8 +126,8 @@
 
       </div>
     </div>
-    <div id="sk-page-content-wrapper">
-      <div class="sk-page-content container-fluid body" role="main">
+    <div id="sk-page-content-wrapper" >
+      <div class="sk-page-content container-fluid body pl-md-4 px-lg-5" role="main">
         
   <div class="section" id="covariance-estimation">
 <span id="covariance"></span><h1>2.6. Covariance estimation<a class="headerlink" href="#covariance-estimation" title="Permalink to this headline">¶</a></h1>
@@ -122,7 +136,7 @@ population’s covariance matrix, which can be seen as an estimation of
 data set scatter plot shape. Most of the time, such an estimation has
 to be done on a sample whose properties (size, structure, homogeneity)
 have a large influence on the estimation’s quality. The
-<a class="reference internal" href="classes.html#module-sklearn.covariance" title="sklearn.covariance"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">sklearn.covariance</span></code></a> package provides tools for accurately estimating
+<a class="reference internal" href="classes.html#module-sklearn.covariance" title="sklearn.covariance"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.covariance</span></code></a> package provides tools for accurately estimating
 a population’s covariance matrix under various settings.</p>
 <p>We assume that the observations are independent and identically
 distributed (i.i.d.).</p>
@@ -198,7 +212,7 @@ minimizes the Mean Squared Error between the estimated and the real
 covariance matrix.</p>
 <p>The Ledoit-Wolf estimator of the covariance matrix can be computed on
 a sample with the <a class="reference internal" href="generated/sklearn.covariance.ledoit_wolf.html#sklearn.covariance.ledoit_wolf" title="sklearn.covariance.ledoit_wolf"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ledoit_wolf</span></code></a> function of the
-<a class="reference internal" href="classes.html#module-sklearn.covariance" title="sklearn.covariance"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">sklearn.covariance</span></code></a> package, or it can be otherwise obtained by
+<a class="reference internal" href="classes.html#module-sklearn.covariance" title="sklearn.covariance"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.covariance</span></code></a> package, or it can be otherwise obtained by
 fitting a <a class="reference internal" href="generated/sklearn.covariance.LedoitWolf.html#sklearn.covariance.LedoitWolf" title="sklearn.covariance.LedoitWolf"><code class="xref py py-class docutils literal notranslate"><span class="pre">LedoitWolf</span></code></a> object to the same sample.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -245,7 +259,7 @@ yields a smaller Mean Squared Error than the one given by Ledoit and
 Wolf’s formula. The resulting estimator is known as the Oracle
 Shrinkage Approximating estimator of the covariance.</p>
 <p>The OAS estimator of the covariance matrix can be computed on a sample
-with the <code class="xref py py-meth docutils literal notranslate"><span class="pre">oas</span></code> function of the <a class="reference internal" href="classes.html#module-sklearn.covariance" title="sklearn.covariance"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">sklearn.covariance</span></code></a>
+with the <code class="xref py py-meth docutils literal notranslate"><span class="pre">oas</span></code> function of the <a class="reference internal" href="classes.html#module-sklearn.covariance" title="sklearn.covariance"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.covariance</span></code></a>
 package, or it can be otherwise obtained by fitting an <a class="reference internal" href="generated/sklearn.covariance.OAS.html#sklearn.covariance.OAS" title="sklearn.covariance.OAS"><code class="xref py py-class docutils literal notranslate"><span class="pre">OAS</span></code></a>
 object to the same sample.</p>
 <div class="figure align-center" id="id13">

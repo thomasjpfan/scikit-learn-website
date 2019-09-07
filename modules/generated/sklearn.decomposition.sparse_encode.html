@@ -25,11 +25,11 @@
 
 
 <nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
-  <div class="container-fluid sk-docs-container">
-      <a class="navbar-brand" href="../../index.html">
+  <div class="container-fluid sk-docs-container px-0">
+      <a class="navbar-brand py-0" href="../../index.html">
         <img
-          src="../../_static/scikit-learn-logo-notext.png"
-          height="38"
+          class="sk-brand-img"
+          src="../../_static/scikit-learn-logo-small.png"
           alt="logo"/>
       </a>
     <button
@@ -47,16 +47,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="../../index.html">Home</a>
+          <a class="sk-nav-link nav-link" href="../../install.html">Install</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../install.html">Install</a>
+          <a class="sk-nav-link nav-link" href="../../user_guide.html">User Guide</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../documentation.html">Documentation</a>
+          <a class="sk-nav-link nav-link" href="../classes.html">API</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../auto_examples/index.html">Examples</a>
+          <a class="sk-nav-link nav-link" href="../../auto_examples/index.html">Examples</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../tutorial/basic/tutorial.html">Quick Start</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../tutorial/index.html">Tutorial</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../glossary.html">Glossary</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../developers/index.html">Development</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../faq.html">FAQ</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../related_projects.html">Related packages</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../roadmap.html">Roadmap</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../about.html">About us</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../documentation.html">Index</a>
+          </div>
         </li>
       </ul>
       <div class="sk-search-form">
@@ -65,7 +79,7 @@
     </div>
   </div>
 </nav>
-<div class="d-flex " id="sk-doc-wrapper">
+<div class="d-flex" id="sk-doc-wrapper">
     <input type="checkbox" name="sk-toggle-checkbox" id="sk-toggle-checkbox">
     <label id="sk-sidemenu-toggle" class="sk-btn-toggle-toc btn sk-btn-primary" for="sk-toggle-checkbox">Toggle Menu</label>
     <div id="sk-sidebar-wrapper" class="border-right">
@@ -73,8 +87,8 @@
         <div class="sk-sidebar-toc-logo">
           <a href="../../index.html">
             <img
+              class="sk-brand-img"
               src="../../_static/scikit-learn-logo-small.png"
-              height="38"
               alt="logo"/>
           </a>
         </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
@@ -98,14 +112,14 @@
 
       </div>
     </div>
-    <div id="sk-page-content-wrapper">
-      <div class="sk-page-content container-fluid body" role="main">
+    <div id="sk-page-content-wrapper" >
+      <div class="sk-page-content container-fluid body pl-md-4 px-lg-5" role="main">
         
   <div class="section" id="sklearn-decomposition-sparse-encode">
 <h1><a class="reference internal" href="../classes.html#module-sklearn.decomposition" title="sklearn.decomposition"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.decomposition</span></code></a>.sparse_encode<a class="headerlink" href="#sklearn-decomposition-sparse-encode" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="sklearn.decomposition.sparse_encode">
-<code class="sig-prename descclassname">sklearn.decomposition.</code><code class="sig-name descname">sparse_encode</code><span class="sig-paren">(</span><em class="sig-param">X</em>, <em class="sig-param">dictionary</em>, <em class="sig-param">gram=None</em>, <em class="sig-param">cov=None</em>, <em class="sig-param">algorithm='lasso_lars'</em>, <em class="sig-param">n_nonzero_coefs=None</em>, <em class="sig-param">alpha=None</em>, <em class="sig-param">copy_cov=True</em>, <em class="sig-param">init=None</em>, <em class="sig-param">max_iter=1000</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">check_input=True</em>, <em class="sig-param">verbose=0</em>, <em class="sig-param">positive=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/decomposition/dict_learning.py#L188"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.decomposition.sparse_encode" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sklearn.decomposition.</code><code class="sig-name descname">sparse_encode</code><span class="sig-paren">(</span><em class="sig-param">X</em>, <em class="sig-param">dictionary</em>, <em class="sig-param">gram=None</em>, <em class="sig-param">cov=None</em>, <em class="sig-param">algorithm='lasso_lars'</em>, <em class="sig-param">n_nonzero_coefs=None</em>, <em class="sig-param">alpha=None</em>, <em class="sig-param">copy_cov=True</em>, <em class="sig-param">init=None</em>, <em class="sig-param">max_iter=1000</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">check_input=True</em>, <em class="sig-param">verbose=0</em>, <em class="sig-param">positive=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/3875090c8b/sklearn/decomposition/dict_learning.py#L188"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.decomposition.sparse_encode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sparse coding</p>
 <p>Each row of the result is the solution to a sparse coding problem.
 The goal is to find a sparse array <code class="docutils literal notranslate"><span class="pre">code</span></code> such that:</p>
@@ -137,7 +151,7 @@ the projection dictionary * X’</p>
 </dd>
 <dt><strong>n_nonzero_coefs</strong><span class="classifier">int, 0.1 * n_features by default</span></dt><dd><p>Number of nonzero coefficients to target in each column of the
 solution. This is only used by <code class="docutils literal notranslate"><span class="pre">algorithm='lars'</span></code> and <code class="docutils literal notranslate"><span class="pre">algorithm='omp'</span></code>
-and is overridden by <code class="docutils literal notranslate"><span class="pre">alpha</span></code> in the <a class="reference internal" href="../linear_model.html#omp"><span class="std std-ref">Orthogonal Matching Pursuit (OMP)</span></a> case.</p>
+and is overridden by <code class="docutils literal notranslate"><span class="pre">alpha</span></code> in the <code class="docutils literal notranslate"><span class="pre">omp</span></code> case.</p>
 </dd>
 <dt><strong>alpha</strong><span class="classifier">float, 1. by default</span></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">algorithm='lasso_lars'</span></code> or <code class="docutils literal notranslate"><span class="pre">algorithm='lasso_cd'</span></code>, <code class="docutils literal notranslate"><span class="pre">alpha</span></code> is the
 penalty applied to the L1 norm.

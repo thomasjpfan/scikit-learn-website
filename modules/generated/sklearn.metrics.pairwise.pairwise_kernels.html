@@ -25,11 +25,11 @@
 
 
 <nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
-  <div class="container-fluid sk-docs-container">
-      <a class="navbar-brand" href="../../index.html">
+  <div class="container-fluid sk-docs-container px-0">
+      <a class="navbar-brand py-0" href="../../index.html">
         <img
-          src="../../_static/scikit-learn-logo-notext.png"
-          height="38"
+          class="sk-brand-img"
+          src="../../_static/scikit-learn-logo-small.png"
           alt="logo"/>
       </a>
     <button
@@ -47,16 +47,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="../../index.html">Home</a>
+          <a class="sk-nav-link nav-link" href="../../install.html">Install</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../install.html">Install</a>
+          <a class="sk-nav-link nav-link" href="../../user_guide.html">User Guide</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../documentation.html">Documentation</a>
+          <a class="sk-nav-link nav-link" href="../classes.html">API</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../auto_examples/index.html">Examples</a>
+          <a class="sk-nav-link nav-link" href="../../auto_examples/index.html">Examples</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../tutorial/basic/tutorial.html">Quick Start</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../tutorial/index.html">Tutorial</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../glossary.html">Glossary</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../developers/index.html">Development</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../faq.html">FAQ</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../related_projects.html">Related packages</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../roadmap.html">Roadmap</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../about.html">About us</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../documentation.html">Index</a>
+          </div>
         </li>
       </ul>
       <div class="sk-search-form">
@@ -65,7 +79,7 @@
     </div>
   </div>
 </nav>
-<div class="d-flex " id="sk-doc-wrapper">
+<div class="d-flex" id="sk-doc-wrapper">
     <input type="checkbox" name="sk-toggle-checkbox" id="sk-toggle-checkbox">
     <label id="sk-sidemenu-toggle" class="sk-btn-toggle-toc btn sk-btn-primary" for="sk-toggle-checkbox">Toggle Menu</label>
     <div id="sk-sidebar-wrapper" class="border-right">
@@ -73,12 +87,12 @@
         <div class="sk-sidebar-toc-logo">
           <a href="../../index.html">
             <img
+              class="sk-brand-img"
               src="../../_static/scikit-learn-logo-small.png"
-              height="38"
               alt="logo"/>
           </a>
         </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
-              <a href="sklearn.metrics.pairwise.manhattan_distances.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.metrics.pairwise.manhattan_distances">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
+              <a href="sklearn.metrics.pairwise.nan_euclidean_distances.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.metrics.pairwise.nan_euclidean_distances">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
               <a href="sklearn.metrics.pairwise.polynomial_kernel.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.metrics.pairwise.polynomial_kernel">Next</a>
           </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
@@ -98,14 +112,14 @@
 
       </div>
     </div>
-    <div id="sk-page-content-wrapper">
-      <div class="sk-page-content container-fluid body" role="main">
+    <div id="sk-page-content-wrapper" >
+      <div class="sk-page-content container-fluid body pl-md-4 px-lg-5" role="main">
         
   <div class="section" id="sklearn-metrics-pairwise-pairwise-kernels">
 <h1><a class="reference internal" href="../classes.html#module-sklearn.metrics.pairwise" title="sklearn.metrics.pairwise"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.metrics.pairwise</span></code></a>.pairwise_kernels<a class="headerlink" href="#sklearn-metrics-pairwise-pairwise-kernels" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="sklearn.metrics.pairwise.pairwise_kernels">
-<code class="sig-prename descclassname">sklearn.metrics.pairwise.</code><code class="sig-name descname">pairwise_kernels</code><span class="sig-paren">(</span><em class="sig-param">X</em>, <em class="sig-param">Y=None</em>, <em class="sig-param">metric='linear'</em>, <em class="sig-param">filter_params=False</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/metrics/pairwise.py#L1644"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.metrics.pairwise.pairwise_kernels" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sklearn.metrics.pairwise.</code><code class="sig-name descname">pairwise_kernels</code><span class="sig-paren">(</span><em class="sig-param">X</em>, <em class="sig-param">Y=None</em>, <em class="sig-param">metric='linear'</em>, <em class="sig-param">filter_params=False</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/3875090c8b/sklearn/metrics/pairwise.py#L1807"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.metrics.pairwise.pairwise_kernels" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the kernel between arrays X and optional array Y.</p>
 <p>This method takes either a vector array or a kernel matrix, and returns
 a kernel matrix. If the input is a vector array, the kernels are
@@ -138,7 +152,7 @@ Alternatively, if metric is a callable function, it is called on each
 pair of instances (rows) and the resulting value recorded. The callable
 should take two rows from X as input and return the corresponding
 kernel value as a single number. This means that callables from
-<a class="reference internal" href="../classes.html#module-sklearn.metrics.pairwise" title="sklearn.metrics.pairwise"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">sklearn.metrics.pairwise</span></code></a> are not allowed, as they operate on
+<a class="reference internal" href="../classes.html#module-sklearn.metrics.pairwise" title="sklearn.metrics.pairwise"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.metrics.pairwise</span></code></a> are not allowed, as they operate on
 matrices, not single samples. Use the string identifying the kernel
 instead.</p>
 </dd>

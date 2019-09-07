@@ -25,11 +25,11 @@
 
 
 <nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
-  <div class="container-fluid sk-docs-container">
-      <a class="navbar-brand" href="../../index.html">
+  <div class="container-fluid sk-docs-container px-0">
+      <a class="navbar-brand py-0" href="../../index.html">
         <img
-          src="../../_static/scikit-learn-logo-notext.png"
-          height="38"
+          class="sk-brand-img"
+          src="../../_static/scikit-learn-logo-small.png"
           alt="logo"/>
       </a>
     <button
@@ -47,16 +47,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="../../index.html">Home</a>
+          <a class="sk-nav-link nav-link" href="../../install.html">Install</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../install.html">Install</a>
+          <a class="sk-nav-link nav-link" href="../../user_guide.html">User Guide</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../documentation.html">Documentation</a>
+          <a class="sk-nav-link nav-link" href="../classes.html">API</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../auto_examples/index.html">Examples</a>
+          <a class="sk-nav-link nav-link" href="../../auto_examples/index.html">Examples</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../tutorial/basic/tutorial.html">Quick Start</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../tutorial/index.html">Tutorial</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../glossary.html">Glossary</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../developers/index.html">Development</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../faq.html">FAQ</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../related_projects.html">Related packages</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../roadmap.html">Roadmap</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../about.html">About us</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../documentation.html">Index</a>
+          </div>
         </li>
       </ul>
       <div class="sk-search-form">
@@ -65,7 +79,7 @@
     </div>
   </div>
 </nav>
-<div class="d-flex " id="sk-doc-wrapper">
+<div class="d-flex" id="sk-doc-wrapper">
     <input type="checkbox" name="sk-toggle-checkbox" id="sk-toggle-checkbox">
     <label id="sk-sidemenu-toggle" class="sk-btn-toggle-toc btn sk-btn-primary" for="sk-toggle-checkbox">Toggle Menu</label>
     <div id="sk-sidebar-wrapper" class="border-right">
@@ -73,8 +87,8 @@
         <div class="sk-sidebar-toc-logo">
           <a href="../../index.html">
             <img
+              class="sk-brand-img"
               src="../../_static/scikit-learn-logo-small.png"
-              height="38"
               alt="logo"/>
           </a>
         </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
@@ -98,14 +112,14 @@
 
       </div>
     </div>
-    <div id="sk-page-content-wrapper">
-      <div class="sk-page-content container-fluid body" role="main">
+    <div id="sk-page-content-wrapper" >
+      <div class="sk-page-content container-fluid body pl-md-4 px-lg-5" role="main">
         
   <div class="section" id="sklearn-datasets-load-files">
 <h1><a class="reference internal" href="../classes.html#module-sklearn.datasets" title="sklearn.datasets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.datasets</span></code></a>.load_files<a class="headerlink" href="#sklearn-datasets-load-files" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="sklearn.datasets.load_files">
-<code class="sig-prename descclassname">sklearn.datasets.</code><code class="sig-name descname">load_files</code><span class="sig-paren">(</span><em class="sig-param">container_path</em>, <em class="sig-param">description=None</em>, <em class="sig-param">categories=None</em>, <em class="sig-param">load_content=True</em>, <em class="sig-param">shuffle=True</em>, <em class="sig-param">encoding=None</em>, <em class="sig-param">decode_error='strict'</em>, <em class="sig-param">random_state=0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/datasets/base.py#L71"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.datasets.load_files" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sklearn.datasets.</code><code class="sig-name descname">load_files</code><span class="sig-paren">(</span><em class="sig-param">container_path</em>, <em class="sig-param">description=None</em>, <em class="sig-param">categories=None</em>, <em class="sig-param">load_content=True</em>, <em class="sig-param">shuffle=True</em>, <em class="sig-param">encoding=None</em>, <em class="sig-param">decode_error='strict'</em>, <em class="sig-param">random_state=0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/3875090c8b/sklearn/datasets/base.py#L71"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.datasets.load_files" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load text files with categories as subfolder names.</p>
 <p>Individual samples are assumed to be files stored a two levels folder
 structure such as the following:</p>
@@ -131,13 +145,13 @@ file names are not important.</p>
 sparse matrix. In addition, if load_content is false it does not try to
 load the files in memory.</p>
 <p>To use text files in a scikit-learn classification or clustering algorithm,
-you will need to use the <a class="reference internal" href="../classes.html#module-sklearn.feature_extraction.text" title="sklearn.feature_extraction.text"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_extraction.text</span></code></a> module to build
-a feature extraction transformer that suits your problem.</p>
+you will need to use the :mod`~sklearn.feature_extraction.text` module to
+build a feature extraction transformer that suits your problem.</p>
 <p>If you set load_content=True, you should also specify the encoding of the
 text using the ‘encoding’ parameter. For many modern text files, ‘utf-8’
 will be the correct encoding. If you leave encoding equal to None, then the
 content will be made of bytes instead of Unicode, and you will not be able
-to use most functions in <a class="reference internal" href="../classes.html#module-sklearn.feature_extraction.text" title="sklearn.feature_extraction.text"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_extraction.text</span></code></a>.</p>
+to use most functions in <a class="reference internal" href="../classes.html#module-sklearn.feature_extraction.text" title="sklearn.feature_extraction.text"><code class="xref py py-mod docutils literal notranslate"><span class="pre">text</span></code></a>.</p>
 <p>Similar feature extractors should be built for other kind of unstructured
 data input such as images, audio, video, …</p>
 <p>Read more in the <a class="reference internal" href="../../datasets/index.html#datasets"><span class="std std-ref">User Guide</span></a>.</p>

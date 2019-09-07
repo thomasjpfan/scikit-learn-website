@@ -25,11 +25,11 @@
 
 
 <nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
-  <div class="container-fluid sk-docs-container">
-      <a class="navbar-brand" href="../../index.html">
+  <div class="container-fluid sk-docs-container px-0">
+      <a class="navbar-brand py-0" href="../../index.html">
         <img
-          src="../../_static/scikit-learn-logo-notext.png"
-          height="38"
+          class="sk-brand-img"
+          src="../../_static/scikit-learn-logo-small.png"
           alt="logo"/>
       </a>
     <button
@@ -47,16 +47,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="../../index.html">Home</a>
+          <a class="sk-nav-link nav-link" href="../../install.html">Install</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../install.html">Install</a>
+          <a class="sk-nav-link nav-link" href="../../user_guide.html">User Guide</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../documentation.html">Documentation</a>
+          <a class="sk-nav-link nav-link" href="../../modules/classes.html">API</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../index.html">Examples</a>
+          <a class="sk-nav-link nav-link" href="../index.html">Examples</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../tutorial/basic/tutorial.html">Quick Start</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../tutorial/index.html">Tutorial</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../glossary.html">Glossary</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../developers/index.html">Development</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../faq.html">FAQ</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../related_projects.html">Related packages</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../roadmap.html">Roadmap</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../about.html">About us</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../documentation.html">Index</a>
+          </div>
         </li>
       </ul>
       <div class="sk-search-form">
@@ -65,7 +79,7 @@
     </div>
   </div>
 </nav>
-<div class="d-flex " id="sk-doc-wrapper">
+<div class="d-flex" id="sk-doc-wrapper">
     <input type="checkbox" name="sk-toggle-checkbox" id="sk-toggle-checkbox">
     <label id="sk-sidemenu-toggle" class="sk-btn-toggle-toc btn sk-btn-primary" for="sk-toggle-checkbox">Toggle Menu</label>
     <div id="sk-sidebar-wrapper" class="border-right">
@@ -73,8 +87,8 @@
         <div class="sk-sidebar-toc-logo">
           <a href="../../index.html">
             <img
+              class="sk-brand-img"
               src="../../_static/scikit-learn-logo-small.png"
-              height="38"
               alt="logo"/>
           </a>
         </div>
@@ -95,19 +109,19 @@
 
       </div>
     </div>
-    <div id="sk-page-content-wrapper">
-      <div class="sk-page-content container-fluid body" role="main">
+    <div id="sk-page-content-wrapper" >
+      <div class="sk-page-content container-fluid body pl-md-4 px-lg-5" role="main">
         
   <div class="section" id="computation-times">
 <span id="sphx-glr-auto-examples-compose-sg-execution-times"></span><h1>Computation times<a class="headerlink" href="#computation-times" title="Permalink to this headline">¶</a></h1>
-<p><strong>00:15.947</strong> total execution time for <strong>auto_examples_compose</strong> files:</p>
+<p><strong>00:01.754</strong> total execution time for <strong>auto_examples_compose</strong> files:</p>
 <ul class="simple">
-<li><p><strong>00:05.619</strong>: <a class="reference internal" href="plot_digits_pipe.html#sphx-glr-auto-examples-compose-plot-digits-pipe-py"><span class="std std-ref">Pipelining: chaining a PCA and a logistic regression</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_digits_pipe.py</span></code>)</p></li>
-<li><p><strong>00:04.734</strong>: <a class="reference internal" href="plot_compare_reduction.html#sphx-glr-auto-examples-compose-plot-compare-reduction-py"><span class="std std-ref">Selecting dimensionality reduction with Pipeline and GridSearchCV</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_compare_reduction.py</span></code>)</p></li>
-<li><p><strong>00:02.667</strong>: <a class="reference internal" href="plot_column_transformer_mixed_types.html#sphx-glr-auto-examples-compose-plot-column-transformer-mixed-types-py"><span class="std std-ref">Column Transformer with Mixed Types</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_column_transformer_mixed_types.py</span></code>)</p></li>
-<li><p><strong>00:01.406</strong>: <a class="reference internal" href="plot_transformed_target.html#sphx-glr-auto-examples-compose-plot-transformed-target-py"><span class="std std-ref">Effect of transforming the targets in regression model</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_transformed_target.py</span></code>)</p></li>
-<li><p><strong>00:01.145</strong>: <a class="reference internal" href="plot_column_transformer.html#sphx-glr-auto-examples-compose-plot-column-transformer-py"><span class="std std-ref">Column Transformer with Heterogeneous Data Sources</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_column_transformer.py</span></code>)</p></li>
-<li><p><strong>00:00.376</strong>: <a class="reference internal" href="plot_feature_union.html#sphx-glr-auto-examples-compose-plot-feature-union-py"><span class="std std-ref">Concatenating multiple feature extraction methods</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_feature_union.py</span></code>)</p></li>
+<li><p><strong>00:01.754</strong>: <a class="reference internal" href="plot_column_transformer.html#sphx-glr-auto-examples-compose-plot-column-transformer-py"><span class="std std-ref">Column Transformer with Heterogeneous Data Sources</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_column_transformer.py</span></code>)</p></li>
+<li><p><strong>00:00.000</strong>: <a class="reference internal" href="plot_column_transformer_mixed_types.html#sphx-glr-auto-examples-compose-plot-column-transformer-mixed-types-py"><span class="std std-ref">Column Transformer with Mixed Types</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_column_transformer_mixed_types.py</span></code>)</p></li>
+<li><p><strong>00:00.000</strong>: <a class="reference internal" href="plot_compare_reduction.html#sphx-glr-auto-examples-compose-plot-compare-reduction-py"><span class="std std-ref">Selecting dimensionality reduction with Pipeline and GridSearchCV</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_compare_reduction.py</span></code>)</p></li>
+<li><p><strong>00:00.000</strong>: <a class="reference internal" href="plot_digits_pipe.html#sphx-glr-auto-examples-compose-plot-digits-pipe-py"><span class="std std-ref">Pipelining: chaining a PCA and a logistic regression</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_digits_pipe.py</span></code>)</p></li>
+<li><p><strong>00:00.000</strong>: <a class="reference internal" href="plot_feature_union.html#sphx-glr-auto-examples-compose-plot-feature-union-py"><span class="std std-ref">Concatenating multiple feature extraction methods</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_feature_union.py</span></code>)</p></li>
+<li><p><strong>00:00.000</strong>: <a class="reference internal" href="plot_transformed_target.html#sphx-glr-auto-examples-compose-plot-transformed-target-py"><span class="std std-ref">Effect of transforming the targets in regression model</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_transformed_target.py</span></code>)</p></li>
 </ul>
 </div>
 

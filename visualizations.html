@@ -25,11 +25,11 @@
 
 
 <nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
-  <div class="container-fluid sk-docs-container">
-      <a class="navbar-brand" href="index.html">
+  <div class="container-fluid sk-docs-container px-0">
+      <a class="navbar-brand py-0" href="index.html">
         <img
-          src="_static/scikit-learn-logo-notext.png"
-          height="38"
+          class="sk-brand-img"
+          src="_static/scikit-learn-logo-small.png"
           alt="logo"/>
       </a>
     <button
@@ -47,16 +47,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
+          <a class="sk-nav-link nav-link" href="install.html">Install</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="install.html">Install</a>
+          <a class="sk-nav-link nav-link" href="user_guide.html">User Guide</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="documentation.html">Documentation</a>
+          <a class="sk-nav-link nav-link" href="modules/classes.html">API</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="auto_examples/index.html">Examples</a>
+          <a class="sk-nav-link nav-link" href="auto_examples/index.html">Examples</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sk-nav-dropdown-item dropdown-item" href="tutorial/basic/tutorial.html">Quick Start</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="tutorial/index.html">Tutorial</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="glossary.html">Glossary</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="developers/index.html">Development</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="faq.html">FAQ</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="related_projects.html">Related packages</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="roadmap.html">Roadmap</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="about.html">About us</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="documentation.html">Index</a>
+          </div>
         </li>
       </ul>
       <div class="sk-search-form">
@@ -65,7 +79,7 @@
     </div>
   </div>
 </nav>
-<div class="d-flex " id="sk-doc-wrapper">
+<div class="d-flex" id="sk-doc-wrapper">
     <input type="checkbox" name="sk-toggle-checkbox" id="sk-toggle-checkbox">
     <label id="sk-sidemenu-toggle" class="sk-btn-toggle-toc btn sk-btn-primary" for="sk-toggle-checkbox">Toggle Menu</label>
     <div id="sk-sidebar-wrapper" class="border-right">
@@ -73,8 +87,8 @@
         <div class="sk-sidebar-toc-logo">
           <a href="index.html">
             <img
+              class="sk-brand-img"
               src="_static/scikit-learn-logo-small.png"
-              height="38"
               alt="logo"/>
           </a>
         </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
@@ -105,8 +119,8 @@
 
       </div>
     </div>
-    <div id="sk-page-content-wrapper">
-      <div class="sk-page-content container-fluid body" role="main">
+    <div id="sk-page-content-wrapper" >
+      <div class="sk-page-content container-fluid body pl-md-4 px-lg-5" role="main">
         
   <style type="text/css">
   div.bodywrapper blockquote {
@@ -167,7 +181,7 @@ ROC curve for a fitted support vector machine:</p>
 ROC curve for SVC in future plots. In this case, the <code class="docutils literal notranslate"><span class="pre">svc_disp</span></code> is a
 <a class="reference internal" href="modules/generated/sklearn.metrics.RocCurveDisplay.html#sklearn.metrics.RocCurveDisplay" title="sklearn.metrics.RocCurveDisplay"><code class="xref py py-class docutils literal notranslate"><span class="pre">RocCurveDisplay</span></code></a> that stores the computed values as
 attributes called <code class="docutils literal notranslate"><span class="pre">roc_auc</span></code>, <code class="docutils literal notranslate"><span class="pre">fpr</span></code>, and <code class="docutils literal notranslate"><span class="pre">tpr</span></code>. Next, we train a random forest
-classifier and plot the previously computed roc curve again by using the <a class="reference internal" href="modules/generated/sklearn.metrics.RocCurveDisplay.html#sklearn.metrics.RocCurveDisplay.plot" title="sklearn.metrics.RocCurveDisplay.plot"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">plot</span></code></a>
+classifier and plot the previously computed roc curve again by using the <code class="docutils literal notranslate"><span class="pre">plot</span></code>
 method of the <code class="docutils literal notranslate"><span class="pre">Display</span></code> object.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>

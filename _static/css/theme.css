@@ -88,7 +88,7 @@ div.highlight a {
   text-decoration: underline;
 }
 
-a.sk-btn-landing-whats-new {
+a.sk-landing-btn {
   background-color: #ff9c34;
   color: black;
   cursor: pointer;
@@ -96,9 +96,8 @@ a.sk-btn-landing-whats-new {
   font-weight: 500;
 }
 
-a.sk-btn-landing-whats-new:hover {
-  color: #ff8d14;
-  background-color: white;
+a.sk-landing-btn:hover {
+  background-color: #ea8f30;
 }
 
 .sk-donate-btn {
@@ -147,10 +146,6 @@ div.clearer {
   width: 80%;
 }
 
-.gsc-input {
-  padding-right: 0;
-}
-
 div.gsc-input-box {
   padding-top: 0;
   padding-bottom: 0;
@@ -164,12 +159,16 @@ div.gsc-control-cse {
 
 button.gsc-search-button {
   border-radius: 0.25rem;
-  padding: 10px 10px;
+  padding: 8px;
 }
 
 button.gsc-search-button:hover,
 button.gsc-search-button:active {
   background-color: #388bb5;
+}
+
+table.gsc-search-box {
+  padding-top: 4px;
 }
 
 div.gsc-results-wrapper-visible {
@@ -187,14 +186,34 @@ div.gsc-results {
 
 @media screen and (min-width: 768px) {
   .sk-search-form {
-    width: 16rem;
+    width: 14rem;
   }
 }
 
 /* General layout */
 
 div.section {
-  margin-bottom: 1rem;
+  overflow-x: scroll;
+}
+
+/* navbar */
+
+img.sk-brand-img {
+  height: 48px;
+}
+
+.navbar-light .navbar-nav a.nav-link, a.sk-dropdown-item  {
+  color: rgba(77, 77, 77, 1);
+  font-weight: 500;
+}
+
+.navbar-light .navbar-nav a.nav-link:hover, a.sk-dropdown-item:hover {
+  color: rgba(246, 126, 0, 1);
+}
+
+a.sk-nav-dropdown-item:active {
+  color: white;
+  background-color: rgba(246, 126, 0, 1);
 }
 
 /* LANDING PAGE STYLE */
@@ -208,7 +227,7 @@ div.sk-landing-bg-more-info dd {
 }
 
 div.sk-landing-bg {
-  background-image: linear-gradient(90deg, #3499cd 40%, #ff9c34);
+  background-color: #3499cd;
 }
 
 div.sk-landing-bg-more-info {
@@ -304,12 +323,20 @@ div.sk-page-content {
   margin-top: 52px;
 }
 
+div.section h2,
+div.section h3,
+div.section h4,
+div.section h5,
+div.section h6 {
+  margin-top: 1.2rem;
+}
+
 .sk-btn-toggle-toc {
   position: fixed;
-  bottom: 0.5rem;
-  margin-left: 0.5rem;
-  padding: 0.5rem;
-  border-radius: 1rem;
+  bottom: 0;
+  margin: 0;
+  border-radius: 0;
+  border-top-right-radius: 0.5rem;
   z-index: 3;
   cursor: pointer;
 }
@@ -754,8 +781,8 @@ div.sphx-glr-thumbcontainer {
 }
 
 .sk-btn-rellink:hover {
-  color: #ff8d14;
-  background-color: white;
+  color: black;
+  border: 1px solid black;
 }
 
 [sk-rellink-tooltip] {
@@ -768,14 +795,15 @@ div.sphx-glr-thumbcontainer {
   position: absolute;
   padding: 0.5rem;
   overflow: hidden;
-  background-color: white;
-  border: 1px solid #ff8d14;
+  background-color: #ff9c34;
+  border: 1px solid #ff9c34;
   white-space: pre;
   content: attr(sk-rellink-tooltip);
   text-align: left;
   width: 222px;
   top: 100%;
   left: -78px;
+  border: 1px solid black;
 }
 
 [sk-rellink-tooltip]:first-child::before {

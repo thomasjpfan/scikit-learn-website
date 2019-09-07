@@ -25,11 +25,11 @@
 
 
 <nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
-  <div class="container-fluid sk-docs-container">
-      <a class="navbar-brand" href="../../index.html">
+  <div class="container-fluid sk-docs-container px-0">
+      <a class="navbar-brand py-0" href="../../index.html">
         <img
-          src="../../_static/scikit-learn-logo-notext.png"
-          height="38"
+          class="sk-brand-img"
+          src="../../_static/scikit-learn-logo-small.png"
           alt="logo"/>
       </a>
     <button
@@ -47,16 +47,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="../../index.html">Home</a>
+          <a class="sk-nav-link nav-link" href="../../install.html">Install</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../install.html">Install</a>
+          <a class="sk-nav-link nav-link" href="../../user_guide.html">User Guide</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../documentation.html">Documentation</a>
+          <a class="sk-nav-link nav-link" href="../classes.html">API</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../auto_examples/index.html">Examples</a>
+          <a class="sk-nav-link nav-link" href="../../auto_examples/index.html">Examples</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../tutorial/basic/tutorial.html">Quick Start</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../tutorial/index.html">Tutorial</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../glossary.html">Glossary</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../developers/index.html">Development</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../faq.html">FAQ</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../related_projects.html">Related packages</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../roadmap.html">Roadmap</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../about.html">About us</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../documentation.html">Index</a>
+          </div>
         </li>
       </ul>
       <div class="sk-search-form">
@@ -65,7 +79,7 @@
     </div>
   </div>
 </nav>
-<div class="d-flex " id="sk-doc-wrapper">
+<div class="d-flex" id="sk-doc-wrapper">
     <input type="checkbox" name="sk-toggle-checkbox" id="sk-toggle-checkbox">
     <label id="sk-sidemenu-toggle" class="sk-btn-toggle-toc btn sk-btn-primary" for="sk-toggle-checkbox">Toggle Menu</label>
     <div id="sk-sidebar-wrapper" class="border-right">
@@ -73,8 +87,8 @@
         <div class="sk-sidebar-toc-logo">
           <a href="../../index.html">
             <img
+              class="sk-brand-img"
               src="../../_static/scikit-learn-logo-small.png"
-              height="38"
               alt="logo"/>
           </a>
         </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
@@ -101,29 +115,29 @@
 
       </div>
     </div>
-    <div id="sk-page-content-wrapper">
-      <div class="sk-page-content container-fluid body" role="main">
+    <div id="sk-page-content-wrapper" >
+      <div class="sk-page-content container-fluid body pl-md-4 px-lg-5" role="main">
         
   <div class="section" id="sklearn-inspection-permutation-importance">
 <h1><a class="reference internal" href="../classes.html#module-sklearn.inspection" title="sklearn.inspection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.inspection</span></code></a>.permutation_importance<a class="headerlink" href="#sklearn-inspection-permutation-importance" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="sklearn.inspection.permutation_importance">
-<code class="sig-prename descclassname">sklearn.inspection.</code><code class="sig-name descname">permutation_importance</code><span class="sig-paren">(</span><em class="sig-param">estimator</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">scoring=None</em>, <em class="sig-param">n_repeats=5</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">random_state=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/inspection/permutation_importance.py#L45"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.inspection.permutation_importance" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sklearn.inspection.</code><code class="sig-name descname">permutation_importance</code><span class="sig-paren">(</span><em class="sig-param">estimator</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">scoring=None</em>, <em class="sig-param">n_repeats=5</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">random_state=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/3875090c8b/sklearn/inspection/permutation_importance.py#L45"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.inspection.permutation_importance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Permutation importance for feature evaluation <a class="reference internal" href="#rd9e56ef97513-bre" id="id1">[BRE]</a>.</p>
-<p>The <a class="reference internal" href="../../glossary.html#term-estimator"><span class="xref any std std-term">estimator</span></a> is required to be a fitted estimator. <a class="reference internal" href="../../glossary.html#term-x"><code class="xref any std std-term docutils literal notranslate"><span class="pre">X</span></code></a> can be the
+<p>The <a class="reference internal" href="../../glossary.html#term-estimator"><span class="xref std std-term">estimator</span></a> is required to be a fitted estimator. <code class="docutils literal notranslate"><span class="pre">X</span></code> can be the
 data set used to train the estimator or a hold-out set. The permutation
 importance of a feature is calculated as follows. First, a baseline metric,
-defined by <a class="reference internal" href="../../glossary.html#term-scoring"><span class="xref any std std-term">scoring</span></a>, is evaluated on a (potentially different) dataset
-defined by the <a class="reference internal" href="../../glossary.html#term-x"><code class="xref any std std-term docutils literal notranslate"><span class="pre">X</span></code></a>. Next, a feature column from the validation set is
-permuted and the metric is evaluated again. The permutation importance is
-defined to be the difference between the baseline metric and metric from
+defined by <a class="reference internal" href="../../glossary.html#term-scoring"><span class="xref std std-term">scoring</span></a>, is evaluated on a (potentially different)
+dataset defined by the <code class="docutils literal notranslate"><span class="pre">X</span></code>. Next, a feature column from the validation set
+is permuted and the metric is evaluated again. The permutation importance
+is defined to be the difference between the baseline metric and metric from
 permutating the feature column.</p>
 <p>Read more in the <a class="reference internal" href="../permutation_importance.html#permutation-importance"><span class="std std-ref">User Guide</span></a>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>estimator</strong><span class="classifier">object</span></dt><dd><p>An estimator that has already been <a class="reference internal" href="../../glossary.html#term-fitted"><span class="xref any std std-term">fitted</span></a> and is compatible with
-<a class="reference internal" href="../../glossary.html#term-scorer"><span class="xref any std std-term">scorer</span></a>.</p>
+<dt><strong>estimator</strong><span class="classifier">object</span></dt><dd><p>An estimator that has already been <a class="reference internal" href="../../glossary.html#term-fitted"><span class="xref std std-term">fitted</span></a> and is compatible
+with <a class="reference internal" href="../../glossary.html#term-scorer"><span class="xref std std-term">scorer</span></a>.</p>
 </dd>
 <dt><strong>X</strong><span class="classifier">ndarray or DataFrame, shape (n_samples, n_features)</span></dt><dd><p>Data on which permutation importance will be computed.</p>
 </dd>

@@ -1664,7 +1664,7 @@ Examples concerning the :mod:`sklearn.datasets` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This illustrates the datasets.make_multilabel_classification dataset generator. Each sample con...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This illustrates the make_multilabel_classification dataset generator. Each sample consists of ...">
 
 .. only:: html
 

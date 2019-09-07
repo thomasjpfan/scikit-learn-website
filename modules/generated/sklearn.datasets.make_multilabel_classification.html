@@ -25,11 +25,11 @@
 
 
 <nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
-  <div class="container-fluid sk-docs-container">
-      <a class="navbar-brand" href="../../index.html">
+  <div class="container-fluid sk-docs-container px-0">
+      <a class="navbar-brand py-0" href="../../index.html">
         <img
-          src="../../_static/scikit-learn-logo-notext.png"
-          height="38"
+          class="sk-brand-img"
+          src="../../_static/scikit-learn-logo-small.png"
           alt="logo"/>
       </a>
     <button
@@ -47,16 +47,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="../../index.html">Home</a>
+          <a class="sk-nav-link nav-link" href="../../install.html">Install</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../install.html">Install</a>
+          <a class="sk-nav-link nav-link" href="../../user_guide.html">User Guide</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../documentation.html">Documentation</a>
+          <a class="sk-nav-link nav-link" href="../classes.html">API</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../auto_examples/index.html">Examples</a>
+          <a class="sk-nav-link nav-link" href="../../auto_examples/index.html">Examples</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../tutorial/basic/tutorial.html">Quick Start</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../tutorial/index.html">Tutorial</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../glossary.html">Glossary</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../developers/index.html">Development</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../faq.html">FAQ</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../related_projects.html">Related packages</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../roadmap.html">Roadmap</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../about.html">About us</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../documentation.html">Index</a>
+          </div>
         </li>
       </ul>
       <div class="sk-search-form">
@@ -65,7 +79,7 @@
     </div>
   </div>
 </nav>
-<div class="d-flex " id="sk-doc-wrapper">
+<div class="d-flex" id="sk-doc-wrapper">
     <input type="checkbox" name="sk-toggle-checkbox" id="sk-toggle-checkbox">
     <label id="sk-sidemenu-toggle" class="sk-btn-toggle-toc btn sk-btn-primary" for="sk-toggle-checkbox">Toggle Menu</label>
     <div id="sk-sidebar-wrapper" class="border-right">
@@ -73,8 +87,8 @@
         <div class="sk-sidebar-toc-logo">
           <a href="../../index.html">
             <img
+              class="sk-brand-img"
               src="../../_static/scikit-learn-logo-small.png"
-              height="38"
               alt="logo"/>
           </a>
         </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
@@ -101,14 +115,14 @@
 
       </div>
     </div>
-    <div id="sk-page-content-wrapper">
-      <div class="sk-page-content container-fluid body" role="main">
+    <div id="sk-page-content-wrapper" >
+      <div class="sk-page-content container-fluid body pl-md-4 px-lg-5" role="main">
         
   <div class="section" id="sklearn-datasets-make-multilabel-classification">
 <h1><a class="reference internal" href="../classes.html#module-sklearn.datasets" title="sklearn.datasets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.datasets</span></code></a>.make_multilabel_classification<a class="headerlink" href="#sklearn-datasets-make-multilabel-classification" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="sklearn.datasets.make_multilabel_classification">
-<code class="sig-prename descclassname">sklearn.datasets.</code><code class="sig-name descname">make_multilabel_classification</code><span class="sig-paren">(</span><em class="sig-param">n_samples=100</em>, <em class="sig-param">n_features=20</em>, <em class="sig-param">n_classes=5</em>, <em class="sig-param">n_labels=2</em>, <em class="sig-param">length=50</em>, <em class="sig-param">allow_unlabeled=True</em>, <em class="sig-param">sparse=False</em>, <em class="sig-param">return_indicator='dense'</em>, <em class="sig-param">return_distributions=False</em>, <em class="sig-param">random_state=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/datasets/samples_generator.py#L257"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.datasets.make_multilabel_classification" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sklearn.datasets.</code><code class="sig-name descname">make_multilabel_classification</code><span class="sig-paren">(</span><em class="sig-param">n_samples=100</em>, <em class="sig-param">n_features=20</em>, <em class="sig-param">n_classes=5</em>, <em class="sig-param">n_labels=2</em>, <em class="sig-param">length=50</em>, <em class="sig-param">allow_unlabeled=True</em>, <em class="sig-param">sparse=False</em>, <em class="sig-param">return_indicator='dense'</em>, <em class="sig-param">return_distributions=False</em>, <em class="sig-param">random_state=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/3875090c8b/sklearn/datasets/samples_generator.py#L257"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.datasets.make_multilabel_classification" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a random multilabel classification problem.</p>
 <dl class="simple">
 <dt>For each sample, the generative process is:</dt><dd><ul class="simple">
@@ -185,7 +199,7 @@ Only returned if <code class="docutils literal notranslate"><span class="pre">re
 <img alt="../../_images/sphx_glr_plot_multilabel_thumb.png" src="../../_images/sphx_glr_plot_multilabel_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="../../auto_examples/plot_multilabel.html#sphx-glr-auto-examples-plot-multilabel-py"><span class="std std-ref">Multilabel classification</span></a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This illustrates the datasets.make_multilabel_classification dataset generator. Each sample con..."><div class="figure align-default" id="id2">
+</div><div class="sphx-glr-thumbcontainer" tooltip="This illustrates the make_multilabel_classification dataset generator. Each sample consists of ..."><div class="figure align-default" id="id2">
 <img alt="../../_images/sphx_glr_plot_random_multilabel_dataset_thumb.png" src="../../_images/sphx_glr_plot_random_multilabel_dataset_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="../../auto_examples/datasets/plot_random_multilabel_dataset.html#sphx-glr-auto-examples-datasets-plot-random-multilabel-dataset-py"><span class="std std-ref">Plot randomly generated multilabel dataset</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>

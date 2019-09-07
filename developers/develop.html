@@ -25,11 +25,11 @@
 
 
 <nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
-  <div class="container-fluid sk-docs-container">
-      <a class="navbar-brand" href="../index.html">
+  <div class="container-fluid sk-docs-container px-0">
+      <a class="navbar-brand py-0" href="../index.html">
         <img
-          src="../_static/scikit-learn-logo-notext.png"
-          height="38"
+          class="sk-brand-img"
+          src="../_static/scikit-learn-logo-small.png"
           alt="logo"/>
       </a>
     <button
@@ -47,16 +47,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="../index.html">Home</a>
+          <a class="sk-nav-link nav-link" href="../install.html">Install</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../install.html">Install</a>
+          <a class="sk-nav-link nav-link" href="../user_guide.html">User Guide</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../documentation.html">Documentation</a>
+          <a class="sk-nav-link nav-link" href="../modules/classes.html">API</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../auto_examples/index.html">Examples</a>
+          <a class="sk-nav-link nav-link" href="../auto_examples/index.html">Examples</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sk-nav-dropdown-item dropdown-item" href="../tutorial/basic/tutorial.html">Quick Start</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../tutorial/index.html">Tutorial</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../glossary.html">Glossary</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="index.html">Development</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../faq.html">FAQ</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../related_projects.html">Related packages</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../roadmap.html">Roadmap</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../about.html">About us</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../documentation.html">Index</a>
+          </div>
         </li>
       </ul>
       <div class="sk-search-form">
@@ -65,7 +79,7 @@
     </div>
   </div>
 </nav>
-<div class="d-flex " id="sk-doc-wrapper">
+<div class="d-flex" id="sk-doc-wrapper">
     <input type="checkbox" name="sk-toggle-checkbox" id="sk-toggle-checkbox">
     <label id="sk-sidemenu-toggle" class="sk-btn-toggle-toc btn sk-btn-primary" for="sk-toggle-checkbox">Toggle Menu</label>
     <div id="sk-sidebar-wrapper" class="border-right">
@@ -73,8 +87,8 @@
         <div class="sk-sidebar-toc-logo">
           <a href="../index.html">
             <img
+              class="sk-brand-img"
               src="../_static/scikit-learn-logo-small.png"
-              height="38"
               alt="logo"/>
           </a>
         </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
@@ -127,8 +141,8 @@
 
       </div>
     </div>
-    <div id="sk-page-content-wrapper">
-      <div class="sk-page-content container-fluid body" role="main">
+    <div id="sk-page-content-wrapper" >
+      <div class="sk-page-content container-fluid body pl-md-4 px-lg-5" role="main">
         
   <div class="section" id="developing-scikit-learn-estimators">
 <span id="develop"></span><h1>Developing scikit-learn estimators<a class="headerlink" href="#developing-scikit-learn-estimators" title="Permalink to this headline">¶</a></h1>
@@ -591,7 +605,7 @@ determined at runtime.</p>
 an estimator is stateless, it might still need a call to <code class="docutils literal notranslate"><span class="pre">fit</span></code> for initialization.</p>
 </dd>
 <dt>requires_fit</dt><dd><p>whether the estimator requires to be fitted before calling one of
-<a class="reference internal" href="../glossary.html#term-transform"><span class="xref any std std-term">transform</span></a>, <a class="reference internal" href="../glossary.html#term-predict"><span class="xref any std std-term">predict</span></a>, <a class="reference internal" href="../glossary.html#term-predict-proba"><span class="xref any std std-term">predict_proba</span></a>, or <a class="reference internal" href="../glossary.html#term-decision-function"><span class="xref any std std-term">decision_function</span></a>.</p>
+<code class="docutils literal notranslate"><span class="pre">transform</span></code>, <code class="docutils literal notranslate"><span class="pre">predict</span></code>, <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code>, or <code class="docutils literal notranslate"><span class="pre">decision_function</span></code>.</p>
 </dd>
 <dt>allow_nan</dt><dd><p>whether the estimator supports data with missing values encoded as np.NaN</p>
 </dd>

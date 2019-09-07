@@ -25,11 +25,11 @@
 
 
 <nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
-  <div class="container-fluid sk-docs-container">
-      <a class="navbar-brand" href="../index.html">
+  <div class="container-fluid sk-docs-container px-0">
+      <a class="navbar-brand py-0" href="../index.html">
         <img
-          src="../_static/scikit-learn-logo-notext.png"
-          height="38"
+          class="sk-brand-img"
+          src="../_static/scikit-learn-logo-small.png"
           alt="logo"/>
       </a>
     <button
@@ -47,16 +47,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="../index.html">Home</a>
+          <a class="sk-nav-link nav-link" href="../install.html">Install</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../install.html">Install</a>
+          <a class="sk-nav-link nav-link" href="../user_guide.html">User Guide</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../documentation.html">Documentation</a>
+          <a class="sk-nav-link nav-link" href="classes.html">API</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../auto_examples/index.html">Examples</a>
+          <a class="sk-nav-link nav-link" href="../auto_examples/index.html">Examples</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sk-nav-dropdown-item dropdown-item" href="../tutorial/basic/tutorial.html">Quick Start</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../tutorial/index.html">Tutorial</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../glossary.html">Glossary</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../developers/index.html">Development</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../faq.html">FAQ</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../related_projects.html">Related packages</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../roadmap.html">Roadmap</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../about.html">About us</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../documentation.html">Index</a>
+          </div>
         </li>
       </ul>
       <div class="sk-search-form">
@@ -65,7 +79,7 @@
     </div>
   </div>
 </nav>
-<div class="d-flex " id="sk-doc-wrapper">
+<div class="d-flex" id="sk-doc-wrapper">
     <input type="checkbox" name="sk-toggle-checkbox" id="sk-toggle-checkbox">
     <label id="sk-sidemenu-toggle" class="sk-btn-toggle-toc btn sk-btn-primary" for="sk-toggle-checkbox">Toggle Menu</label>
     <div id="sk-sidebar-wrapper" class="border-right">
@@ -73,8 +87,8 @@
         <div class="sk-sidebar-toc-logo">
           <a href="../index.html">
             <img
+              class="sk-brand-img"
               src="../_static/scikit-learn-logo-small.png"
-              height="38"
               alt="logo"/>
           </a>
         </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
@@ -151,8 +165,8 @@
 
       </div>
     </div>
-    <div id="sk-page-content-wrapper">
-      <div class="sk-page-content container-fluid body" role="main">
+    <div id="sk-page-content-wrapper" >
+      <div class="sk-page-content container-fluid body pl-md-4 px-lg-5" role="main">
         
   <div class="section" id="generalized-linear-models">
 <span id="linear-model"></span><h1>1.1. Generalized Linear Models<a class="headerlink" href="#generalized-linear-models" title="Permalink to this headline">¶</a></h1>
@@ -267,9 +281,10 @@ as GridSearchCV except that it defaults to Generalized Cross-Validation
 <span class="go">0.01</span>
 </pre></div>
 </div>
-<p>Specifying the value of the <a class="reference internal" href="../glossary.html#term-cv"><span class="xref any std std-term">cv</span></a> attribute will trigger the use of
-cross-validation with <a class="reference internal" href="generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV" title="sklearn.model_selection.GridSearchCV"><code class="xref any py py-class docutils literal notranslate"><span class="pre">GridSearchCV</span></code></a>, for example <code class="docutils literal notranslate"><span class="pre">cv=10</span></code> for 10-fold
-cross-validation, rather than Generalized Cross-Validation.</p>
+<p>Specifying the value of the <a class="reference internal" href="../glossary.html#term-cv"><span class="xref std std-term">cv</span></a> attribute will trigger the use of
+cross-validation with <a class="reference internal" href="generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV" title="sklearn.model_selection.GridSearchCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">GridSearchCV</span></code></a>, for
+example <code class="docutils literal notranslate"><span class="pre">cv=10</span></code> for 10-fold cross-validation, rather than Generalized
+Cross-Validation.</p>
 <div class="topic">
 <p class="topic-title first">References</p>
 <ul class="simple">
@@ -948,7 +963,7 @@ thus be used to perform feature selection, as detailed in
 <p><strong>P-value estimation</strong></p>
 <p>It is possible to obtain the p-values and confidence intervals for
 coefficients in cases of regression without penalization. The <code class="docutils literal notranslate"><span class="pre">statsmodels</span>
-<span class="pre">package</span></code> natively supports this.
+<span class="pre">package</span> <span class="pre">&lt;https://pypi.org/project/statsmodels/&gt;</span></code> natively supports this.
 Within sklearn, one could use bootstrapping instead as well.</p>
 </div>
 <p><a class="reference internal" href="generated/sklearn.linear_model.LogisticRegressionCV.html#sklearn.linear_model.LogisticRegressionCV" title="sklearn.linear_model.LogisticRegressionCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogisticRegressionCV</span></code></a> implements Logistic Regression with built-in
@@ -1085,7 +1100,7 @@ outliers.</p>
 fraction of data that can be outlying for the fit to start missing the
 inlying data.</p>
 <p>Note that in general, robust fitting in high-dimensional setting (large
-<a class="reference internal" href="../glossary.html#term-n-features"><span class="xref any std std-term">n_features</span></a>) is very hard. The robust models here will probably not work
+<code class="docutils literal notranslate"><span class="pre">n_features</span></code>) is very hard. The robust models here will probably not work
 in these settings.</p>
 <div class="topic">
 <p class="topic-title first"><strong>Trade-offs: which estimator?</strong></p>

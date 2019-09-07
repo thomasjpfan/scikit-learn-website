@@ -25,11 +25,11 @@
 
 
 <nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
-  <div class="container-fluid sk-docs-container">
-      <a class="navbar-brand" href="../../index.html">
+  <div class="container-fluid sk-docs-container px-0">
+      <a class="navbar-brand py-0" href="../../index.html">
         <img
-          src="../../_static/scikit-learn-logo-notext.png"
-          height="38"
+          class="sk-brand-img"
+          src="../../_static/scikit-learn-logo-small.png"
           alt="logo"/>
       </a>
     <button
@@ -47,16 +47,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="../../index.html">Home</a>
+          <a class="sk-nav-link nav-link" href="../../install.html">Install</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../install.html">Install</a>
+          <a class="sk-nav-link nav-link" href="../../user_guide.html">User Guide</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../documentation.html">Documentation</a>
+          <a class="sk-nav-link nav-link" href="../classes.html">API</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../auto_examples/index.html">Examples</a>
+          <a class="sk-nav-link nav-link" href="../../auto_examples/index.html">Examples</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../tutorial/basic/tutorial.html">Quick Start</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../tutorial/index.html">Tutorial</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../glossary.html">Glossary</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../developers/index.html">Development</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../faq.html">FAQ</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../related_projects.html">Related packages</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../roadmap.html">Roadmap</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../about.html">About us</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../documentation.html">Index</a>
+          </div>
         </li>
       </ul>
       <div class="sk-search-form">
@@ -65,7 +79,7 @@
     </div>
   </div>
 </nav>
-<div class="d-flex " id="sk-doc-wrapper">
+<div class="d-flex" id="sk-doc-wrapper">
     <input type="checkbox" name="sk-toggle-checkbox" id="sk-toggle-checkbox">
     <label id="sk-sidemenu-toggle" class="sk-btn-toggle-toc btn sk-btn-primary" for="sk-toggle-checkbox">Toggle Menu</label>
     <div id="sk-sidebar-wrapper" class="border-right">
@@ -73,8 +87,8 @@
         <div class="sk-sidebar-toc-logo">
           <a href="../../index.html">
             <img
+              class="sk-brand-img"
               src="../../_static/scikit-learn-logo-small.png"
-              height="38"
               alt="logo"/>
           </a>
         </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
@@ -101,14 +115,14 @@
 
       </div>
     </div>
-    <div id="sk-page-content-wrapper">
-      <div class="sk-page-content container-fluid body" role="main">
+    <div id="sk-page-content-wrapper" >
+      <div class="sk-page-content container-fluid body pl-md-4 px-lg-5" role="main">
         
   <div class="section" id="sklearn-model-selection-validation-curve">
 <h1><a class="reference internal" href="../classes.html#module-sklearn.model_selection" title="sklearn.model_selection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.model_selection</span></code></a>.validation_curve<a class="headerlink" href="#sklearn-model-selection-validation-curve" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="sklearn.model_selection.validation_curve">
-<code class="sig-prename descclassname">sklearn.model_selection.</code><code class="sig-name descname">validation_curve</code><span class="sig-paren">(</span><em class="sig-param">estimator</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">param_name</em>, <em class="sig-param">param_range</em>, <em class="sig-param">groups=None</em>, <em class="sig-param">cv=None</em>, <em class="sig-param">scoring=None</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">pre_dispatch='all'</em>, <em class="sig-param">verbose=0</em>, <em class="sig-param">error_score=nan</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/model_selection/_validation.py#L1387"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.model_selection.validation_curve" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sklearn.model_selection.</code><code class="sig-name descname">validation_curve</code><span class="sig-paren">(</span><em class="sig-param">estimator</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">param_name</em>, <em class="sig-param">param_range</em>, <em class="sig-param">groups=None</em>, <em class="sig-param">cv=None</em>, <em class="sig-param">scoring=None</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">pre_dispatch='all'</em>, <em class="sig-param">verbose=0</em>, <em class="sig-param">error_score=nan</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/3875090c8b/sklearn/model_selection/_validation.py#L1387"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.model_selection.validation_curve" title="Permalink to this definition">¶</a></dt>
 <dd><p>Validation curve.</p>
 <p>Determine training and test scores for varying parameter values.</p>
 <p>Compute scores for an estimator with different values of a specified
@@ -132,8 +146,8 @@ None for unsupervised learning.</p>
 <dt><strong>param_range</strong><span class="classifier">array-like, shape (n_values,)</span></dt><dd><p>The values of the parameter that will be evaluated.</p>
 </dd>
 <dt><strong>groups</strong><span class="classifier">array-like, with shape (n_samples,), optional</span></dt><dd><p>Group labels for the samples used while splitting the dataset into
-train/test set. Only used in conjunction with a “Group” <a class="reference internal" href="../../glossary.html#term-cv"><span class="xref any std std-term">cv</span></a> instance
-(e.g., <a class="reference internal" href="sklearn.model_selection.GroupKFold.html#sklearn.model_selection.GroupKFold" title="sklearn.model_selection.GroupKFold"><code class="xref any py py-class docutils literal notranslate"><span class="pre">GroupKFold</span></code></a>).</p>
+train/test set. Only used in conjunction with a “Group” <a class="reference internal" href="../../glossary.html#term-cv"><span class="xref std std-term">cv</span></a>
+instance (e.g., <a class="reference internal" href="sklearn.model_selection.GroupKFold.html#sklearn.model_selection.GroupKFold" title="sklearn.model_selection.GroupKFold"><code class="xref py py-class docutils literal notranslate"><span class="pre">GroupKFold</span></code></a>).</p>
 </dd>
 <dt><strong>cv</strong><span class="classifier">int, cross-validation generator or an iterable, optional</span></dt><dd><p>Determines the cross-validation splitting strategy.
 Possible inputs for cv are:</p>

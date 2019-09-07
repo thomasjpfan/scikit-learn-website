@@ -25,11 +25,11 @@
 
 
 <nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
-  <div class="container-fluid sk-docs-container">
-      <a class="navbar-brand" href="../index.html">
+  <div class="container-fluid sk-docs-container px-0">
+      <a class="navbar-brand py-0" href="../index.html">
         <img
-          src="../_static/scikit-learn-logo-notext.png"
-          height="38"
+          class="sk-brand-img"
+          src="../_static/scikit-learn-logo-small.png"
           alt="logo"/>
       </a>
     <button
@@ -47,16 +47,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="../index.html">Home</a>
+          <a class="sk-nav-link nav-link" href="../install.html">Install</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../install.html">Install</a>
+          <a class="sk-nav-link nav-link" href="../user_guide.html">User Guide</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../documentation.html">Documentation</a>
+          <a class="sk-nav-link nav-link" href="classes.html">API</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../auto_examples/index.html">Examples</a>
+          <a class="sk-nav-link nav-link" href="../auto_examples/index.html">Examples</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sk-nav-dropdown-item dropdown-item" href="../tutorial/basic/tutorial.html">Quick Start</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../tutorial/index.html">Tutorial</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../glossary.html">Glossary</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../developers/index.html">Development</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../faq.html">FAQ</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../related_projects.html">Related packages</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../roadmap.html">Roadmap</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../about.html">About us</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../documentation.html">Index</a>
+          </div>
         </li>
       </ul>
       <div class="sk-search-form">
@@ -65,7 +79,7 @@
     </div>
   </div>
 </nav>
-<div class="d-flex " id="sk-doc-wrapper">
+<div class="d-flex" id="sk-doc-wrapper">
     <input type="checkbox" name="sk-toggle-checkbox" id="sk-toggle-checkbox">
     <label id="sk-sidemenu-toggle" class="sk-btn-toggle-toc btn sk-btn-primary" for="sk-toggle-checkbox">Toggle Menu</label>
     <div id="sk-sidebar-wrapper" class="border-right">
@@ -73,8 +87,8 @@
         <div class="sk-sidebar-toc-logo">
           <a href="../index.html">
             <img
+              class="sk-brand-img"
               src="../_static/scikit-learn-logo-small.png"
-              height="38"
               alt="logo"/>
           </a>
         </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
@@ -107,8 +121,8 @@
 
       </div>
     </div>
-    <div id="sk-page-content-wrapper">
-      <div class="sk-page-content container-fluid body" role="main">
+    <div id="sk-page-content-wrapper" >
+      <div class="sk-page-content container-fluid body pl-md-4 px-lg-5" role="main">
         
   <div class="section" id="pairwise-metrics-affinities-and-kernels">
 <span id="metrics"></span><h1>6.8. Pairwise metrics, Affinities and Kernels<a class="headerlink" href="#pairwise-metrics-affinities-and-kernels" title="Permalink to this headline">¶</a></h1>
@@ -143,8 +157,8 @@ the kernel:</p>
 <p>The distances between the row vectors of <code class="docutils literal notranslate"><span class="pre">X</span></code> and the row vectors of <code class="docutils literal notranslate"><span class="pre">Y</span></code>
 can be evaluated using <a class="reference internal" href="generated/sklearn.metrics.pairwise_distances.html#sklearn.metrics.pairwise_distances" title="sklearn.metrics.pairwise_distances"><code class="xref py py-func docutils literal notranslate"><span class="pre">pairwise_distances</span></code></a>. If <code class="docutils literal notranslate"><span class="pre">Y</span></code> is omitted the
 pairwise distances of the row vectors of <code class="docutils literal notranslate"><span class="pre">X</span></code> are calculated. Similarly,
-<a class="reference internal" href="generated/sklearn.metrics.pairwise.pairwise_kernels.html#sklearn.metrics.pairwise.pairwise_kernels" title="sklearn.metrics.pairwise.pairwise_kernels"><code class="xref py py-func docutils literal notranslate"><span class="pre">pairwise.pairwise_kernels</span></code></a> can be used to calculate the kernel between <a class="reference internal" href="../glossary.html#term-x"><code class="xref any std std-term docutils literal notranslate"><span class="pre">X</span></code></a>
-and <a class="reference internal" href="../glossary.html#term-0"><code class="xref any std std-term docutils literal notranslate"><span class="pre">Y</span></code></a> using different kernel functions. See the API reference for more
+<a class="reference internal" href="generated/sklearn.metrics.pairwise.pairwise_kernels.html#sklearn.metrics.pairwise.pairwise_kernels" title="sklearn.metrics.pairwise.pairwise_kernels"><code class="xref py py-func docutils literal notranslate"><span class="pre">pairwise.pairwise_kernels</span></code></a> can be used to calculate the kernel between <code class="docutils literal notranslate"><span class="pre">X</span></code>
+and <code class="docutils literal notranslate"><span class="pre">Y</span></code> using different kernel functions. See the API reference for more
 details.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">pairwise_distances</span>

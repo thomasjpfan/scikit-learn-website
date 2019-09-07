@@ -25,11 +25,11 @@
 
 
 <nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
-  <div class="container-fluid sk-docs-container">
-      <a class="navbar-brand" href="index.html">
+  <div class="container-fluid sk-docs-container px-0">
+      <a class="navbar-brand py-0" href="index.html">
         <img
-          src="_static/scikit-learn-logo-notext.png"
-          height="38"
+          class="sk-brand-img"
+          src="_static/scikit-learn-logo-small.png"
           alt="logo"/>
       </a>
     <button
@@ -47,16 +47,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
+          <a class="sk-nav-link nav-link" href="install.html">Install</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="install.html">Install</a>
+          <a class="sk-nav-link nav-link" href="user_guide.html">User Guide</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="documentation.html">Documentation</a>
+          <a class="sk-nav-link nav-link" href="modules/classes.html">API</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="auto_examples/index.html">Examples</a>
+          <a class="sk-nav-link nav-link" href="auto_examples/index.html">Examples</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sk-nav-dropdown-item dropdown-item" href="tutorial/basic/tutorial.html">Quick Start</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="tutorial/index.html">Tutorial</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="glossary.html">Glossary</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="developers/index.html">Development</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="faq.html">FAQ</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="related_projects.html">Related packages</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="#">Roadmap</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="about.html">About us</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="documentation.html">Index</a>
+          </div>
         </li>
       </ul>
       <div class="sk-search-form">
@@ -65,7 +79,7 @@
     </div>
   </div>
 </nav>
-<div class="d-flex " id="sk-doc-wrapper">
+<div class="d-flex" id="sk-doc-wrapper">
     <input type="checkbox" name="sk-toggle-checkbox" id="sk-toggle-checkbox">
     <label id="sk-sidemenu-toggle" class="sk-btn-toggle-toc btn sk-btn-primary" for="sk-toggle-checkbox">Toggle Menu</label>
     <div id="sk-sidebar-wrapper" class="border-right">
@@ -73,12 +87,12 @@
         <div class="sk-sidebar-toc-logo">
           <a href="index.html">
             <img
+              class="sk-brand-img"
               src="_static/scikit-learn-logo-small.png"
-              height="38"
               alt="logo"/>
           </a>
         </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
-              <a href="whats_new/older_versions.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Version 0.12.1">Prev</a><a href="preface.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="scikit-learn">Up</a>
+              <a href="whats_new/older_versions.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Version 0.12.1">Prev</a><a href="preface.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Welcome to scikit-learn">Up</a>
               <a href="governance.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Scikit-learn governance and decision-making">Next</a>
           </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
@@ -104,8 +118,8 @@
 
       </div>
     </div>
-    <div id="sk-page-content-wrapper">
-      <div class="sk-page-content container-fluid body" role="main">
+    <div id="sk-page-content-wrapper" >
+      <div class="sk-page-content container-fluid body pl-md-4 px-lg-5" role="main">
         
   <div class="section" id="roadmap">
 <span id="id1"></span><h1>Roadmap<a class="headerlink" href="#roadmap" title="Permalink to this headline">¶</a></h1>
@@ -161,7 +175,7 @@ bottom.</p>
 <ol class="arabic simple">
 <li><p>Everything in Scikit-learn should conform to our API contract</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline" title="sklearn.pipeline.Pipeline"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a> and <a class="reference internal" href="modules/generated/sklearn.pipeline.FeatureUnion.html#sklearn.pipeline.FeatureUnion" title="sklearn.pipeline.FeatureUnion"><code class="xref any py py-class docutils literal notranslate"><span class="pre">FeatureUnion</span></code></a> modify their input
+<li><p><code class="docutils literal notranslate"><span class="pre">Pipeline</span> <span class="pre">&lt;pipeline.Pipeline&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">FeatureUnion</span></code> modify their input
 parameters in fit. Fixing this requires making sure we have a good
 grasp of their use cases to make sure all current functionality is
 maintained. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/issues/8157">#8157</a> <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/issues/7382">#7382</a></p></li>
@@ -286,7 +300,7 @@ large scale while supporting only a fraction of the patterns.</p></li>
 <li><p>Support for working with pre-trained models</p>
 <ul class="simple">
 <li><p>Estimator “freezing”. In particular, right now it’s impossible to clone a
-<a class="reference internal" href="modules/generated/sklearn.calibration.CalibratedClassifierCV.html#sklearn.calibration.CalibratedClassifierCV" title="sklearn.calibration.CalibratedClassifierCV"><code class="xref any py py-class docutils literal notranslate"><span class="pre">CalibratedClassifierCV</span></code></a> with prefit. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/issues/8370">#8370</a>. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/issues/6451">#6451</a></p></li>
+<code class="docutils literal notranslate"><span class="pre">CalibratedClassifierCV</span></code> with prefit. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/issues/8370">#8370</a>. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/issues/6451">#6451</a></p></li>
 </ul>
 </li>
 <li><p>Backwards-compatible de/serialization of some estimators</p>
@@ -362,7 +376,7 @@ benefits beyond hierarchical clustering.</p></li>
 <li><p>the handling of random states in CV splitters is a poor design and
 contradicts the validation of similar parameters in estimators.</p></li>
 <li><p>exploit warm-starting and path algorithms so the benefits of <code class="docutils literal notranslate"><span class="pre">EstimatorCV</span></code>
-objects can be accessed via <a class="reference internal" href="modules/generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV" title="sklearn.model_selection.GridSearchCV"><code class="xref any py py-class docutils literal notranslate"><span class="pre">GridSearchCV</span></code></a> and used in Pipelines.
+objects can be accessed via <code class="docutils literal notranslate"><span class="pre">GridSearchCV</span></code> and used in Pipelines.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/issues/1626">#1626</a></p></li>
 <li><p>Cross-validation should be able to be replaced by OOB estimates whenever a
 cross-validation iterator is used.</p></li>

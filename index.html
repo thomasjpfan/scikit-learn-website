@@ -25,11 +25,11 @@
 
 
 <nav id="navbar" class="sk-landing-navbar navbar navbar-expand-md navbar-light bg-light py-0">
-  <div class="container-fluid sk-landing-container">
-      <a class="navbar-brand" href="#">
+  <div class="container-fluid sk-landing-container px-0">
+      <a class="navbar-brand py-0" href="#">
         <img
-          src="_static/scikit-learn-logo-notext.png"
-          height="38"
+          class="sk-brand-img"
+          src="_static/scikit-learn-logo-small.png"
           alt="logo"/>
       </a>
     <button
@@ -47,16 +47,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
+          <a class="sk-nav-link nav-link" href="install.html">Install</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="install.html">Install</a>
+          <a class="sk-nav-link nav-link" href="user_guide.html">User Guide</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="documentation.html">Documentation</a>
+          <a class="sk-nav-link nav-link" href="modules/classes.html">API</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="auto_examples/index.html">Examples</a>
+          <a class="sk-nav-link nav-link" href="auto_examples/index.html">Examples</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sk-nav-dropdown-item dropdown-item" href="tutorial/basic/tutorial.html">Quick Start</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="tutorial/index.html">Tutorial</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="glossary.html">Glossary</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="developers/index.html">Development</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="faq.html">FAQ</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="related_projects.html">Related packages</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="roadmap.html">Roadmap</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="about.html">About us</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="documentation.html">Index</a>
+          </div>
         </li>
       </ul>
       <div class="sk-search-form">
@@ -68,16 +82,19 @@
 <div class="container-fluid sk-landing-bg py-3">
   <div class="container sk-landing-container">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-5">
         <h1 class="sk-landing-header text-white text-monospace">scikit-learn</h1>
-        <h5 class="text-white font-italic">Machine Learning in Python</h5>
+        <h5 class="text-white font-italic mb-3">Machine Learning in Python</h5>
+        <a class="btn sk-landing-btn my-1" href="whats_new.html#version-0-22-0" role="button">Whats New in 0.22</a>
+        <a class="btn sk-landing-btn my-1" href="documentation.html" role="button">Documentation</a>
+      </div>
+      <div class="col-md-7">
         <p><ul class="sk-landing-header-body">
           <li>Simple and efficient tools for data mining and data analysis</li>
           <li>Accessible to everybody, and reusable in various contexts</li>
           <li>Built on NumPy, SciPy, and matplotlib</li>
           <li>Open source, commercially usable - BSD license</li>
         </ul></p>
-        <a class="btn sk-btn-landing-whats-new" href="whats_new.html#version-0-22-0" role="button">Whats New in 0.22</a>
       </div>
     </div>
   </div>
@@ -85,7 +102,7 @@
 
 <div class="container sk-landing-container pt-3 body" role="main">
   <div class="row no-gutters">
-    <div class="col-md-4 mb-3 px-md-1">
+    <div class="col-md-4 mb-3 px-md-2">
       <div class="card h-100">
         <div class="card-body">
           <a href="supervised_learning.html#supervised-learning"><h4 class="sk-card-title card-title">Classification</h4></a>
@@ -97,15 +114,15 @@
           <a href="modules/ensemble.html#forest">random forest</a>,
           and <a href="supervised_learning.html#supervised-learning">more...</a></p>
         </div>
-        <div class="overflow-hidden mx-1 text-center">
+        <div class="overflow-hidden mx-2 text-center">
           <a href="auto_examples/classification/plot_classifier_comparison.html">
           <img src="_images/sphx_glr_plot_classifier_comparison_001_carousel.png" class="sk-index-img" style="width: unset; height: 240px">
           </a>
         </div>
-          <a href="auto_examples/index.html#examples" class="sk-btn-primary btn text-white btn-block" role="button">Examples</a>
+          <a href="auto_examples/index.html#classification" class="sk-btn-primary btn text-white btn-block" role="button">Examples</a>
       </div>
     </div>
-    <div class="col-md-4 mb-3 px-md-1">
+    <div class="col-md-4 mb-3 px-md-2">
       <div class="card h-100">
         <div class="card-body">
           <a href="supervised_learning.html#supervised-learning"><h4 class="sk-card-title card-title">Regression</h4></a>
@@ -117,7 +134,7 @@
           <a href="modules/linear_model.html#lasso">random forest</a>,
           and <a href="supervised_learning.html#supervised-learning">more...</a></p>
         </div>
-        <div class="overflow-hidden mx-1 text-center">
+        <div class="overflow-hidden mx-2 text-center">
           <a href="auto_examples/ensemble/plot_adaboost_regression.html">
           <img src="_images/sphx_glr_plot_adaboost_regression_thumb.png" class="sk-index-img">
           </a>
@@ -125,7 +142,7 @@
           <a href="auto_examples/index.html#examples" class="sk-btn-primary btn text-white btn-block" role="button">Examples</a>
       </div>
     </div>
-    <div class="col-md-4 mb-3 px-md-1">
+    <div class="col-md-4 mb-3 px-md-2">
       <div class="card h-100">
         <div class="card-body">
           <a href="modules/clustering.html#clustering"><h4 class="sk-card-title card-title">Clustering</h4></a>
@@ -137,7 +154,7 @@
           <a href="modules/clustering.html#mean-shift">mean-shift</a>,
           and <a href="modules/clustering.html#clustering">more...</a></p>
         </div>
-        <div class="overflow-hidden mx-1 text-center">
+        <div class="overflow-hidden mx-2 text-center">
           <a href="auto_examples/cluster/plot_kmeans_digits.html">
           <img src="_images/sphx_glr_plot_kmeans_digits_thumb.png" class="sk-index-img">
           </a>
@@ -145,7 +162,7 @@
           <a href="auto_examples/index.html#cluster-examples" class="sk-btn-primary btn text-white btn-block" role="button">Examples</a>
       </div>
     </div>
-    <div class="col-md-4 mb-3 px-md-1">
+    <div class="col-md-4 mb-3 px-md-2">
       <div class="card h-100">
         <div class="card-body">
           <a href="modules/decomposition.html#decompositions"><h4 class="sk-card-title card-title">Dimensionality reduction</h4></a>
@@ -157,7 +174,7 @@
           <a href="modules/decomposition.html#nmf">non-negative matrix factorization</a>,
           and <a href="modules/decomposition.html#decompositions">more...</a></p>
         </div>
-        <div class="overflow-hidden mx-1 text-center">
+        <div class="overflow-hidden mx-2 text-center">
           <a href="auto_examples/decomposition/plot_pca_iris.html">
           <img src="_images/sphx_glr_plot_pca_iris_thumb.png" class="sk-index-img">
           </a>
@@ -165,7 +182,7 @@
           <a href="auto_examples/index.html#decomposition-examples" class="sk-btn-primary btn text-white btn-block" role="button">Examples</a>
       </div>
     </div>
-    <div class="col-md-4 mb-3 px-md-1">
+    <div class="col-md-4 mb-3 px-md-2">
       <div class="card h-100">
         <div class="card-body">
           <a href="model_selection.html#model-selection"><h4 class="sk-card-title card-title">Model selection</h4></a>
@@ -177,7 +194,7 @@
           <a href="modules/model_evaluation.html#model-evaluation">metrics</a>,
           and <a href="modules/decomposition.html#decompositions">more...</a></p>
         </div>
-        <div class="overflow-hidden mx-1 text-center">
+        <div class="overflow-hidden mx-2 text-center">
           <a href="auto_examples/model_selection/plot_multi_metric_evaluation.html">
             <img src="_images/sphx_glr_plot_multi_metric_evaluation_thumb.png" class="sk-index-img">
           </a>
@@ -185,7 +202,7 @@
           <a href="auto_examples/index.html#model-selection" class="sk-btn-primary btn text-white btn-block" role="button">Examples</a>
       </div>
     </div>
-    <div class="col-md-4 mb-3 px-md-1">
+    <div class="col-md-4 mb-3 px-md-2">
       <div class="card h-100">
         <div class="card-body">
           <a href="modules/preprocessing.html#preprocessing"><h4 class="sk-card-title card-title">Preprocessing</h4></a>
@@ -196,7 +213,7 @@
           <a href="modules/feature_extraction.html#feature-extraction">feature extraction</a>,
           and <a href="modules/preprocessing.html#preprocessing">more...</a></p>
         </div>
-        <div class="overflow-hidden mx-1 text-center">
+        <div class="overflow-hidden mx-2 text-center">
           <a href="auto_examples/preprocessing/plot_discretization_strategies.html">
           <img src="_images/sphx_glr_plot_discretization_strategies_thumb.png" class="sk-index-img">
           </a>

@@ -25,11 +25,11 @@
 
 
 <nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
-  <div class="container-fluid sk-docs-container">
-      <a class="navbar-brand" href="../../index.html">
+  <div class="container-fluid sk-docs-container px-0">
+      <a class="navbar-brand py-0" href="../../index.html">
         <img
-          src="../../_static/scikit-learn-logo-notext.png"
-          height="38"
+          class="sk-brand-img"
+          src="../../_static/scikit-learn-logo-small.png"
           alt="logo"/>
       </a>
     <button
@@ -47,16 +47,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="../../index.html">Home</a>
+          <a class="sk-nav-link nav-link" href="../../install.html">Install</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../install.html">Install</a>
+          <a class="sk-nav-link nav-link" href="../../user_guide.html">User Guide</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../documentation.html">Documentation</a>
+          <a class="sk-nav-link nav-link" href="../classes.html">API</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../auto_examples/index.html">Examples</a>
+          <a class="sk-nav-link nav-link" href="../../auto_examples/index.html">Examples</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../tutorial/basic/tutorial.html">Quick Start</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../tutorial/index.html">Tutorial</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../glossary.html">Glossary</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../developers/index.html">Development</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../faq.html">FAQ</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../related_projects.html">Related packages</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../roadmap.html">Roadmap</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../about.html">About us</a>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../documentation.html">Index</a>
+          </div>
         </li>
       </ul>
       <div class="sk-search-form">
@@ -65,7 +79,7 @@
     </div>
   </div>
 </nav>
-<div class="d-flex " id="sk-doc-wrapper">
+<div class="d-flex" id="sk-doc-wrapper">
     <input type="checkbox" name="sk-toggle-checkbox" id="sk-toggle-checkbox">
     <label id="sk-sidemenu-toggle" class="sk-btn-toggle-toc btn sk-btn-primary" for="sk-toggle-checkbox">Toggle Menu</label>
     <div id="sk-sidebar-wrapper" class="border-right">
@@ -73,8 +87,8 @@
         <div class="sk-sidebar-toc-logo">
           <a href="../../index.html">
             <img
+              class="sk-brand-img"
               src="../../_static/scikit-learn-logo-small.png"
-              height="38"
               alt="logo"/>
           </a>
         </div><div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
@@ -101,14 +115,14 @@
 
       </div>
     </div>
-    <div id="sk-page-content-wrapper">
-      <div class="sk-page-content container-fluid body" role="main">
+    <div id="sk-page-content-wrapper" >
+      <div class="sk-page-content container-fluid body pl-md-4 px-lg-5" role="main">
         
   <div class="section" id="sklearn-impute-iterativeimputer">
 <h1><a class="reference internal" href="../classes.html#module-sklearn.impute" title="sklearn.impute"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.impute</span></code></a>.IterativeImputer<a class="headerlink" href="#sklearn-impute-iterativeimputer" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="sklearn.impute.IterativeImputer">
-<em class="property">class </em><code class="sig-prename descclassname">sklearn.impute.</code><code class="sig-name descname">IterativeImputer</code><span class="sig-paren">(</span><em class="sig-param">estimator=None</em>, <em class="sig-param">missing_values=nan</em>, <em class="sig-param">sample_posterior=False</em>, <em class="sig-param">max_iter=10</em>, <em class="sig-param">tol=0.001</em>, <em class="sig-param">n_nearest_features=None</em>, <em class="sig-param">initial_strategy='mean'</em>, <em class="sig-param">imputation_order='ascending'</em>, <em class="sig-param">min_value=None</em>, <em class="sig-param">max_value=None</em>, <em class="sig-param">verbose=0</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">add_indicator=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/impute/_iterative.py#L27"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.impute.IterativeImputer" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">sklearn.impute.</code><code class="sig-name descname">IterativeImputer</code><span class="sig-paren">(</span><em class="sig-param">estimator=None</em>, <em class="sig-param">missing_values=nan</em>, <em class="sig-param">sample_posterior=False</em>, <em class="sig-param">max_iter=10</em>, <em class="sig-param">tol=0.001</em>, <em class="sig-param">n_nearest_features=None</em>, <em class="sig-param">initial_strategy='mean'</em>, <em class="sig-param">imputation_order='ascending'</em>, <em class="sig-param">min_value=None</em>, <em class="sig-param">max_value=None</em>, <em class="sig-param">verbose=0</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">add_indicator=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/3875090c8b/sklearn/impute/_iterative.py#L28"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.impute.IterativeImputer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Multivariate imputer that estimates each feature from all the others.</p>
 <p>A strategy for imputing missing values by modeling each feature with
 missing values as a function of other features in a round-robin fashion.</p>
@@ -144,7 +158,7 @@ fitted estimator for each imputation. Estimator must support
 imputations computed during the final round. A round is a single
 imputation of each feature with missing values. The stopping criterion
 is met once <code class="docutils literal notranslate"><span class="pre">abs(max(X_t</span> <span class="pre">-</span> <span class="pre">X_{t-1}))/abs(max(X[known_vals]))</span></code> &lt; tol,
-where <code class="docutils literal notranslate"><span class="pre">X_t</span></code> is <a class="reference internal" href="../../glossary.html#term-x"><code class="xref any std std-term docutils literal notranslate"><span class="pre">X</span></code></a> at iteration <code class="docutils literal notranslate"><span class="pre">t.</span> <span class="pre">Note</span> <span class="pre">that</span> <span class="pre">early</span> <span class="pre">stopping</span> <span class="pre">is</span> <span class="pre">only</span>
+where <code class="docutils literal notranslate"><span class="pre">X_t</span></code> is <code class="docutils literal notranslate"><span class="pre">X</span></code> at iteration <code class="docutils literal notranslate"><span class="pre">t.</span> <span class="pre">Note</span> <span class="pre">that</span> <span class="pre">early</span> <span class="pre">stopping</span> <span class="pre">is</span> <span class="pre">only</span>
 <span class="pre">applied</span> <span class="pre">if</span> <span class="pre">``sample_posterior=False`</span></code>.</p>
 </dd>
 <dt><strong>tol</strong><span class="classifier">float, optional (default=1e-3)</span></dt><dd><p>Tolerance of the stopping condition.</p>
@@ -192,7 +206,7 @@ selection of estimator features if n_nearest_features is not None, the
 <code class="docutils literal notranslate"><span class="pre">sample_posterior</span></code> is True. Use an integer for determinism.
 See <a class="reference internal" href="../../glossary.html#term-random-state"><span class="xref std std-term">the Glossary</span></a>.</p>
 </dd>
-<dt><strong>add_indicator</strong><span class="classifier">boolean, optional (default=False)</span></dt><dd><p>If True, a <a class="reference internal" href="sklearn.impute.MissingIndicator.html#sklearn.impute.MissingIndicator" title="sklearn.impute.MissingIndicator"><code class="xref any py py-class docutils literal notranslate"><span class="pre">MissingIndicator</span></code></a> transform will stack onto output
+<dt><strong>add_indicator</strong><span class="classifier">boolean, optional (default=False)</span></dt><dd><p>If True, a <a class="reference internal" href="sklearn.impute.MissingIndicator.html#sklearn.impute.MissingIndicator" title="sklearn.impute.MissingIndicator"><code class="xref py py-class docutils literal notranslate"><span class="pre">MissingIndicator</span></code></a> transform will stack onto output
 of the imputer’s transform. This allows a predictive estimator
 to account for missingness despite imputation. If a feature has no
 missing values at fit/train time, the feature won’t appear on
@@ -278,13 +292,13 @@ Journal of the Royal Statistical Society 22(2): 302-306.</a></p>
 </table>
 <dl class="method">
 <dt id="sklearn.impute.IterativeImputer.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">estimator=None</em>, <em class="sig-param">missing_values=nan</em>, <em class="sig-param">sample_posterior=False</em>, <em class="sig-param">max_iter=10</em>, <em class="sig-param">tol=0.001</em>, <em class="sig-param">n_nearest_features=None</em>, <em class="sig-param">initial_strategy='mean'</em>, <em class="sig-param">imputation_order='ascending'</em>, <em class="sig-param">min_value=None</em>, <em class="sig-param">max_value=None</em>, <em class="sig-param">verbose=0</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">add_indicator=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/impute/_iterative.py#L185"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.impute.IterativeImputer.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">estimator=None</em>, <em class="sig-param">missing_values=nan</em>, <em class="sig-param">sample_posterior=False</em>, <em class="sig-param">max_iter=10</em>, <em class="sig-param">tol=0.001</em>, <em class="sig-param">n_nearest_features=None</em>, <em class="sig-param">initial_strategy='mean'</em>, <em class="sig-param">imputation_order='ascending'</em>, <em class="sig-param">min_value=None</em>, <em class="sig-param">max_value=None</em>, <em class="sig-param">verbose=0</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">add_indicator=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/3875090c8b/sklearn/impute/_iterative.py#L186"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.impute.IterativeImputer.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sklearn.impute.IterativeImputer.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/impute/_iterative.py#L668"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.impute.IterativeImputer.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/3875090c8b/sklearn/impute/_iterative.py#L669"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.impute.IterativeImputer.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fits the imputer on X and return self.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -306,7 +320,7 @@ Journal of the Royal Statistical Society 22(2): 302-306.</a></p>
 
 <dl class="method">
 <dt id="sklearn.impute.IterativeImputer.fit_transform">
-<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/impute/_iterative.py#L495"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.impute.IterativeImputer.fit_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/3875090c8b/sklearn/impute/_iterative.py#L496"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.impute.IterativeImputer.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fits the imputer on X and return the transformed X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -328,7 +342,7 @@ Journal of the Royal Statistical Society 22(2): 302-306.</a></p>
 
 <dl class="method">
 <dt id="sklearn.impute.IterativeImputer.get_params">
-<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/base.py#L180"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.impute.IterativeImputer.get_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/3875090c8b/sklearn/base.py#L169"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.impute.IterativeImputer.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -349,7 +363,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="sklearn.impute.IterativeImputer.set_params">
-<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/base.py#L211"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.impute.IterativeImputer.set_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/3875090c8b/sklearn/base.py#L200"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.impute.IterativeImputer.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as pipelines). The latter have parameters of the form
@@ -366,7 +380,7 @@ component of a nested object.</p>
 
 <dl class="method">
 <dt id="sklearn.impute.IterativeImputer.transform">
-<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cd79373ac4/sklearn/impute/_iterative.py#L614"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.impute.IterativeImputer.transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/3875090c8b/sklearn/impute/_iterative.py#L615"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.impute.IterativeImputer.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Imputes all missing values in X.</p>
 <p>Note that this is stochastic, and that if random_state is not fixed,
 repeated calls, or permuted input, will yield different results.</p>

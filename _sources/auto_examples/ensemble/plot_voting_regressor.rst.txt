@@ -11,11 +11,15 @@
 Plot individual and voting regression predictions
 =================================================
 
+.. currentmodule:: sklearn
+
 Plot individual and averaged regression predictions for Boston dataset.
 
-First, three exemplary regressors are initialized (`GradientBoostingRegressor`,
-`RandomForestRegressor`, and `LinearRegression`) and used to initialize a
-`VotingRegressor`.
+First, three exemplary regressors are initialized
+(:class:`~ensemble.GradientBoostingRegressor`,
+:class:`~ensemble.RandomForestRegressor`, and
+:class:`~linear_model.LinearRegression`) and used to initialize a
+:class:`~ensemble.VotingRegressor`.
 
 The red starred dots are the averaged predictions.
 
@@ -83,7 +87,7 @@ The red starred dots are the averaged predictions.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.697 seconds)
+   **Total running time of the script:** ( 0 minutes  0.439 seconds)
 
 
 .. _sphx_glr_download_auto_examples_ensemble_plot_voting_regressor.py:
