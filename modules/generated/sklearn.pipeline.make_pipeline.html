@@ -69,7 +69,8 @@
             <a class="sk-nav-dropdown-item dropdown-item" href="../../related_projects.html">Related packages</a>
             <a class="sk-nav-dropdown-item dropdown-item" href="../../roadmap.html">Roadmap</a>
             <a class="sk-nav-dropdown-item dropdown-item" href="../../about.html">About us</a>
-            <a class="sk-nav-dropdown-item dropdown-item" href="../../documentation.html">Index</a>
+            <div class="dropdown-divider"></div>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../documentation.html">Documentation</a>
           </div>
         </li>
       </ul>
@@ -106,13 +107,15 @@
             Please <a class="font-weight-bold" href="../../about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
           </p>
         </div>
-        <ul>
+        <div class="sk-local-toc">
+          <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.pipeline</span></code>.make_pipeline</a><ul>
 <li><a class="reference internal" href="#examples-using-sklearn-pipeline-make-pipeline">Examples using <code class="docutils literal notranslate"><span class="pre">sklearn.pipeline.make_pipeline</span></code></a></li>
 </ul>
 </li>
 </ul>
 
+        </div>
       </div>
     </div>
     <div id="sk-page-content-wrapper" >
@@ -122,7 +125,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.pipeline" title="sklearn.pipeline"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.pipeline</span></code></a>.make_pipeline<a class="headerlink" href="#sklearn-pipeline-make-pipeline" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="sklearn.pipeline.make_pipeline">
-<code class="sig-prename descclassname">sklearn.pipeline.</code><code class="sig-name descname">make_pipeline</code><span class="sig-paren">(</span><em class="sig-param">*steps</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/3875090c8b/sklearn/pipeline.py#L652"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.pipeline.make_pipeline" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sklearn.pipeline.</code><code class="sig-name descname">make_pipeline</code><span class="sig-paren">(</span><em class="sig-param">*steps</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/743843d2c2/sklearn/pipeline.py#L652"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.pipeline.make_pipeline" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a Pipeline from the given estimators.</p>
 <p>This is a shorthand for the Pipeline constructor; it does not require, and
 does not permit, naming the estimators. Instead, their names will be set

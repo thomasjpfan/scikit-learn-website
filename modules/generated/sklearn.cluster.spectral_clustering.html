@@ -69,7 +69,8 @@
             <a class="sk-nav-dropdown-item dropdown-item" href="../../related_projects.html">Related packages</a>
             <a class="sk-nav-dropdown-item dropdown-item" href="../../roadmap.html">Roadmap</a>
             <a class="sk-nav-dropdown-item dropdown-item" href="../../about.html">About us</a>
-            <a class="sk-nav-dropdown-item dropdown-item" href="../../documentation.html">Index</a>
+            <div class="dropdown-divider"></div>
+            <a class="sk-nav-dropdown-item dropdown-item" href="../../documentation.html">Documentation</a>
           </div>
         </li>
       </ul>
@@ -106,13 +107,15 @@
             Please <a class="font-weight-bold" href="../../about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
           </p>
         </div>
-        <ul>
+        <div class="sk-local-toc">
+          <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.cluster</span></code>.spectral_clustering</a><ul>
 <li><a class="reference internal" href="#examples-using-sklearn-cluster-spectral-clustering">Examples using <code class="docutils literal notranslate"><span class="pre">sklearn.cluster.spectral_clustering</span></code></a></li>
 </ul>
 </li>
 </ul>
 
+        </div>
       </div>
     </div>
     <div id="sk-page-content-wrapper" >
@@ -122,7 +125,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.cluster" title="sklearn.cluster"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.cluster</span></code></a>.spectral_clustering<a class="headerlink" href="#sklearn-cluster-spectral-clustering" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="sklearn.cluster.spectral_clustering">
-<code class="sig-prename descclassname">sklearn.cluster.</code><code class="sig-name descname">spectral_clustering</code><span class="sig-paren">(</span><em class="sig-param">affinity</em>, <em class="sig-param">n_clusters=8</em>, <em class="sig-param">n_components=None</em>, <em class="sig-param">eigen_solver=None</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">n_init=10</em>, <em class="sig-param">eigen_tol=0.0</em>, <em class="sig-param">assign_labels='kmeans'</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/3875090c8b/sklearn/cluster/spectral.py#L159"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.spectral_clustering" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sklearn.cluster.</code><code class="sig-name descname">spectral_clustering</code><span class="sig-paren">(</span><em class="sig-param">affinity</em>, <em class="sig-param">n_clusters=8</em>, <em class="sig-param">n_components=None</em>, <em class="sig-param">eigen_solver=None</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">n_init=10</em>, <em class="sig-param">eigen_tol=0.0</em>, <em class="sig-param">assign_labels='kmeans'</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/743843d2c2/sklearn/cluster/spectral.py#L159"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.spectral_clustering" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply clustering to a projection of the normalized Laplacian.</p>
 <p>In practice Spectral Clustering is very useful when the structure of
 the individual clusters is highly non-convex or more generally when
