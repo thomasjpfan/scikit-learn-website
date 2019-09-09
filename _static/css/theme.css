@@ -338,6 +338,7 @@ img.sk-footer-funding-logo {
 div.sk-page-content {
   background-color: white;
   margin-top: 52px;
+  position: relative;
 }
 
 div.section h2,
@@ -809,6 +810,14 @@ table.docutils td:last-child p {
 div.sphx-glr-thumbcontainer {
   min-height: 250px;
   font-size: 0.9rem;
+}
+
+@media screen and (min-width: 1540px) {
+  .sphx-glr-download-link-note {
+    position: absolute;
+    left: 97%;
+    width: 20ex;
+  }
 }
 
 /* rellinks */
