@@ -14,6 +14,9 @@ Table Of Contents
     tutorial/index
     user_guide
     glossary
-    auto_examples/index
     modules/classes
     developers/index
+
+.. toctree::
+    :maxdepth: 2
+    auto_examples/index

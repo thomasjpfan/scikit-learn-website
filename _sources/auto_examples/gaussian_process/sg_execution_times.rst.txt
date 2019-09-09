@@ -5,14 +5,14 @@
 
 Computation times
 =================
-**00:18.308** total execution time for **auto_examples_gaussian_process** files:
+**00:19.157** total execution time for **auto_examples_gaussian_process** files:
 
-- **00:05.297**: :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_co2.py` (``plot_gpr_co2.py``)
-- **00:03.000**: :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_noisy.py` (``plot_gpr_noisy.py``)
-- **00:02.465**: :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpc.py` (``plot_gpc.py``)
-- **00:02.457**: :ref:`sphx_glr_auto_examples_gaussian_process_plot_compare_gpr_krr.py` (``plot_compare_gpr_krr.py``)
-- **00:02.301**: :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpc_iris.py` (``plot_gpc_iris.py``)
-- **00:01.500**: :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_prior_posterior.py` (``plot_gpr_prior_posterior.py``)
-- **00:00.533**: :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_noisy_targets.py` (``plot_gpr_noisy_targets.py``)
-- **00:00.485**: :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpc_xor.py` (``plot_gpc_xor.py``)
-- **00:00.270**: :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpc_isoprobability.py` (``plot_gpc_isoprobability.py``)
+- **00:05.285**: :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_co2.py` (``plot_gpr_co2.py``)
+- **00:03.119**: :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_noisy.py` (``plot_gpr_noisy.py``)
+- **00:02.724**: :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpc_iris.py` (``plot_gpc_iris.py``)
+- **00:02.580**: :ref:`sphx_glr_auto_examples_gaussian_process_plot_compare_gpr_krr.py` (``plot_compare_gpr_krr.py``)
+- **00:02.376**: :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpc.py` (``plot_gpc.py``)
+- **00:01.669**: :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_prior_posterior.py` (``plot_gpr_prior_posterior.py``)
+- **00:00.546**: :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpc_xor.py` (``plot_gpc_xor.py``)
+- **00:00.490**: :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_noisy_targets.py` (``plot_gpr_noisy_targets.py``)
+- **00:00.368**: :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpc_isoprobability.py` (``plot_gpc_isoprobability.py``)

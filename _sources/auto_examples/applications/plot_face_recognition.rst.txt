@@ -64,28 +64,28 @@ Gerhard Schroeder       0.76      0.76      0.76        25
     n_features: 1850
     n_classes: 3
     Extracting the top 150 eigenfaces from 570 faces
-    done in 0.056s
+    done in 0.061s
     Projecting the input data on the eigenfaces orthonormal basis
-    done in 0.005s
+    done in 0.006s
     Fitting the classifier to the training set
-    done in 7.409s
+    done in 8.464s
     Best estimator found by grid search:
     SVC(C=1000.0, class_weight='balanced', gamma=0.001)
     Predicting people's names on the test set
-    done in 0.010s
+    done in 0.011s
                        precision    recall  f1-score   support
 
-      Donald Rumsfeld       0.89      0.86      0.87        36
-        George W Bush       0.90      0.98      0.94       123
-    Gerhard Schroeder       0.95      0.68      0.79        31
+      Donald Rumsfeld       0.91      0.83      0.87        36
+        George W Bush       0.92      0.98      0.94       123
+    Gerhard Schroeder       0.96      0.81      0.88        31
 
-             accuracy                           0.91       190
-            macro avg       0.91      0.84      0.87       190
-         weighted avg       0.91      0.91      0.90       190
+             accuracy                           0.92       190
+            macro avg       0.93      0.87      0.90       190
+         weighted avg       0.92      0.92      0.92       190
 
-    [[ 31   5   0]
+    [[ 30   6   0]
      [  2 120   1]
-     [  2   8  21]]
+     [  1   5  25]]
 
 
 
@@ -233,7 +233,7 @@ Gerhard Schroeder       0.76      0.76      0.76        25
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.044 seconds)
+   **Total running time of the script:** ( 0 minutes  9.158 seconds)
 
 
 .. _sphx_glr_download_auto_examples_applications_plot_face_recognition.py:
