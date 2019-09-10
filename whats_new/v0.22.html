@@ -118,6 +118,7 @@
 <li><a class="reference internal" href="#sklearn-compose"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.compose</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-datasets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.datasets</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-decomposition"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.decomposition</span></code></a></li>
+<li><a class="reference internal" href="#sklearn-dummy"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.dummy</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-ensemble"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.ensemble</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-feature-extraction"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_extraction</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-gaussian-process"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.gaussian_process</span></code></a></li>
@@ -176,6 +177,8 @@ due to deprecation.</p></li>
 <li><p><a class="reference internal" href="../modules/generated/sklearn.linear_model.Ridge.html#sklearn.linear_model.Ridge" title="sklearn.linear_model.Ridge"><code class="xref py py-class docutils literal notranslate"><span class="pre">linear_model.Ridge</span></code></a> when <code class="docutils literal notranslate"><span class="pre">X</span></code> is sparse. <span class="raw-html"><span class="badge badge-danger">Fix</span></span> </p></li>
 <li><p><a class="reference internal" href="../modules/generated/sklearn.model_selection.StratifiedKFold.html#sklearn.model_selection.StratifiedKFold" title="sklearn.model_selection.StratifiedKFold"><code class="xref py py-class docutils literal notranslate"><span class="pre">model_selection.StratifiedKFold</span></code></a> and any use of <code class="docutils literal notranslate"><span class="pre">cv=int</span></code> with a
 classifier. <span class="raw-html"><span class="badge badge-danger">Fix</span></span> </p></li>
+<li><p><a class="reference internal" href="../modules/generated/sklearn.impute.IterativeImputer.html#sklearn.impute.IterativeImputer" title="sklearn.impute.IterativeImputer"><code class="xref py py-class docutils literal notranslate"><span class="pre">impute.IterativeImputer</span></code></a> when <code class="docutils literal notranslate"><span class="pre">X</span></code> has features with no missing
+values. <span class="raw-html"><span class="badge badge-success">Feature</span></span> </p></li>
 </ul>
 <p>Details are listed in the changelog below.</p>
 <p>(While we are trying to better inform users by providing this information, we
@@ -247,6 +250,14 @@ need to store the entire dense matrix at once.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/13960">#13960</a> by <a class="reference external" href="https://github.com/scottgigante">Scott Gigante</a>.</p></li>
 </ul>
 </div>
+<div class="section" id="sklearn-dummy">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.dummy" title="sklearn.dummy"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.dummy</span></code></a><a class="headerlink" href="#sklearn-dummy" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.dummy.DummyClassifier.html#sklearn.dummy.DummyClassifier" title="sklearn.dummy.DummyClassifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">dummy.DummyClassifier</span></code></a> now handles checking the existence
+of the provided constant in multiouput cases.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/14908">#14908</a> by <a class="reference external" href="https://github.com/martinagvilas">Martina G. Vilas</a>.</p></li>
+</ul>
+</div>
 <div class="section" id="sklearn-ensemble">
 <h3><a class="reference internal" href="../modules/classes.html#module-sklearn.ensemble" title="sklearn.ensemble"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.ensemble</span></code></a><a class="headerlink" href="#sklearn-ensemble" title="Permalink to this headline">¶</a></h3>
 <ul>
@@ -267,6 +278,8 @@ subsample to preserve the class balance of the original training set.
 <li><p><span class="raw-html"><span class="badge badge-success">Feature</span></span>  <a class="reference internal" href="../modules/generated/sklearn.inspection.partial_dependence.html#sklearn.inspection.partial_dependence" title="sklearn.inspection.partial_dependence"><code class="xref py py-func docutils literal notranslate"><span class="pre">inspection.partial_dependence</span></code></a> and
 <a class="reference internal" href="../modules/generated/sklearn.inspection.plot_partial_dependence.html#sklearn.inspection.plot_partial_dependence" title="sklearn.inspection.plot_partial_dependence"><code class="xref py py-func docutils literal notranslate"><span class="pre">inspection.plot_partial_dependence</span></code></a> now support the fast ‘recursion’
 method for both estimators. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/13769">#13769</a> by <a class="reference external" href="https://github.com/NicolasHug">Nicolas Hug</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  <a class="reference internal" href="../modules/generated/sklearn.ensemble.HistGradientBoostingRegressor.html#sklearn.ensemble.HistGradientBoostingRegressor" title="sklearn.ensemble.HistGradientBoostingRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.HistGradientBoostingRegressor</span></code></a> now supports
+the ‘least_absolute_deviation’ loss. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/13896">#13896</a> by <a class="reference external" href="https://github.com/NicolasHug">Nicolas Hug</a>.</p></li>
 <li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  Estimators now bin the training and validation data separately to
 avoid any data leak. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/13933">#13933</a> by <a class="reference external" href="https://github.com/NicolasHug">Nicolas Hug</a>.</p></li>
 <li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  Fixed a bug where early stopping would break with string targets.
@@ -332,6 +345,12 @@ estimator’s constructor but not stored as attributes on the instance.
 <li><p><span class="raw-html"><span class="badge badge-success">Major Feature</span></span>  Added <a class="reference internal" href="../modules/generated/sklearn.impute.KNNImputer.html#sklearn.impute.KNNImputer" title="sklearn.impute.KNNImputer"><code class="xref py py-class docutils literal notranslate"><span class="pre">impute.KNNImputer</span></code></a>, to impute missing values using
 k-Nearest Neighbors. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/issues/12852">#12852</a> by <a class="reference external" href="https://github.com/ashimb9">Ashim Bhattarai</a> and
 <a class="reference external" href="https://github.com/thomasjpfan">Thomas Fan</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.impute.IterativeImputer.html#sklearn.impute.IterativeImputer" title="sklearn.impute.IterativeImputer"><code class="xref py py-class docutils literal notranslate"><span class="pre">impute.IterativeImputer</span></code></a> now works when there is only one feature.
+By <a class="reference external" href="https://github.com/sergeyf">Sergey Feldman</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-success">Feature</span></span>  <a class="reference internal" href="../modules/generated/sklearn.impute.IterativeImputer.html#sklearn.impute.IterativeImputer" title="sklearn.impute.IterativeImputer"><code class="xref py py-class docutils literal notranslate"><span class="pre">impute.IterativeImputer</span></code></a> has new <code class="docutils literal notranslate"><span class="pre">skip_compute</span></code> flag that
+is False by default, which, when True, will skip computation on features that
+have no missing values during the fit phase. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/issues/13773">#13773</a> by
+<a class="reference external" href="https://github.com/sergeyf">Sergey Feldman</a>.</p></li>
 </ul>
 </div>
 <div class="section" id="sklearn-inspection">
@@ -374,6 +393,9 @@ and non-contiguous arrays and makes a conversion instead of failing.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/14458">#14458</a> by <a class="reference external" href="https://github.com/glemaitre">Guillaume Lemaitre</a>.</p></li>
 <li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.linear_model.LassoCV.html#sklearn.linear_model.LassoCV" title="sklearn.linear_model.LassoCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">linear_model.LassoCV</span></code></a> no longer forces <code class="docutils literal notranslate"><span class="pre">precompute=False</span></code>
 when fitting the final model. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/14591">#14591</a> by <a class="reference external" href="https://amueller.github.io/">Andreas Müller</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.linear_model.RidgeCV.html#sklearn.linear_model.RidgeCV" title="sklearn.linear_model.RidgeCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">linear_model.RidgeCV</span></code></a> and <a class="reference internal" href="../modules/generated/sklearn.linear_model.RidgeClassifierCV.html#sklearn.linear_model.RidgeClassifierCV" title="sklearn.linear_model.RidgeClassifierCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">linear_model.RidgeClassifierCV</span></code></a>
+now correctly scores when <code class="docutils literal notranslate"><span class="pre">cv=None</span></code>.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/14864">#14864</a> by <a class="reference external" href="https://github.com/venkyyuvy">Venkatachalam N</a>.</p></li>
 </ul>
 </div>
 <div class="section" id="sklearn-manifold">
