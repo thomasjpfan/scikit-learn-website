@@ -18,8 +18,8 @@
   
 
   <link rel="stylesheet" href="../../_static/css/vendor/bootstrap.min.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" /> 
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" /> 
 </head>
 <body>
 
@@ -319,7 +319,6 @@ $(document).ready(function() {
 
     var prevScrollpos = window.pageYOffset;
     hideOnScroll = function(lastScrollTop) {
-        console.log(lastScrollTop > 2, prevScrollpos <= lastScrollTop, hashTargetOnTop());
         if (lastScrollTop > 2 && (prevScrollpos <= lastScrollTop) || hashTargetOnTop()){
             // hide navbar
             navBar.style.top = navBarHeightHidden;
