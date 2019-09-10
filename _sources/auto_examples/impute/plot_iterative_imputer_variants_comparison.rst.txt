@@ -57,41 +57,41 @@ For this particular pattern of missing values we see that
  .. code-block:: none
 
 
-    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:608: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:623: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
       " reached.", ConvergenceWarning)
-    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:608: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:623: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
       " reached.", ConvergenceWarning)
-    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:608: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:623: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
       " reached.", ConvergenceWarning)
-    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:608: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:623: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
       " reached.", ConvergenceWarning)
-    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:608: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:623: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
       " reached.", ConvergenceWarning)
-    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:608: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:623: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
       " reached.", ConvergenceWarning)
-    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:608: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:623: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
       " reached.", ConvergenceWarning)
-    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:608: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:623: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
       " reached.", ConvergenceWarning)
-    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:608: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:623: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
       " reached.", ConvergenceWarning)
-    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:608: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:623: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
       " reached.", ConvergenceWarning)
-    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:608: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:623: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
       " reached.", ConvergenceWarning)
-    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:608: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:623: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
       " reached.", ConvergenceWarning)
-    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:608: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:623: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
       " reached.", ConvergenceWarning)
-    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:608: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:623: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
       " reached.", ConvergenceWarning)
-    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:608: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:623: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
       " reached.", ConvergenceWarning)
-    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:608: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:623: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
       " reached.", ConvergenceWarning)
-    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:608: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:623: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
       " reached.", ConvergenceWarning)
-    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:608: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+    /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/impute/_iterative.py:623: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
       " reached.", ConvergenceWarning)
     /Users/thomasfan/Documents/scikit-learn-bootstrap/examples/impute/plot_iterative_imputer_variants_comparison.py:130: FutureWarning: The 'get_values' method is deprecated and will be removed in a future version. Use '.to_numpy()' or '.array' instead.
       ax.set_yticklabels([" w/ ".join(label) for label in means.index.get_values()])
@@ -203,7 +203,7 @@ For this particular pattern of missing values we see that
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  14.698 seconds)
+   **Total running time of the script:** ( 0 minutes  15.774 seconds)
 
 
 .. _sphx_glr_download_auto_examples_impute_plot_iterative_imputer_variants_comparison.py:

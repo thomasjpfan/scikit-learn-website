@@ -23,19 +23,7 @@ even with a small amount of labeled data.
     :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
 
- Out:
-
- .. code-block:: none
-
-
-
-
-
-
-
-|
 
 
 .. code-block:: default
@@ -111,7 +99,7 @@ even with a small amount of labeled data.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.592 seconds)
+   **Total running time of the script:** ( 0 minutes  0.595 seconds)
 
 
 .. _sphx_glr_download_auto_examples_semi_supervised_plot_label_propagation_versus_svm_iris.py:

@@ -51,19 +51,7 @@ tends to divide natural clusters into unnecessary sub-components.
             :class: sphx-glr-multi-img
 
 
-.. rst-class:: sphx-glr-script-out
 
- Out:
-
- .. code-block:: none
-
-
-
-
-
-
-
-|
 
 
 .. code-block:: default
@@ -179,7 +167,7 @@ tends to divide natural clusters into unnecessary sub-components.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.271 seconds)
+   **Total running time of the script:** ( 0 minutes  7.149 seconds)
 
 
 .. _sphx_glr_download_auto_examples_mixture_plot_concentration_prior.py:

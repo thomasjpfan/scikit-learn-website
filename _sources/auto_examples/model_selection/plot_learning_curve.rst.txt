@@ -29,19 +29,7 @@ the models for each training sizes.
     :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
 
- Out:
-
- .. code-block:: none
-
-
-
-
-
-
-
-|
 
 
 .. code-block:: default
@@ -196,7 +184,7 @@ the models for each training sizes.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.608 seconds)
+   **Total running time of the script:** ( 0 minutes  3.835 seconds)
 
 
 .. _sphx_glr_download_auto_examples_model_selection_plot_learning_curve.py:

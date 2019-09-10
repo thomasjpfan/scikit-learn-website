@@ -5,6 +5,8 @@
 
 Computation times
 =================
-**00:02.740** total execution time for **auto_examples_multioutput** files:
+**00:02.198** total execution time for **auto_examples_multioutput** files:
 
-- **00:02.740**: :ref:`sphx_glr_auto_examples_multioutput_plot_classifier_chain_yeast.py` (``plot_classifier_chain_yeast.py``)
++---------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_multioutput_plot_classifier_chain_yeast.py` (``plot_classifier_chain_yeast.py``) | 00:02.198 | 0.0 MB |
++---------------------------------------------------------------------------------------------------------------+-----------+--------+

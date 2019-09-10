@@ -100,19 +100,7 @@ is not scaled.
             :class: sphx-glr-multi-img
 
 
-.. rst-class:: sphx-glr-script-out
 
- Out:
-
- .. code-block:: none
-
-
-
-
-
-
-
-|
 
 
 .. code-block:: default
@@ -193,7 +181,7 @@ is not scaled.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  14.655 seconds)
+   **Total running time of the script:** ( 0 minutes  14.232 seconds)
 
 
 .. _sphx_glr_download_auto_examples_svm_plot_svm_scale_c.py:

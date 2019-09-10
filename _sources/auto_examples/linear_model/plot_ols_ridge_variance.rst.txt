@@ -41,19 +41,7 @@ of the standard linear regression
             :class: sphx-glr-multi-img
 
 
-.. rst-class:: sphx-glr-script-out
 
- Out:
-
- .. code-block:: none
-
-
-
-
-
-
-
-|
 
 
 .. code-block:: default
@@ -107,7 +95,7 @@ of the standard linear regression
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.218 seconds)
+   **Total running time of the script:** ( 0 minutes  0.200 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_ols_ridge_variance.py:

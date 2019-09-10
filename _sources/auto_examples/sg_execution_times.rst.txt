@@ -5,14 +5,24 @@
 
 Computation times
 =================
-**00:30.389** total execution time for **auto_examples** files:
+**00:22.636** total execution time for **auto_examples** files:
 
-- **00:17.254**: :ref:`sphx_glr_auto_examples_plot_kernel_ridge_regression.py` (``plot_kernel_ridge_regression.py``)
-- **00:03.861**: :ref:`sphx_glr_auto_examples_plot_anomaly_comparison.py` (``plot_anomaly_comparison.py``)
-- **00:03.631**: :ref:`sphx_glr_auto_examples_plot_johnson_lindenstrauss_bound.py` (``plot_johnson_lindenstrauss_bound.py``)
-- **00:02.770**: :ref:`sphx_glr_auto_examples_plot_kernel_approximation.py` (``plot_kernel_approximation.py``)
-- **00:01.962**: :ref:`sphx_glr_auto_examples_plot_multioutput_face_completion.py` (``plot_multioutput_face_completion.py``)
-- **00:00.352**: :ref:`sphx_glr_auto_examples_plot_roc_curve_visualization_api.py` (``plot_roc_curve_visualization_api.py``)
-- **00:00.299**: :ref:`sphx_glr_auto_examples_plot_multilabel.py` (``plot_multilabel.py``)
-- **00:00.176**: :ref:`sphx_glr_auto_examples_plot_isotonic_regression.py` (``plot_isotonic_regression.py``)
-- **00:00.083**: :ref:`sphx_glr_auto_examples_plot_changed_only_pprint_parameter.py` (``plot_changed_only_pprint_parameter.py``)
++-----------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_plot_kernel_ridge_regression.py` (``plot_kernel_ridge_regression.py``)             | 00:10.626 | 0.0 MB |
++-----------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_plot_anomaly_comparison.py` (``plot_anomaly_comparison.py``)                       | 00:04.245 | 0.0 MB |
++-----------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_plot_johnson_lindenstrauss_bound.py` (``plot_johnson_lindenstrauss_bound.py``)     | 00:03.427 | 0.0 MB |
++-----------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_plot_multioutput_face_completion.py` (``plot_multioutput_face_completion.py``)     | 00:02.139 | 0.0 MB |
++-----------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_plot_kernel_approximation.py` (``plot_kernel_approximation.py``)                   | 00:01.515 | 0.0 MB |
++-----------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_plot_multilabel.py` (``plot_multilabel.py``)                                       | 00:00.270 | 0.0 MB |
++-----------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_plot_roc_curve_visualization_api.py` (``plot_roc_curve_visualization_api.py``)     | 00:00.266 | 0.0 MB |
++-----------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_plot_isotonic_regression.py` (``plot_isotonic_regression.py``)                     | 00:00.147 | 0.0 MB |
++-----------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_plot_changed_only_pprint_parameter.py` (``plot_changed_only_pprint_parameter.py``) | 00:00.003 | 0.0 MB |
++-----------------------------------------------------------------------------------------------------------------+-----------+--------+

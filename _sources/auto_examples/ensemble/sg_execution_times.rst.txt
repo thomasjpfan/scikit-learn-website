@@ -5,26 +5,48 @@
 
 Computation times
 =================
-**01:03.952** total execution time for **auto_examples_ensemble** files:
+**01:05.498** total execution time for **auto_examples_ensemble** files:
 
-- **00:13.621**: :ref:`sphx_glr_auto_examples_ensemble_plot_gradient_boosting_early_stopping.py` (``plot_gradient_boosting_early_stopping.py``)
-- **00:10.289**: :ref:`sphx_glr_auto_examples_ensemble_plot_gradient_boosting_regularization.py` (``plot_gradient_boosting_regularization.py``)
-- **00:09.275**: :ref:`sphx_glr_auto_examples_ensemble_plot_adaboost_multiclass.py` (``plot_adaboost_multiclass.py``)
-- **00:06.556**: :ref:`sphx_glr_auto_examples_ensemble_plot_forest_iris.py` (``plot_forest_iris.py``)
-- **00:06.167**: :ref:`sphx_glr_auto_examples_ensemble_plot_ensemble_oob.py` (``plot_ensemble_oob.py``)
-- **00:04.062**: :ref:`sphx_glr_auto_examples_ensemble_plot_adaboost_hastie_10_2.py` (``plot_adaboost_hastie_10_2.py``)
-- **00:02.940**: :ref:`sphx_glr_auto_examples_ensemble_plot_gradient_boosting_oob.py` (``plot_gradient_boosting_oob.py``)
-- **00:02.212**: :ref:`sphx_glr_auto_examples_ensemble_plot_adaboost_twoclass.py` (``plot_adaboost_twoclass.py``)
-- **00:02.173**: :ref:`sphx_glr_auto_examples_ensemble_plot_feature_transformation.py` (``plot_feature_transformation.py``)
-- **00:01.386**: :ref:`sphx_glr_auto_examples_ensemble_plot_forest_importances_faces.py` (``plot_forest_importances_faces.py``)
-- **00:01.015**: :ref:`sphx_glr_auto_examples_ensemble_plot_bias_variance.py` (``plot_bias_variance.py``)
-- **00:00.572**: :ref:`sphx_glr_auto_examples_ensemble_plot_gradient_boosting_regression.py` (``plot_gradient_boosting_regression.py``)
-- **00:00.513**: :ref:`sphx_glr_auto_examples_ensemble_plot_gradient_boosting_quantile.py` (``plot_gradient_boosting_quantile.py``)
-- **00:00.489**: :ref:`sphx_glr_auto_examples_ensemble_plot_isolation_forest.py` (``plot_isolation_forest.py``)
-- **00:00.471**: :ref:`sphx_glr_auto_examples_ensemble_plot_voting_decision_regions.py` (``plot_voting_decision_regions.py``)
-- **00:00.468**: :ref:`sphx_glr_auto_examples_ensemble_plot_random_forest_embedding.py` (``plot_random_forest_embedding.py``)
-- **00:00.434**: :ref:`sphx_glr_auto_examples_ensemble_plot_forest_importances.py` (``plot_forest_importances.py``)
-- **00:00.422**: :ref:`sphx_glr_auto_examples_ensemble_plot_adaboost_regression.py` (``plot_adaboost_regression.py``)
-- **00:00.390**: :ref:`sphx_glr_auto_examples_ensemble_plot_random_forest_regression_multioutput.py` (``plot_random_forest_regression_multioutput.py``)
-- **00:00.276**: :ref:`sphx_glr_auto_examples_ensemble_plot_voting_probas.py` (``plot_voting_probas.py``)
-- **00:00.221**: :ref:`sphx_glr_auto_examples_ensemble_plot_voting_regressor.py` (``plot_voting_regressor.py``)
++----------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_ensemble_plot_gradient_boosting_early_stopping.py` (``plot_gradient_boosting_early_stopping.py``)         | 00:15.038 | 0.0 MB |
++----------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_ensemble_plot_adaboost_multiclass.py` (``plot_adaboost_multiclass.py``)                                   | 00:10.412 | 0.0 MB |
++----------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_ensemble_plot_gradient_boosting_regularization.py` (``plot_gradient_boosting_regularization.py``)         | 00:09.904 | 0.0 MB |
++----------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_ensemble_plot_forest_iris.py` (``plot_forest_iris.py``)                                                   | 00:06.485 | 0.0 MB |
++----------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_ensemble_plot_ensemble_oob.py` (``plot_ensemble_oob.py``)                                                 | 00:05.956 | 0.0 MB |
++----------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_ensemble_plot_adaboost_hastie_10_2.py` (``plot_adaboost_hastie_10_2.py``)                                 | 00:04.409 | 0.0 MB |
++----------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_ensemble_plot_gradient_boosting_oob.py` (``plot_gradient_boosting_oob.py``)                               | 00:02.962 | 0.0 MB |
++----------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_ensemble_plot_adaboost_twoclass.py` (``plot_adaboost_twoclass.py``)                                       | 00:02.349 | 0.0 MB |
++----------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_ensemble_plot_feature_transformation.py` (``plot_feature_transformation.py``)                             | 00:01.919 | 0.0 MB |
++----------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_ensemble_plot_forest_importances_faces.py` (``plot_forest_importances_faces.py``)                         | 00:01.061 | 0.0 MB |
++----------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_ensemble_plot_bias_variance.py` (``plot_bias_variance.py``)                                               | 00:00.958 | 0.0 MB |
++----------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_ensemble_plot_gradient_boosting_regression.py` (``plot_gradient_boosting_regression.py``)                 | 00:00.566 | 0.0 MB |
++----------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_ensemble_plot_voting_decision_regions.py` (``plot_voting_decision_regions.py``)                           | 00:00.502 | 0.0 MB |
++----------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_ensemble_plot_gradient_boosting_quantile.py` (``plot_gradient_boosting_quantile.py``)                     | 00:00.477 | 0.0 MB |
++----------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_ensemble_plot_random_forest_regression_multioutput.py` (``plot_random_forest_regression_multioutput.py``) | 00:00.449 | 0.0 MB |
++----------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_ensemble_plot_random_forest_embedding.py` (``plot_random_forest_embedding.py``)                           | 00:00.437 | 0.0 MB |
++----------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_ensemble_plot_forest_importances.py` (``plot_forest_importances.py``)                                     | 00:00.409 | 0.0 MB |
++----------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_ensemble_plot_isolation_forest.py` (``plot_isolation_forest.py``)                                         | 00:00.379 | 0.0 MB |
++----------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_ensemble_plot_adaboost_regression.py` (``plot_adaboost_regression.py``)                                   | 00:00.342 | 0.0 MB |
++----------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_ensemble_plot_voting_probas.py` (``plot_voting_probas.py``)                                               | 00:00.292 | 0.0 MB |
++----------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_ensemble_plot_voting_regressor.py` (``plot_voting_regressor.py``)                                         | 00:00.193 | 0.0 MB |
++----------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+

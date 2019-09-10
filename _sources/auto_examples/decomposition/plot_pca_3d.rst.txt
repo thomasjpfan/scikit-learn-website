@@ -31,19 +31,7 @@ comes in to choose a direction that is not flat.
             :class: sphx-glr-multi-img
 
 
-.. rst-class:: sphx-glr-script-out
 
- Out:
-
- .. code-block:: none
-
-
-
-
-
-
-
-|
 
 
 .. code-block:: default
@@ -136,7 +124,7 @@ comes in to choose a direction that is not flat.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.243 seconds)
+   **Total running time of the script:** ( 0 minutes  0.194 seconds)
 
 
 .. _sphx_glr_download_auto_examples_decomposition_plot_pca_3d.py:

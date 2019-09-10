@@ -31,19 +31,7 @@ set.
     :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
 
- Out:
-
- .. code-block:: none
-
-
-
-
-
-
-
-|
 
 
 .. code-block:: default
@@ -174,7 +162,7 @@ set.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.323 seconds)
+   **Total running time of the script:** ( 0 minutes  4.230 seconds)
 
 
 .. _sphx_glr_download_auto_examples_classification_plot_classifier_comparison.py:
