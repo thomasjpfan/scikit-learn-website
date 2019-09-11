@@ -282,18 +282,18 @@ For each value of ``n_components``, we plot:
     Embedding 500 samples with dim 64 using various random projections
     /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/random_projection.py:375: DataDimensionalityWarning: The number of components is higher than the number of features: n_features < n_components (64 < 300).The dimensionality of the problem will not be reduced.
       DataDimensionalityWarning)
-    Projected 500 samples from 64 to 300 in 0.016s
-    Random matrix with size: 0.028MB
-    Mean distances rate: 0.96 (0.08)
+    Projected 500 samples from 64 to 300 in 0.018s
+    Random matrix with size: 0.029MB
+    Mean distances rate: 0.98 (0.08)
     /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/random_projection.py:375: DataDimensionalityWarning: The number of components is higher than the number of features: n_features < n_components (64 < 1000).The dimensionality of the problem will not be reduced.
       DataDimensionalityWarning)
-    Projected 500 samples from 64 to 1000 in 0.116s
-    Random matrix with size: 0.095MB
-    Mean distances rate: 1.00 (0.05)
+    Projected 500 samples from 64 to 1000 in 0.093s
+    Random matrix with size: 0.097MB
+    Mean distances rate: 1.01 (0.05)
     /Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/random_projection.py:375: DataDimensionalityWarning: The number of components is higher than the number of features: n_features < n_components (64 < 10000).The dimensionality of the problem will not be reduced.
       DataDimensionalityWarning)
-    Projected 500 samples from 64 to 10000 in 0.566s
-    Random matrix with size: 0.958MB
+    Projected 500 samples from 64 to 10000 in 0.430s
+    Random matrix with size: 0.955MB
     Mean distances rate: 1.00 (0.01)
 
 
@@ -322,7 +322,7 @@ pairwise distances.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.427 seconds)
+   **Total running time of the script:** ( 0 minutes  2.893 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_johnson_lindenstrauss_bound.py:
