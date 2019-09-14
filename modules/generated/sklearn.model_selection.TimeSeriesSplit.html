@@ -133,7 +133,7 @@
             Please <a class="font-weight-bold" href="../../about.html#citing-scikit-learn"><string>cite us</string></a> if you use the software.
           </p>
         </div>
-        <div class="sk-sidebar-toc">
+          <div class="sk-sidebar-toc">
             <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.model_selection</span></code>.TimeSeriesSplit</a><ul>
 <li><a class="reference internal" href="#examples-using-sklearn-model-selection-timeseriessplit">Examples using <code class="docutils literal notranslate"><span class="pre">sklearn.model_selection.TimeSeriesSplit</span></code></a></li>
@@ -141,7 +141,7 @@
 </li>
 </ul>
 
-        </div>
+          </div>
       </div>
     </div>
     <div id="sk-page-content-wrapper">
@@ -151,7 +151,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.model_selection" title="sklearn.model_selection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.model_selection</span></code></a>.TimeSeriesSplit<a class="headerlink" href="#sklearn-model-selection-timeseriessplit" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="sklearn.model_selection.TimeSeriesSplit">
-<em class="property">class </em><code class="sig-prename descclassname">sklearn.model_selection.</code><code class="sig-name descname">TimeSeriesSplit</code><span class="sig-paren">(</span><em class="sig-param">n_splits=5</em>, <em class="sig-param">max_train_size=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/a23484b789/sklearn/model_selection/_split.py#L723"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.model_selection.TimeSeriesSplit" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">sklearn.model_selection.</code><code class="sig-name descname">TimeSeriesSplit</code><span class="sig-paren">(</span><em class="sig-param">n_splits=5</em>, <em class="sig-param">max_train_size=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/8da8fcabb9/sklearn/model_selection/_split.py#L723"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.model_selection.TimeSeriesSplit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Time Series cross-validator</p>
 <p>Provides train/test indices to split time series data samples
 that are observed at fixed time intervals, in train/test sets.
@@ -217,13 +217,13 @@ where <code class="docutils literal notranslate"><span class="pre">n_samples</sp
 </table>
 <dl class="method">
 <dt id="sklearn.model_selection.TimeSeriesSplit.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">n_splits=5</em>, <em class="sig-param">max_train_size=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/a23484b789/sklearn/model_selection/_split.py#L777"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.model_selection.TimeSeriesSplit.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">n_splits=5</em>, <em class="sig-param">max_train_size=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/8da8fcabb9/sklearn/model_selection/_split.py#L777"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.model_selection.TimeSeriesSplit.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sklearn.model_selection.TimeSeriesSplit.get_n_splits">
-<code class="sig-name descname">get_n_splits</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X=None</em>, <em class="sig-param">y=None</em>, <em class="sig-param">groups=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/a23484b789/sklearn/model_selection/_split.py#L329"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.model_selection.TimeSeriesSplit.get_n_splits" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_n_splits</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X=None</em>, <em class="sig-param">y=None</em>, <em class="sig-param">groups=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/8da8fcabb9/sklearn/model_selection/_split.py#L329"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.model_selection.TimeSeriesSplit.get_n_splits" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the number of splitting iterations in the cross-validator</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -247,7 +247,7 @@ where <code class="docutils literal notranslate"><span class="pre">n_samples</sp
 
 <dl class="method">
 <dt id="sklearn.model_selection.TimeSeriesSplit.split">
-<code class="sig-name descname">split</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em>, <em class="sig-param">groups=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/a23484b789/sklearn/model_selection/_split.py#L781"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.model_selection.TimeSeriesSplit.split" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">split</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em>, <em class="sig-param">groups=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/8da8fcabb9/sklearn/model_selection/_split.py#L781"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.model_selection.TimeSeriesSplit.split" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate indices to split data into training and test set.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
