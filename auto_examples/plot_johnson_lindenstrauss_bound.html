@@ -56,7 +56,34 @@
         <li class="nav-item">
           <a class="sk-nav-link nav-link" href="index.html">Examples</a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../tutorial/basic/tutorial.html">Quick Start</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../tutorial/index.html">Tutorial</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../glossary.html">Glossary</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../developers/index.html">Development</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../faq.html">FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../related_projects.html">Related packages</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../roadmap.html">Roadmap</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../about.html">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../documentation.html">Documentation</a>
+        </li>
+        <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="sk-nav-dropdown-item dropdown-item" href="../tutorial/basic/tutorial.html">Quick Start</a>
@@ -457,19 +484,29 @@ $(document).ready(function() {
     // Hide navbar on load if hash target is on top
     var navBar = document.getElementById("navbar");
     var navBarHeightHidden = "-" + navBar.getBoundingClientRect().height + "px";
-    if (hashTargetOnTop()) {
-        // hide navbar
+    var $window = $(window);
+
+    hideNavBar = function() {
         navBar.style.top = navBarHeightHidden;
+    };
+
+    showNavBar = function() {
+        navBar.style.top = "0";
+    }
+
+    if (hashTargetOnTop() && ($window.width() >= 768)) {
+        hideNavBar()
     }
 
     var prevScrollpos = window.pageYOffset;
     hideOnScroll = function(lastScrollTop) {
+        if ($window.width() < 768) {
+            return;
+        }
         if (lastScrollTop > 2 && (prevScrollpos <= lastScrollTop) || hashTargetOnTop()){
-            // hide navbar
-            navBar.style.top = navBarHeightHidden;
+            hideNavBar()
         } else {
-            // show navbar
-            navBar.style.top = "0";
+            showNavBar()
         }
         prevScrollpos = lastScrollTop;
     };
@@ -480,7 +517,6 @@ $(document).ready(function() {
         window.mozRequestAnimationFrame ||
         window.msRequestAnimationFrame ||
         window.oRequestAnimationFrame;
-    var $window = $(window);
     var lastScrollTop = $window.scrollTop();
 
     if (raf) {
