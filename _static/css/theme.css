@@ -138,8 +138,8 @@ div.clearer {
 /* Button */
 
 .sk-btn-primary {
-  background-color: #388bb5;
-  border-color: #388bb5;
+  background-color: #30799C;
+  border-color: #30799C;
   color: white;
 }
 
@@ -286,7 +286,7 @@ div.sk-landing-bg-more-info {
 }
 
 .sk-landing-call-header {
-  color: #ff921f;
+  color: #E07200;
   font-weight: 700;
 }
 
