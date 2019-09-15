@@ -14,3 +14,8 @@
 .. raw:: html
 
     <div class="clearer"></div>
+
+
+.. toctree::
+
+    sklearn.compose
