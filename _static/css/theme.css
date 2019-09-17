@@ -509,6 +509,10 @@ div.sk-sidebar-toc-wrapper {
   padding-right: 1.75rem;
 }
 
+div.sk-sidebar-toc-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
 div.sk-sidebar-toc-wrapper::after {
   display: block;
   content: "";
