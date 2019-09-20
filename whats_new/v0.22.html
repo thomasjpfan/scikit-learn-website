@@ -142,8 +142,9 @@
 <li><a class="reference internal" href="#changelog">Changelog</a><ul>
 <li><a class="reference internal" href="#sklearn-base"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.base</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-calibration"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.calibration</span></code></a></li>
-<li><a class="reference internal" href="#sklearn-compose"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.compose</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-cluster"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.cluster</span></code></a></li>
+<li><a class="reference internal" href="#sklearn-compose"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.compose</span></code></a></li>
+<li><a class="reference internal" href="#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.cluster</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-cross-decomposition"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.cross_decomposition</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-datasets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.datasets</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-decomposition"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.decomposition</span></code></a></li>
@@ -167,6 +168,7 @@
 <li><a class="reference internal" href="#sklearn-svm"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.svm</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-tree"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.tree</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.utils</span></code></a></li>
+<li><a class="reference internal" href="#id2"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.metrics</span></code></a></li>
 <li><a class="reference internal" href="#miscellaneous">Miscellaneous</a></li>
 </ul>
 </li>
@@ -231,6 +233,14 @@ given a <code class="docutils literal notranslate"><span class="pre">sample_weig
 by <a class="reference external" href="https://github.com/wdevazelhes">William de Vazelhes</a>.</p></li>
 </ul>
 </div>
+<div class="section" id="sklearn-cluster">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.cluster" title="sklearn.cluster"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.cluster</span></code></a><a class="headerlink" href="#sklearn-cluster" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-success">Feature</span></span>  <a class="reference internal" href="../modules/generated/sklearn.cluster.SpectralClustering.html#sklearn.cluster.SpectralClustering" title="sklearn.cluster.SpectralClustering"><code class="xref py py-class docutils literal notranslate"><span class="pre">cluster.SpectralClustering</span></code></a> now accepts precomputed sparse
+neighbors graph as input. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/issues/10482">#10482</a> by <a class="reference external" href="https://github.com/TomDLT">Tom Dupre la Tour</a> and
+<a class="reference external" href="https://github.com/thechargedneutron">Kumar Ashutosh</a>.</p></li>
+</ul>
+</div>
 <div class="section" id="sklearn-compose">
 <h3><a class="reference internal" href="../modules/classes.html#module-sklearn.compose" title="sklearn.compose"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.compose</span></code></a><a class="headerlink" href="#sklearn-compose" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -243,8 +253,8 @@ pass <code class="docutils literal notranslate"><span class="pre">**fit_params</
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/14890">#14890</a> by <a class="reference external" href="https://github.com/mfcabrera">Miguel Cabrera</a>.</p></li>
 </ul>
 </div>
-<div class="section" id="sklearn-cluster">
-<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.cluster" title="sklearn.cluster"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.cluster</span></code></a><a class="headerlink" href="#sklearn-cluster" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.cluster" title="sklearn.cluster"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.cluster</span></code></a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  <a class="reference internal" href="../modules/generated/sklearn.cluster.SpectralClustering.html#sklearn.cluster.SpectralClustering" title="sklearn.cluster.SpectralClustering"><code class="xref py py-class docutils literal notranslate"><span class="pre">cluster.SpectralClustering</span></code></a> now accepts a <code class="docutils literal notranslate"><span class="pre">n_components</span></code>
 parameter. This parameter extends <code class="docutils literal notranslate"><span class="pre">SpectralClustering</span></code> class functionality to
@@ -266,12 +276,18 @@ with a target matrix <code class="docutils literal notranslate"><span class="pre
 </div>
 <div class="section" id="sklearn-datasets">
 <h3><a class="reference internal" href="../modules/classes.html#module-sklearn.datasets" title="sklearn.datasets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.datasets</span></code></a><a class="headerlink" href="#sklearn-datasets" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
+<ul>
 <li><p><span class="raw-html"><span class="badge badge-success">Feature</span></span>  <a class="reference internal" href="../modules/generated/sklearn.datasets.fetch_openml.html#sklearn.datasets.fetch_openml" title="sklearn.datasets.fetch_openml"><code class="xref py py-func docutils literal notranslate"><span class="pre">datasets.fetch_openml</span></code></a> now supports heterogeneous data using
 pandas by setting <code class="docutils literal notranslate"><span class="pre">as_frame=True</span></code>. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/13902">#13902</a> by <a class="reference external" href="https://github.com/thomasjpfan">Thomas Fan</a>.</p></li>
 <li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  The parameter <code class="docutils literal notranslate"><span class="pre">return_X_y</span></code> was added to
 <a class="reference internal" href="../modules/generated/sklearn.datasets.fetch_20newsgroups.html#sklearn.datasets.fetch_20newsgroups" title="sklearn.datasets.fetch_20newsgroups"><code class="xref py py-func docutils literal notranslate"><span class="pre">datasets.fetch_20newsgroups</span></code></a> and <a class="reference internal" href="../modules/generated/sklearn.datasets.fetch_olivetti_faces.html#sklearn.datasets.fetch_olivetti_faces" title="sklearn.datasets.fetch_olivetti_faces"><code class="xref py py-func docutils literal notranslate"><span class="pre">datasets.fetch_olivetti_faces</span></code></a>
 . <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/14259">#14259</a> by <a class="reference external" href="https://github.com/souravsingh">Sourav Singh</a>.</p></li>
+<li><dl class="simple">
+<dt><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  <a class="reference internal" href="../modules/generated/sklearn.datasets.make_classification.html#sklearn.datasets.make_classification" title="sklearn.datasets.make_classification"><code class="xref py py-func docutils literal notranslate"><span class="pre">datasets.make_classification</span></code></a> now accepts array-like</dt><dd><p><code class="docutils literal notranslate"><span class="pre">weights</span></code> parameter, i.e. list or numpy.array, instead of list only.</p>
+</dd>
+</dl>
+<p><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/14764">#14764</a> by <a class="reference external" href="https://github.com/CatChenal">Cat Chenal</a>.</p>
+</li>
 <li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  Fixed a bug in <a class="reference internal" href="../modules/generated/sklearn.datasets.fetch_openml.html#sklearn.datasets.fetch_openml" title="sklearn.datasets.fetch_openml"><code class="xref py py-func docutils literal notranslate"><span class="pre">datasets.fetch_openml</span></code></a>, which failed to load
 an OpenML dataset that contains an ignored feature.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/14623">#14623</a> by <a class="reference external" href="https://github.com/HabchiSarra">Sarra Habchi</a>.</p></li>
@@ -304,11 +320,19 @@ underlying <code class="docutils literal notranslate"><span class="pre">LassoLar
 <li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.dummy.DummyClassifier.html#sklearn.dummy.DummyClassifier" title="sklearn.dummy.DummyClassifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">dummy.DummyClassifier</span></code></a> now handles checking the existence
 of the provided constant in multiouput cases.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/14908">#14908</a> by <a class="reference external" href="https://github.com/martinagvilas">Martina G. Vilas</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-warning">API Change</span></span>  The <code class="docutils literal notranslate"><span class="pre">outputs_2d_</span></code> attribute is deprecated in
+<a class="reference internal" href="../modules/generated/sklearn.dummy.DummyClassifier.html#sklearn.dummy.DummyClassifier" title="sklearn.dummy.DummyClassifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">dummy.DummyClassifier</span></code></a> and <a class="reference internal" href="../modules/generated/sklearn.dummy.DummyRegressor.html#sklearn.dummy.DummyRegressor" title="sklearn.dummy.DummyRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">dummy.DummyRegressor</span></code></a>. It is
+equivalent to <code class="docutils literal notranslate"><span class="pre">n_outputs</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/14933">#14933</a> by <a class="reference external" href="https://github.com/NicolasHug">Nicolas Hug</a></p></li>
 </ul>
 </div>
 <div class="section" id="sklearn-ensemble">
 <h3><a class="reference internal" href="../modules/classes.html#module-sklearn.ensemble" title="sklearn.ensemble"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.ensemble</span></code></a><a class="headerlink" href="#sklearn-ensemble" title="Permalink to this headline">¶</a></h3>
 <ul>
+<li><p><span class="raw-html"><span class="badge badge-success">Major Feature</span></span>  Added <a class="reference internal" href="../modules/generated/sklearn.ensemble.StackingClassifier.html#sklearn.ensemble.StackingClassifier" title="sklearn.ensemble.StackingClassifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.StackingClassifier</span></code></a> and
+<a class="reference internal" href="../modules/generated/sklearn.ensemble.StackingRegressor.html#sklearn.ensemble.StackingRegressor" title="sklearn.ensemble.StackingRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.StackingRegressor</span></code></a> to stack predictors using a final
+classifier or regressor.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/11047">#11047</a> by <a class="reference external" href="https://github.com/glemaitre">Guillaume Lemaitre</a> and
+<a class="reference external" href="https://github.com/caioaao">Caio Oliveira</a>.</p></li>
 <li><p>Many improvements were made to
 <a class="reference internal" href="../modules/generated/sklearn.ensemble.HistGradientBoostingClassifier.html#sklearn.ensemble.HistGradientBoostingClassifier" title="sklearn.ensemble.HistGradientBoostingClassifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.HistGradientBoostingClassifier</span></code></a> and
 <a class="reference internal" href="../modules/generated/sklearn.ensemble.HistGradientBoostingRegressor.html#sklearn.ensemble.HistGradientBoostingRegressor" title="sklearn.ensemble.HistGradientBoostingRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.HistGradientBoostingRegressor</span></code></a>:</p>
@@ -332,13 +356,12 @@ the ‘least_absolute_deviation’ loss. <a class="reference external" href="htt
 avoid any data leak. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/13933">#13933</a> by <a class="reference external" href="https://github.com/NicolasHug">Nicolas Hug</a>.</p></li>
 <li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  Fixed a bug where early stopping would break with string targets.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/14710">#14710</a> by <a class="reference external" href="https://github.com/glemaitre">Guillaume Lemaitre</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.ensemble.HistGradientBoostingClassifier.html#sklearn.ensemble.HistGradientBoostingClassifier" title="sklearn.ensemble.HistGradientBoostingClassifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.HistGradientBoostingClassifier</span></code></a> now raises an error
+if <code class="docutils literal notranslate"><span class="pre">categorical_crossentropy</span></code> loss is given for a binary classification
+problem. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/14869">#14869</a> by <a class="reference external" href="https://github.com/adrinjalali">Adrin Jalali</a>.</p></li>
 </ul>
 <p>Note that pickles from 0.21 will not work in 0.22.</p>
 </li>
-<li><p><span class="raw-html"><span class="badge badge-info">Efficiency</span></span>  <code class="xref py py-meth docutils literal notranslate"><span class="pre">ensemble.MissingIndicator.fit_transform</span></code> the
-_get_missing_features_info function is now called once when calling
-fit_transform for MissingIndicator class. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/14356">#14356</a> by :user:
-<code class="docutils literal notranslate"><span class="pre">Harsh</span> <span class="pre">Soni</span> <span class="pre">&lt;harsh020&gt;</span></code>.</p></li>
 <li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.ensemble.VotingClassifier.html#sklearn.ensemble.VotingClassifier.predict_proba" title="sklearn.ensemble.VotingClassifier.predict_proba"><code class="xref py py-func docutils literal notranslate"><span class="pre">ensemble.VotingClassifier.predict_proba</span></code></a> will no longer be
 present when <code class="docutils literal notranslate"><span class="pre">voting='hard'</span></code>. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/14287">#14287</a> by <a class="reference external" href="https://github.com/thomasjpfan">Thomas Fan</a>.</p></li>
 <li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  Run by default
@@ -359,6 +382,17 @@ the decision function as in the literature. Thus, <code class="docutils literal 
 Users are recommended to use <a class="reference internal" href="../modules/generated/sklearn.ensemble.HistGradientBoostingClassifier.html#sklearn.ensemble.HistGradientBoostingClassifier" title="sklearn.ensemble.HistGradientBoostingClassifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.HistGradientBoostingClassifier</span></code></a>
 and <a class="reference internal" href="../modules/generated/sklearn.ensemble.HistGradientBoostingRegressor.html#sklearn.ensemble.HistGradientBoostingRegressor" title="sklearn.ensemble.HistGradientBoostingRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.HistGradientBoostingRegressor</span></code></a> instead.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/14907">#14907</a> by <a class="reference external" href="https://github.com/adrinjalali">Adrin Jalali</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  Addition of <code class="docutils literal notranslate"><span class="pre">max_samples</span></code> argument allows limiting
+size of bootstrap samples to be less than size of dataset. Added to
+<code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.forest.ForestClassifier</span></code>,
+<code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.forest.ForestRegressor</span></code>,
+<code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.forest.RandomForestClassifier</span></code>,
+<code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.forest.RandomForestRegressor</span></code>,
+<code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.forest.ExtraTreesClassifier</span></code>,
+<code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.forest.ExtraTreesRegressor</span></code>,
+<code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.forest.RandomTreesEmbedding</span></code>. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/14682">#14682</a> by
+<a class="reference external" href="https://github.com/notmatthancock">Matt Hancock</a> and
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/5963">#5963</a> by <a class="reference external" href="https://github.com/DrDub">Pablo Duboue</a>.</p></li>
 </ul>
 </div>
 <div class="section" id="sklearn-feature-extraction">
@@ -414,6 +448,8 @@ have no missing values during the fit phase. <a class="reference external" href=
 <a class="reference external" href="https://github.com/sergeyf">Sergey Feldman</a>.</p></li>
 <li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.impute.IterativeImputer.html#sklearn.impute.IterativeImputer" title="sklearn.impute.IterativeImputer"><code class="xref py py-class docutils literal notranslate"><span class="pre">impute.IterativeImputer</span></code></a> now works when there is only one feature.
 By <a class="reference external" href="https://github.com/sergeyf">Sergey Feldman</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-info">Efficiency</span></span>  <a class="reference internal" href="../modules/generated/sklearn.impute.MissingIndicator.html#sklearn.impute.MissingIndicator.fit_transform" title="sklearn.impute.MissingIndicator.fit_transform"><code class="xref py py-meth docutils literal notranslate"><span class="pre">impute.MissingIndicator.fit_transform</span></code></a> avoid repeated
+computation of the masked matrix. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/14356">#14356</a> by <a class="reference external" href="https://github.com/harsh020">Harsh Soni</a>.</p></li>
 </ul>
 </div>
 <div class="section" id="sklearn-inspection">
@@ -464,6 +500,12 @@ now correctly scores when <code class="docutils literal notranslate"><span class
 <div class="section" id="sklearn-manifold">
 <h3><a class="reference internal" href="../modules/classes.html#module-sklearn.manifold" title="sklearn.manifold"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.manifold</span></code></a><a class="headerlink" href="#sklearn-manifold" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-success">Feature</span></span>  <a class="reference internal" href="../modules/generated/sklearn.manifold.Isomap.html#sklearn.manifold.Isomap" title="sklearn.manifold.Isomap"><code class="xref py py-class docutils literal notranslate"><span class="pre">manifold.Isomap</span></code></a>, <a class="reference internal" href="../modules/generated/sklearn.manifold.TSNE.html#sklearn.manifold.TSNE" title="sklearn.manifold.TSNE"><code class="xref py py-class docutils literal notranslate"><span class="pre">manifold.TSNE</span></code></a>, and
+<a class="reference internal" href="../modules/generated/sklearn.manifold.SpectralEmbedding.html#sklearn.manifold.SpectralEmbedding" title="sklearn.manifold.SpectralEmbedding"><code class="xref py py-class docutils literal notranslate"><span class="pre">manifold.SpectralEmbedding</span></code></a> now accept precomputed sparse
+neighbors graph as input. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/issues/10482">#10482</a> by <a class="reference external" href="https://github.com/TomDLT">Tom Dupre la Tour</a> and
+<a class="reference external" href="https://github.com/thechargedneutron">Kumar Ashutosh</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-warning">API Change</span></span>  Deprecate <code class="docutils literal notranslate"><span class="pre">training_data_</span></code> unused attribute in
+<a class="reference internal" href="../modules/generated/sklearn.manifold.Isomap.html#sklearn.manifold.Isomap" title="sklearn.manifold.Isomap"><code class="xref py py-class docutils literal notranslate"><span class="pre">manifold.Isomap</span></code></a>. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/issues/10482">#10482</a> by <a class="reference external" href="https://github.com/TomDLT">Tom Dupre la Tour</a>.</p></li>
 <li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  Fixed a bug where <a class="reference internal" href="../modules/generated/sklearn.manifold.spectral_embedding.html#sklearn.manifold.spectral_embedding" title="sklearn.manifold.spectral_embedding"><code class="xref py py-func docutils literal notranslate"><span class="pre">manifold.spectral_embedding</span></code></a> (and therefore
 <a class="reference internal" href="../modules/generated/sklearn.manifold.SpectralEmbedding.html#sklearn.manifold.SpectralEmbedding" title="sklearn.manifold.SpectralEmbedding"><code class="xref py py-class docutils literal notranslate"><span class="pre">manifold.SpectralEmbedding</span></code></a> and <a class="reference internal" href="../modules/generated/sklearn.cluster.SpectralClustering.html#sklearn.cluster.SpectralClustering" title="sklearn.cluster.SpectralClustering"><code class="xref py py-class docutils literal notranslate"><span class="pre">cluster.SpectralClustering</span></code></a>)
 computed wrong eigenvalues with <code class="docutils literal notranslate"><span class="pre">eigen_solver='amg'</span></code> when
@@ -539,6 +581,18 @@ now be near-equally sized. <a class="reference external" href="https://github.co
 <div class="section" id="sklearn-neighbors">
 <h3><a class="reference internal" href="../modules/classes.html#module-sklearn.neighbors" title="sklearn.neighbors"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.neighbors</span></code></a><a class="headerlink" href="#sklearn-neighbors" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-success">Major Feature</span></span>  Added <a class="reference internal" href="../modules/generated/sklearn.neighbors.KNeighborsTransformer.html#sklearn.neighbors.KNeighborsTransformer" title="sklearn.neighbors.KNeighborsTransformer"><code class="xref py py-class docutils literal notranslate"><span class="pre">neighbors.KNeighborsTransformer</span></code></a> and
+<a class="reference internal" href="../modules/generated/sklearn.neighbors.RadiusNeighborsTransformer.html#sklearn.neighbors.RadiusNeighborsTransformer" title="sklearn.neighbors.RadiusNeighborsTransformer"><code class="xref py py-class docutils literal notranslate"><span class="pre">neighbors.RadiusNeighborsTransformer</span></code></a>, which transform input dataset
+into a sparse neighbors graph. They give finer control on nearest neighbors
+computations and enable easy pipeline caching for multiple use.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/issues/10482">#10482</a> by <a class="reference external" href="https://github.com/TomDLT">Tom Dupre la Tour</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-success">Feature</span></span>  <a class="reference internal" href="../modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier" title="sklearn.neighbors.KNeighborsClassifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">neighbors.KNeighborsClassifier</span></code></a>,
+<a class="reference internal" href="../modules/generated/sklearn.neighbors.KNeighborsRegressor.html#sklearn.neighbors.KNeighborsRegressor" title="sklearn.neighbors.KNeighborsRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">neighbors.KNeighborsRegressor</span></code></a>,
+<a class="reference internal" href="../modules/generated/sklearn.neighbors.RadiusNeighborsClassifier.html#sklearn.neighbors.RadiusNeighborsClassifier" title="sklearn.neighbors.RadiusNeighborsClassifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">neighbors.RadiusNeighborsClassifier</span></code></a>,
+<a class="reference internal" href="../modules/generated/sklearn.neighbors.RadiusNeighborsRegressor.html#sklearn.neighbors.RadiusNeighborsRegressor" title="sklearn.neighbors.RadiusNeighborsRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">neighbors.RadiusNeighborsRegressor</span></code></a>, and
+<a class="reference internal" href="../modules/generated/sklearn.neighbors.LocalOutlierFactor.html#sklearn.neighbors.LocalOutlierFactor" title="sklearn.neighbors.LocalOutlierFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">neighbors.LocalOutlierFactor</span></code></a> now accept precomputed sparse
+neighbors graph as input. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/issues/10482">#10482</a> by <a class="reference external" href="https://github.com/TomDLT">Tom Dupre la Tour</a> and
+<a class="reference external" href="https://github.com/thechargedneutron">Kumar Ashutosh</a>.</p></li>
 <li><p><span class="raw-html"><span class="badge badge-success">Feature</span></span>  <a class="reference internal" href="../modules/generated/sklearn.neighbors.RadiusNeighborsClassifier.html#sklearn.neighbors.RadiusNeighborsClassifier" title="sklearn.neighbors.RadiusNeighborsClassifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">neighbors.RadiusNeighborsClassifier</span></code></a> now supports
 predicting probabilities by using <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code> and supports more
 outlier_label options: ‘most_frequent’, or different outlier_labels
@@ -615,6 +669,9 @@ and <a class="reference internal" href="../modules/generated/sklearn.ensemble.Gr
 <a class="reference internal" href="../modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier" title="sklearn.tree.DecisionTreeClassifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">tree.DecisionTreeClassifier</span></code></a> and
 <a class="reference internal" href="../modules/generated/sklearn.tree.DecisionTreeRegressor.html#sklearn.tree.DecisionTreeRegressor" title="sklearn.tree.DecisionTreeRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">tree.DecisionTreeRegressor</span></code></a>, and the parameter has no effect.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/14907">#14907</a> by <a class="reference external" href="https://github.com/adrinjalali">Adrin Jalali</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-warning">API Change</span></span>  The <code class="docutils literal notranslate"><span class="pre">classes_</span></code> and <code class="docutils literal notranslate"><span class="pre">n_classes_</span></code> attributes of
+<a class="reference internal" href="../modules/generated/sklearn.tree.DecisionTreeRegressor.html#sklearn.tree.DecisionTreeRegressor" title="sklearn.tree.DecisionTreeRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">tree.DecisionTreeRegressor</span></code></a> are now deprecated. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/15028">#15028</a> by
+<a class="reference external" href="https://github.com/meiguan">Mei Guan</a>, <a class="reference external" href="https://github.com/NicolasHug">Nicolas Hug</a>, and <a class="reference external" href="https://github.com/adrinjalali">Adrin Jalali</a>.</p></li>
 </ul>
 </div>
 <div class="section" id="sklearn-utils">
@@ -640,6 +697,17 @@ refactoring was done.
 <li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  <a class="reference internal" href="../modules/generated/sklearn.utils.extmath.safe_sparse_dot.html#sklearn.utils.extmath.safe_sparse_dot" title="sklearn.utils.extmath.safe_sparse_dot"><code class="xref py py-func docutils literal notranslate"><span class="pre">utils.extmath.safe_sparse_dot</span></code></a> works between 3D+ ndarray
 and sparse matrix.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/14538">#14538</a> by <a class="reference external" href="https://github.com/jeremiedbb">Jérémie du Boisberranger</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.utils.check_array.html#sklearn.utils.check_array" title="sklearn.utils.check_array"><code class="xref py py-func docutils literal notranslate"><span class="pre">utils.check_array</span></code></a> is now raising an error instead of casting
+NaN to integer.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/14872">#14872</a> by <a class="reference external" href="https://github.com/rth">Roman Yurchak</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.metrics" title="sklearn.metrics"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.metrics</span></code></a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-warning">API Change</span></span>  scoring=”neg_brier_score” should be used instead of
+scoring=”brier_score_loss” which is now deprecated.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/14898">#14898</a> by <a class="reference external" href="https://github.com/stefan-matcovici">Stefan Matcovici</a>.</p></li>
 </ul>
 </div>
 <div class="section" id="miscellaneous">

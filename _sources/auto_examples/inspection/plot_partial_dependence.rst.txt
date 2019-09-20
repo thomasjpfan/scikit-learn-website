@@ -119,8 +119,8 @@ plots
  .. code-block:: none
 
     Training MLPRegressor...
-    done in 4.890s
-    Test R2 score: 0.82
+    done in 2.188s
+    Test R2 score: 0.81
 
 
 
@@ -159,7 +159,7 @@ the model-agnostic (brute-force) method:
     fig = plt.gcf()
     fig.suptitle('Partial dependence of house value on non-location features\n'
                  'for the California housing dataset, with MLPRegressor')
-    fig.tight_layout(rect=[0, 0.03, 1, 0.95])
+    fig.subplots_adjust(wspace=0.8, hspace=0.3)
 
 
 
@@ -175,7 +175,7 @@ the model-agnostic (brute-force) method:
  .. code-block:: none
 
     Computing partial dependence plots...
-    done in 1.117s
+    done in 1.424s
 
 
 
@@ -207,7 +207,7 @@ plots either or one or two variables at a time.
  .. code-block:: none
 
     Training GradientBoostingRegressor...
-    done in 0.460s
+    done in 0.494s
     Test R2 score: 0.85
 
 
@@ -238,7 +238,8 @@ dependence plots for pairs of interacting features:
     fig = plt.gcf()
     fig.suptitle('Partial dependence of house value on non-location features\n'
                  'for the California housing dataset, with Gradient Boosting')
-    fig.tight_layout(rect=[0, 0.03, 1, 0.95])
+    fig.subplots_adjust(wspace=0.8, hspace=0.3)
+
 
 
 
@@ -254,7 +255,7 @@ dependence plots for pairs of interacting features:
  .. code-block:: none
 
     Computing partial dependence plots...
-    done in 0.178s
+    done in 0.156s
 
 
 
@@ -330,7 +331,7 @@ this time in 3 dimensions.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.308 seconds)
+   **Total running time of the script:** ( 0 minutes  4.774 seconds)
 
 
 .. _sphx_glr_download_auto_examples_inspection_plot_partial_dependence.py:

@@ -78,6 +78,26 @@ Miscellaneous and introductory examples for scikit-learn.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="    See also sphx_glr_auto_examples_plot_roc_curve_visualization_api.py">
+
+.. only:: html
+
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_partial_dependence_visualization_api_thumb.png
+
+     :ref:`sphx_glr_auto_examples_plot_partial_dependence_visualization_api.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_partial_dependence_visualization_api
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This example shows the use of multi-output estimator to complete images. The goal is to predict...">
 
 .. only:: html
@@ -2277,6 +2297,26 @@ Examples concerning the :mod:`sklearn.ensemble` module.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Stacking refers to a method to blend estimators. In this strategy, some estimators are individu...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/ensemble/images/thumb/sphx_glr_plot_stack_predictors_thumb.png
+
+     :ref:`sphx_glr_auto_examples_ensemble_plot_stack_predictors.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/ensemble/plot_stack_predictors
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Gradient boosting is an ensembling technique where several weak learners (regression trees) are...">
 
 .. only:: html
@@ -4414,6 +4454,46 @@ Examples concerning the :mod:`sklearn.neighbors` module.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This examples demonstrates how to precompute the k nearest neighbors before using them in KNeig...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/neighbors/images/thumb/sphx_glr_plot_caching_nearest_neighbors_thumb.png
+
+     :ref:`sphx_glr_auto_examples_neighbors_plot_caching_nearest_neighbors.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/neighbors/plot_caching_nearest_neighbors
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates a learned distance metric that maximizes the nearest neighbors classif...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/neighbors/images/thumb/sphx_glr_plot_nca_illustration_thumb.png
+
+     :ref:`sphx_glr_auto_examples_neighbors_plot_nca_illustration.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/neighbors/plot_nca_illustration
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="The Local Outlier Factor (LOF) algorithm is an unsupervised anomaly detection method which comp...">
 
 .. only:: html
@@ -4474,26 +4554,6 @@ Examples concerning the :mod:`sklearn.neighbors` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="An example illustrating the goal of learning a distance metric that maximizes the nearest neigh...">
-
-.. only:: html
-
- .. figure:: /auto_examples/neighbors/images/thumb/sphx_glr_plot_nca_illustration_thumb.png
-
-     :ref:`sphx_glr_auto_examples_neighbors_plot_nca_illustration.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/neighbors/plot_nca_illustration
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This example does not perform any learning over the data (see sphx_glr_auto_examples_applicatio...">
 
 .. only:: html
@@ -4531,6 +4591,26 @@ Examples concerning the :mod:`sklearn.neighbors` module.
    :hidden:
 
    /auto_examples/neighbors/plot_kde_1d
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example presents how to chain KNeighborsTransformer and TSNE in a pipeline. It also shows ...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/neighbors/images/thumb/sphx_glr_approximate_nearest_neighbors_thumb.png
+
+     :ref:`sphx_glr_auto_examples_neighbors_approximate_nearest_neighbors.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/neighbors/approximate_nearest_neighbors
 .. raw:: html
 
     <div style='clear:both'></div>
