@@ -101,7 +101,10 @@
         </li>
       </ul>
       <div class="sk-search-form">
-          <div class="gcse-search" id="cse" data-linktarget="_parent"></div>
+          <div class="gcse-search" id="cse"
+          personalizedAds="false"
+          as_sitesearch="scikit-learn.org/dev"
+          data-linktarget="_parent"></div>
       </div>
     </div>
   </div>
@@ -151,7 +154,7 @@
 </div>
 <div class="sphx-glr-example-title section" id="faces-dataset-decompositions">
 <span id="sphx-glr-auto-examples-decomposition-plot-faces-decomposition-py"></span><h1>Faces dataset decompositions<a class="headerlink" href="#faces-dataset-decompositions" title="Permalink to this headline">¶</a></h1>
-<p>This example applies to <span class="xref std std-ref">olivetti_faces</span> different unsupervised
+<p>This example applies to <a class="reference internal" href="../../datasets/index.html#olivetti-faces-dataset"><span class="std std-ref">The Olivetti faces dataset</span></a> different unsupervised
 matrix decomposition (dimension reduction) methods from the module
 <a class="reference internal" href="../../modules/classes.html#module-sklearn.decomposition" title="sklearn.decomposition"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.decomposition</span></code></a> (see the documentation chapter
 <a class="reference internal" href="../../modules/decomposition.html#decompositions"><span class="std std-ref">Decomposing signals in components (matrix factorization problems)</span></a>) .</p>
@@ -188,29 +191,27 @@ matrix decomposition (dimension reduction) methods from the module
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Dataset consists of 400 faces
 Extracting the top 6 Eigenfaces - PCA using randomized SVD...
-done in 0.028s
+done in 0.079s
 Extracting the top 6 Non-negative components - NMF...
-done in 0.255s
+done in 0.139s
 Extracting the top 6 Independent components - FastICA...
-/Users/thomasfan/Documents/scikit-learn-bootstrap/sklearn/decomposition/fastica_.py:119: ConvergenceWarning: FastICA did not converge. Consider increasing tolerance or the maximum number of iterations.
-  ConvergenceWarning)
-done in 0.101s
+done in 0.111s
 Extracting the top 6 Sparse comp. - MiniBatchSparsePCA...
-done in 0.664s
+done in 0.693s
 Extracting the top 6 MiniBatchDictionaryLearning...
-done in 0.403s
+done in 0.417s
 Extracting the top 6 Cluster centers - MiniBatchKMeans...
-done in 0.103s
+done in 0.115s
 Extracting the top 6 Factor Analysis components - FA...
-done in 0.200s
+done in 0.169s
 Extracting the top 6 Dictionary learning...
-done in 0.433s
+done in 0.438s
 Extracting the top 6 Dictionary learning - positive dictionary...
-done in 0.391s
+done in 0.439s
 Extracting the top 6 Dictionary learning - positive code...
-done in 0.114s
+done in 0.142s
 Extracting the top 6 Dictionary learning - positive dictionary &amp; code...
-done in 0.125s
+done in 0.140s
 </pre></div>
 </div>
 <div class="line-block">
@@ -400,7 +401,7 @@ done in 0.125s
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.673 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.919 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-decomposition-plot-faces-decomposition-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/master?urlpath=lab/tree/notebooks/auto_examples/decomposition/plot_faces_decomposition.ipynb"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" width="150px" /></a>

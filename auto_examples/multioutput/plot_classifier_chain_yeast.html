@@ -101,7 +101,10 @@
         </li>
       </ul>
       <div class="sk-search-form">
-          <div class="gcse-search" id="cse" data-linktarget="_parent"></div>
+          <div class="gcse-search" id="cse"
+          personalizedAds="false"
+          as_sitesearch="scikit-learn.org/dev"
+          data-linktarget="_parent"></div>
       </div>
     </div>
   </div>
@@ -157,7 +160,7 @@
 data point has at least one label. As a baseline we first train a logistic
 regression classifier for each of the 14 labels. To evaluate the performance of
 these classifiers we predict on a held-out test set and calculate the
-<span class="xref std std-ref">jaccard score</span> for each sample.</p>
+<a class="reference internal" href="../../modules/model_evaluation.html#jaccard-similarity-score"><span class="std std-ref">jaccard score</span></a> for each sample.</p>
 <p>Next we create 10 classifier chains. Each classifier chain contains a
 logistic regression model for each of the 14 labels. The models in each
 chain are ordered randomly. In addition to the 103 features in the dataset,
@@ -257,7 +260,7 @@ with randomly ordered chains).</p>
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.516 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.235 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-multioutput-plot-classifier-chain-yeast-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/master?urlpath=lab/tree/notebooks/auto_examples/multioutput/plot_classifier_chain_yeast.ipynb"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" width="150px" /></a>

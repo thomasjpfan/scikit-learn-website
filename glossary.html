@@ -101,7 +101,10 @@
         </li>
       </ul>
       <div class="sk-search-form">
-          <div class="gcse-search" id="cse" data-linktarget="_parent"></div>
+          <div class="gcse-search" id="cse"
+          personalizedAds="false"
+          as_sitesearch="scikit-learn.org/dev"
+          data-linktarget="_parent"></div>
       </div>
     </div>
   </div>
@@ -978,7 +981,7 @@ See <a class="reference internal" href="modules/model_evaluation.html#scoring-pa
 may represented as for a <a class="reference internal" href="#term-multiclass"><span class="xref std std-term">multiclass</span></a> problem but with only two
 labels.  A binary decision function is represented as a 1d array.</p>
 <p>Semantically, one class is often considered the “positive” class.
-Unless otherwise specified (e.g. using <span class="xref std std-term">pos_label</span> in
+Unless otherwise specified (e.g. using <a class="reference internal" href="#term-pos-label"><span class="xref std std-term">pos_label</span></a> in
 <a class="reference internal" href="#term-evaluation-metrics"><span class="xref std std-term">evaluation metrics</span></a>), we consider the class label with the
 greater value (numerically or lexicographically) as the positive class:
 of labels [0, 1], 1 is the positive class; of [1, 2], 2 is the positive
@@ -1422,6 +1425,11 @@ won’t work.</p>
 <p>When <code class="docutils literal notranslate"><span class="pre">n_jobs</span></code> is not 1, the estimator being parallelized must be
 picklable.  This means, for instance, that lambdas cannot be used
 as estimator parameters.</p>
+</dd>
+<dt id="term-pos-label"><code class="docutils literal notranslate"><span class="pre">pos_label</span></code></dt><dd><p>Value with which positive labels must be encoded in binary
+classification problems in which the positive class is not assumed.
+This value is typically required to compute asymmetric evaluation
+metrics such as precision and recall.</p>
 </dd>
 <dt id="term-random-state"><code class="docutils literal notranslate"><span class="pre">random_state</span></code></dt><dd><p>Whenever randomization is part of a Scikit-learn algorithm, a
 <code class="docutils literal notranslate"><span class="pre">random_state</span></code> parameter may be provided to control the random number

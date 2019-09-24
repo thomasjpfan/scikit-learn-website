@@ -101,7 +101,10 @@
         </li>
       </ul>
       <div class="sk-search-form">
-          <div class="gcse-search" id="cse" data-linktarget="_parent"></div>
+          <div class="gcse-search" id="cse"
+          personalizedAds="false"
+          as_sitesearch="scikit-learn.org/dev"
+          data-linktarget="_parent"></div>
       </div>
     </div>
   </div>
@@ -136,7 +139,10 @@
         </div>
           <div class="sk-sidebar-toc">
             <ul>
-<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.inspection</span></code>.permutation_importance</a></li>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.inspection</span></code>.permutation_importance</a><ul>
+<li><a class="reference internal" href="#examples-using-sklearn-inspection-permutation-importance">Examples using <code class="docutils literal notranslate"><span class="pre">sklearn.inspection.permutation_importance</span></code></a></li>
+</ul>
+</li>
 </ul>
 
           </div>
@@ -149,7 +155,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.inspection" title="sklearn.inspection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.inspection</span></code></a>.permutation_importance<a class="headerlink" href="#sklearn-inspection-permutation-importance" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="sklearn.inspection.permutation_importance">
-<code class="sig-prename descclassname">sklearn.inspection.</code><code class="sig-name descname">permutation_importance</code><span class="sig-paren">(</span><em class="sig-param">estimator</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">scoring=None</em>, <em class="sig-param">n_repeats=5</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">random_state=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/f0978556c1/sklearn/inspection/permutation_importance.py#L45"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.inspection.permutation_importance" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sklearn.inspection.</code><code class="sig-name descname">permutation_importance</code><span class="sig-paren">(</span><em class="sig-param">estimator</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">scoring=None</em>, <em class="sig-param">n_repeats=5</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">random_state=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/6bd8df099f/sklearn/inspection/permutation_importance.py#L45"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.inspection.permutation_importance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Permutation importance for feature evaluation <a class="reference internal" href="#rd9e56ef97513-bre" id="id1">[BRE]</a>.</p>
 <p>The <a class="reference internal" href="../../glossary.html#term-estimator"><span class="xref std std-term">estimator</span></a> is required to be a fitted estimator. <code class="docutils literal notranslate"><span class="pre">X</span></code> can be the
 data set used to train the estimator or a hold-out set. The permutation
@@ -210,7 +216,14 @@ feature. See <a class="reference internal" href="../../glossary.html#term-random
 </dl>
 </dd></dl>
 
-<div class="clearer"></div></div>
+<div class="section" id="examples-using-sklearn-inspection-permutation-importance">
+<h2>Examples using <code class="docutils literal notranslate"><span class="pre">sklearn.inspection.permutation_importance</span></code><a class="headerlink" href="#examples-using-sklearn-inspection-permutation-importance" title="Permalink to this headline">¶</a></h2>
+<div class="sphx-glr-thumbcontainer" tooltip="In this example, we will compare the impurity-based feature importance of RandomForestClassifie..."><div class="figure align-default" id="id3">
+<img alt="../../_images/sphx_glr_plot_permutation_importance_thumb.png" src="../../_images/sphx_glr_plot_permutation_importance_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../../auto_examples/inspection/plot_permutation_importance.html#sphx-glr-auto-examples-inspection-plot-permutation-importance-py"><span class="std std-ref">Permutation Importance vs Random Forest Feature Importance (MDI)</span></a></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="clearer"></div></div>
+</div>
 
 
       </div>
